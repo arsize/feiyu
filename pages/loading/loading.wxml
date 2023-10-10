@@ -1,0 +1,4 @@
+<view class="loading">
+    <!-- <canvas id="loadingcanvas" type="2d"></canvas> -->
+    <image mode="widthFix" style="width:250rpx;height:250rpx;" src="{{baseUrlImg + 'newloading.gif'}}" />
+</view>

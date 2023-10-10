@@ -1,0 +1,46 @@
+<view class="chargeinfo">
+  <view class="topInfo">
+    <view class="cabinetName">{{takeData.cabinetName || '--'}}</view>
+    <view class="item">
+      <image mode="widthFix" style="width:30rpx;height:30rpx;" src="{{baseUrlImg+'icon_cont_id@2x.png'}}" />
+      <view style="margin-left:10rpx;font-size:24rpx;">{{takeData.cabinetDid || '--'}}</view>
+    </view>
+  </view>
+</view>
+<view class="centerChargeBox">
+  <view class="toptext">温馨提示：开始换电后，将会打开空仓，请保持安全距离</view>
+  <view class="cabinetCent" wx:for="{{cabinetBoxInfoList}}" wx:key="index">
+    <view class="portnum">{{item.boxSn}}</view>
+
+    <block wx:if="{{item.boxStatus == 0}}">
+      <block wx:if="{{item.boxUseStatus == 1}}">
+        <block wx:if="{{item.boxBatteryStatus == 1}}">
+          <image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery03@2x.png'}}" />
+          <view class="text">可换电</view>
+        </block>
+        <block wx:elif="{{item.boxBatteryStatus == 3}}">
+          <image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery01@2x.png'}}" />
+          <view class="text">充电中</view>
+        </block>
+
+      </block>
+      <block wx:else>
+        <image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery04@2x.png'}}" />
+        <view class="text">空仓</view>
+      </block>
+
+    </block>
+    <block wx:else>
+      <image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery02@2x.png'}}" />
+      <view class="text">禁用</view>
+    </block>
+
+  </view>
+
+</view>
+
+
+<view wx:if="{{btnflag}}" class="bottomBTn">开仓取电</view>
+<view wx:else class="bottomBTn" bindtap="opencangmen">开仓取电</view>
+
+<dialog></dialog>

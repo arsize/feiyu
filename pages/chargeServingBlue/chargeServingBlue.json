@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "订单信息",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#1A6EFF",
+    "usingComponents": {
+      "dialog": "../component/dialog/dialog",
+      "van-notice-bar": "../../miniprogram_npm/@vant/weapp/notice-bar/index"
+    }
+  }

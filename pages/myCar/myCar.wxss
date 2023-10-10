@@ -1,0 +1,54 @@
+page {
+  background-color: #f0f2f5;
+}
+.myCar {
+  width: 100%;
+  padding: 40rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+}
+.left {
+  width: 65%;
+  font-size: 30rpx;
+}
+.item {
+  margin-bottom: 20rpx;
+}
+.bottombar {
+  margin-top: 15rpx;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: #999;
+}
+.scanbind {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400rpx;
+  height: 88rpx;
+  background: linear-gradient(270deg, #41beff 0%, #1a6eff 100%);
+  box-shadow: 0rpx 4rpx 6rpx 0rpx rgba(27, 112, 255, 0.25);
+  border-radius: 44rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: bold;
+}
+.scanbindimg {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,3 @@
+<view class="wai">
+	<image mode="widthFix" style="width:100%;" src="{{baseUrlImg + 'rentalPage.png'}}" />
+</view>

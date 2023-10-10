@@ -1,0 +1,17 @@
+<view style="margin-top: 20rpx; font-size: 48rpx;color: #333333;font-weight: bold;">
+  提现金额 <text style="color: #1A6EFF;">{{money}}元</text>
+</view>
+
+<view style="margin-top: 20rpx;font-size: 28rpx;color: #666666;">
+  预计0-5个工作日到账
+</view>
+<view style="margin-top: 40rpx;margin-bottom: 20rpx; width: 682rpx;height: 1rpx;background-color: #D8D8D8;"></view>
+
+<view style="font-size: 32rpx;color: #333333;font-weight: bold;">提现进度</view>
+
+<view style="position: relative;box-sizing: border-box;padding-right: 32rpx;">
+  <view class="positime" style="font-size: 28rpx;color:#999999;position: absolute;right: 70rpx;">{{time1}}</view>
+  <view class="positime" style="font-size: 28rpx;color:#999999;position: absolute;right: 70rpx;top: 40%;">{{time1}}</view>
+  <image style="display: block;width: 491rpx;height: 467rpx; margin-top:40rpx;" src="{{baseUrlImg + 'tixian_bg_core.png'}}"></image>
+
+</view>

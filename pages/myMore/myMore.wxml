@@ -1,0 +1,15 @@
+<!-- pages/myService/myService.wxml -->
+<view class="pageCont1005">
+    <view class="FAQCont">
+        <view class="item" wx:for="{{faqList}}" wx:key="index" data-index="{{index}}" data-item="{{item}}" bindtap='showFun'>
+            <!-- <view data-index="{{index}}"> -->
+            <text>{{item.title}}</text>
+            <image mode="widthFix" class="rightIcon" src="{{baseUrlImg + 'icon_list_more@2x.png'}}" />
+            <!-- </view> -->
+        </view>
+    </view>
+</view>
+<!-- <view class="botBtmFixLine220"></view>
+<view class="botBtmFix">
+    <view class="btnBlue" bindtap="joinPhone">修改手机号</view>
+</view> -->

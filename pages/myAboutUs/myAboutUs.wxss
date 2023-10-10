@@ -1,0 +1,76 @@
+/* pages/myAboutUs/myAboutUs.wxss */
+page {
+  width: 100%;
+  background: #f9f9f9;
+}
+
+.logoCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 430rpx;
+}
+
+.logoCont image {
+  width: 152rpx;
+  height: 152rpx;
+  margin-bottom: 30rpx;
+}
+
+.logoCont text {
+  color: #333;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.FAQCont {
+  width: 100%;
+  background: #fff;
+}
+
+.FAQCont .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  height: 100rpx;
+  border-bottom: 1rpx solid #EEEEEE;
+}
+
+.FAQCont .item .left {
+  color: #333;
+  font: 500 30rpx "PingFangSC-Medium";
+}
+
+.FAQCont .item .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.FAQCont .item .right text {
+  color: #666;
+  font-size: 30rpx;
+}
+
+.FAQCont .item .right image {
+  margin-left: 10rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.FAQCont .item:last-child {
+  border-bottom: none;
+}
+
+.bottomCont {
+  position: fixed;
+  left: 0;
+  bottom: 37rpx;
+  width: 100%;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+}

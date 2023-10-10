@@ -1,0 +1,217 @@
+<!-- pages/myBattery/myBattery.wxml -->
+<view class="pageCont" wx:if="{{isRequest}}">
+	<!-- 已绑定电池 -->
+	<view class="hasBattery" wx:if="{{batteryType==1||batteryType==3||batteryType==4}}">
+		<view class="batteryInfo" wx:if="{{infoData.connectType==1}}">
+			<view class="content">
+				<image class="contentBg" mode="widthFix" src="{{baseUrlImg+'icon_battery_bg@2x.png'}}" />
+				<view class="wrap" wx:if="{{batteryType==4}}">
+					<view class="data ColorGreen">
+						<view class="top">
+							<text>{{infoData.batterySoc||'-'}}</text>
+							<text>%</text>
+						</view>
+						<view class="bottom">
+							电池电量
+						</view>
+					</view>
+					<image mode="widthFix" src="{{baseUrlImg+'icon_battery_element01@2x.png'}}" />
+					<view class="data ColorGreen">
+						<view class="top">
+							<text>{{infoData.estimatedMileage||'-'}}</text>
+							<text>km</text>
+						</view>
+						<view class="bottom">
+							预估里程
+						</view>
+					</view>
+				</view>
+				<view class="wrap" wx:if="{{batteryType==3}}">
+					<view class="data ColorYellow">
+						<text>--</text>
+					</view>
+					<view class="data ColorYellow">
+						<view class="top">
+							<text>--</text>
+						</view>
+						<view class="bottom">
+							电池电量
+						</view>
+					</view>
+					<image mode="widthFix" src="{{baseUrlImg+'icon_battery_element06@2x.png'}}" />
+					<view class="data ColorYellow">
+						<text>--</text>
+					</view>
+					<view class="data ColorYellow">
+						<view class="top">
+							<text>--</text>
+						</view>
+						<view class="bottom">
+							预估里程
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="{{batteryType==3?'note opacity1':'note'}}">
+				<block wx:if="{{batteryType==4&&infoData.dataUpdateTime}}">
+					<text>{{infoData.dataUpdateTime}}</text>
+					<text>数据更新时间</text>
+				</block>
+				<block wx:if="{{batteryType==3}}">
+					<text class="ColorYellowtext">暂不可用，请缴纳绿色回收金激活电池</text>
+				</block>
+			</view>
+		</view>
+		<view class="batteryInfoNoel" wx:if="{{infoData.connectType==0}}">
+			<block wx:if="{{infoData.dataUpdateTime}}">
+				<text>{{infoData.dataUpdateTime}}</text>
+				<text>数据更新时间</text>
+			</block>
+			<image mode="widthFix" src="../../images/batinfoIcon.png" />
+
+		</view>
+
+		<view class="dataInfo">
+			<view class="dataInfoBg"></view>
+			<view class="dataCont">
+				<view class="item">
+					<view class="left">
+						<text>电池SN码：</text>
+						<text bindlongtap='copy'
+                            data-set="{{infoData.batterySn||'-'}}">{{infoData.batterySn||'-'}}</text>
+					</view>
+				</view>
+				<view class="item">
+					<view class="left">
+						<text>电池型号：</text>
+						<!-- <text>{{infoData.batteryVoltage?infoData.batteryVoltage+"V":"-V"}}{{infoData.batteryCapacity?infoData.batteryCapacity+"Ah":"-Ah"}}
+                        </text> -->
+						<text>{{infoData.batteryTypeVersion||'-'}}</text>
+					</view>
+					<view class="right"></view>
+				</view>
+				<view class="item" wx:if="{{infoData.connectType==1}}">
+					<view class="left">
+						<text>电池位置：</text>
+						<text>{{infoData.batteryAddress||'-'}}</text>
+					</view>
+					<view class="right" wx:if="{{infoData.batteryLatitude}}" bindtap="openMap" data-index="0">
+						<text>查看地图</text>
+					</view>
+				</view>
+				<view class="item">
+					<view class="left">
+						<text>电压/容量：</text>
+						<text
+                            wx:if="{{infoData.batteryVoltage}}">{{infoData.batteryVoltage||'-'}}V/{{infoData.batteryCapacity||'-'}}Ah
+						</text>
+						<text wx:else>-</text>
+					</view>
+					<view class="right"></view>
+				</view>
+				<view class="item">
+					<view class="left">
+						<text>绿色回收金：</text>
+						<text wx:if="{{infoData.batteryDeposit === 0}}">0元</text>
+						<text wx:else>{{infoData.batteryDeposit?infoData.batteryDeposit+'元':'-'}}</text>
+					</view>
+					<view class="right"></view>
+				</view>
+				<view class="item">
+					<view class="left">
+						<text>租赁日期：</text>
+						<text>{{infoData.batteryRentStartTime||'-'}}</text>
+					</view>
+					<view class="right"></view>
+				</view>
+				<view class="item">
+					<view class="left">
+						<text>售后门店地址：</text>
+						<text style="word-break:break-all;">{{infoData.shopBusiness&&infoData.shopBusiness.busAddress||'-'}}
+						</text>
+					</view>
+					<view class="right" wx:if="{{infoData.shopBusiness&&infoData.shopBusiness.latitude}}" bindtap="openMap" data-index="1">
+						<text>导航</text>
+						<image mode="widthFix" src="{{baseUrlImg+'icon_cont_guide@2x.png'}}" />
+					</view>
+				</view>
+				<view class="item">
+					<view class="left">
+						<text>门店营业时间：</text>
+						<text>{{infoData.shopBusiness&&infoData.shopBusiness.serviceTime||'-'}}
+						</text>
+					</view>
+					<view class="right"></view>
+				</view>
+			</view>
+		</view>
+		<view class="tempposition" wx:if="{{batteryType==4}}">
+			<text bindtap="returnFun" style="font-size:28rpx;margin-bottom:10rpx;">退还电池</text>
+		</view>
+	</view>
+	<!-- 未绑定电池 -->
+	<view class="noBattery" wx:if="{{batteryType==0}}">
+		<image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus04@2x.png'}}" />
+		<view class="btnBlueScan" data-type="0" bindtap="btmBtnFun">扫码绑定电池</view>
+	</view>
+	<!-- 吞并电池 -->
+	<block wx:if="{{batteryType==2}}">
+		<view class="quitCont">
+			<image mode="widthFix" src="{{baseUrlImg+'icon_cont_warning@2x.png'}}" />
+			<text>
+			{{infoData.lockType==1?'因换电结束后未取走电池，电池已被吞并如需帮助请联系客服':infoData.lockType==2?'因换电时SN码不匹配，电池已被吞并如需帮助请联系客服':infoData.lockType==3?'因操作超时后未取走电池，电池已被吞并如需帮助请联系客服':'电池已被吞并如需帮助请联系客服'}}
+			</text>
+		</view>
+		<view class="botBtmFix">
+			<view wx:if="{{seconds>0}}" class="btnBluelinear" data-type="2" bindtap="btmBtnFun">
+				取出吞并电池（{{seconds}}s）
+			</view>
+			<view class="btnWhite" data-type="7" bindtap="btmBtnFun">拨打客服电话</view>
+		</view>
+	</block>
+	<!-- 去激活电池 -->
+	<block wx:if="{{batteryType != 0 && batteryType != -1 && batteryType != 6 && (batteryDepositOrderStatus === 0 || realName === false)}}">
+		<view class="botBtmFixLine130"></view>
+		<view class="botBtmFix">
+			<view class="btnBluelinear" data-type="3" bindtap="btmBtnFun">去激活电池</view>
+		</view>
+	</block>
+	<!-- 退押金中 -->
+	<block wx:if="{{batteryType==6}}">
+		<view class="quitCont">
+			<image mode="widthFix" src="{{baseUrlImg+'icon_cont_return@2x.png'}}" />
+			<text>正在为你办理退绿色回收金手续</text>
+			<text>预计1~7个工作日原路返还至你账户</text>
+		</view>
+	</block>
+</view>
+<!-- 退电池提示 -->
+<view class="blackopBg" wx:if="{{isTip}}">
+	<view class="refundCont" catchtap="refundBatTip">
+		<view class="refundClose">
+			<image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus03@2x.png'}}" />
+		</view>
+		<view class="refundWrap">
+			<view class="title">
+				<text>退电池提示</text>
+				<text>请前往售后门店退还电池</text>
+			</view>
+			<view class="note">电池退还后将无法体验换电服务，且已购买的套餐也会随之消失，再给一点时间，我们一定努力改善。</view>
+			<view class="reason">
+				<view class="item {{item.isSelect?'primaryBor':''}}" wx:for="{{refundResList}}" wx:key="{{index}}" data-item="{{item}}" data-index="{{index}}" catchtap='selectRes'>
+					<text class="{{item.isSelect?'primaryColor':'Color666'}}">{{item.cont}}</text>
+					<image wx:if="{{item.isSelect}}" class="mybat" src="{{baseUrlImg+'icon_cont_checked@2x.png'}}">
+					</image>
+				</view>
+			</view>
+			<view class="btn">
+				<!-- <text catchtap='joinScan'>{{qrCodeInfo?'现在退电':'扫码退电'}}</text>
+            <text catchtap='refundBatTip'>下次再退</text> -->
+				<text catchtap="returnFun">下次再说</text>
+				<text catchtap="goonReturnFun">继续退电</text>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 弹框 -->
+<dialog></dialog>

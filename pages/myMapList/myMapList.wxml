@@ -1,0 +1,132 @@
+<!--pages/myMapList/myMapList.wxml-->
+<view class="pageCont100">
+	<view class="switchBar">
+		<view class="item" wx:for="{{switchBarList}}" wx:key="index" data-item="{{item}}" data-index="{{index}}" bindtap='selectBar'>
+			<block wx:if="{{index==0}}">
+				<text
+          class="{{curSwitchBar==index?'text primaryColor':'text'}}">{{batteryTypeList[currBat].batteryTypeName}}</text>
+			</block>
+			<block wx:if="{{index==1}}">
+				<text class="{{curSwitchBar==index?'text primaryColor':'text'}}">{{item.title}}</text>
+			</block>
+			<block wx:if="{{index==0}}">
+				<picker value="{{batteryTypeList[currBat].batteryTypeId}}" range-key="{{'batteryTypeName'}}" range="{{batteryTypeList}}" bindchange="bindChangeBatteryType">
+					<view class="{{curSwitchBar==index?'textpicker primaryColor':'textpicker'}}">
+						<image wx:if="{{curSwitchBar==index}}" src="{{baseUrlImg+'Rectangle 27@2x.png'}}" />
+					</view>
+				</picker>
+			</block>
+		</view>
+	</view>
+	<view class="line20G"></view>
+	<!-- 电柜 activeBg-->
+	<view class="cabitListCont" wx:if="{{curSwitchBar==0&&isRequest}}">
+		<view class="cabitList" wx:if="{{recordList.length>0}}">
+			<view class="{{currCabit==index?'cabitDetailItem activeBg':'cabitDetailItem'}}" wx:for="{{recordList}}" wx:key="index" data-item="{{item}}" data-index="{{index}}" bindtap="selectBat">
+				<view class="cabitTitle">
+					<view class="left">
+						{{item.cabinetName||'--'}}
+					</view>
+					<view class="right" data-item="{{item}}" data-item="{{item}}" data-curr="2" catchtap="navigationMap">
+						<view>导航</view>
+						<image class="imageNav" src="{{baseUrlImg+'icon_cont_guide@2x.png'}}"></image>
+					</view>
+				</view>
+				<view class="middleInfo">
+					<view class="item">
+						<image style="width:30rpx;height:25rpx;" src="{{baseUrlImg+'icon_cont_id@2x.png'}}"></image>
+						<view class="text">
+							{{item.qrCodeDid||'--'}}
+						</view>
+						<view class="text2">
+							{{item.userFromDistance}}{{item.unit}}
+						</view>
+					</view>
+					<view class="item">
+						<image style="width:25rpx;height:25rpx;" src="{{baseUrlImg+'icon_cont_location@2x.png'}}"></image>
+						<view class="text">
+							{{item.cabinetAddress||'--'}}
+						</view>
+					</view>
+
+				</view>
+				<view class="bottomInfo">
+					<view style="display: flex;align-items: center;min-width: 160rpx;margin-bottom:15rpx;">
+						<image style="width:24rpx;height:24rpx;margin-right:5px;" src="{{baseUrlImg + 'v3_gonglv@2x.png'}}"></image>
+						<view style="font: 500 24rpx 'PingFangSC-Medium';color:#999;">限定功率 ≤ 260W</view>
+					</view>
+					<view class="top">
+						<view class="wrap">
+							<text>空仓：</text>
+							<text>{{item.emptyBoxNum||0}}</text>
+						</view>
+						<view class="wrap">
+							<text>可充电：</text>
+							<text>{{item.canUseChargingPortNum||0}}</text>
+						</view>
+					</view>
+					<view class="bottom">
+						<view class="title">可换电：</view>
+						<view class="cont">
+							<block wx:if="{{item.batteryTypeAndNumDtoList.length>0}}">
+								<view class="item" wx:for="{{item.batteryTypeAndNumDtoList}}" wx:for-item="itemType" wx:key="index">
+									<text>({{itemType.batteryTypeName}})</text>
+									<text>{{itemType.num||0}}</text>
+								</view>
+							</block>
+							<block wx:if="{{item.batteryTypeAndNumDtoList.length==0}}">
+								<view class="item">
+									<text>0</text>
+								</view>
+							</block>
+						</view>
+					</view>
+
+				</view>
+			</view>
+		</view>
+		<view class="noBattery" wx:if="{{recordList.length==0}}">
+			<image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus03@2x.png'}}" />
+			<text>暂无数据</text>
+		</view>
+
+	</view>
+
+	<!-- 网点 -->
+
+	<view class="cabitListCont" wx:if="{{curSwitchBar==1&&isRequest}}">
+		<view class="{{currStore==index?'storeList activeBg':'storeList'}}" wx:for="{{recordList}}" wx:key="index" data-item="{{item}}" data-index="{{index}}">
+			<view class="cabitTitle">
+				<view class="left">
+					{{item.busName||'-'}}
+				</view>
+				<view class="right" data-curr="3" data-item="{{item}}" catchtap="navigationMap">
+					<view>导航</view>
+					<image class="imageNav" src="{{baseUrlImg+'icon_cont_guide@2x.png'}}"></image>
+				</view>
+			</view>
+			<view class="middleInfo">
+				<view class="item">
+					<image src="{{baseUrlImg+'icon_cont_phone2@2x.png'}}"></image>
+					<text class="text" style="width:71%;">{{item.busMobile||'-'}}({{item.busContactName||'-'}})</text>
+					<text class="text2">{{item.dis}}{{item.unit}}</text>
+				</view>
+				<view class="item">
+					<image src="{{baseUrlImg+'icon_cont_location@2x.png'}}"></image>
+					<view class="text">
+						{{item.busAddress||'-'}}
+					</view>
+				</view>
+			</view>
+			<!-- <view class="bottomImg">
+        <view class="bottomImgWarp" wx:for="{{item.imgList}}" wx:for-item="itemImg" wx:key="index">
+          <image mode="widthFix" class="imageBtm" src="{{itemImg}}" />
+        </view>
+      </view> -->
+		</view>
+		<view class="noBattery" wx:if="{{recordList.length==0}}">
+			<image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus03@2x.png'}}" />
+			<text>暂无数据</text>
+		</view>
+	</view>
+</view>

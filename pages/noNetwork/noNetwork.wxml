@@ -1,0 +1,10 @@
+<!--pages/noNetwork/noNetwork.wxml-->
+<view class="pageCont1005">
+	<view class="noRecord">
+		<image src="{{baseUrl + 'nonetworkIcon.png'}}" alt="heneng"></image>
+		<view class="detail" bindtap='getNet'>
+			网络加载失败，点击
+			<text class="primaryColor">重新加载</text>
+		</view>
+	</view>
+</view>

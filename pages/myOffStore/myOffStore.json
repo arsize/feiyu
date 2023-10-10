@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "线下服务门店",
+  "usingComponents": {
+    "van-tree-select": "../../miniprogram_npm/@vant/weapp/tree-select/index"
+  }
+}

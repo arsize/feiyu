@@ -1,0 +1,113 @@
+.pageCont {
+  width: 100%;
+}
+
+.pageCont .formSubmitCont {
+  width: 100%;
+}
+
+.pageCont .info {
+  width: 90%;
+  margin: 64rpx auto 0;
+}
+
+.pageCont .info .title {
+  margin-bottom: 18rpx;
+}
+
+.pageCont .info .title image {
+  width: 128rpx;
+  height: 32rpx;
+}
+.defaultRound{
+  width:52rpx;
+height:52rpx;
+background:rgba(238,238,238,1);
+border:8rpx solid rgba(246,246,248,1);
+border-radius: 52rpx;
+}
+.reactivating{
+  width: 65%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.reactivating .left{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reactivating .right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pageCont .info .cont {
+  width: 100%;
+}
+
+.pageCont .info .cont .item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 112rpx;
+  border-bottom: 1rpx solid #EEEEEE;
+}
+
+.pageCont .info .cont .item text {
+  display: inline-block;
+  width: 180rpx;
+  color: #333;
+  font: 500 30rpx "PingFangSC-Medium";
+}
+
+.pageCont .info .cont .item input {
+  width: 72%;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.pageCont .info .cont .item .areaCont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 72%;
+
+}
+
+.pageCont .info .cont .item .areaCont picker {
+  width: 92%;
+}
+
+.pageCont .info .cont .item .areaCont .picker {
+  width: 100%;
+  font-size: 30rpx;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pageCont .info .cont .item .areaCont .pickerNo {
+  font-size: 30rpx;
+  color: #999;
+}
+
+.pageCont .info .cont .item .areaCont image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.pageCont .info .note {
+  margin: 24rpx 0 15rpx 0;
+  color: #999;
+  font-size: 24rpx;
+}
+
+.placeholderCont {
+  color: #999;
+  font-size: 30rpx;
+  /* font-weight: 500; */
+  /* font: 500 30rpx "PingFangSC-Medium"; */
+}

@@ -1,0 +1,47 @@
+/* pages/myService/myService.wxss */
+page {
+  width: 100%;
+  background: #f9f9f9;
+}
+
+.title {
+  margin: 0 auto;
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(136, 136, 136, 1);
+}
+
+.FAQCont {
+  width: 100%;
+  background: #fff;
+}
+
+.FAQCont .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  height: 100rpx;
+  border-bottom: 1rpx solid #EEEEEE;
+  /* padding-bottom: 40rpx; */
+}
+.FAQCont .item:nth-child(1) {
+  border-top: 1rpx solid #EEEEEE;
+}
+.FAQCont .item text {
+  color: #333;
+  font: 500 30rpx "PingFangSC-Medium";
+}
+
+.FAQCont .item image {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.FAQCont .item:last-child {
+  border-bottom: none;
+}

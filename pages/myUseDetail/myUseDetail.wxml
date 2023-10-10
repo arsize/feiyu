@@ -1,0 +1,180 @@
+<!-- pages/myUseDetail/myUseDetail.wxml -->
+<view class="pageCont">
+	<!-- 换电 -->
+	<block wx:if="{{linkData.useType==0}}">
+		<view class="infoCont">
+			<view class="topCont">
+				<view class="iconNote" wx:if="{{exchangeRecordDetail.exchangeStatus==0}}">
+					<image mode="widthFix" src="{{baseUrlImg+'card_element02@2x.png'}}" />
+					<text>换电中</text>
+				</view>
+				<view class="iconNote" wx:elif="{{exchangeRecordDetail.exchangeStatus== -1}}">
+					<image mode="widthFix" src="{{baseUrlImg+'card_element02@2x.png'}}" />
+					<text>换电终止</text>
+				</view>
+				<view class="iconNote" wx:elif="{{exchangeRecordDetail.exchangeStatus== 1}}">
+					<image mode="widthFix" src="{{baseUrlImg+'card_element02@2x.png'}}" />
+					<text>已完成</text>
+				</view>
+				<view class="item">
+					<text>{{exchangeRecordDetail.returnBoxSn||'-'}}号</text>
+					<text>放入仓</text>
+				</view>
+				<view class="item">
+					<text>{{exchangeRecordDetail.borrowBoxSn||'-'}}号</text>
+					<text>取出仓</text>
+				</view>
+				<view class="item" wx:if="{{exchangeRecordDetail.chargingType==0}}">
+					<text>{{exchangeRecordDetail.money||'0.00'}}</text>
+					<text>余额支付（元）</text>
+				</view>
+				<view class="item" wx:if="{{exchangeRecordDetail.chargingType==1}}">
+					<text wx:if="{{exchangeRecordDetail.frequencyCardType==2}}">无限次</text>
+					<text wx:else>{{exchangeRecordDetail.surplusNum||'0'}}</text>
+					<text>套餐剩余次数</text>
+				</view>
+			</view>
+			<view class="botCont">
+				<view class="item">
+					<text>订单编号：</text>
+					<text bindlongtap='copy' data-set="{{exchangeRecordDetail.orderNo||'-'}}">{{exchangeRecordDetail.orderNo||'-'}}
+					</text>
+				</view>
+				<view class="item">
+					<text>电柜ID：</text>
+					<text>{{exchangeRecordDetail.cabinetDid||'-'}}</text>
+				</view>
+				<view class="item">
+					<text>电柜名称：</text>
+					<text>{{exchangeRecordDetail.cabinetName||'-'}}</text>
+				</view>
+				<view class="item">
+					<text>换电时间：</text>
+					<text>{{exchangeRecordDetail.ctime||'-'}}</text>
+				</view>
+				<view class="item">
+					<text>放入电池SN码：</text>
+					<text bindlongtap='copy' data-set="{{exchangeRecordDetail.returnBatterySn||'-'}}">{{exchangeRecordDetail.returnBatterySn||'-'}}
+					</text>
+				</view>
+				<view class="item">
+					<text>取出电池SN码：</text>
+					<text bindlongtap='copy' data-set="{{exchangeRecordDetail.borrowBatterySn||'-'}}">{{exchangeRecordDetail.borrowBatterySn||'-'}}
+					</text>
+				</view>
+				<view class="item">
+					<text>换电结果：</text>
+					<text wx:if="{{exchangeRecordDetail.exchangeResult==1||exchangeRecordDetail.exchangeResult==0||exchangeRecordDetail.exchangeResult==-2}}">换电成功
+                    </text>
+					<text wx:else>{{exchangeRecordDetail.exchangeFailResultDesc}}</text>
+				</view>
+				<view class="item">
+					<text>扣费类型：</text>
+					<text>{{exchangeRecordDetail.chargingType==0?'余额扣费':'套餐抵扣'}} {{exchangeRecordDetail.userFrequencyPayType==4?'(兑换套餐)':''}}</text>
+				</view>
+				<view class="item">
+					<text>电池剩余电量：</text>
+					<text wx:if="{{exchangeRecordDetail.returnBatterySoc}}">{{exchangeRecordDetail.returnBatterySoc}}%</text>
+					<text wx:else>--</text>
+				</view>
+				<view class="item">
+					<text>计费规则：</text>
+					<!-- 套餐有效期内，使用限定的免费换电次数进行抵扣  单次换电5元/次 -->
+					<text>{{exchangeRecordDetail.chargingType==0?'单次换电'+exchangeRecordDetail.singleChargePrice+'元/次':'套餐有效期内，使用限定的免费换电次数进行抵扣'}}
+					</text>
+				</view>
+			</view>
+		</view>
+	</block>
+	<!-- 充电 -->
+	<block wx:if="{{linkData.useType==1}}">
+		<view class="infoCont">
+			<view class="topCont">
+				<view class="iconNote" wx:if="{{chargingRecordDetail.chargingStatus==0||chargingRecordDetail.chargingStatus==1}}">
+					<image mode="widthFix" src="{{baseUrlImg+'card_element02@2x.png'}}" />
+					<!-- 待连接  充电中 -->
+					<text>{{chargingRecordDetail.chargingStatus==0?'待连接':'充电中'}}</text>
+				</view>
+				<view class="item">
+					<text>{{chargingRecordDetail.boxProtSn}}号</text>
+					<text>充电位</text>
+				</view>
+				<view class="item" wx:if="{{chargingRecordDetail.chargingStatus==0}}">
+					<text>{{chargingRecordDetail.prePayMoney||'0.00'}}</text>
+					<text>预付金额（元）</text>
+				</view>
+				<view class="item" wx:elif="{{chargingRecordDetail.chargingStatus==1}}">
+					<text>-</text>
+					<text>充电费用（元）</text>
+				</view>
+				<view wx:else class="item">
+					<text>{{chargingRecordDetail.costMoney||'0.00'}}</text>
+					<text>充电费用（元）</text>
+				</view>
+				<!-- chargingRecordDetail.chargingStatus==0|| -->
+				<view class="item" wx:if="{{chargingRecordDetail.chargingStatus==1}}">
+					<text>{{chargingAllTime}}</text>
+					<text>充电计时</text>
+				</view>
+				<view class="item" wx:elif="{{chargingRecordDetail.chargingStatus==0}}">
+					<text>00:00:00</text>
+					<text>充电计时</text>
+				</view>
+				<view class="item" wx:else>
+					<text>{{chargingRecordDetail.chargingTime||'00:00:00'}}</text>
+					<text>充电计时</text>
+				</view>
+			</view>
+			<view class="botCont">
+				<view class="item">
+					<text>订单编号：</text>
+					<text bindlongtap='copy' data-set="{{chargingRecordDetail.orderNo||'-'}}">{{chargingRecordDetail.orderNo||'-'}}
+					</text>
+				</view>
+				<view class="item">
+					<text>电柜ID：</text>
+					<text>{{chargingRecordDetail.cabinetDid||'-'}}</text>
+				</view>
+				<view class="item">
+					<text>电柜名称：</text>
+					<text>{{chargingRecordDetail.cabinetName||'-'}}</text>
+				</view>
+				<view class="item">
+					<text>购买时长：</text>
+					<text>{{chargingRecordDetail.purchaseDuration==-1?'充满自停':chargingRecordDetail.purchaseDuration+'小时'}}
+					</text>
+				</view>
+				<view class="item">
+					<text>下单时间：</text>
+					<text>{{chargingRecordDetail.ctime||'-'}}</text>
+				</view>
+				<view class="item" wx:if="{{chargingRecordDetail.chargingStatus==1}}">
+					<text>充电结束时间：</text>
+					<text>-</text>
+				</view>
+				<view class="item" wx:else>
+					<text>充电结束时间：</text>
+					<text>{{chargingRecordDetail.chargingEndTime||'-'}}</text>
+				</view>
+				<view class="item">
+					<text>预付金额：</text>
+					<text>{{chargingRecordDetail.prePayMoney||'0.00'}}元</text>
+				</view>
+				<view class="item" wx:if="{{chargingRecordDetail.chargingStatus==1}}">
+					<text>退还金额：</text>
+					<text>-</text>
+				</view>
+				<view class="item" wx:else>
+					<text>退还金额：</text>
+					<text>{{chargingRecordDetail.returnMoney||'0.00'}}元</text>
+				</view>
+				<view class="item">
+					<text>计费规则：</text>
+					<text>{{chargingRecordDetail.chargingUnitPrice||'-'}}元/{{chargingRecordDetail.unit||'-'}}分钟，{{chargingRecordDetail.topMoney||'-'}}元封顶
+					</text>
+				</view>
+			</view>
+		</view>
+	</block>
+	<view class="botNote" bindtap="joinFeedBack">对订单有疑问?</view>
+</view>

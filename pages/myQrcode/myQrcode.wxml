@@ -1,0 +1,17 @@
+<!--pages/myQrcode/myQrcode.wxml-->
+<view class="pagecont">
+    <view class="qrcodeCont">
+        <view class="qrcode">
+            <canvas style="width:200px; height:200px;" canvas-id="canvas" bindlongtap="saveQrFun"></canvas>
+            <cover-view wx:if="{{isShow&&logindata.userPhoto}}" class="photo" scroll-top="0">
+                <cover-image class="image" src="{{logindata.userPhoto}}"></cover-image>
+            </cover-view>
+        </view>
+        <view class="noteCont">
+            <block wx:if="{{isShow&&logindata.userPhoto}}">
+                <text>请向线下服务人员出示个人二维码</text>
+                <text>店员扫码为你绑定电池或解绑电池</text>
+            </block>
+        </view>
+    </view>
+</view>

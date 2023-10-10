@@ -1,0 +1,29 @@
+<!-- pages/myAboutUs/myAboutUs.wxml -->
+<view class="pageCont">
+	<view class="logoCont">
+		<image mode="widthFix" class="rightIcon" src="{{logo}}" />
+		<text style="width:90%;">{{companyIntroduction}}</text>
+	</view>
+	<view class="FAQCont">
+		<view class="item">
+			<view class="left">{{name1}}</view>
+			<view class="right">
+				<text>{{count1}}</text>
+			</view>
+		</view>
+		<view class="item">
+			<view class="left">{{name2}}</view>
+			<view class="right">
+				<text>{{count2}}</text>
+			</view>
+		</view>
+		<view class="item">
+			<view class="left">{{name3}}</view>
+			<view class="right">
+				<text>{{count3}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="bottomCont">{{wxmpName}}</view>
+
+</view>

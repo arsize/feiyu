@@ -1,0 +1,75 @@
+page {
+  background-color: #f6f6f8;
+}
+.exchangeEnd {
+  width: 100%;
+}
+.exchangeEnd .endServing {
+  width: 100%;
+}
+.exchangeEnd .endServing .topBox {
+  width: 100%;
+  height: 480rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.exchangeEnd .endServing .subbottomtext {
+  font-weight: normal;
+  color: #999999;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.exchangeEnd .endServing .bottomBar {
+  position: absolute;
+  bottom: 32rpx;
+  left: 0;
+  right: 0;
+  height: 255rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.exchangeEnd .endServing .block {
+  position: absolute;
+  bottom: 142rpx;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 686rpx;
+  height: 100rpx;
+  font-size: 32rpx;
+  background: linear-gradient(270deg, #41beff 0%, #1a6eff 100%);
+  box-shadow: 0rpx 4rpx 6rpx 0rpx rgba(27, 112, 255, 0.25);
+  border-radius: 50rpx;
+}
+.exchangeEnd .endServing .block2 {
+  position: absolute;
+  bottom: 32rpx;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 686rpx;
+  font-size: 32rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  background-color: white;
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

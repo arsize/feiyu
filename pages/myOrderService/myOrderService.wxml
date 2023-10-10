@@ -1,0 +1,61 @@
+<!-- pages/myOrderService/myOrderService.wxml -->
+<view class="noteTopMore" wx:if="{{isRequest}}" wx:if="{{isRequest&&objData.busName}}">
+  <image mode="widthFix" src="{{baseUrlImg+'icon_cont_info02@2x.png'}}" />
+  <text>因各地区的电池和套餐不通用，请选择你常在地区的服务网点</text>
+</view>
+<view class="myReturnbatStore">
+  <view class="title"></view>
+  <view class="wrap" wx:if="{{isRequest&&objData.busName}}">
+    <view class="titleNote" wx:if="{{isNear}}">
+      <image src="{{baseUrlImg+'card_element01@2x.png'}}" />
+      <text>最近服务网点</text>
+    </view>
+    <view class="top">
+      <text>{{objData.busName||'-'}}</text>
+    </view>
+    <view class="bottom">
+      <view class="leftCont">
+        <text wx:if="{{objData.isServeVehicle==1}}">车辆服务</text>
+        <text wx:if="{{objData.isServerBattery==1}}">电池服务</text>
+        <text wx:if="{{objData.isServerSale==1}}">售后服务</text>
+      </view>
+    </view>
+    <view class="middle">
+      <image mode="widthFix" src="{{baseUrlImg+'icon_cont_time@2x.png'}}" />
+      <text>营业时间：{{objData.serviceTime?objData.serviceTime+'（工作日）':'--'}}</text>
+    </view>
+    <view class="middle">
+      <view style="display:flex;">
+        <view style="width:180rpx;">
+          <image mode="widthFix" src="{{baseUrlImg+'icon_cont_location@2x.png'}}" />
+          {{objData.diskm||'--'}}km |
+        </view>
+        <view>{{objData.busAddress||'--'}}</view>
+      </view>
+    </view>
+    <view class="bottomOrder">
+      <view class="bottomOrderCont">
+        <view data-index="0" bindtap="operationFun" class="">
+          <text>联系</text>
+          <image mode="widthFix" style="width:40rpx;height:40rpx;" src="{{baseUrlImg+'Rectangle@2x.png'}}" />
+        </view>
+        <view data-index="1" bindtap="operationFun" class="">
+          <text>导航</text>
+          <image mode="widthFix" style="width:40rpx;height:40rpx;" src="{{baseUrlImg+'icon_cont_guide@2x.png'}}" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="noRecordCont" wx:if="{{isRequest&&!objData.busName}}">
+    <image class="laImage" mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
+    <text>暂无门店</text>
+  </view>
+  <view bindtap="serviceFun" class="viewOther" wx:if="{{isRequest&&objData.busName}}">
+    选择其他服务网点
+  </view>
+</view>
+<view class="botBtmFixLine150"></view>
+<view class="botBtmFix" wx:if="{{isRequest&&objData.busName}}">
+  <view class="btnBluelinear" bindtap="btmFun">下一步</view>
+</view>
+<dialog></dialog>

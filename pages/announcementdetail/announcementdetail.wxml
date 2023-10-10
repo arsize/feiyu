@@ -1,0 +1,17 @@
+<view class="announcementDetail">
+	<view class="detailtop">
+		{{announcementDetail.announcementTitle?announcementDetail.announcementTitle:'--'}}
+
+	</view>
+	<view class="detailtime">
+		{{announcementDetail.publishTime?announcementDetail.publishTime:'--'}}
+	</view>
+	<view class="detailbody">
+		<view class="textwrap">
+			{{announcementDetail.announcementContent?announcementDetail.announcementContent:''}}
+		</view>
+		<view wx:for="{{announcementDetail.announcementPictureUrl}}" wx:key="index" data-item="{{item}}" data-index="{{index}}">
+			<image mode="widthFix" src="{{item}}" style="width:100%;display:block;" />
+		</view>
+	</view>
+</view>

@@ -1,0 +1,10 @@
+<view class="pageCont">
+	<view class="succCont">
+		<image mode="widthFix" src="{{baseUrlImg+'icon_cont_complete@2x.png'}}" />
+		<text style="color:#333333;font-size;32rpx;width:450rpx;font-weight:bold;text-align: center;">变更成功，套餐将于下期生效并在生效日自动扣费</text>
+	</view>
+</view>
+<view class="botBtmFixLine150"></view>
+<view class="botBtmFix">
+	<view class="btnBluelinear" bindtap="succFun">我知道了</view>
+</view>

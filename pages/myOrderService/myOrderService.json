@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "预约线下服务网点",
+  "usingComponents": {
+    "dialog": "../component/dialog/dialog"
+  }
+}

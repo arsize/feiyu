@@ -1,0 +1,10 @@
+{
+    "navigationBarBackgroundColor": "#1A6EFF",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "服务进行中",
+    "usingComponents": {
+      "dialog": "../component/dialog/dialog",
+      "van-notice-bar": "../../miniprogram_npm/@vant/weapp/notice-bar/index",
+      "van-loading": "../../miniprogram_npm/@vant/weapp/loading/index"
+    }
+  }

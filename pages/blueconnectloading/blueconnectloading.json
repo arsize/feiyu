@@ -1,0 +1,7 @@
+{
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "连接电柜",
+    "usingComponents": {
+        "dialog": "../component/dialog/dialog"
+      }
+}

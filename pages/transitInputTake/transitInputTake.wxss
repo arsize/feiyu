@@ -1,0 +1,82 @@
+page {
+  background-color: #f6f6f8;
+}
+
+.transitInput {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  padding: 30rpx 40rpx;
+}
+
+.transitInput .top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transitInput .inputnum {
+  width: 100%;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.transitInput .inputnum .positioninput {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 12rpx;
+  opacity: 0.5;
+  z-index: 1000;
+  background-color: transparent;
+  text-align: center;
+  position: absolute;
+  text-indent: -999em;
+  margin-left: -100%;
+}
+
+.transitInput .inputnum .blockitem {
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #eeeeee;
+  border-radius: 12rpx;
+  display: flex;
+  color: #1a6eff;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.historyinput {
+  padding: 30rpx 40rpx;
+}
+
+.historyinput .topbar {
+  font-size: 28rpx;
+  color: #999999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.historyinput .centerbar {
+  margin-top: 24rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.historyinput .centerbar .historyitem {
+  width: 190rpx;
+  height: 80rpx;
+  margin-right: 25rpx;
+  background-color: white;
+  border-radius: 6rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999999;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}

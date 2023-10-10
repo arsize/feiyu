@@ -1,0 +1,191 @@
+<wxs module="m1">
+	var getFixed = function(str){
+	return Number(str).toFixed(2)
+	}
+	module.exports.getFixed = getFixed;
+</wxs>
+<!--  -->
+<view class="topblock">
+	<view class="one" wx:if="{{selectCounpItem && showyouhuiquan}}">
+		￥{{m1.getFixed(money - selectCounpItem.discountedPrices)}}
+	</view>
+	<view class="one" wx:else>
+		￥{{money}}
+	</view>
+	<view class="two" wx:if="{{selectCounpItem && showyouhuiquan}}">
+		￥{{money}}
+	</view>
+	<view class="three" wx:if="{{type == 0}}">
+		<block wx:if="{{depositId}}">
+			缴纳绿色回收金<text wx:if="{{name}}">+购买套餐：{{name}}</text>
+		</block>
+		<block wx:else>
+			<text wx:if="{{name}}">购买套餐：{{name}}</text>
+		</block>
+	</view>
+</view>
+<view class="centerblock">
+	<view class="centertopline">
+		选择支付方式{{money}}
+	</view>
+	<view class="centerpayway">
+		<view class="item wxpay" bindtap="selectwx" wx:if="{{money >= 0}}">
+			<view style="display:flex;align-items: center;">
+				<view class="img">
+					<image style="width:72rpx;height:72rpx;" src="{{baseUrlImg + 'wxpay_ico.png'}}" />
+				</view>
+				<view class="content" style="{{cardsActions && cardsActions.length >0?'display:flex;flex-direction: column;':'display:flex;flex-direction: column;justify-content: center;'}}">
+					<view class="title">
+						微信支付
+					</view>
+				</view>
+			</view>
+			<view>
+				<image wx:if="{{selectedIndex == 'wx'}}" style="width:38rpx;height:38rpx;" src="../../images/pay_yes_right.png" />
+				<view wx:else class="roundpay"></view>
+			</view>
+		</view>
+		<block wx:if="{{!depositId}}">
+			<view class="item yuepay" bindtap="selectyu" wx:if="{{(walletMoney >= (money) || principalMoney >= m1.getFixed(money - selectCounpItem.discountedPrices))}}">
+				<view style="display:flex;align-items: center;">
+					<view class="img">
+						<image style="width:72rpx;height:72rpx;" src="{{baseUrlImg + 'yue_pay_ico.png'}}" />
+					</view>
+					<view class="content" wx:if="{{showyouhuiquan}}">
+						<view class="title">
+							余额支付（剩余 ￥{{walletMoney}} <text style="font-size:22rpx;">含赠送金额￥{{additionalMoney?additionalMoney:0.00}}</text>）
+						</view>
+					</view>
+					<view class="content" wx:else>
+						<view class="title">
+							余额支付（剩余 ￥{{walletMoney}} <text style="font-size:22rpx;">含赠送金额￥{{additionalMoney?additionalMoney:0.00}}</text>）
+						</view>
+						<view style="font-size:24rpx;color:#666666;">
+							已使用赠送金额支付，不可叠加使用其他优惠
+						</view>
+
+					</view>
+
+				</view>
+				<view>
+					<block wx:if="{{selectedIndex == 'ye'}}">
+						<image style="width:38rpx;height:38rpx;" src="../../images/pay_yes_right.png" />
+					</block>
+					<view wx:else class="roundpay"></view>
+				</view>
+			</view>
+			<view class="item yuepay displeynone" wx:else>
+				<view style="display:flex;">
+					<view class="img">
+						<image style="width:72rpx;height:72rpx;" src="{{baseUrlImg + 'yue_pay_ico.png'}}" />
+					</view>
+					<view class="content">
+						<view class="title">
+							余额支付（剩余 {{walletMoney}} 元）
+						</view>
+						<view class="subtitle2">
+							余额不足，不可使用余额支付
+						</view>
+					</view>
+				</view>
+				<view>
+					<image wx:if="{{selectedIndex == 'ye'}}" style="width:38rpx;height:38rpx;" src="../../images/pay_yes_right.png" />
+					<view wx:else class="roundpay"></view>
+				</view>
+			</view>
+		</block>
+	</view>
+</view>
+<view class="youhuijuan" wx:if="{{showyouhuiquan && cardsActions && cardsActions.length >0}}">
+	<view class="youhuijuantitle">
+		选择优惠券
+	</view>
+	<view class="subtitleyouhuijuan" bindtap="selectCard" wx:if="{{selectCounpItem}}">
+		<view class="name">
+			{{selectCounpItem.description}}
+		</view>
+		<view class="money">
+			-￥{{selectCounpItem.discountedPrices}}
+			<van-icon name="arrow" style="color:#B2B2B2;margin-left: 24rpx;" />
+		</view>
+	</view>
+	<view wx:else class="subtitleyouhuijuan" bindtap="selectCard">
+		<view class="name">
+			暂不使用优惠券
+		</view>
+		<view class="money">
+			<van-icon name="arrow" style="color:#B2B2B2;margin-left: 24rpx;" />
+		</view>
+	</view>
+</view>
+<view class="payBtn" bindtap="togoPay">
+	确认支付
+</view>
+<van-popup class="bottomBar" lock-scroll="true" show="{{ payshow }}" round position="bottom" custom-style="height:{{cardsActions.length*15 > 90?90:cardsActions.length*18}}%" bind:close="onClose">
+	<view class="top">
+		<view class="title">
+			选择优惠券
+		</view>
+	</view>
+	<view class="content">
+		<view class="item" bindtap="selectCounp" data-index="{{index}}" wx:for="{{cardsActions}}" data-item="{{item}}">
+			<block wx:if="{{index == cardsActions.length-1}}">
+				<view style="display:flex;justify-content: space-between;width: 100%;align-items: center;">
+					<view class="nouse">
+						{{item.name}}
+					</view>
+					<view class="right_right">
+						<image wx:if="{{selectCounpIndex == index}}" style="width:38rpx;height:38rpx;" src="../../images/pay_yes_right.png" />
+						<view wx:else class="roundpay"></view>
+					</view>
+				</view>
+			</block>
+			<block wx:else>
+				<view class="left">
+					<view class="money">
+						￥{{item.discountedPrices}}
+					</view>
+					<view class="submoney">
+						满{{item.thresholdPrice}}元可使用
+					</view>
+				</view>
+				<view class="counp_right_content">
+					<view classl="right">
+						<view class="title" style="margin-bottom:10rpx;">
+							{{item.name}}
+						</view>
+						<view class="time">
+							{{item.getTime}} - {{item.expiredTime}}
+						</view>
+					</view>
+					<view class="counp_right">
+						<image wx:if="{{selectCounpIndex == index}}" style="width:38rpx;height:38rpx;" src="../../images/pay_yes_right.png" />
+						<view wx:else class="roundpay"></view>
+					</view>
+				</view>
+			</block>
+		</view>
+	</view>
+</van-popup>
+<!-- 支付提示  -->
+<view class="blackopBg" wx:if="{{isPay}}" catchtap="okPayFun">
+	<view class="payNoteCont" style="height: 380rpx;">
+		<view class="title">
+			<image catchtap="okPayFun" mode="widthFix" src="{{baseUrlImg+'icon_cancel@2x.png'}}" />
+			<text style="margin-right:25rpx;">支付提示</text>
+		</view>
+		<view class="content" style="">
+			<block wx:if="{{showyouhuiquan}}">
+				<text style="font-size:38rpx" wx:if="{{selectCounpItem && selectCounpItem.discountedPrices}}">{{m1.getFixed(money - selectCounpItem.discountedPrices)}}元</text>
+				<text style="font-size:38rpx" wx:else>{{money}}元</text>
+			</block>
+			<block wx:else>
+				<text style="font-size:38rpx">{{money}}元</text>
+			</block>
+		</view>
+		<view class="btn" catchtap="balanceFun">
+			确认支付
+		</view>
+	</view>
+</view>
+<dialog></dialog>

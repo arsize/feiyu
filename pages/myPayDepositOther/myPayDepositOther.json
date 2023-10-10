@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "开通换电服务",
+  "usingComponents": {
+    "van-picker": "@vant/weapp/picker/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "dialog": "../component/dialog/dialog"
+  }
+
+}

@@ -1,0 +1,9 @@
+{
+    "navigationBarBackgroundColor": "#1A6EFF",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "登录",
+    "usingComponents": {
+        "van-checkbox": "../../miniprogram_npm/@vant/weapp/checkbox/index",
+        "van-checkbox-group": "../../miniprogram_npm/@vant/weapp/checkbox-group/index"
+      }
+  }

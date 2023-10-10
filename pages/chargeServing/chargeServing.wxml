@@ -1,0 +1,40 @@
+<view class="serving">
+    <view class="servingTop">
+        <image style="width:400rpx;height:314rpx;" src="{{baseUrlImg + 'new_img_cabinet01@2x.png'}}" />
+    </view>
+    <view class="statusBar">
+        <view class="line">
+            <view class="leftblock"></view>
+            <view>充电信息</view>
+        </view>
+        <view class="statusPort">
+            <view class="port">{{chargingRecordDetail.boxProtSn}}</view>
+            <view>号口待连接</view>
+        </view>
+        <view class="line">
+            <view class="leftblock"></view>
+            <view>订单信息</view>
+        </view>
+        <view class="blocklist">
+            <view class="item item1">
+                <view class="title" wx:if="{{chargingRecordDetail.purchaseDuration}}">
+                    {{chargingRecordDetail.purchaseDuration == -1?'充满自停':chargingRecordDetail.purchaseDuration + '小时'}}
+                </view>
+                <view class="title" wx:else>0小时</view>
+                <view class="subtitle">购买时长（时）</view>
+            </view>
+            <view class="item item2">
+                <view class="title">
+                    {{chargingRecordDetail.prePayMoney?chargingRecordDetail.prePayMoney:0}}
+                </view>
+                <view class="subtitle">预付金额（元）</view>
+            </view>
+            <view class="item">
+                <view class="title">00:00:00</view>
+                <view class="subtitle">充电计时</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view bind:tap="cancelCharge2" class="bottomTime">取消充电（{{seconds?seconds:0}}s）</view>
+<dialog></dialog>

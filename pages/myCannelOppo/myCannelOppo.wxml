@@ -1,0 +1,12 @@
+<!--pages/myCannelOppo/myCannelOppo.wxml-->
+<view class="quitCont">
+  <image mode="widthFix" src="{{baseUrlImg+'icon_cont_complete@2x.png'}}" />
+  <text>
+    已为你成功取消预约
+  </text>
+</view>
+
+<view class="botBtmFix">
+  <view class="btnTrans" bindtap="cannelFun">预约其他服务网点</view>
+  <view class="btnBluelinear" bindtap="returnFun">返回首页</view>
+</view>

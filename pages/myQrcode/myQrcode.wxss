@@ -1,0 +1,61 @@
+page {
+  background: #1A6EFF;
+}
+
+.pagecont .qrcodeCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20rpx auto 0;
+  width: 686rpx;
+  height: 686rpx;
+  border-radius: 12rpx;
+  background: #fff;
+}
+
+.pagecont .qrcodeCont .qrcode {
+  position: relative;
+  width: 400rpx;
+  height: 400rpx;
+}
+
+.pagecont .qrcodeCont .qrcode canvas {
+  width: 400rpx;
+  height: 400rpx;
+  z-index: 0;
+}
+
+.pagecont .qrcodeCont .qrcode .photo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100000;
+  margin: auto auto;
+  width: 100rpx;
+  height: 100rpx;
+  background: #fff;
+}
+
+.pagecont .qrcodeCont .qrcode .photo .image {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.pagecont .qrcodeCont .noteCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 46rpx;
+  color: #666;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+
+.pagecont .qrcodeCont .noteCont text:nth-child(2) {
+  margin-top: 10rpx;
+}

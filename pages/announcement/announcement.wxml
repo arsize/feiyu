@@ -1,0 +1,21 @@
+<view class="announcement" wx:if="{{listData.length > 0}}">
+	<view bindtap="gotodetail" class="item" wx:for="{{listData}}" data-index="{{index}}" data-item="{{item}}" wx:key="index">
+		<view class="toptitle">
+			{{item.announcementTitle?item.announcementTitle:'--'}}
+		</view>
+		<view class="bodyconent">
+			{{item.announcementIntroduction?item.announcementIntroduction:'--'}}
+		</view>
+		<view class="time">
+			<view class="left">
+				{{item.publishTime?item.publishTime:'--'}}
+			</view>
+			<view class="right">
+				查看全文
+			</view>
+		</view>
+	</view>
+</view>
+<view wx:else class="noannouncement">
+	暂无公告
+</view>

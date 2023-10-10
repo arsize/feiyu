@@ -1,0 +1,98 @@
+page {
+    background-color: #f5f5f5;
+  }
+  .serving {
+    width: 100%;
+    position: relative;
+  }
+  .serving .servingTop {
+    width: 100%;
+    height: 460rpx;
+    background-color: #1a6eff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .serving .statusBar {
+    width: 686rpx;
+    position: absolute;
+    top: 289rpx;
+    left: 50%;
+    background-color: white;
+    transform: translate(-50%, 0);
+    height: 580rpx;
+    border-radius: 16rpx;
+    padding: 28rpx;
+    box-sizing: border-box;
+  }
+  .serving .statusBar .line {
+    width: 100%;
+    color: #999999;
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+  }
+  .serving .statusBar .line .leftblock {
+    width: 8rpx;
+    height: 24rpx;
+    border-radius: 4rpx;
+    background-color: #1a6eff;
+    margin-right: 12rpx;
+  }
+  .serving .statusBar .statusPort {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    color: #ffcd3a;
+    justify-content: center;
+    padding-top: 60rpx;
+    font-weight: bold;
+  }
+  .serving .statusBar .statusPort .port {
+    font-size: 120rpx;
+    font-weight: bold;
+    color: #ffcd3a;
+    line-height: 120rpx;
+  }
+  .blocklist {
+    width: 606rpx;
+    height: 160rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fafafa;
+    margin: 0 auto;
+    margin-top: 28rpx;
+  }
+  .blocklist .item {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .blocklist .item .title {
+    font-size: 32rpx;
+    color: #333333;
+    font-weight: bold;
+  }
+  .blocklist .item .subtitle {
+    font-size: 24rpx;
+    color: #999999;
+  }
+  .blocklist .item1 {
+    padding: 0 10rpx;
+    box-shadow: 2rpx 0rpx 0rpx 0rpx #dddddd;
+  }
+  .blocklist .item2 {
+    padding: 0 10rpx;
+    box-shadow: 2rpx 0rpx 0rpx 0rpx #dddddd;
+  }
+  .bottomTime{
+    position: absolute;
+    bottom: 60rpx;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #166CFF;
+    font-size: 28rpx;
+  }

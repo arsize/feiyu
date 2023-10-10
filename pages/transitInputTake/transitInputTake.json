@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#1A6EFF",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "取电",
+  "usingComponents": {
+    "dialog": "../component/dialog/dialog"
+  }
+}

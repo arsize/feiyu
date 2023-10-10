@@ -1,0 +1,292 @@
+page {
+  width: 100%;
+  background: #f6f6f8;
+}
+
+.pageCont {
+  width: 100%;
+}
+
+.pageCont .hasBattery {
+  width: 100%;
+}
+
+.pageCont .hasBattery .batteryInfo {
+  padding-top: 40rpx;
+  width: 100%;
+  /* height: 482rpx; */
+  /* height: 450rpx; */
+  height: 420rpx;
+  background: #1a6eff;
+}
+
+.tempposition {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: #1a6eff;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.pageCont .hasBattery .batteryInfoNoel {
+  position: relative;
+  width: 100%;
+  height: 338rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background: #1a6eff;
+}
+
+.pageCont .hasBattery .batteryInfoNoel text {
+  color: #fff;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.pageCont .hasBattery .batteryInfoNoel text:nth-child(1) {
+  margin-top: 60rpx;
+}
+
+.pageCont .hasBattery .batteryInfoNoel image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -28rpx;
+  z-index: 1;
+  margin: 0 auto;
+  width: 234rpx;
+  height: 199rpx;
+}
+
+.pageCont .hasBattery .batteryInfo .title {
+  width: 100%;
+  text-align: center;
+}
+
+.pageCont .hasBattery .batteryInfo .title image {
+  width: 528rpx;
+  height: 64rpx;
+}
+
+.pageCont .hasBattery .batteryInfo .content {
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.pageCont .hasBattery .batteryInfo .content .contentBg {
+  width: 100%;
+  height: 316rpx;
+}
+
+.pageCont .hasBattery .batteryInfo .content .wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.pageCont .hasBattery .batteryInfo .content .wrap .data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 41%;
+  height: 100%;
+}
+
+.pageCont .hasBattery .batteryInfo .content .wrap .data .top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageCont .hasBattery .batteryInfo .content .wrap .data .top text:nth-child(1) {
+  font: 500 56rpx "PingFangSC-Medium";
+}
+
+.pageCont .hasBattery .batteryInfo .content .wrap .data .top text:nth-child(2) {
+  margin-top: 20rpx;
+  font: 500 20rpx "PingFangSC-Medium";
+}
+
+.pageCont .hasBattery .batteryInfo .content .wrap .data .bottom {
+  color: #5e99ff;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.pageCont .hasBattery .batteryInfo .content .wrap image {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.pageCont .hasBattery .batteryInfo .note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 90%;
+  color: #fff;
+  font: 500 24rpx "PingFangSC-Medium";
+  opacity: 0.7;
+}
+
+.pageCont .hasBattery .batteryInfo .note .ColorYellowtext {
+  color: #ffcd3a;
+  font: 500 28rpx "PingFangSC-Medium";
+  opacity: 1;
+}
+
+.pageCont .hasBattery .dataInfo {
+  width: 100%;
+  position: relative;
+}
+
+.pageCont .hasBattery .dataInfo .dataInfoBg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 186rpx;
+  background: #1a6eff;
+}
+
+.pageCont .hasBattery .dataInfo .dataCont {
+  width: 90%;
+  margin: 0 auto;
+  padding: 63rpx 0 49rpx 0;
+  border-radius: 16rpx;
+  background: #fff;
+}
+
+.pageCont .hasBattery .dataInfo .dataCont .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto 14rpx;
+}
+
+.pageCont .hasBattery .dataInfo .dataCont .item .left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 72%;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.pageCont .hasBattery .dataInfo .dataCont .item .left text:nth-child(1) {
+  display: inline-block;
+  width: 220rpx;
+  color: #999;
+}
+
+.pageCont .hasBattery .dataInfo .dataCont .item .left text:nth-child(2) {
+  display: inline-block;
+  width: 55%;
+  color: #333;
+  text-align: left;
+}
+
+.pageCont .hasBattery .dataInfo .dataCont .item .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 18%;
+}
+
+.pageCont .hasBattery .dataInfo .dataCont .item .right text {
+  color: #1a6eff;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.pageCont .hasBattery .dataInfo .dataCont .item .right image {
+  margin-left: 10rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.pageCont .noBattery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 318rpx;
+  width: 100%;
+}
+
+.pageCont .noBattery image {
+  width: 240rpx;
+  height: 240rpx;
+}
+
+.pageCont .noBattery text:nth-child(2) {
+  margin: 63rpx 0 40rpx 0;
+  font-size: 28rpx;
+  color: #959ba6;
+}
+.btnBlueScan {
+  display: inline-block;
+  width: 340rpx;
+  height: 80rpx;
+  color: #fff;
+  font: 500 30rpx "PingFangSC-Medium";
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 44rpx;
+  background: linear-gradient(to right, #1a6eff 0%, #41beff 100%);
+}
+.pageCont .noBattery text:nth-child(3) {
+  display: inline-block;
+  width: 340rpx;
+  height: 80rpx;
+  color: #fff;
+  font: 500 30rpx "PingFangSC-Medium";
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 44rpx;
+  background: linear-gradient(to right, #1a6eff 0%, #41beff 100%);
+}
+
+.pageCont .quitCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 496rpx;
+  background: #fff;
+}
+
+.pageCont .quitCont image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-bottom: 56rpx;
+}
+
+.pageCont .quitCont text:nth-child(2) {
+  display: inline-block;
+  width: 79%;
+  margin-bottom: 32rpx;
+  color: #333;
+  font: 500 32rpx "PingFangSC-Medium";
+  text-align: center;
+}
+
+.pageCont .quitCont text:nth-child(3) {
+  color: #999;
+  font-size: 28rpx;
+}

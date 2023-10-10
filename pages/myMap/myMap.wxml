@@ -1,0 +1,302 @@
+<!--pages/myMap/myMap.wxml-->
+<view class="mapPage">
+	<!-- bindtap="bindtapMap" -->
+	<map id="myMap" longitude="{{point.longitude}}" latitude="{{point.latitude}}" markers="{{markers}}" scale="{{mapScale}}" show-location bindregionchange="regionchange" bindmarkertap="markertap" bindcontroltap="controltap" style="width: {{mapWidth}}; height: {{mapHeight}};top: {{mapTop}}" bindtap="bindtapMap">
+		<!-- 切换类型 -->
+		<cover-view class="serveType">
+			<cover-view wx:for="{{serveTypeList}}" wx:key="index" class="{{serveTypeCurr==index?'item active':'item'}}" data-item="{{item}}" data-index="{{index}}" catchtap="serveTypeFun">
+				<cover-view class="wrap">{{item.title}}</cover-view>
+			</cover-view>
+		</cover-view>
+		<cover-view class="batType" wx:if="{{isBatType&&batteryTypeList.length>0}}">
+			<cover-view class="batTypeItem" wx:for="{{batteryTypeList}}" wx:key="index" data-item="{{item}}" data-index="{{index}}" catchtap="selectBatFun">
+				<cover-image class="imagebt" src="{{currBat==index?'../../images/hasSelectIcon.png':'../../images/noSelectIcon.png'}}"></cover-image>
+				<cover-view class="wrapbt">{{item.batteryTypeName}}电池</cover-view>
+			</cover-view>
+
+		</cover-view>
+
+		<!-- 中心点 -->
+		<!--  catchtap='backOriginal' -->
+		<cover-view class="centerPosition">
+			<cover-image class="image" src="{{baseUrlImg+'mapcenter.png'}}"></cover-image>
+		</cover-view>
+
+		<!-- 搜索地图 -->
+		<cover-view class="topBotPosition" catchtap='searchFun'>
+			<cover-image class="image" src="{{baseUrlImg+'new_icon_map_search@2x.png'}}"></cover-image>
+		</cover-view>
+		<!-- 刷新地图 -->
+		<cover-view class="leftBotPosition" catchtap='refreshFun'>
+			<cover-image class="image" src="{{baseUrlImg+'maprefesh.png'}}"></cover-image>
+		</cover-view>
+		<!-- 查看列表 -->
+		<cover-view class="leftList" catchtap='listContFun'>
+			<cover-image class="image" src="{{baseUrlImg +'v4_map_mapListIcon.png'}}"></cover-image>
+		</cover-view>
+
+		<!-- 显示机柜信息-->
+		<block wx:if="{{iscabinet}}">
+			<cover-view class="cabitDetail {{nowCabinet.imgList.length>0&&isMoreCabit?serveTypeCurr == 0?'height600':'height915':nowCabinet.imgList.length==0&&isMoreCabit?'height730':!isMoreCabit?'heightXN':'height420'}}">
+				<cover-view class="toTop" catchtap='viewMoreCabitFun'>
+					<cover-image class="topImg" src="{{!isMoreCabit?baseUrlImg+'icon_map_switch01@2x.png':baseUrlImg+'icon_map_switch02@2x.png'}}">
+					</cover-image>
+				</cover-view>
+				<cover-view class="cabitTitle">
+					<cover-view class="left">
+						{{nowCabinet.cabinetName||'--'}}
+					</cover-view>
+					<cover-view class="right" data-curr="1" catchtap="navigationMap">
+						<cover-view>导航</cover-view>
+						<cover-image class="imageNav" src="{{baseUrlImg+'icon_cont_guide@2x.png'}}"></cover-image>
+					</cover-view>
+				</cover-view>
+				<cover-view class="middleInfo">
+					<cover-view class="item">
+						<cover-view class="text" style="display:flex;align-items: center;min-width: 160rpx;">
+							<cover-image style="margin-right:10rpx;width:25rpx;height:25rpx;" class="imageNav" src="{{baseUrlImg+'icon_cont_id@2x.png'}}"></cover-image>
+							<cover-view>{{nowCabinet.qrCodeDid||'--'}}</cover-view>
+
+						</cover-view>
+						<cover-view class="text2">
+							{{nowCabinet.userFromDistance}}{{nowCabinet.unit}}
+						</cover-view>
+					</cover-view>
+					<cover-view class="item">
+						<cover-view class="text" style="display:flex;align-items: center;min-width: 160rpx;">
+							<cover-image style="margin-right:10rpx;width:25rpx;height:25rpx;" class="imageNav" src="{{baseUrlImg+'icon_cont_location@2x.png'}}"></cover-image>
+							<cover-view>{{nowCabinet.cabinetAddress||'--'}}</cover-view>
+
+						</cover-view>
+					</cover-view>
+					<cover-view class="item">
+						<cover-view class="text" wx:if="{{serveTypeCurr == 0}}" style="display: flex;align-items: center;min-width: 190rpx;margin-top:5px;">
+							<cover-image style="width:24rpx;height:24rpx;margin-right:5px;" class="imageNav" src="{{baseUrlImg + 'v3_gonglv@2x.png'}}"></cover-image>
+							<cover-view style="font: 500 24rpx 'PingFangSC-Medium';color:#999;">限定功率≤260W</cover-view>
+						</cover-view>
+					</cover-view>
+
+				</cover-view>
+
+
+				<cover-view class="bottomInfoCh">
+					<cover-view class="top">
+						<cover-view class="wrap" wx:if="{{serveTypeCurr != 0}}">
+							<cover-view style="display: flex;align-items: center;min-width: 160rpx;">
+								<cover-image style="width:30rpx;height:30rpx;margin-right: 10rpx;" src="{{baseUrlImg + 'nv_icon_cont_kc@2x.png'}}"></cover-image>
+								<cover-view>空仓：</cover-view>
+							</cover-view>
+							<cover-view>{{nowCabinet.emptyBoxNum||0}}</cover-view>
+						</cover-view>
+						<cover-view class="wrap" wx:if="{{serveTypeCurr == 0}}">
+							<cover-view style="display: flex;align-items: center;min-width: 160rpx;">
+								<cover-image style="width:30rpx;height:30rpx;margin-right: 10rpx;" src="{{baseUrlImg + 'nv_icon_cdk@2x.png'}}"></cover-image>
+								<cover-view>可充电：</cover-view>
+							</cover-view>
+							<cover-view>{{nowCabinet.canUseChargingPortNum||0}}</cover-view>
+						</cover-view>
+					</cover-view>
+					<cover-view class="bottom" wx:if="{{serveTypeCurr != 0}}">
+						<cover-view class="title" style="display: flex;align-items: center;min-width: 160rpx;">
+							<cover-image style="width:25rpx;height:30rpx;margin-right: 10rpx;" src="{{baseUrlImg + 'nv_icon_cont_hd@2x.png'}}"></cover-image>
+							<cover-view style="font: 500 26rpx 'PingFangSC-Medium';color: #333;">可换电：</cover-view>
+						</cover-view>
+						<cover-view class="cont">
+							<block wx:if="{{nowCabinet.batteryTypeAndNumDtoList.length>0}}">
+								<cover-view class="item" wx:for="{{nowCabinet.batteryTypeAndNumDtoList}}" wx:key="index">
+									<cover-view style="width:80%;">({{item.batteryTypeName}})</cover-view>
+									<cover-view>{{item.num||0}}</cover-view>
+								</cover-view>
+							</block>
+							<block wx:if="{{nowCabinet.batteryTypeAndNumDtoList.length==0}}">
+								<cover-view class="item">
+									<cover-view>0</cover-view>
+								</cover-view>
+							</block>
+
+						</cover-view>
+					</cover-view>
+				</cover-view>
+				<block wx:if="{{isMoreCabit}}">
+					<cover-view class="batInfo" wx:if="{{serveTypeCurr != 0}}">
+						<cover-view class="title">
+							电池充电情况
+						</cover-view>
+						<cover-view class="table">
+							<cover-image mode="widthFix" class="imageBor" src="../../images/mapBorderIcon.png">
+							</cover-image>
+							<cover-view class="tableCont">
+								<cover-view wx:if="{{nowCabinet.batteryTypeAndNumDtoListCurr.length>0}}" class="wrap" wx:for="{{nowCabinet.batteryTypeAndNumDtoListCurr}}" wx:key="index">
+									<cover-view class="itemtext">
+										<cover-view class="text" wx:for="{{item}}" wx:key="index">
+											{{item}}
+										</cover-view>
+									</cover-view>
+								</cover-view>
+								<cover-view class="nodata" wx:if="{{nowCabinet.batteryTypeAndNumDtoListCurr.length==0}}">
+									暂无数据
+								</cover-view>
+							</cover-view>
+						</cover-view>
+
+					</cover-view>
+					<cover-view class="bottomImg" wx:if="{{nowCabinet.imgList.length>0}}" data-index="1" catchtap="viewPic">
+						<cover-view class="bottomImgWarp" wx:for="{{nowCabinet.imgList}}" wx:key="index">
+							<cover-image mode="widthFix" class="imageBtm" src="{{item}}">
+							</cover-image>
+						</cover-view>
+					</cover-view>
+				</block>
+				<!-- <cover-view class="bottomInfo">
+          <cover-view class="item">
+            <cover-view>
+              可充电：
+            </cover-view>
+            <cover-view>
+              {{nowCabinet.canUseChargingPortNum||0}}
+            </cover-view>
+          </cover-view>
+          <cover-view class="item">
+            <cover-view>
+              空仓：
+            </cover-view>
+            <cover-view>
+              {{nowCabinet.emptyBoxNum||0}}
+            </cover-view>
+          </cover-view>
+
+          <cover-view class="item">
+            <cover-view>
+              可换电：
+            </cover-view>
+            <cover-view>
+              {{nowCabinet.canUseExchangeBatteryNum||0}}{{nowCabinet.canUseExchangeBatteryNum==0?'（约'+(nowCabinet.estimatedAvailableTime||0)+'分钟可换电）':''}}
+            </cover-view>
+          </cover-view>
+        </cover-view> -->
+
+			</cover-view>
+		</block>
+		<!-- 显示机柜信息列表 -->
+		<!-- <block wx:if="{{iscabinetList}}">
+      <cover-view class="cabitListCont">
+        <cover-view class="cabitList">
+          <cover-view class="toTop" catchtap='oneCabitFun'>
+            <cover-image class="topImg" src="{{baseUrlImg+'icon_map_switch02@2x.png'}}"></cover-image>
+          </cover-view>
+          <cover-view class="cabitDetailItem" wx:for="{{chargeCabinetList}}" wx:key="index" data-item="{{item}}"
+            data-index="{{index}}">
+            <cover-view class="cabitTitle">
+              <cover-view class="left">
+                {{item.cabinetName||'--'}}
+              </cover-view>
+              <cover-view class="right" data-item="{{item}}" data-curr="2" catchtap="navigationMap">
+                <cover-view>导航</cover-view>
+                <cover-image class="imageNav" src="{{baseUrlImg+'icon_cont_guide@2x.png'}}"></cover-image>
+              </cover-view>
+            </cover-view>
+            <cover-view class="middleInfo">
+              <cover-view class="item">
+                <cover-image src="{{baseUrlImg+'icon_cont_id@2x.png'}}"></cover-image>
+                <cover-view class="text" style="width:71%;">
+                  {{item.qrCodeDid||'--'}}
+                </cover-view>
+                <cover-view class="text2">
+                  {{item.userFromDistance}}{{item.unit}}
+                </cover-view>
+              </cover-view>
+              <cover-view class="item">
+                <cover-image src="{{baseUrlImg+'icon_cont_location@2x.png'}}"></cover-image>
+                <cover-view class="text">
+                  {{item.cabinetAddress||'--'}}
+                </cover-view>
+
+              </cover-view>
+            </cover-view>
+            <cover-view class="bottomInfo">
+              <cover-view class="item">
+                <cover-view>
+                  可充电：
+                </cover-view>
+                <cover-view>
+                  {{item.canUseChargingPortNum||0}}
+                </cover-view>
+              </cover-view>
+              <cover-view class="item">
+                <cover-view>
+                  空仓：
+                </cover-view>
+                <cover-view>
+                  {{item.emptyBoxNum||0}}
+                </cover-view>
+              </cover-view>
+
+              <cover-view class="item">
+                <cover-view>
+                  可换电：
+                </cover-view>
+                <cover-view>
+                  {{item.canUseExchangeBatteryNum||0}}{{item.canUseExchangeBatteryNum==0?'（约'+(item.estimatedAvailableTime||0)+'分钟可换电）':''}}
+                </cover-view>
+              </cover-view>
+            </cover-view>
+
+          </cover-view>
+        </cover-view>
+      </cover-view>
+    </block> -->
+
+		<!-- 显示门店信息-->
+		<block wx:if="{{isStore}}">
+			<!-- <cover-view class="{{!activateBattery?'cabitDetail':'cabitDetail height200'}}"> -->
+			<cover-view class="{{nowStore.imgList.length>0?'cabitDetail height410':'cabitDetail height200'}}">
+
+				<cover-view class="topStore">
+
+				</cover-view>
+				<cover-view class="cabitTitle">
+					<cover-view class="left">
+						{{nowStore.busName||'-'}}
+					</cover-view>
+					<cover-view class="right" data-curr="3" catchtap="navigationMap">
+						<cover-view>导航</cover-view>
+						<cover-image class="imageNav" src="{{baseUrlImg+'icon_cont_guide@2x.png'}}"></cover-image>
+					</cover-view>
+				</cover-view>
+				<cover-view class="middleInfo">
+					<cover-view class="item">
+						<cover-image src="{{baseUrlImg+'icon_cont_phone2@2x.png'}}"></cover-image>
+						<cover-view class="text" style="width:71%;">
+							{{nowStore.busMobile||'-'}}({{nowStore.busContactName||'-'}})
+						</cover-view>
+						<cover-view class="text2">
+							{{nowStore.dis}}{{nowStore.unit}}
+						</cover-view>
+					</cover-view>
+					<cover-view class="item">
+						<cover-image src="{{baseUrlImg+'icon_cont_location@2x.png'}}"></cover-image>
+						<cover-view class="text">
+							{{nowStore.busAddress||'-'}}
+						</cover-view>
+					</cover-view>
+				</cover-view>
+				<cover-view class="bottomImg">
+					<cover-view class="bottomImgWarp" wx:if="{{nowStore.imgList.length>0}}" wx:for="{{nowStore.imgList}}" wx:key="index" data-index="2" catchtap="viewPic">
+						<cover-image mode="widthFix" class="imageBtm" src="{{item}}">
+						</cover-image>
+					</cover-view>
+				</cover-view>
+				<!-- <cover-view wx:if="{{!activateBattery}}" class="bottomInfo" catchtap="joinPage">
+          <cover-view class="btn">
+            <cover-image class="btnImg" src="{{baseUrlImg+'btn_medium@2x.png'}}"></cover-image>
+            <cover-view class="contbtn">
+              预约购车/租电池
+            </cover-view>
+          </cover-view>
+        </cover-view> -->
+			</cover-view>
+		</block>
+
+
+	</map>
+</view>

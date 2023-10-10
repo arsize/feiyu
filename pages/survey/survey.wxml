@@ -1,0 +1,38 @@
+<view class="survey">
+    <view class="topBar">
+        <image class="img" src="{{baseUrlImg + 'img_text01@2x.png'}}" />
+        <view class="subtext">参与调研，让我们为你精准服务</view>
+    </view>
+    <view class="surveybox">
+        <image class="img" style="width:230rpx;height:36rpx;" src="{{baseUrlImg + 'img_text02@2x.png'}}" />
+        <view class="boxlist">
+            <view bind:tap="getarr" style="{{actived1 === index?'background:#101A0F;color:#4CF76D;':''}}" wx:for="{{arr1}}" wx:key="index" data-item="{{item}}" data-index="{{index}}" class="boxitem">
+                {{item}}
+            </view>
+        </view>
+        <view class="thirdbar">
+            <image class="img" style="width:230rpx;height:36rpx;" src="{{baseUrlImg + 'img_text06@2x.png'}}" />
+            <view class="boxlist">
+                <view style="{{actived2 === index?'background:#101A0F;color:#4CF76D;':''}}" bind:tap="getarr" wx:for="{{arr2}}" wx:key="index" data-item="{{item}}" data-index="{{index}}" class="boxitem">
+                    {{item}}
+                </view>
+            </view>
+        </view>
+        <view class="fourbar">
+            <image class="img" style="width:324rpx;height:36rpx;" src="{{baseUrlImg + 'img_text07@2x.png'}}" />
+            <view class="boxlist">
+                <view style="{{actived3 === index?'background:#101A0F;color:#4CF76D;':''}}" bind:tap="getarr2" wx:for="{{arr3}}" wx:key="index" data-item="{{item}}" data-index="{{index}}" class="boxitem">
+                    {{item}}
+                </view>
+            </view>
+        </view>
+        <view class="btn" wx:if="{{finish}}" bind:tap="gotoresearch">
+            <image class="img" src="{{baseUrlImg + 'btn_active02@2x.png'}}" />
+            <text class="text">开启免费充电</text>
+        </view>
+        <view class="btn" wx:else style="opacity:0.5;">
+            <image class="img" src="{{baseUrlImg + 'btn_active02@2x.png'}}" />
+            <text class="text">开启免费充电</text>
+        </view>
+    </view>
+</view>

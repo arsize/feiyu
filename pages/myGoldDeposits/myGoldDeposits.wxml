@@ -1,0 +1,48 @@
+<!--pages/myGoldDeposits/myGoldDeposits.wxml-->
+<view class="pageCont">
+	<view class="noteDe">
+		选择充值金额
+	</view>
+	<view class="numDe">
+		<view>
+			<text>金额：</text>
+			<input type="digit" data-obj="obj" data-item="item" focus="{{isFocus}}" value="{{rechargeMoney}}" maxlength="8" bindinput="bindinputFun" bindfocus="bindfocusFun" bindblur="bindblurFun" placeholder="" />
+		</view>
+		<view>{{rechargeMoney<=0?'当前余额：':'充值后余额：'}}{{balanceMoney}}元</view>
+	</view>
+	<view class="selectDe">
+		<view class="{{currSelect==index?'item active':'item'}}" wx:for="{{moneyList}}" wx:key="index" data-index="{{index}}" data-item="{{item}}" bindtap="selectMoneyFun">
+			<text style="font-size:36rpx;">{{item.title}}</text>
+			<block wx:if="{{currSelect==index}}">
+				<text style="font-size:24rpx;color:#fff;" wx:if="{{item.subNum}}">赠送{{item.subNum}}元</text>
+			</block>
+			<block wx:else>
+				<text style="font-size:24rpx;color:#166CFF;" wx:if="{{item.subNum}}">赠送{{item.subNum}}元</text>
+			</block>
+		</view>
+	</view>
+</view>
+
+<view class="botBtmFixLine220"></view>
+<view class="botBtnDe">
+	<view class="protocol" catchtap="protocolFun">
+		<view>
+			<image mode="widthFix" src="{{isProtocol?baseUrlImg+'icon_cont_checked@2x.png':baseUrlImg+'icon_cont_unckeck@2x.png'}}" />
+			<text>我已认真阅读并同意</text>
+			<text data-index="1" catchtap="joinAgree">《充值协议》</text>
+		</view>
+		<view>
+			一经充值，不支持退款、提现，请合理选择充值金额
+		</view>
+	</view>
+
+</view>
+
+<view class="botBtmFixSig">
+	<view>
+		<text>{{rechargeMoney||'0.00'}}元</text>
+	</view>
+	<view catchtap="rechargeFun" class="{{isProtocol&&rechargeMoney?'active':''}}">
+		确认充值
+	</view>
+</view>

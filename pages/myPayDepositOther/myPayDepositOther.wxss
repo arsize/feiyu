@@ -1,0 +1,353 @@
+.pageCont {
+  width: 100%;
+}
+.botBtmFixSigExtrl {
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx 20rpx;
+  box-shadow: 0rpx 0rpx 10rpx 0rpx rgba(0, 0, 0, 0.1);
+}
+.botBtmFixSigExtrl .left {
+  display: flex;
+  align-items: center;
+}
+.botBtmFixSigExtrl .submoney {
+  color: #999;
+  font-size: 25rpx;
+  margin-left: 20rpx;
+}
+.botBtmFixSigExtrl .submoney .one {
+  text-decoration: line-through;
+}
+.primaryBglExtrl {
+  width: 280rpx;
+  height: 88rpx;
+  background: linear-gradient(270deg, #19b2ff 0%, #166cff 100%);
+  border-radius: 44rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  color: #ffffff;
+}
+.pageCont .listCont {
+  width: 100%;
+  padding-top: 8rpx;
+}
+
+.pageCont .listCont .titleCombo {
+  width: 90%;
+  margin: 57rpx auto 0;
+  color: #666;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.pageCont .listCont .item {
+  width: 90%;
+  margin: 57rpx auto 0;
+}
+.defaultRound {
+  width: 52rpx;
+  height: 52rpx;
+  background: rgba(238, 238, 238, 1);
+  border: 8rpx solid rgba(246, 246, 248, 1);
+  border-radius: 52rpx;
+}
+.nopayitem {
+  width: 100%;
+  height: 188rpx;
+  background-color: #f7f9fc;
+  border-radius: 16rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nopayitem .nopaycenter {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.nopayborder {
+  border: 4rpx solid #1a6eff;
+  border-radius: 16rpx;
+}
+.reactivating {
+  width: 65%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.reactivating .left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reactivating .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pageCont .listCont .item .title {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  width: 100%;
+}
+.pageCont .listCont .item .title .left{
+  display: flex;
+  align-items: center;
+
+}
+.pageCont .listCont .item .title .right{
+  font-size: 26rpx;
+  color: #999999;
+
+
+}
+.pickerBlock{
+  width: 670rpx;
+  height: 96rpx;
+  border: 1rpx solid #DEDFE1;
+  background-color: #F7F9FC;
+  border-radius: 10rpx;
+  margin-top: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #999999;
+
+}
+.healthSet-date{
+  color: red;
+}
+
+.pageCont .listCont .item .title .left .blockBlue{
+  width: 8rpx;
+  height: 24rpx;
+  background-color: #166CFF;
+  border-radius: 2rpx;
+  margin-right: 12rpx;
+
+}
+
+.pageCont .listCont .item .title .titleName {
+  color: #333333;
+  font-weight: bold;
+  font-size: 28rpx;
+}
+
+.pageCont .listCont .item .title .titleNote {
+  position: relative;
+  margin-left: 16rpx;
+  width: 118rpx;
+  height: 40rpx;
+}
+
+.pageCont .listCont .item .title .titleNote image {
+  width: 118rpx;
+  height: 40rpx;
+}
+
+.pageCont .listCont .item .title .titleNote text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font: 500 20rpx "PingFangSC-Medium";
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.pageCont .listCont .item .cont {
+  position: relative;
+  width: 100%;
+  margin-top: 17rpx;
+  padding-top: 34rpx;
+  padding-bottom: 34rpx;
+  border-radius: 16rpx;
+  background: #f7f9fc;
+  box-sizing: border-box;
+}
+
+.pageCont .listCont .item .cont .selectIcon {
+  position: absolute;
+  right: 16rpx;
+  top: 16rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.pageCont .listCont .item .cont .topIcon {
+  position: absolute;
+  right: 0rpx;
+  top: 16rpx;
+  left: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.pageCont .listCont .item .cont .topIcon .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 112rpx;
+  height: 40rpx;
+}
+
+.pageCont .listCont .item .cont .topIcon .left image {
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  z-index: 0;
+  width: 112rpx;
+  height: 40rpx;
+}
+
+.pageCont .listCont .item .cont .topIcon .left text {
+  z-index: 1;
+  color: #fff;
+  font: 500 20rpx "PingFangSC-Medium";
+}
+
+.pageCont .listCont .item .cont .topIcon .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.pageCont .listCont .item .cont .topIcon .right image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.pageCont .listCont .item .cont .top {
+  width: 90%;
+  height: 40rpx;
+  margin: 0 auto;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pageCont .listCont .item .cont .top.colorwhite {
+  /* color: rgba(255, 255, 255, 0.7); */
+  color: #999;
+}
+
+.pageCont .listCont .item .cont .top.color999 {
+  color: #999;
+}
+
+.pageCont .listCont .item .cont .middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  color: #ff9900;
+  font: 500 32rpx "PingFangSC-Medium";
+}
+
+.pageCont .listCont .item .cont .middleCombo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  /* color:#FF9900;*/
+  font: 500 32rpx "PingFangSC-Medium";
+}
+
+.pageCont .listCont .item .cont .middleCombo .left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.pageCont .listCont .item .cont .middleCombo .left text:nth-child(2) {
+  display: inline-block;
+  margin-left: 16rpx;
+  width: 124rpx;
+  height: 40rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #ff9900;
+  border-radius: 6rpx;
+  font-size: 20rpx;
+  color: #ff9900;
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.pageCont .listCont .item .cont .bottom {
+  width: 90%;
+  margin: 0 auto;
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+  text-align: right;
+  text-decoration: line-through;
+}
+.botBtmFixLine250 {
+  width: 100%;
+  height: 250rpx;
+}
+.bottomblock {
+  position: fixed;
+  width: 100%;
+  height: 140rpx;
+  background-color: white;
+  bottom: 85rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pageCont .noteCont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 17rpx auto 0;
+  font-size: 28rpx;
+  color: #333;
+}
+.roundright {
+  width: 30rpx;
+  height: 30rpx;
+  background: #f7f7f7;
+  border: 2rpx solid #dddddd;
+  border-radius: 30rpx;
+  margin-right: 16rpx;
+}
+.roundrighthave {
+  width: 30rpx;
+  height: 30rpx;
+  background: #f7f7f7;
+  border: 2rpx solid #dddddd;
+  border-radius: 30rpx;
+  margin-right: 16rpx;
+  position: relative;
+}
+.roundrightnei {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15rpx;
+  height: 15rpx;
+  background: #166cff;
+  border-radius: 15rpx;
+}

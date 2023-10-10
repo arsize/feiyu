@@ -1,0 +1,91 @@
+page {
+  background-color: #F5F5F5;
+}
+
+.chargeinfo {
+  width: 100%;
+  height: 144rpx;
+  padding: 32rpx;
+  box-sizing: border-box;
+  background-color: white;
+  margin-bottom: 24rpx;
+}
+
+.chargeinfo .cabinetName {
+  font-size: 32rpx;
+  color: #000000;
+  line-height: 48rpx;
+  font-weight: bold;
+
+}
+
+.chargeinfo .item {
+  margin-top: 6rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.centerChargeBox {
+  width: 100%;
+  background-color: white;
+  padding: 32rpx;
+  box-sizing: border-box;
+  margin-bottom: 24rpx;
+}
+
+.centerChargeBox .toptext {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.cabinetItem {
+  width: 48%;
+}
+
+.cabinetCent {
+  width: 335rpx;
+  height: 114rpx;
+  border-radius: 8rpx;
+  background-color: #FAFAFA;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 16rpx;
+
+
+}
+
+.portnum {
+  position: absolute;
+  top: 12rpx;
+  left: 12rpx;
+  font-size: 24rpx;
+  color: #999999;
+
+}
+
+.text {
+  width: 100rpx;
+  font-size: 28rpx;
+  color: #999999;
+  margin-left: 28rpx;
+}
+
+.bottomBTn {
+  background: linear-gradient(270deg, #41BEFF 0%, #1A6EFF 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 686rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  bottom: 52rpx;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}

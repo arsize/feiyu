@@ -1,0 +1,117 @@
+page {
+  background-color: #f7f7f7;
+}
+
+.couponitem {
+  width: 686rpx;
+  margin: 32rpx auto;
+  margin-bottom: 0;
+}
+.couponitem .top {
+  width: 100%;
+  height: 200rpx;
+  background-color: white;
+  border-radius: 12rpx;
+  display: flex;
+  box-shadow: 0rpx 2rpx 10rpx 0rpx rgba(0, 0, 0, 0.1);
+}
+.couponitem .top .left {
+  width: 466rpx;
+  height: 100%;
+  padding: 28rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.couponitem .top .right {
+  width: 220rpx;
+  height: 100%;
+  background: linear-gradient(90deg, #ffa468 0%, #ff6b3a 100%);
+  border-top-right-radius: 12rpx;
+  border-bottom-right-radius: 12rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.couponitem .top .right2 {
+  background: #ccc;
+}
+.couponitem .top .right .rightcontent {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.couponitem .top .right .money {
+  font-size: 46rpx;
+  color: #ffffff;
+  font-weight: bold;
+  display: flex;
+  align-items: flex-end;
+}
+.couponitem .top .right .submoney {
+  font-size: 22rpx;
+  color: #ffffff;
+  margin-bottom: 13rpx;
+}
+.couponitem .top .right .usebtn {
+  width: 118rpx;
+  height: 40rpx;
+  background-color: #ffffff;
+  border-radius: 23rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff703e;
+  font-size: 24rpx;
+}
+.couponitem .couponText {
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.couponitem .couponTime {
+  font-size: 24rpx;
+  color: #666666;
+}
+.couponitem .couponBottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22rpx;
+  color: #999999;
+}
+.couponitem .couponBottom .coupontop {
+  transition: all 0.3s;
+}
+.blank_block {
+  width: 100%;
+  height: 80rpx;
+}
+.noannouncement {
+  width: 100%;
+  height: 300rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #999;
+}
+.couponitem .subBottom {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 28rpx;
+  color: #999999;
+  background-color: white;
+  border-bottom-right-radius: 12rpx;
+  border-bottom-left-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  transition: height 0.3s;
+}

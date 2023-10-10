@@ -1,0 +1,88 @@
+page {
+  background-color: #f5f5f5;
+}
+.survey {
+  width: 100%;
+}
+.survey .topBar {
+  width: 100%;
+  box-sizing: border-box;
+  height: 144rpx;
+  padding: 36rpx;
+  background-color: white;
+}
+.survey .topBar .img {
+  width: 313rpx;
+  height: 40rpx;
+}
+.survey .topBar .subtext {
+  font-size: 24rpx;
+  color: #000000;
+}
+.survey .surveybox {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 35rpx;
+  position: absolute;
+  top: 168rpx;
+  bottom: 0;
+  background-color: white;
+}
+.survey .surveybox .img {
+  width: 222rpx;
+  height: 31rpx;
+}
+.survey .surveybox .boxlist {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.survey .surveybox .boxlist .boxitem {
+  margin-right: 13rpx;
+  width: 156rpx;
+  height: 80rpx;
+  border: 1rpx solid #999999;
+  border-radius: 8rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.survey .surveybox .thirdbar {
+  margin-top: 40rpx;
+}
+.survey .surveybox .thirdbar .img {
+  width: 222rpx;
+  height: 31rpx;
+}
+.survey .surveybox .fourbar {
+  margin-top: 40rpx;
+}
+.survey .surveybox .fourbar .img {
+  width: 222rpx;
+  height: 31rpx;
+}
+.survey .surveybox .btn {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 10rpx;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+}
+.survey .surveybox .btn .img {
+  width: 560rpx;
+  height: 100rpx;
+}
+.survey .surveybox .btn .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #4cf76d;
+  z-index: 1000;
+  font-size: 32rpx;
+  line-height: 45rpx;
+}

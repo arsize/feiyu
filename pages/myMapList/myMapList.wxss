@@ -1,0 +1,366 @@
+/* pages/myMapList/myMapList.wxss */
+page {
+  width: 100%;
+}
+
+.line20G {
+  width: 100%;
+  height: 18rpx;
+  background: #F6F6F8;
+}
+
+.switchBar {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.switchBar .item {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.switchBar .item:nth-child(1){
+  width: 55%;
+}
+.switchBar .item:nth-child(2){
+  width: 45%;
+}
+
+.switchBar .item .text {
+  color: #999;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.switchBar .item .textpicker {
+  color: #999;
+  font-size: 32rpx;
+  font-weight: 500;
+  padding-right:40rpx;
+  /* background: red; */
+}
+.switchBar .item image {
+  margin-left: 8rpx;
+  width: 24rpx;
+  height: 24rpx;
+  transform: rotateY(180deg);
+}
+
+.cabitListCont {
+  width: 100%;
+}
+
+.cabitList {
+
+  margin: auto auto;
+  width: 100%;
+}
+
+.activeBg {
+  background: #E0EAFF;
+}
+
+.cabitDetailItem {
+  width: 100%;
+  padding: 40rpx 0;
+  border-bottom: 1rpx solid #EEEEEE;
+
+  /* height: 310rpx; */
+}
+
+
+
+
+.cabitDetailItem .cabitTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.cabitDetailItem .cabitTitle .left {
+  width: 82%;
+  color: #000;
+  font: 500 32rpx "PingFangSC-Medium";
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cabitDetailItem .cabitTitle .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cabitDetailItem .cabitTitle .right view {
+  color: #1A6EFF;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.cabitDetailItem .cabitTitle .right .imageNav {
+  margin-left: 10rpx;
+  width: 24rpx;
+  height: 24rpx;
+
+}
+
+.cabitDetailItem .middleInfo {
+  width: 90%;
+  margin: 24rpx auto 0;
+}
+
+.cabitDetailItem .middleInfo .item {
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: 6rpx auto 0;
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.cabitDetailItem .middleInfo .item image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 9rpx;
+}
+
+.cabitDetailItem .middleInfo .item .text {
+  display: inline-block;
+  width: 95%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cabitDetailItem .middleInfo .item .text2 {
+  display: inline-block;
+  width: 22%;
+  text-align: right;
+  font-size: 28rpx;
+  /* background:red; */
+}
+
+
+.cabitDetailItem .bottomInfo {
+  /* display: flex;
+  justify-content: flex-start;
+  align-items: center; */
+  width: 90%;
+  margin: 16rpx auto 0;
+}
+
+.cabitDetailItem .bottomInfo .top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: 0rpx auto;
+}
+
+.cabitDetailItem .bottomInfo .top .wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+}
+
+.cabitDetailItem .bottomInfo .top .wrap text:nth-child(1) {
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.cabitDetailItem .bottomInfo .top .wrap text:nth-child(2) {
+  color: #333;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.cabitDetailItem .bottomInfo .bottom {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  margin: 16rpx auto 0;
+}
+.cabitDetailItem .bottomInfo .bottom .title{
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+.cabitDetailItem .bottomInfo .bottom .cont{
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-wrap: wrap;
+   width:84%;
+  
+
+}
+
+.cabitDetailItem .bottomInfo .bottom  .item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 20rpx 10rpx 0;
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+
+}
+
+
+.cabitDetailItem .bottomInfo .bottom  .item text:nth-child(1) {
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.cabitDetailItem .bottomInfo .bottom  .item text:nth-child(2) {
+  margin-left:8rpx;
+  color: #333;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+
+.cabitDetailItem .bottomImg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  margin: 0rpx auto;
+}
+
+.cabitDetailItem .bottomImg .bottomImgWarp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48%;
+  height: 200rpx;
+}
+
+.cabitDetailItem .bottomImg .bottomImgWarp .imageBtm {
+  width: 100%;
+  min-height: 120rpx !important;
+  height: auto !important;
+}
+
+.cabitDetailItem .bottomImg .bottomImgWarp:nth-child(1) {
+  margin-right: 2%;
+}
+
+
+
+.storeList {
+  width: 100%;
+  padding: 40rpx 0;
+  border-bottom: 1rpx solid #EEEEEE;
+
+}
+
+.storeList .cabitTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  /* background: green; */
+}
+
+.storeList .cabitTitle .left {
+  width: 82%;
+  color: #000;
+  font: 500 32rpx "PingFangSC-Medium";
+}
+
+.storeList .cabitTitle .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.storeList .cabitTitle .right view {
+  color: #1A6EFF;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.storeList .cabitTitle .right .imageNav {
+  margin-left: 10rpx;
+  width: 24rpx;
+  height: 24rpx;
+
+}
+
+.storeList .middleInfo {
+  width: 90%;
+  margin: 24rpx auto;
+}
+
+.storeList .middleInfo .item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: 6rpx auto 0;
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.storeList .middleInfo .item image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 9rpx;
+}
+
+.storeList .middleInfo .item .text {
+  display: inline-block;
+  width: 82%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* background:green; */
+}
+
+.storeList .middleInfo .item .text2 {
+  display: inline-block;
+  width: 22%;
+  text-align: right;
+  font-size: 28rpx;
+  /* background:red; */
+}
+
+.storeList .bottomImg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  margin: 20rpx auto 0rpx;
+}
+
+.storeList .bottomImg .bottomImgWarp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48%;
+  height: 200rpx;
+}
+
+.storeList .bottomImg .bottomImgWarp .imageBtm {
+  width: 100%;
+  height: 110rpx;
+}
+
+.storeList .bottomImg .bottomImgWarp:nth-child(1) {
+  margin-right: 2%;
+}

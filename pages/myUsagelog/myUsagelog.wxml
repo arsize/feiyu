@@ -1,0 +1,65 @@
+<!--pages/myUsagelog/myUsagelog.wxml-->
+<view class="pageCont">
+    <block wx:if="{{recordList.length>0&&isRequest}}">
+        <view class="blank"></view>
+        <view class="hasCont">
+            <!-- useType  	消费类型0:换电1:充电
+            chargingStatus  充电状态：-1:充电终止0:操作中1:充电中2:充电结束3用户取消操作中，4用户取消
+            exchangeStatus  换电状态：-1：换电终止，0：操作中（开启箱门未放入旧电池），1：已完成（旧电池已经放入打开新柜门）
+            
+            -->
+            <view class="item" wx:for="{{recordList}}" wx:key="index" data-item="{{item}}" bindtap="joinDetail">
+                <!-- 左边 -->
+                <view class="left">
+                    <view class="timer">
+                        <text>{{item.ctimeArr[1]}}</text>
+                        <text>{{item.ctimeArr[0]}}</text>
+                    </view>
+                    <view class="line">
+                        <text class="{{index!=0?'short':'short transparentBg'}}"></text>
+                        <!--primaryBg  bgD8D8D8-->
+                        <text
+                            class="{{(item.useType==0&&item.exchangeStatus==0)||(item.useType==1&&(item.chargingStatus==0||item.chargingStatus==1))?'dot primaryBg':'dot bgD8D8D8'}}"></text>
+                        <text class="long"></text>
+                    </view>
+                </view>
+                <!-- 右边 primaryBg  bgfff-->
+                <view
+                    class="{{(item.useType==0&&item.exchangeStatus==0)||(item.useType==1&&(item.chargingStatus==0||item.chargingStatus==1))?'right primaryBg':'right bgfff'}}">
+                    <view class="rightCont">
+                        <view class="top">
+                            <view class="topLeft">
+                                <!-- primaryColor ColorWhite-->
+                                <text
+                                    style="font-weight:bold;"
+                                    class="{{(item.useType==0&&item.exchangeStatus==0)||(item.useType==1&&(item.chargingStatus==0||item.chargingStatus==1))?'ColorWhite':'Color333'}}">{{item.useType==0?'换电':'充电'}}</text>
+                                <text
+                                    wx:if="{{(item.useType==0&&item.exchangeStatus==0)||(item.useType==1&&(item.chargingStatus==0||item.chargingStatus==1))}}">{{item.useType==0?'换电中':item.useType==1&&item.chargingStatus==0?'待连接':item.useType==1&&item.chargingStatus==1?'充电中':''}}</text>
+                            </view>
+                            <view class="topRight">
+                                <!-- primaryColor ColorWhite-->
+                                <text
+                                    class="{{(item.useType==0&&item.exchangeStatus==0)||(item.useType==1&&(item.chargingStatus==0||item.chargingStatus==1))?'ColorWhite':'primaryColor'}}">查看详情</text>
+                                <image mode="widthFix"
+                                    src="{{(item.useType==0&&item.exchangeStatus==0)||(item.useType==1&&(item.chargingStatus==0||item.chargingStatus==1))?baseUrlImg+'icon_list_more02@2x.png':baseUrlImg+'icon_list_more03@2x.png'}}" />
+
+                            </view>
+                        </view>
+                        <view
+                            class="{{(item.useType==0&&item.exchangeStatus==0)||(item.useType==1&&(item.chargingStatus==0||item.chargingStatus==1))?'middle ColorWhite':'middle Color999'}}">
+                            消费金额：{{item.money||'0.00'}}元
+                        </view>
+                        <view
+                            class="{{(item.useType==0&&item.exchangeStatus==0)||(item.useType==1&&(item.chargingStatus==0||item.chargingStatus==1))?'middle ColorWhite':'middle Color999'}}" bindlongtap='copy' data-set="{{item.orderNo||'-'}}">
+                            订单编号：{{item.orderNo||'-'}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class="noBattery" wx:if="{{recordList.length==0&&isRequest}}">
+        <image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus03@2x.png'}}" />
+        <text>暂无记录</text>
+    </view>
+</view>

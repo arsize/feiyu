@@ -1,0 +1,40 @@
+/* pages/myOpenSuccess/myOpenSuccess.wxss */
+page {
+  width: 100%;
+  background: #F5F5F5;
+}
+
+.pageCont .succCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 80rpx;
+  width: 100%;
+  height: 416rpx;
+  background: #fff;
+}
+
+.pageCont .succCont image:nth-child(1) {
+  width: 160rpx;
+  height: 160rpx;
+  margin-bottom:56rpx;
+}
+
+.pageCont .succCont text:nth-child(2) {
+  margin-top: 24rpx;
+  color: #333;
+  font: 500 32rpx "PingFangSC-Medium";
+}
+
+.pageCont .succCont text:nth-child(3) {
+  margin: 24rpx 0 40rpx 0;
+  color: #999;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.pageCont .succCont image:nth-child(4) {
+  margin-top: 40rpx;
+  width: 530rpx;
+  height: 530rpx;
+}

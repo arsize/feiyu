@@ -1,0 +1,22 @@
+<block wx:if="{{isbind == true}}">
+    <view class="myCar">
+        <view class="left">
+            <view class="item">品牌：{{carinfo.vehicleBrand?carinfo.vehicleBrand:'--'}}</view>
+            <view class="item">型号：{{carinfo.vehicleType?carinfo.vehicleType:'--'}}</view>
+            <view class="item">颜色：{{carinfo.vehicleColor?carinfo.vehicleColor:'--'}}</view>
+            <view class="item">编号：{{carinfo.vehicleSn?carinfo.vehicleSn:'--'}}</view>
+            <view class="item">所属门店：{{carinfo.agentName?carinfo.agentName:'--'}}</view>
+            <view class="item">购买时间：{{carinfo.timeToSell?carinfo.timeToSell:'--'}}</view>
+        </view>
+        <view class="right">
+            <image wx:if="{{carinfo.vehicleImg}}" style="width:240rpx;" mode="widthFix" src="{{carinfo.vehicleImg}}" />
+            <image wx:else style="width:240rpx;"  mode="widthFix" src="{{baseUrlImg + 'img_empty@2x.png'}}" />
+        </view>
+    </view>
+    <view class="bottombar">更多功能敬请期待</view>
+</block>
+<block wx:elif="{{isbind == false}}">
+    <image class="scanbindimg" style="width:200rpx;height:200rpx;" src="{{baseUrlImg + 'car_empty_img_01@2x.png'}}" />
+    <view class="scanbind" bindtap="scanbind">扫码绑定车辆</view>
+</block>
+<dialog></dialog>

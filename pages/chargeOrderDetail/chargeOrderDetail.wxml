@@ -1,0 +1,50 @@
+<van-notice-bar wx:if="{{flag}}" text="蓝牙充换电服务中，为提供正常服务请保持屏幕常亮" color="#FFFFFF" backgroundColor="#000000" left-icon="info-o" />
+<view class="detail">
+	<view class="detailTop">
+		<image style="width:400rpx;height:314rpx;" src="{{baseUrlImg + 'img_cabinet02@2x.png'}}" />
+	</view>
+	<view class="statusBar">
+		<view class="line">
+			<view class="leftblock"></view>
+			<view>充电信息</view>
+		</view>
+		<view class="statusPort">
+			<view class="port">{{detailInfo.boxProtSn}}</view>
+			<view>号口充电中</view>
+		</view>
+		<view class="line">
+			<view class="leftblock"></view>
+			<view>订单信息</view>
+		</view>
+		<view class="blocklist">
+			<view class="item item1">
+				<view class="title" wx:if="{{detailInfo.purchaseDuration}}">
+					{{detailInfo.purchaseDuration == -1?'充满自停':detailInfo.purchaseDuration + '小时'}}
+				</view>
+				<view class="title" wx:else>0小时</view>
+				<view class="subtitle">购买时长（时）</view>
+			</view>
+			<view class="item item2">
+				<view class="title">{{detailInfo.prePayMoney?detailInfo.prePayMoney:0}}</view>
+				<view class="subtitle">预付金额（元）</view>
+			</view>
+			<view class="item">
+				<view class="title">{{chargingAllTime}}</view>
+				<view class="subtitle">充电计时</view>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- <view class="exchangelog" bindtap="gotomyCombo">
+	<image style="width:686rpx;height:140rpx;" src="{{baseUrlImg + 'nv_banner@2x.png'}}" />
+</view> -->
+
+
+<view bind:tap="cancelCharge2" wx:if="{{seconds > 0}}" class="bottomTime">
+	取消充电（{{seconds?seconds:0}}s）
+</view>
+<view class="bottomBarBlock" bindtap="gohome">
+	返回首页
+</view>
+
+<dialog></dialog>

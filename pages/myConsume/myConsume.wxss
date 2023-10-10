@@ -1,0 +1,119 @@
+page {
+  width: 100%;
+  background: #F6F6F8;
+}
+
+.pageCont {
+  width: 100%;
+}
+
+.pageCont .typeCont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+}
+
+.pageCont .typeCont .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  height: 100%;
+  box-sizing: border-box;
+  color: #999;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.pageCont .typeCont .item text {
+  display: inline-block;
+  height: 100%;
+  line-height: 100rpx;
+  border-radius: 2rpx;
+}
+
+.pageCont .typeCont .item text.active {
+  color: #1A6EFF;
+  border-bottom: 4rpx solid #1A6EFF;
+}
+
+.pageCont .record {
+  margin: 24rpx auto 0;
+  width: 90%;
+  /* background: #fff; */
+  border-radius: 12rpx;
+}
+
+.pageCont .record .item {
+  width: 100%;
+  margin: 0 auto;
+  padding: 22rpx 0 0rpx 0;
+  margin-bottom: 32rpx;
+  background: #fff;
+  border-radius: 12rpx;
+
+  /* border-bottom: 1rpx solid #EEEEEE; */
+}
+
+.pageCont .record .item .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 0rpx 0 39rpx 0;
+  width: 90%;
+  margin:0 auto;
+ 
+}
+
+.pageCont .record .item .timer {
+  width: 100%;
+  padding-bottom: 22rpx;
+  margin-bottom: 32rpx;
+  color: #999;
+  font-size: 24rpx;
+  border-bottom: 1rpx solid #EEEEEE;
+
+}
+
+.pageCont .record .item .wrap .left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.pageCont .record .item .wrap .left text:nth-child(1) {
+  color: #333;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.pageCont .record .item .wrap .left text:nth-child(2) {
+  margin-top: 12rpx;
+  color: #999;
+  font-size: 24rpx;
+}
+
+.pageCont .record .item .wrap .right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.pageCont .record .item .wrap .right text:nth-child(1) {
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.pageCont .record .item .wrap .right text:nth-child(2) {
+  margin-top: 12rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.pageCont .record .item .wrap .right text:nth-child(3) {
+  margin-top: 12rpx;
+  font-size: 24rpx;
+}

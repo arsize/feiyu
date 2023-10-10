@@ -1,0 +1,150 @@
+page {
+  background: #F6F6F8;
+}
+
+.myReturnbatStore {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.myReturnbatStore .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 32rpx 0 24rpx 0;
+  color: #999;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.myReturnbatStore .title text:nth-child(2) {
+  color: #1a6eff;
+}
+
+.myReturnbatStore .wrap {
+  position: relative;
+  width: 100%;
+  margin: 0 auto 24rpx;
+  padding: 26rpx 0 34rpx 0;
+  border-radius: 6rpx;
+  background: #fff;
+}
+
+.myReturnbatStore .wrap .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0rpx auto 0;
+}
+
+.myReturnbatStore .wrap .top text:nth-child(1) {
+  color: #333;
+  font: 500 32rpx "PingFangSC-Medium";
+}
+
+.myReturnbatStore .wrap .top text:nth-child(2) {
+  padding-left: 32rpx;
+  border-left: 1rpx solid #eee;
+  color: #999;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.myReturnbatStore .wrap .middle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  margin: 10rpx auto 0;
+  color: #999;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.myReturnbatStore .wrap .middle image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+
+.myReturnbatStore .wrap .middle text {
+  display: inline-block;
+  width: 92%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.myReturnbatStore .wrap .bottom {
+  display: flex;
+  justify-content: flex-start;
+  /* align-items: flex-start; */
+  align-items: center;
+  width: 90%;
+  margin: 26rpx auto 0;
+}
+
+.myReturnbatStore .wrap .bottom .leftCont {
+  display: flex;
+  justify-content: flex-start;
+  /* align-items: flex-start; */
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 32rpx;
+  width: 100%;
+  color: #999;
+  font: 500 22rpx "PingFangSC-Medium";
+}
+
+.myReturnbatStore .wrap .bottom .leftCont text {
+  display: inline-block;
+  width: 120rpx;
+  height: 48rpx;
+  margin: 0 16rpx 0rpx 0;
+  /* padding: 4rpx 8rpx; */
+  text-align: center;
+  line-height: 48rpx;
+  border-radius: 4rpx;
+  background: #F5F5F5;
+}
+
+.myReturnbatStore .wrap .bottom .bottomCont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 40rpx;
+}
+
+.myReturnbatStore .wrap .bottom .bottomCont view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48%;
+}
+
+.myReturnbatStore .wrap .bottom .bottomCont view text {
+  margin-right: 10rpx;
+  color: #1a6eff;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.myReturnbatStore .wrap .bottom .bottomCont view image {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.myReturnbatStore .wrap .bottom .bottomCont view:nth-child(1) {
+  /* margin-right: 30rpx; */
+  border-right: 2rpx solid #EBEBEB;
+}
+
+.myReturnbatStore .serviceCont {}
+
+.myReturnbatStore .serviceCont text:nth-child(1) {
+  color: #999;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.myReturnbatStore .serviceCont text:nth-child(2) {
+  color: #1a6eff;
+  font: 500 28rpx "PingFangSC-Medium";
+}

@@ -1,0 +1,13 @@
+<!--pages/myOpenSuccess/myOpenSuccess.wxml-->
+<view class="pageCont">
+  <view class="succCont">
+    <image mode="widthFix" src="{{baseUrlImg+'icon_cont_complete@2x.png'}}" />
+    <text>服务开通成功，你的电池已激活</text>
+    <!-- <text>请前往线下门店领取电池</text> -->
+  
+  </view>
+</view>
+<view class="botBtmFixLine150"></view>
+<view class="botBtmFix">
+  <view class="btnBluelinear" bindtap="succFun">查看我的电池（{{seconds}}s）</view>
+</view>

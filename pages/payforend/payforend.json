@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "支付订单",
+    "usingComponents": {
+        "van-popup": "../../miniprogram_npm/@vant/weapp/popup/index",
+        "van-icon": "../../miniprogram_npm/@vant/weapp/icon/index",
+        "dialog": "../component/dialog/dialog"
+    }
+}

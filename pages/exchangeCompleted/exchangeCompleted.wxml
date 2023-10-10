@@ -1,0 +1,103 @@
+<view class="completed">
+	<view class="completedTop">
+		<image style="width:480rpx;height:468rpx;" src="{{baseUrlImg + 'v2img_cont_hdcg@2x.png'}}" />
+	</view>
+	<view class="statusBar">
+		<view class="line">
+			<view class="leftblock"></view>
+			<view>订单信息</view>
+		</view>
+		<view class="topBar">
+			<view class="item">
+				<view class="title">
+					{{exchangeRecordDetail.returnBoxSn?exchangeRecordDetail.returnBoxSn:'--'}}号
+				</view>
+				<view class="subtitle">放入仓</view>
+			</view>
+			<view class="item">
+				<view class="title">
+					{{exchangeRecordDetail.borrowBoxSn?exchangeRecordDetail.borrowBoxSn:'--'}}号
+				</view>
+				<view class="subtitle">取出仓</view>
+			</view>
+			<view class="item" wx:if="{{exchangeRecordDetail.chargingType==0}}">
+				<view class="title">
+					{{exchangeRecordDetail.money?exchangeRecordDetail.money:0}}
+				</view>
+				<view class="subtitle">余额支付（元）</view>
+			</view>
+			<view class="item" wx:else>
+				<view class="title" wx:if="{{exchangeRecordDetail.frequencyCardType != 2}}">
+					{{exchangeRecordDetail.surplusNum?exchangeRecordDetail.surplusNum:'0'}}
+				</view>
+				<view class="title" wx:else>无限次</view>
+				<view class="subtitle">套餐剩余次数</view>
+			</view>
+		</view>
+		<view class="detailinfo">
+			<view class="item">
+				<view class="left">订单编号：</view>
+				<view class="right" bindlongtap='copy' data-set="{{exchangeRecordDetail.orderNo?exchangeRecordDetail.orderNo:'--'}}">
+					{{exchangeRecordDetail.orderNo?exchangeRecordDetail.orderNo:'--'}}
+				</view>
+			</view>
+			<view class="item">
+				<view class="left">换电时间：</view>
+				<view class="right">{{ctime?ctime:'--'}}</view>
+			</view>
+			<view class="item">
+				<view class="left">电柜ID：</view>
+				<view class="right">{{exchangeRecordDetail.cabinetDid?exchangeRecordDetail.cabinetDid:'--'}}</view>
+			</view>
+			<view class="item">
+				<view class="left">放入电池SN码：</view>
+				<view class="right" bindlongtap='copy' data-set="{{exchangeRecordDetail.returnBatterySn?exchangeRecordDetail.returnBatterySn:'--'}}">
+					{{exchangeRecordDetail.returnBatterySn?exchangeRecordDetail.returnBatterySn:'--'}}
+				</view>
+			</view>
+			<view class="item">
+				<view class="left">取出电池SN码：</view>
+				<view class="right" bindlongtap='copy' data-set=" {{exchangeRecordDetail.borrowBatterySn?exchangeRecordDetail.borrowBatterySn:'--'}}">
+					{{exchangeRecordDetail.borrowBatterySn?exchangeRecordDetail.borrowBatterySn:'--'}}
+				</view>
+			</view>
+			<view class="item">
+				<view class="left">电池剩余电量：</view>
+				<view class="right" wx:if="{{exchangeRecordDetail.returnBatterySoc}}">{{exchangeRecordDetail.returnBatterySoc}}%</view>
+				<view class="right" wx:else>--</view>
+
+			</view>
+
+			<view class="item">
+				<view class="left">计费规则：</view>
+				<view class="right" wx:if="{{exchangeRecordDetail.chargingType==1}}">套餐抵扣</view>
+				<view class="right" wx:elif="{{exchangeRecordDetail.chargingType==0}}">
+					单次换电{{exchangeRecordDetail.singleChargePrice}}元/次
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="dianliblock" bindtap="gotoshouqu" wx:if="{{exchangeRecordDetail.powerBeanNum}}">
+	<view class="left">
+		<image class="leftimg" src="../../images/icon_dl@2x.png" />
+	</view>
+	<view class="center">
+		<view class="centertop">
+			<view style="color:#333333;font-size:30rpx;font-weight: bold;">
+				本次换电获得电粒
+			</view>
+			<view style="font-weight: bold;margin-left:10rpx;color:#FF571B;font-size:30rpx">
+				+{{exchangeRecordDetail.powerBeanNum}}g
+			</view>
+		</view>
+		<view class="centersub">
+			电粒可兑换换电套餐哟～
+		</view>
+	</view>
+	<view class="right">
+		<image class="rightimg" src="../../images/btn@2x.png" />
+
+	</view>
+</view>
+<view bind:tap="gohome" class="gotoback">返回首页</view>

@@ -1,0 +1,169 @@
+page {
+  background: #F6F6F8;
+}
+.pageCont {
+  width: 100%;
+}
+.pageCont .selectType {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+.pageCont .selectType .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 98rpx;
+}
+.pageCont .selectType .item text {
+  height: 98rpx;
+  color: #999;
+  font: 500 28rpx "PingFangSC-Medium";
+  line-height: 98rpx;
+  box-sizing: border-box;
+}
+.pageCont .selectType .item text.active {
+  color: #1A6EFF;
+  border-bottom: 4rpx solid #1A6EFF;
+}
+.pageCont .selectTypeLine {
+  width: 100%;
+  height: 100rpx;
+}
+.pageCont .electricCard {
+  width: 90%;
+  margin: 0 auto;
+}
+.pageCont .electricCard .typeCont {
+  padding: 32rpx 0;
+}
+.pageCont .electricCard .typeCont text {
+  display: inline-block;
+  width: 173rpx;
+  height: 64rpx;
+  margin-right: 32rpx;
+  border-radius: 32rpx;
+  font-size: 28rpx;
+  color: #888;
+  line-height: 64rpx;
+  text-align: center;
+  background: #fff;
+}
+.pageCont .electricCard .typeCont text.active {
+  color: #fff;
+  background: #1A6EFF;
+}
+.pageCont .electricCard .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: 200rpx;
+  margin-bottom: 24rpx;
+  border-radius: 16rpx;
+  background: #FFBF27;
+}
+.pageCont .electricCard .item.lose {
+  background: #ccc;
+}
+.pageCont .electricCard .item view:nth-child(1) {
+  margin: 24rpx 0 0 5%;
+}
+.pageCont .electricCard .item view:nth-child(1) text:nth-child(1) {
+  padding: 6rpx 16rpx;
+  margin-right: 20rpx;
+  color: #FFBF27;
+  font: 500 26rpx "PingFangSC-Medium";
+  border-radius: 8rpx;
+  background: #000;
+}
+.pageCont .electricCard .item view:nth-child(1) text:nth-child(1).lose {
+  color: #ccc;
+}
+.pageCont .electricCard .item view:nth-child(1) text:nth-child(2) {
+  padding: 6rpx 16rpx;
+  color: #4C380B;
+  font: 500 26rpx "PingFangSC-Medium";
+  border-radius: 8rpx;
+  background: #FAD77F;
+}
+.pageCont .electricCard .item view:nth-child(1) text:nth-child(2).lose {
+  background: #DEDEDE;
+}
+.pageCont .electricCard .item view:nth-child(2) {
+  margin: 18rpx 0 0 5%;
+  color: #fff;
+  font: 500 44rpx "PingFangSC-Medium";
+}
+.pageCont .electricCard .item view:nth-child(3) {
+  width: 90%;
+  margin: 0 auto;
+  text-align: right;
+}
+.pageCont .electricCard .item view:nth-child(3) image {
+  width: 147rpx;
+  height: 35rpx;
+}
+.pageCont .voucher {
+  width: 90%;
+  margin: 0 auto;
+}
+.pageCont .voucher .item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 200rpx;
+  margin-bottom: 24rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+  background: #fff;
+}
+.pageCont .voucher .item .leftCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 212rpx;
+  height: 100%;
+  color: #fff;
+  background: #FFBF27;
+}
+.pageCont .voucher .item .leftCont text:nth-child(1) {
+  font: 600 44rpx "PingFangSC-Medium";
+}
+.pageCont .voucher .item .leftCont text:nth-child(2) {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+}
+.pageCont .voucher .item .rightCont {
+  margin-left: 24rpx;
+}
+.pageCont .voucher .item .rightCont .note {
+  margin-top: 24rpx;
+}
+.pageCont .voucher .item .rightCont .note text {
+  padding: 6rpx 16rpx;
+  color: #999;
+  font: 600 26rpx "PingFangSC-Medium";
+  border-radius: 8rpx;
+  background: #F5F5F5;
+}
+.pageCont .voucher .item .rightCont .note text:nth-child(1) {
+  margin-right: 20rpx;
+}
+.pageCont .voucher .item .rightCont .title {
+  margin-top: 14rpx;
+  color: #333;
+  font: 600 36rpx "PingFangSC-Medium";
+}
+.pageCont .voucher .item:nth-child(1) {
+  margin-top: 32rpx;
+}

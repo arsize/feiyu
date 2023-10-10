@@ -1,0 +1,392 @@
+page {
+  background: #f6f6f8;
+}
+
+.myBaseInfo {
+  position: relative;
+  height: 300rpx;
+  display: flex;
+  align-items: center;
+  background-color: #1a6eff;
+}
+.mytakeCombo{
+  width: 686rpx;
+  height: 100rpx;
+  background-color: #DEEAF8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #2B4364;
+  font-size: 28rpx;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  margin: 0 auto;
+  border-radius: 6rpx;
+}
+.mytakeCombo .btns{
+  background-color: #1780FF;
+  color: white;
+  padding: 9rpx 20rpx;
+  border-radius: 30rpx;
+
+
+}
+.mytakeCombo .leftbs{
+  display: flex;
+  align-items: center;
+}
+.mytakeCombo .leftbs .leftbs_img{
+  width: 72rpx;
+  height: 72rpx;
+  margin-right: 16rpx;
+}
+
+.myBaseInfo .floatUserInfo {
+  width: 90%;
+  padding-top: 32rpx;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  /* box-shadow: 0rpx 4rpx 8rpx 0rpx rgba(0, 0, 0, 0.12); */
+  transform: translate(-50%, 5%);
+  height: 300rpx;
+  border-radius: 12rpx;
+}
+
+.myBaseInfo .floatUserInfo .topBar {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.imgdotblock {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 16rpx;
+  background-color: #ff4c4c;
+  position: absolute;
+  top: 0;
+  right: 37rpx;
+}
+.myBaseInfo .floatUserInfo .topBar .userCont {
+  display: flex;
+}
+
+.myBaseInfo .floatUserInfo .topBar .userCont .userIcon {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.myBaseInfo .floatUserInfo .topBar .userCont .userIcon .image {
+  width: 100%;
+  height: 100%;
+  /* border: 6rpx solid #1a6eff; */
+  border-radius: 50%;
+  /* box-sizing: border-box; */
+}
+
+.myBaseInfo .floatUserInfo .topBar .userCont .rightLogin {
+  display: flex;
+  align-items: center;
+  margin-left: 40rpx;
+  /* color: #1a6eff; */
+  color: #fff;
+  font: 500 32rpx "PingFangSC-Medium";
+}
+
+.myBaseInfo .floatUserInfo .topBar .userCont .right {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 30rpx;
+  color: #333;
+  font: 500 36rpx "PingFangSC-Medium";
+  box-sizing: border-box;
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+}
+
+.myBaseInfo .floatUserInfo .topBar .userCont .right text:nth-child(1) {
+  /* color: #333; */
+  color: #fff;
+  font: 500 36rpx "PingFangSC-Medium";
+}
+
+.myBaseInfo .floatUserInfo .topBar .userCont .right text:nth-child(2) {
+  color: #999;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.myBaseInfo .floatUserInfo .topBar .userCont .right .setting {
+  font-size: 22rpx;
+  margin-left: 20rpx;
+}
+
+.myBaseInfo .floatUserInfo .topBar .qrcodeCont {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.myBaseInfo .floatUserInfo .topBar .qrcodeCont image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.myBaseInfo .floatUserInfo .topBar .qrcodeCont canvas {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.myBaseInfo .floatUserInfo .bottomBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 204rpx;
+  margin-top: 32rpx;
+  border-radius: 26rpx;
+  background: #fff;
+}
+.myBaseInfo .floatUserInfo .bottomBar2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 280rpx;
+  margin-top: 32rpx;
+  border-radius: 26rpx;
+  background: #fff;
+}
+.myBaseInfo .floatUserInfo .bottomBar2 .topbar {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.myBaseInfo .floatUserInfo .bottomBar2 .bottombarcontain {
+  width: 50%;
+  height: 100%;
+}
+/* 2 */
+.myBaseInfo .floatUserInfo .bottomBar2 .text {
+  color: #1a6eff;
+  font: 500 35rpx "PingFangSC-Medium";
+}
+.textbox {
+  display: flex;
+  align-items: center;
+}
+.textbox .sub {
+  color: #999;
+  font: 500 26rpx "PingFangSC-Medium";
+  margin-top: 20rpx;
+}
+.textbox .boxtitle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.textbox .boxtitle .redspan {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20rpx;
+}
+.myBaseInfo .floatUserInfo .bottomBar2 .sub {
+  color: #999;
+  font: 500 26rpx "PingFangSC-Medium";
+  margin-top: 10rpx;
+}
+
+.myBaseInfo .floatUserInfo .bottomBar2 .one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-right: 1rpx solid #eeeeee;
+}
+
+.myBaseInfo .floatUserInfo .bottomBar2 .two {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1rpx solid #eeeeee;
+}
+
+.myBaseInfo .floatUserInfo .bottomBar2 .three {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.myBaseInfo .floatUserInfo .bottomBar2 .four {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.myBaseInfo .floatUserInfo .bottomBar2 .block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+}
+
+/* 1 */
+
+.myBaseInfo .floatUserInfo .bottomBar .text {
+  color: #1a6eff;
+  font: 500 32rpx "PingFangSC-Medium";
+  margin-top: 10rpx;
+}
+
+.myBaseInfo .floatUserInfo .bottomBar .sub {
+  color: #999;
+  font: 500 26rpx "PingFangSC-Medium";
+  margin-top: 10rpx;
+}
+
+.myBaseInfo .floatUserInfo .bottomBar .one {
+  width: 200rpx;
+}
+
+.myBaseInfo .floatUserInfo .bottomBar .two {
+  width: 200rpx;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+
+.myBaseInfo .floatUserInfo .bottomBar .three {
+  width: 250rpx;
+}
+
+.myBaseInfo .floatUserInfo .bottomBar .block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 80rpx; */
+}
+
+.myCombo {
+  margin: 120rpx auto 32rpx;
+  width: 90%;
+  height: 160rpx;
+  border-radius: 12rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+
+.myCombo image {
+  width: 100%;
+  height: 160rpx;
+}
+
+.myMenuList {
+  width: 100%;
+  /* margin-top: 120rpx; */
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.myMenuList .menuItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
+}
+
+.myMenuList .menuItem .left {
+  display: flex;
+  align-items: center;
+}
+
+.myMenuList .menuItem .menuText {
+  margin-left: 20rpx;
+  color: #333;
+  font: 500 30rpx "PingFangSC-Medium";
+}
+
+.myMenuList .menuItem .listImg {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.myMenuList .menuItem .rightIcon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 15rpx;
+}
+
+.myMenuListRow {
+  width: 90%;
+  padding: 32rpx 0 68rpx 0;
+  margin: 0 auto;
+  border-radius: 26rpx;
+  background: #fff;
+  padding-bottom: 30rpx;
+  margin-top: 20rpx;
+  margin-bottom: 50rpx;
+}
+.myMenuListRow .title_line {
+  width: 6rpx;
+  height: 28rpx;
+  background: linear-gradient(90deg, #2e7bff, #5392ff);
+  border-radius: 2rpx;
+  margin-right: 12rpx;
+
+}
+.myMenuListRow .title {
+  width: 90%;
+  margin: 0 auto 16rpx;
+  color: #343434;
+  font: 500 30rpx "PingFangSC-Medium";
+  font-weight: bold;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+
+}
+
+.myMenuListRow .itemWrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.myMenuListRow .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 25%;
+  height: 160rpx;
+  position: relative;
+}
+
+.myMenuListRow .item text {
+  margin-top: 15rpx;
+  color: #666;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.myMenuListRow .item image {
+  width: 80rpx;
+  height: 80rpx;
+}

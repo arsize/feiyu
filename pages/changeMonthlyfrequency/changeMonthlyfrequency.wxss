@@ -1,0 +1,128 @@
+page {
+  background: #f6f6f8;
+}
+
+.pageCont {
+  padding: 32rpx;
+  padding-top: 40rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.pageCont .block {
+  display: flex;
+  align-items: center;
+}
+.blueline {
+  width: 8rpx;
+  height: 24rpx;
+  background: #166cff;
+  border-radius: 2rpx;
+  margin-right: 12rpx;
+}
+.linename {
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: bold;
+  font-family: PingFangSC-Medium, PingFang SC;
+}
+
+.mycomboItems {
+  position: relative;
+  width: 686rpx;
+  box-sizing: border-box;
+  height: 180rpx;
+  border-radius: 18rpx;
+  background-color: #dbe8ff;
+  color: #1a6eff;
+  margin: 0 auto;
+  margin-top: 24rpx;
+  display: flex;
+  align-items: center;
+  padding: 32rpx;
+  border: 4rpx solid transparent;
+}
+.comboItems {
+  background-color: white;
+  font-size: 36rpx;
+  color: #333333;
+  margin-top: 24rpx;
+}
+.comboItems .name {
+  font-size: 36rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.centerleft .rightblocks {
+  width: 124rpx;
+  height: 40rpx;
+  border-radius: 6rpx;
+  border: 1rpx solid #ff9900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #ff9900;
+  margin-left: 32rpx;
+}
+.comboItems .centerright {
+  font-size: 36rpx;
+  color: #ff5532;
+}
+.mycomboItems .centline {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mycomboItems .centerleft {
+  display: flex;
+  align-items: center;
+}
+.mycomboItems .bottomsub {
+  position: absolute;
+  bottom: 27rpx;
+  right: 35rpx;
+  font-size: 24rpx;
+  color: #1a6eff;
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.comboItems .bottomsub {
+  position: absolute;
+  bottom: 27rpx;
+  right: 35rpx;
+  font-size: 24rpx;
+  color: #999999;
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+.bottomBarLine {
+  width: 100%;
+  height: 140rpx;
+  background-color: #f6f6f8;
+  position: fixed;
+  bottom: 0rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blockblank {
+  width: 100%;
+  height: 140rpx;
+}
+.configBiangeng {
+  width: 686rpx;
+  height: 100rpx;
+  background: linear-gradient(270deg, #41beff 0%, #1a6eff 100%);
+  box-shadow: 0rpx 4rpx 6rpx 0rpx rgba(27, 112, 255, 0.25);
+  border-radius: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 32rpx;
+  font-weight: bold;
+}

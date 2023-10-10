@@ -1,0 +1,23 @@
+<!-- pages/myModPhone/myModPhone.wxml -->
+<form bindsubmit="formSubmitReg" bindreset="formReset">
+    <view class="pageCont">
+        <!-- 1363553079 -->
+        <view class="title">当前手机号：{{myphone}}</view>
+        <view class="formCont">
+            <view class="item">
+                <input placeholder='请输入新手机号' maxlength='11' focus="{{phoneFoucs}}" type="number" name="phoneNum" placeholder-style="color:#B2B2B2;font-size:30rpx;font-weight:bold;" value="{{phone}}" bindinput="phoneInput" bindblur="phoneBlur" bindconfirm="phoneConfirm"></input>
+            </view>
+            <view class="item">
+                <input placeholder='请输入验证码' maxlength='4' type="number" name="codeNum" value="{{code}}" bindinput="codeInput" placeholder-style="color:#B2B2B2;font-size:30rpx;font-weight:bold;" bindblur="codeBlur" bindconfirm="codeConfirm"></input>
+                <view wx:if="{{second==0}}" bindtap='getCode' class="{{isPhone?'active':''}}">
+                    {{hasCode}}
+                </view>
+                <view wx:else class="codeActive">重新获取{{second}}s</view>
+            </view>
+        </view>
+    </view>
+    <!-- disabled="{{!isPhone || !code}}" -->
+    <view class="btn">
+        <button formType="submit" class="{{isPhone && code?'active':''}}">确定</button>
+    </view>
+</form>

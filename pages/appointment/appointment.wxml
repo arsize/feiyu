@@ -1,0 +1,35 @@
+<view class="appointment">
+    <view class="item" bind:tap="selecttimefn">
+        <view class="top">预计到店日期</view>
+        <view class="itemright">
+            <view class="val">{{arrivalDate?arrivalDate:'请选择日期'}}</view>
+            <image style="width:30rpx;height:30rpx;margin-left:20rpx;" src="{{baseUrlImg + 'icon_list_more@2x.png'}}" />
+        </view>
+    </view>
+    <view class="item2">
+        <view class="top">预计到店时段</view>
+        <view class="timebox">
+            <block wx:for="{{timearr}}" wx:key="index" data-item="{{item}}" data-index="{{index}}">
+                <view wx:if="{{flagArr[index]}}" style="{{arrivalTime==item?'background-color:#166CFF;color:white;':''}}" bind:tap="selectCurrentTime" class="timeItem" data-item="{{item}}">
+                    {{item}}
+                </view>
+                <view wx:else style="border: none;background-color:#F5F5F5;color:#999999;" class="timeItem">
+                    {{item}}
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="item3">
+        <view class="top">你的姓名</view>
+        <input class="iteminput" bindinput="inputval1" value="{{userName}}" placeholder="请输入姓名（选填）" />
+    </view>
+    <view class="item4">
+        <view class="top">联系方式</view>
+        <input maxlength="11" class="iteminput" bindinput="inputval2" value="{{userMobilePhone}}" />
+    </view>
+</view>
+<view wx:if="{{!loading}}" bind:tap="confirmEnd" class="appointBtn">确认预约</view>
+<view wx:else class="appointBtn" style="opacity: 0.5;">确认预约</view>
+<van-popup show="{{ selectdata }}" close-on-click-overlay round position="bottom" custom-style="height: 48%;" bind:close="onClosechargeInfolog">
+    <van-datetime-picker type="date" bind:input="onInput" bind:confirm="onconfirm" bind:cancel="oncancel" min-date="{{ minDate }}" max-date="{{maxDate}}" formatter="{{ formatter }}" />
+</van-popup>

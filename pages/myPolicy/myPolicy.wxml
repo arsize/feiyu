@@ -1,0 +1,833 @@
+<!--pages/myPolicy/myPolicy.wxml-->
+<view class="pageCont">
+  <view style="text-align:center"><text
+      style="color:#333333; font-family:黑体-简; font-size:18pt; font-style:normal; text-transform:none">隐私政策</text></view>
+  <view style="margin:0pt 0pt 10pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">特别提示</text></view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">欢迎您使用</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}小程序</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(以下简称“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}} </text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”或“我们”)平台(包括但不限于PC版及移动电话、PDA版等各种无线手持终端版本)提供的各项服务,这表示您信赖“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="font-family:黑体-简; font-size:10.5pt"> </text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”对您信息的处理方式,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="font-family:黑体-简; font-size:10.5pt"> </text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”深知您的信任非常重要,鉴于此,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="font-family:黑体-简; font-size:10.5pt"> </text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”服务提供者制定本《隐私政策》(以下简称“本政策”)并提醒您:</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">本政策仅适用于“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="font-family:黑体-简; font-size:10.5pt"> </text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”提供的所有产品及服务。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">在您使用“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”提供的服务前,请务必仔细阅读并理解本政策。当您使用“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="font-family:黑体-简; font-size:10.5pt"> </text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”的产品或服务时,即视为您已经阅读、理解并同意本政策,同意“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="font-family:黑体-简; font-size:10.5pt"> </text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none"> </text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">按照本政策收集、保存、使用、共享、保护您的个人信息。如您不同意本政策中的任何条款,请立即停止使用或访问“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”提供的服务。如您对本政策内容</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none"> </text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">有任何疑问、意见或建议,请联系客服,客服热线:</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">400</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">-</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">600-2839</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">,服务时间:9:00-</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">18</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">:</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">3</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">0,周一至周五,节假日除外。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">本政策将帮助您了解以下内容:</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">一、个人信息的收集和使用</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">二、我们对Cookie和同类技术的使用</text></view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">三、个人信息的存储</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">四、您的权利
+      </text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">五、个人信息的安全</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">六、个人信息的共享、转让、公开披露</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">七、未成年人使用条款</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">八、隐私政策的修订和通知</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">九、如何与我们联系</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">一、个人信息的收集和使用</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">个人信息,是指以电子或者其他方式记录的能够单独或者与其他信息结合识别自然人个人身份的各种信息,在本政策中包括姓名、手机号码、用户密码、身份证号码、身份证或其他身份证明、性别、年龄、征信信息、车辆信息、常用地址、通讯地址、紧急联系人、位置信息、行程信息、订单信息及交易状态、支付信息、提现记录、银行卡号、评价信息、相机(摄像头)、相册(图片库)、日志信息、设备信息、IP地址、存储信息。</text>
+  </view>
+  <view style="text-indent:15.75pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">个人敏感信息,是指一旦泄露、非法提供或滥用可能危害人身和财产安全,极易导致个人名誉、身心健康受到损害或歧视性待遇等的个人信息,在本政策中包括:手机号码、用户密码、身份证或其他身份证明、职业信息、征信信息、位置信息、行程信息、支付信息、提现记录、银行卡号、通讯记录、短信。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">匿名化处理后的信息,即通过对个人信息的技术处理,使得个人信息主体无法被识别,且处理后不能被复原的信息,匿名化处理的信息不属于个人信息。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”为实现本政策下述的各项功能,收集和使用您的个人信息:</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">（一）核心业务功能收集和使用您个人信息的情形“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”可能会收集、保存和使用下列与您有关的信息才能实现下述功能。如果您不提供相关信息,您可能无法正常使用“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="font-family:黑体-简; font-size:10.5pt"> </text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”服务中的特定功能,但不影响您使用“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="font-family:黑体-简; font-size:10.5pt"> </text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”服务中的其他功能,这些功能包括:</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1、您使用“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台服务前,需要在“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台创建账号,您需要提供以下信息(以下简称“账户信息”)</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1.1您的手机号、账号密码,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="font-family:黑体-简; font-size:10.5pt"> </text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将通过发送短信验证码来验证您的身份是否有效,并为您提供</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">换电</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">服务,如您拒绝提供手机号码,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台将无法为您创建账号并提供服务。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1.2您可以选择向我们提供照片、昵称、来完善相关的网络身份识别信息,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”收集这些信息是为了帮助您完成注册,为您提供更高效的“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”服务,如您拒绝提供上述信息,将不会影响您使用“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”服务。</text></view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2、在您使用“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”换电服务时,我们会收集您的以下信息:</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2.1在您首次使用换电服务前,您需要通过“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台绑定您租赁的电池的SN码,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将存储、记录您的上述租赁信息,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”收集上述信息是基于法律法规要求以及保护您的人身财产安全、处理用户纠纷之需要。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2.2身份信息,在您使用换电服务前必须提供您的身份证号码、姓名进行实名认证,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”收集上述信息是为了满足法律法规需求,保护您的人身财产安全以及满足平台对风险的把控,如您拒绝提供上述信息,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将无法为您提供相应服务。</text>
+  </view>
+  <view style="text-indent:15.75pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2.3紧急联系人,您需要手动输入紧急联系人的姓、手机号。“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”收集上述信息,是为了保护您的人身财产安全。</text>
+  </view>
+  <view style="text-indent:15.75pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2.4相机(摄像头),为实现向您提供“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”换电服务的基本功能,您可在开启相机权限,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="font-family:黑体-简; font-size:10.5pt"> </text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”通过您的相机扫描二维码,为您提供扫码换电服务。</text>
+  </view>
+  <view style="text-indent:15.75pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2.5录像信息,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”换电站点可能安装有换电柜视频记录仪等设备,您在“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”站点换电的过程中可能被录制信息。“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”保存上述信息,是基于法律法规的要求,用于用户发生纠纷或安全事故,或保障“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”资产安全,核实事实并处理投诉。</text>
+  </view>
+  <view style="text-indent:15.75pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt">3、</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">在您租用“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”电池开始骑行时,我们会收集您的以下信息:</text>
+  </view>
+  <view style="text-indent:15.75pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">3.1位置信息在您首次“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台前,我们会提示您选择是否允许“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台获取以及何种情况下可以获取您的位置信息</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">，</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">获得您的</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">允许</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">后,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”会通过</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">I</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">P地址、GPS以及能够提供相关信息的其他传感器来获取您的位置信息。</text>
+  </view>
+  <view style="text-indent:15.75pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">3</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">.2蓝牙,您将要开始使用</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">充换电</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">功能(例如:</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">电柜离线后</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">扫码</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">换电</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">、</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">扫码充电</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">)时,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”会在获得您的自主选择同意后,</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">通过手机蓝牙连接电柜以提供充换电服务。</text>
+  </view>
+  <view style="text-indent:15.75pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">3.3行程信息,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将通过记录用户行为收集您的出发地、到达地、行踪轨迹、时长及里程数信息。</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”收集上述信息,是基于法律法规要求以及保护您的人身财产安全、依照平台规则处理用户纠纷之需要。</text>
+  </view>
+  <view style="text-indent:15.75pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">地理位置信息属于个人敏感信息,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将尽最大的努力来保护您个人敏感信息的安全,如您拒绝提供该信息会使您无法使用上述功能。</text>
+  </view>
+  <view style="text-indent:15.75pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt">4、</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">支付</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">结算功能,您在“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台进行交易支</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">付</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">时,如果您使用第三方支付功能,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”除获取您的支付工具及订单支付状态外,不会获取其他个人信息。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(二)附加业务功能收集和使用您个人信息的情形</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">、如您参加“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”组织的运营活动时,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”需要您提供某些信息,包括但不限于您的姓名、照片、通讯地址、联系方式、银行卡号,您提供的此类信息以便“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”对活动结果进行公示,对活动进行后续宣传,与您取得联系,向您发放礼品或转账。如您拒绝提供此类信息,可能导致无法参加相应活动,或无法收到礼品、转账,但不会影响您使用“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台核心业务功能。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">、为开展数据分析和更好改善“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台服务,</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”{{appName}}</text><text
+      style="font-family:黑体-简; font-size:10.5pt"> </text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”会收集您的日志信息,包括检索内容、IP地址、设备信息、位置信息、订单信息,进行综合统计或算法分析,以便为您进行个性化推荐、展示或推送您可能感兴趣的信息,或提供更适合您的特定功能或服务。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(三)第三方服务收集和使用您个人信息的情形</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">您可以通过“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台使用第三方服务,您使用第三方服务过程中,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将收集您的必要个人信息(包括您提供的信息、系统记录的信息),并将其共享给提供服务的第三方,以使第三方能够为您提供相应服务。如您拒绝“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”收集此类信息,会导致您无法在“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台使用第三方服务,但不影响您使用“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台核心业务功能。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1、保险服务,您通过“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台使用保险服务时,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”会收集您的身份信息、车辆信息及订单信息将该信息共享给为您提供服务的第三方,以便第三方为您提供保险服务。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(四)征得授权同意的例外</text>
+  </view>
+  <view style="font-size:10.5pt;margin:0pt 0pt 14pt; text-align:justify; text-indent:42pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">您充分理解并同意,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”在以下情况下收集、使用您的个人信息无需通过您的授权同意,且“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”可能不会响应您提出的更正、修改、删除、注销信息的请求:</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1、与国家安全、国防安全有关的;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2、与公共安全、公共卫生、重大公共利益有关的;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">3、与犯罪侦查、起诉、审判和判决执行等司法或行政执法有关的;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">4、出于维护您或其他个人的生命、财产等重大合法权益的;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">5、所收集的个人信息是您自行向社会公众公开的;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">6、从合法公开披露的信息中获取个人信息的,如合法的新闻报道、政府信息公开等渠道;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">7、根据与您签订和履行相关协议或其他书面文件所必需的;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">8、用于维护所提供的产品或服务的安全稳定运行所必需的,例如发现、处置产品或服务故障的情形;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">9、为合法的新闻报道所必需的;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">10、根据您要求实现产品功能及服务所必需的;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">11、学术研究机构基于公共利益开展统计或学术研究所必要,且对外提供学术研究或描述的结果时,对结果中所包含的个人信息进行去标识化处理的;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">12、法律法规规定的其他情形。</text>
+  </view>
+  <view style="font-size:10.5pt;margin:0pt 0pt 14pt; text-align:justify; text-indent:31.5pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">您知悉,上述服务可能需要您</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">授权我们使用</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">您的位置信息(地理位置)、相机(摄像头)、相册(图片库)、麦克风(语音)、通讯录的访问权限、蓝牙,以实现这些权限所涉及信息的收集和使用。请您理解并同意,您开启任一权限即代表您授权我们可以收集和使用相关个人信息来为您提供对应服务,您一旦关闭任一权限即代表您取消了授权,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将不再基于对应权限继续收集和使用相关个人信息同时也无法为您提供该权限所对应的服务。但是,您关闭权限的决定不会影响此前基于您的授权所进行的信息收集和使用。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">二、对Cookie和同类技术的使用</text></view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">Cookie和同类技术是互联网中的通用常用技术。当您使用“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”服务时,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”可能会在您的计算机或移动设备上存储
+      Cookie、Flash Cookie,或浏览器(或关联应用程序)提供的其他通常包含标识符、站点名称以及一些号码和字符的本地存储(统“
+      Cookie”)。借助于Cookie,,网站能够存储您的偏好或购物车内的商品等数据。</text></view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”使用Cookie和同类技术以便“</text><text style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”可以更深入地了解和改善产品或服务,保障产品与服务的安全、高效运转。</text>
+  </view>
+  <view style="text-indent:26.25pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”可能会设置认证与保障安全性的cookie或匿名标识符,以确认您是否安全登录服务,或者是否遇到盗用、欺诈等不法行为。这些技术还会帮助“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”改进服务效率,提升登录和响应速度。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”承诺,不会将Cookie用于本政策所述目的之外的任何其他用途。</text></view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">三、我们如何存储个人信息</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">一</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">)信息存储的期限</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1、账号信息:在您使用“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台服务期间,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”会持续保存您的个人信息。当您申请注销账号,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将删除对应信息。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">、订单信息:当您使用“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”换电服务时,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”会根据您购买的换电套餐产生订单信息,以帮助您核对订单或者后续的客服服务</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">。</text></view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">3、</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">为配合人民检察院、公安机关、国家安全机关侦查用户使用“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”服务过程中产生的犯罪行为、更好保护其他用户生命财产安全,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将在刑法规定的犯罪追诉时效期间内,加密隔离存档用户个人信息;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">4、</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">如您使用“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”服务的过程中,存在严重违反法律法规、用户协议等情形,您的违法、违约记录及相应的平台信用记录,将被永久保存。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(二)信息存储的地点</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1、按照法律法规规定,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将境内运营过程中收集和产生的您的个人信息存储于</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">中国境</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">内。</text></view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2、“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”不存在向境外提供个人信息的场景。如将来涉及向境外传输个人信息,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将明确向您告知个人信息出境的目的、接收方、安全保障措施等情况,并另行征得您的同意。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">四、您的个人权利</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(一)访问您的个人信息</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">您有权访问您的个人信息,法律法规规定的例外情况外。如果您想行使数据访问权,可以通过以下方式自行访问:</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt">1、</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">账号信息:您可以通过查看个人中心,点击头像,查看您的头像、昵称、性别、生日、手机号码、二维码、实名认证、我的地址。</text>
+  </view>
+  <view style="font-size:10.5pt;margin:0pt 0pt 14pt; text-align:justify;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2、租赁订单:您可以在“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台访问您租赁的</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">电池</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">信息、订单信息及交易状态。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">3</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">、</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">我的</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">套餐:您可以通过“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台的查询您的换电套餐(生效的换电套餐、暂未生效的换电套餐)</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">4</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">、电池:您可以通过“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台查询您的电池SN码,并浏览电池租借须知。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(二)更正您的个人信息</text>
+  </view>
+  <view style="text-indent:15.75pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">您可以通过查看个人中心,点击头像</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">/设置</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">,查看或编辑您的头像、昵称</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">、修改手机号</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">。如您需要更正您在使用“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”服务过程中产生的其他个人信息,如修改手机号码、实名认证信息,您可以与客服联系</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">。</text></view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(三)删除您的个人信息</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">在以下情形中,您可以提出删除个人信息的请求:</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1、“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”处理个人信息的行为违反法律法规;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2、“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”收集、使用您的个人信息,却未征得您的同意;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">3、“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”处理个人信息的行为违反双方的约定;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">4、您不再使用“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”的产品或服务</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">；</text></view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">5、“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”不再为您提供产品或服务。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">四</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">)改变您授权同意的范围</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1、每个业务功能需要一些基本的个人信息才能得以完成(见本政策“一、个人信息的收集和使用”)。对于额外收集的个人信息的收集和使用,您可以随时给予或收回您的授权同意。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2、您可以在您的设备中设置或关闭相关权限(见本政策“一、个人信息的收集和使用”)改变您授权“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”继续收集个人信息的范围或撤回您的授权</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">3、当您收回同意后,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将不再处理相应的个人信息。但您收回同意的决定,不会影响此前基于您的授权而开展的个人信息处理。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">五</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">)投诉举报</text></view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">如果您认为您的个人信息权利可能受到侵害,或者发现侵害个人信息权利的线索,您可以通过【客服】,进入用户反馈界面与“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”联系。</text></view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">六</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">)访问隐私政策</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">您可以在注册页面,或者在登录个人账号【设置】</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">-</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">【隐私政策】查看本政策的全部内容。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">七</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">)停止运营向您告知权利</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1、当“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”的产品或服务发生停止运营的情形时,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将至少提前30个工作日在“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台发布公告,并及时停止收集个人信息。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2、停止运营后,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将停止对个人信息的商业化使用,并在满足法律法规规定的最短保存期后,对收集的个人信息进行删除或匿名化处理。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">五、我们如何保护您的个人信息</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">一</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">)“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将采用严格的安全制度以及行业通行的安全技术和程序来确保您的个人信息不丢失、泄露、毁损或被未经授权的访问、使用。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(二)“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”建立专门的管理制度、流程和组织以保障信息的安全。例如,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”严格按照工作职责分配数据访问权限,并与其相关人员签署保密协议,要求其遵守保密义务。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(三)“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”采取以下安全技术措施保护您的个人信息:</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1、用户个人信息被加密储存在服务器中,并通过数据隔离技术进行存储;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2、数据传输过程中使用加密传输;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">3、严格控制数据访问权限,设立完善的数据访问权限申请、审批制度;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">4、建立数据安全监控和审计制度,进行全面数据安全控制;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(四)您知悉并理解,即使“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”已采取了上述合理有效措施,并遵守了相关法律规定要求的标准,但不可能始终保证信息百分之百的安全,如因技术的限制以及可能存在的各种恶意手段,导致您的个人信息丢失、泄露、毁损或被未经授权的访问、使用,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将按照法律法规的要求,采取合理、有效的方式(如以推送通知、短信等形式告知您,难以逐一告知时,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”会采取合理、有效的方式发布公告)及时向您告知:安全事件的基本情况和可能的影响、“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”已采取或将要采取的处置措施、您可自主防范和降低风险的建议、对您的补救措施等。同时,我们还将按照相关监管部门要求,上报用户信息安全事件的处置情况。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(五)“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”在此特别提醒您,本政策提供的个人信息保护措施仅适用于“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”服务,一旦您离开“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”服务,浏览或使用“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台上可能含有的第三方网站、产品服务及内容资源,此类第三方网站、产品服务并不受本政策规制,该等第三方收集的信息须遵守第三方的隐私政策。“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”建议您审阅该等第三方的隐私政策,以了解并知悉他们的个人信息的收集、使用和披露程序。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">六、我们如何共享、转让、公开披露个人信息</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(一)共享</text></view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将遵守相关法律法规,对您的个人信息予以保密,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”不会向其他人共享您的个人信息,但以下情况除外</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1、“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”可能会根据法律法规规定、法律程序的要求或强制性的政府要求或司法裁判,对外共享您的个人信息。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2、您通过“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台使用第三方服务时,我们会在获得您明确同意后,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”会按照“一、个人信息的收集和使用”条款列明的共享内容与提供服务的第三方共享您的个人信息。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">3、为了提升“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”的产品及服务质量或向您提供全新的产品及服务,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”会在关联公司内部共享您的相关信息。我们只会共享必要的个人信息,且受本隐私政策中所声明目的的约束,如果我们共享您的个人敏感信息或关联公司改变个人信息的适用及处理目的,将再次征求您的授权同意。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">4、为维护用户合法权益,在协助处理与您有关的交易纠纷或争议时,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”可能向您的交易相对方或存在利害关系的第三方提供解决交易纠纷或争议所必需的信息。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">5、在法律要求或允许的范围内,为了保护社会公共利益、财产或安全而提供必要的信息。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">6、另行获得您的明确同意或授权。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(二)转让</text></view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”不会将您的个人信息转让给任何公司、组织和个人,但以下情况除外:</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1、在获取明确同意的情况下转让:获得您的明确同意后,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”会向其他方转让您的个人信息;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2、如“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”发生合并、收购或破产清算情形,或其他涉及合并、收购或破产清算情形时,如涉及到个人信息转让,“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”会要求新的持有您个人信息的公司、组织继续受本政策的约束,否则“</text><text
+      style="font-family:黑体-简; font-size:10.5pt">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将要求该公司、组织和个人重新向您征求授权同意。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(三)公开披露</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”仅会在以下情况下,公开披露您的个人信息:</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1、</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">事先获得您的明确同意或授权,或依照法律规定所必须,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”可能会公开披露您的个人信息;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2、</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">如您出现违反法律法规或严重违反“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台相关协议及规则的情况,或为保护“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台用户或公众的人身财产安全免遭侵害,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”可能依据法律法规或征得您同意的情况下披露关于您的个人信息,包括相关违规行为以及“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台已对您采取的措施。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(四)共享、转让、公开披露个人信息时事先征得授权同意的例外以下情形中,共享、转让、公开披露您的个人信息无需事先征得您的授权同意:</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1、与国家安全、国防安全有关的;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2、与公共安全、公共卫生、重大公共利益有关的;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">3、与犯罪侦查、起诉、审判和判决执行等司法或行政执法有关的;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">4、出于维护您或其他个人的生命、财产等重大合法权益但又很难得到本人同意的;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">5、您自行向社会公众公开的个人信息;</text>
+  </view>
+  <view style="text-indent:26.25pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">6、从合法公开披露的信息中收集个人信息的,如合法的新闻报道、政府信息公开等渠道。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">七、未成年人使用条款</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">（一</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">)未满18周岁的未成年人,在使用“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”服务前,应在您监护人监护、指导下共同阅读并同意本政策。如您的监护人不同意本政策的任何内容,您应该立即停止使用“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台。</text></view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">（</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">二)“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”根据国家相关法律法规的规定保护未成年人的个人信息,只会在法律允许、父母或其他监护人明确同意或保护未成年人所必要的情况下收集、使用、共享或披露未成年人的个人信息;如“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”发现在未事先获得可证实的监护人同意的情况下收集了未成年人的个人信息,则会尽快删除相关信息。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">八、隐私政策的修订和通知</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">（一）“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”有权修改本政策的任何条款,一旦本政策的内容发生变动,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将会直接在“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台上公布修改之后的内容,该公布行为视为“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”已经通知用户修改内容。同时“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”也可通过其他适当方式向用户提示修改内容。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(二)若您在“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”公布变更后的本政策后继续使用“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”服务,则表示您已充分阅读、理解并接受经该等修订后的本政策的全部内容,也将遵循该等内容使用本政策,如您不同意“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”对本政策相关条款所做的修改,您应当停止使用“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”服务。如您继续使用“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”服务,则视为您同意并接受“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”对本政策相关条款所做的修改。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(三)如“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”平台发生以下变化,“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”将及时对本政策进行相应的修订:</text>
+  </view>
+  <view style="font-size:10.5pt;margin:0pt 0pt 14pt; text-align:justify;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1、“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”的服务模式发生重大变化。如处理个人</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">信息的目的、处理的个人信息类型、个人信息的使用方式</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">等</text></view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2、“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”所有权结构、组织架构等方面发生重大变化。如业务调整、破产并购等引起的所有者变更等;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">3、个人信息共享、转让或公开披露的主要对象发生变化;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">4、您参与个人信息处理方面的权利及其行使方式发生重大变化;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">5、我们负责处理个人信息安全的责任部门、联络方式及投诉渠道发生变化时;</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">6、个人信息安全影响评估报告表明存在高风险时。</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">九、如何与我们联系</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt;"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">如您对本政策存在任何疑问,或对于您的个人信息处理存在任何投诉、意见,请通过以下渠道联系我们,我们将在15个工作日内回复您:</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">(</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">一</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">)客服咨询:“联系在线客服”</text>
+  </view>
+  <view style="text-indent:0pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt">(2)</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">拨打客服热线:</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">400-660-2839</text>
+  </view>
+  <view style="text-indent:0pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt">(3)</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">在客服中心点击意见反馈，进入意见反馈页面填写你的投诉/建议</text>
+  </view>
+  <view style="margin:0pt 0pt 10pt"><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">如您对“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”处理结果不满意,或您认为“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”的个人信息处理行为损害了您的合法权益,您可以向“</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text
+      style="color:#333333; font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”所在地有管辖权的人民法院提起诉讼。</text>
+  </view>
+
+</view>

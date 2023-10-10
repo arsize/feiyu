@@ -1,0 +1,18 @@
+<!--pages/myBuildCabit/myBuildCabit.wxml-->
+<view class="pageCont">
+    <image mode="widthFix" src="{{baseUrlImg+'banner_address@2x.png'}}" />
+    <view class="addrCont">
+        <view class="left">
+            希望安装地址
+        </view>
+        <view class="right" bindtap = "selectArea">
+            <text>{{currArea||'请选择'}}</text>
+            <image mode="widthFix" class="rightIcon" src="{{baseUrlImg + 'icon_list_more@2x.png'}}" />
+
+        </view>
+    </view>
+    <view class="botBtmFixLine130"></view>
+    <view class="botBtmFix">
+        <view class="btnBluelinear" bindtap="btmBtnFun">提交</view>
+    </view>
+</view>

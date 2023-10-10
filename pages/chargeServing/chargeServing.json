@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "订单信息",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#1A6EFF",
+  "usingComponents": {
+    "dialog": "../component/dialog/dialog"
+  }
+}

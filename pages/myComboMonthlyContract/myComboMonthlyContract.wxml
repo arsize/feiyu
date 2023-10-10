@@ -1,0 +1,89 @@
+<view class="pageCont">
+	<block wx:if="{{buyComboList && buyComboList.length > 0}}">
+		<block wx:for="{{buyComboList}}" wx:key="index" wx:if="{{item.type == 3}}">
+			<block wx:if="{{isfold?index < 3:true}}">
+				<view style="{{selectItem && selectItem.id == item.id?'border: 4rpx solid #1A6EFF;':''}}" class="comboItems" bindtap="selectcombo" data-item="{{item}}">
+					<view class="centline">
+						<view class="centerleft">
+							<view class="name">
+								{{item.name}}
+							</view>
+							<view class="rightblocks">
+								{{item.monthly}}元/次
+							</view>
+						</view>
+						<view class="centerright">
+							<text style="font-size: 30rpx;">({{item.contractPeriod}}期)</text>
+							<text style="font-size: 38rpx;">￥{{item.price}}</text>
+						</view>
+					</view>
+					<view class="bottomsub" wx:if="{{item.originalPrice}}">
+						￥{{item.originalPrice}}
+					</view>
+				</view>
+			</block>
+		</block>
+		<!-- 上拉 -->
+		<view wx:if="{{isfold&&buyComboList.length>3}}" class="viewMore" data-type="1" bindtap='viewMore'>
+			<text>查看更多</text>
+			<image mode="widthFix" class="laImage" src="{{baseUrlImg+'icon_cont_arrow01@2x.png'}}" />
+		</view>
+		<view wx:if="{{!isfold&&buyComboList.length>3}}" class="viewMore" data-type="2" bindtap='viewMore'>
+			<text>收起</text>
+			<image mode="widthFix" class="laImage" src="{{baseUrlImg+'Rectangle 27@2x.png'}}" />
+		</view>
+
+		<!-- 套餐说明 -->
+		<view class="noticeCont" style="margin-top:20rpx;">
+			<view class="title">
+				<text></text>
+				<text>套餐说明</text>
+				<text></text>
+			</view>
+			<view class="wrap">
+				<view class="item">
+					1、各城市套餐不通用，若更换城市需重新购买套餐；
+				</view>
+				<view class="item">
+					2、套餐有效期为1个自然月，每月1日生效并于每月最后一日24时到期(失效清零)；
+				</view>
+				<view class="item">
+					3、首次购买套餐时若当月剩余天数不足一个自然月时，按天计算当月的套餐剩余次数及金额。如9月20日购买12次/月的套餐，套餐价格为39元，则该套餐当月换电次数为(12÷30)X(30-20)≈4次，套餐费用为(39÷12)X4=13元。
+				</view>
+				<view class="item">
+					4、每月1日系统将自动从余额扣除套餐费用，退还电池后停止自动续费；
+				</view>
+				<view class="item">
+					5、套餐一旦购买成功，不支持更换或退款。
+				</view>
+
+			</view>
+		</view>
+		<view class="botBtmFixLinenow"></view>
+		<view class="topbotBtmFixSig">
+			<view>
+				本月套餐剩余次数：{{remainingTimes}}次
+			</view>
+			<view style="margin-left:50rpx;">
+				本月套餐应缴金额：{{buyComboMoney}}元
+			</view>
+		</view>
+
+		<view class="botBtmFixSig" style="box-shadow:none;">
+			<view class="money">
+				<text>{{buyComboMoney||'0.00'}}元</text>
+			</view>
+			<view class="payBtn" bindtap="checkPayFun">
+				去支付
+			</view>
+		</view>
+
+
+	</block>
+	<block wx:else>
+		<view class="noRecordCont">
+			<image mode="widthFix" class="laImage" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
+			<text>暂无可购买套餐</text>
+		</view>
+	</block>
+</view>

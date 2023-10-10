@@ -1,0 +1,63 @@
+<!-- pages/myDepositAgreement/myDepositAgreement.wxml -->
+<view class="pageContAgree">
+	<view style="font-size:16pt;margin:0pt 0pt 10pt; orphans:0; text-align:center; widows:0"><text
+            style="font-family:微软雅黑; font-size:16pt; font-weight:bold">绿色回收金说明</text></view>
+	<!-- <view style="font-size:16pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0"></view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0"><text
+            style="font-family:微软雅黑; font-size:10.5pt">尊敬的用户，为了保证您的合法权益，请您在缴纳电池绿色回收金之前务必仔细阅读本规定，当您</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">点击支付按钮</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">时，即视为您已经完全阅读和理解电池绿色回收金的相关规定，并同意按照本规定执行。</text></view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0"></view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0"><text
+            style="font-family:微软雅黑; font-size:10.5pt">电池绿色回收金是指用户在注册账户后为使用</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">充</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">换电服务、租用电池等所缴纳的一笔可退还的款项，其目的是为了激励用户合法、规范及文明地使用换电服务。电池绿色回收金不可用于消费，</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">我司会将在用户退</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">还租借的电池</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">后退回电池绿色回收金至用户账户</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">。</text></view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0"></view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0"><text
+            style="font-family:微软雅黑; font-size:10.5pt">用户应爱护租借的电池，并合理、正常、安全地使用。如在用户使用期间因用户使用或保管不善导致发生如电池遗失、被窃或毁坏及部分损坏等情况，我司将不予退还电池电池绿色回收金，同时用户还需对本公司进行电池成本差额的赔偿(电池成本差额=电池成本-不予退还的电池电池绿色回收金)。</text>
+    </view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0"></view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0"><text
+            style="font-family:微软雅黑; font-size:10.5pt">若</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">30天内消费低于20元，将会收取电池占用费19元，若持续两次且未缴纳电池占用费</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">，我们将会为用户办理电池清退手续。</text></view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0"></view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0"><text
+            style="font-family:微软雅黑; font-size:10.5pt">电池绿色回收金的缴纳:</text></view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0"><text
+            style="font-family:微软雅黑; font-size:10.5pt">您可以通过</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">“</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">{{appName}}</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">”</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">小程序选择微信钱包进行电池绿色回收金支付</text></view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0"></view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0"><text
+            style="font-family:微软雅黑; font-size:10.5pt">电池绿色回收金的退还：</text></view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0"><text
+            style="font-family:微软雅黑; font-size:10.5pt">如果您不再需要换电服务，请先将</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">租借的</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">电池退回</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">至</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">指定的线下服务门店</text><text
+            style="font-family:微软雅黑; font-size:10.5pt">。</text></view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0"><text
+            style="font-family:微软雅黑; font-size:10.5pt; font-weight:normal">在您成功归还电池后，我司工作人员会立即为您办理退款手续，但退款到账时间会根据您选择的支付方式所对应的银行或第三方支付的处理流程不同而有所差别。通常情况下，退款到账需要2~7个工作日。</text>
+    </view> -->
+	<view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">尊敬的用户（以下称您），为了保证您的合法权益，请您在缴纳电池绿色回收金之前务必仔细阅读本规定，当您点击支付按钮时，即视为您已经完全阅读和理解电池绿色回收金的相关规定，并同意按照本规定执行。</view>
+
+	<view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">电池绿色回收金是指您在注册账户后为使用换电服务、租用电池等所缴纳的一笔可退还的款项，其目的是为了激励您合法、规范及文明地使用换电服务。电池绿色回收金不可用于消费，我司会在您退还租借的电池后将绿色回收金退回至您账户。</view>
+
+	<view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">同时，您谅解并理解，鉴于绿色回收金是使用换电服务的前提条件之一，如您选择退还电池及电池绿色回收金，将无法继续使用换电的服务；同时，账户内的优惠券以及套餐内的剩余换电次数，也将在电池成功退还后自动被清零。</view>
+
+	<view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">您清楚并知悉，为使用电池而单独缴纳的绿色回收金，金额标准由我司制定。无论如何，电池所有权(包括所有权及知识产权等)归属于我司，您在租赁使用期间，不得对电池进行进行出卖、出租或设定权利等任何处置。</view>
+
+	<view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">您应爱护租借的电池，并合理、正常、安全地使用。如在使用期间因您使用或保管不善导致发生如电池遗失、被窃或毁坏及部分损坏等情况，您应当按照电池成本价向我们进行賠偿。上述补偿额不足以弥补甲方司损失的，甲方有权要求乙方予以赔偿以弥补损失，同时我们有权将绿色回收金直接抵作賠偿金。</view>
+
+	<view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">电池绿色回收金的缴纳: 您可以通过“司马出行”小程序/APP选择微信钱包或支付宝进行电池绿色回收金支付。</view>
+
+	<view style="font-size:10.5pt;margin:0pt 0pt 10pt; orphans:0; text-align:justify; widows:0">电池绿色回收金的退还： 如果您不再需要换电服务，请先将租借的电池退回至指定的线下服务门店。 在您成功归还电池后，我司工作人员会立即为您办理退款手续，退款到账时间会根据您选择的支付方式所对应的银行或第三方支付的处理流程不同而有所差别。通常情况下，退款到账需要2~7个工作日。</view>
+</view>

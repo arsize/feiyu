@@ -1,0 +1,12 @@
+<view class="registeredPre">
+	<image class="elephimg" style="width:149rpx;height:160rpx;" src="{{baseUrlImg + 'img_elephant@2x.png'}}" />
+	<view class="elephtext">
+		欢迎使用{{appName}}
+	</view>
+	<view class="subelephtext">
+		授权后将为你提供更好的服务
+	</view>
+	<button class="souquanbtn" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+		<view class="shouquantext">立即授权</view>
+	</button>
+</view>

@@ -1,0 +1,135 @@
+page {
+  background: #f6f6f8;
+}
+
+.pageCont {
+  width: 100%;
+  background: #fff;
+  padding-bottom: 80rpx;
+}
+
+.pageCont .noteDe {
+  height: 104rpx;
+  width: 90%;
+  margin: 0 auto;
+  color: #999;
+  font: 500 28rpx "PingFangSC-Medium";
+  line-height: 104rpx;
+}
+
+.pageCont .numDe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120rpx;
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #999;
+}
+
+.pageCont .numDe view:nth-child(1) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.pageCont .numDe view:nth-child(1) text {
+  color: #333;
+  font: 500 32rpx "PingFangSC-Medium";
+}
+
+.pageCont .numDe view:nth-child(1) input {
+  width: 240rpx;
+  height: 60rpx;
+  color: #1a6eff;
+  font: 500 32rpx "PingFangSC-Medium";
+}
+
+.pageCont .numDe view:nth-child(2) {
+  color: #999;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.pageCont .selectDe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+  padding-top: 64rpx;
+  margin: 0 auto;
+  /* padding: 64rpx 0 32rpx 0; */
+  /* border-bottom: 1rpx solid #eee; */
+}
+
+.pageCont .selectDe .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30.5%;
+  height: 168rpx;
+  margin-bottom: 28rpx;
+  color: #1a6eff;
+  border-radius: 8rpx;
+  border: 2rpx solid #166CFF;
+  box-sizing: border-box;
+}
+
+.pageCont .selectDe .item text:nth-child(1) {
+  margin-bottom: 8rpx;
+
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.pageCont .selectDe .item text:nth-child(2) {
+  color: #999;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.active {
+  color: #fff !important;
+  background: #1A6EFF;
+}
+
+
+
+.botBtnDe {
+  position: fixed;
+  left: 0;
+  bottom: 130rpx;
+  width: 100%;
+}
+
+.botBtnDe .protocol {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.botBtnDe .protocol view:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botBtnDe .protocol view:nth-child(1) image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 16rpx;
+}
+
+.botBtnDe .protocol view:nth-child(1) text {
+  color: #1a6eff;
+  font: 500 26rpx "PingFangSC-Medium";
+}
+
+.botBtnDe .protocol view:nth-child(1) text:nth-child(2) {
+  color: #666;
+}
+
+.botBtnDe .protocol view:nth-child(2) {
+  margin: 16rpx 0;
+  color: #999;
+  font: 500 26rpx "PingFangSC-Medium";
+  text-align: center;
+}

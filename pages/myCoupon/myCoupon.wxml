@@ -1,0 +1,33 @@
+<!--pages/myCoupon/myCoupon.wxml-->
+<view class="pageCont">
+
+  <view wx:if="{{recordList.length>0&&isRequest}}" class="voucher" wx:for="{{recordList}}" wx:key="index">
+    <view class="item">
+      <view class="leftCont">
+        <text>{{item.freeFee}}</text>
+        <text>元</text>
+      </view>
+      <view class="rightCont">
+        <view class="note" style="{{item.validType==0?'margin-bottom:40rpx;':''}}">
+          <text>仅限购车</text>
+          <text style="margin-left: 20rpx;" wx:if="{{item.validType==0}}">永久有效</text>
+
+        </view>
+        <view wx:if="{{item.validType==1}}" class="note" style="margin:0;">
+          <text style="font-size:24rpx;">有效期：{{item.validStartTime}}--{{item.validEndTime}}</text>
+        </view>
+        <view class="title">
+          {{item.title}}
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="noRecordCont" wx:if="{{recordList.length==0&&isRequest}}">
+    <image class="laImage" mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus02@2x.png'}}" />
+    <text>暂无优惠券</text>
+  </view>
+
+
+</view>

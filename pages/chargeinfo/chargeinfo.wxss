@@ -1,0 +1,430 @@
+page {
+  background-color: #f5f5f5;
+}
+.chargeinfo {
+  width: 100%;
+}
+.chargeinfo .topInfo {
+  width: 100%;
+  height: 144rpx;
+  padding: 32rpx;
+  box-sizing: border-box;
+  background-color: white;
+  margin-bottom: 24rpx;
+}
+.chargeinfo .topInfo .cabinetName {
+  font-size: 32rpx;
+  color: #000000;
+  line-height: 48rpx;
+  font-weight: bold;
+}
+.chargeinfo .topInfo .item {
+  margin-top: 6rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999999;
+}
+.chargeinfo .centerChargeBox {
+  width: 100%;
+  background-color: white;
+  padding: 32rpx;
+  box-sizing: border-box;
+  margin-bottom: 24rpx;
+}
+.chargeinfo .centerChargeBox .topLine {
+  width: 100%;
+  height: 45rpx;
+  display: flex;
+  margin-bottom: 25rpx;
+  align-items: center;
+}
+.chargeinfo .centerChargeBox .topLine .title {
+  font-size: 32rpx;
+  color: #000000;
+  font-weight: bold;
+  line-height: 48rpx;
+}
+.chargeinfo .centerChargeBox .topLine .subtitle {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #999999;
+}
+.chargeinfo .centerChargeBox .cabinetShow {
+  width: 100%;
+  display: flex;
+}
+.chargeinfo .centerChargeBox .cabinetShow .leftCabinet,
+.chargeinfo .centerChargeBox .cabinetShow .rightCabinet {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chargeinfo .centerChargeBox .cabinetShow .leftCabinet .text,
+.chargeinfo .centerChargeBox .cabinetShow .rightCabinet .text {
+  font-size: 24rpx;
+  color: #cccccc;
+  margin-bottom: 18rpx;
+}
+.chargeinfo .centerChargeBox .cabinetShow .leftCabinet .chargport,
+.chargeinfo .centerChargeBox .cabinetShow .rightCabinet .chargport {
+  width: 320rpx;
+  height: 114rpx;
+  border-radius: 8rpx;
+  background-color: #fafafa;
+  margin-bottom: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chargeinfo
+  .centerChargeBox
+  .cabinetShow
+  .leftCabinet
+  .chargport
+  .chargPortCenter,
+.chargeinfo
+  .centerChargeBox
+  .cabinetShow
+  .rightCabinet
+  .chargport
+  .chargPortCenter {
+  width: 100%;
+  padding: 0 60rpx;
+  box-sizing: border-box;
+  height: 114rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.chargeinfo
+  .centerChargeBox
+  .cabinetShow
+  .leftCabinet
+  .chargport
+  .chargPortCenter
+  .text,
+.chargeinfo
+  .centerChargeBox
+  .cabinetShow
+  .rightCabinet
+  .chargport
+  .chargPortCenter
+  .text {
+  font-size: 28rpx;
+  color: #166cff;
+  line-height: 28rpx;
+  margin-bottom: 0;
+}
+.positionnum {
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  width: 10rpx;
+  height: 10rpx;
+  padding: 10rpx;
+  border-radius: 4rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333333;
+  font-size: 28rpx;
+}
+.chargeinfo .selectChargingTime {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  padding: 32rpx;
+}
+.chargeinfo .selectChargingTime .topLine {
+  width: 100%;
+  height: 45rpx;
+  display: flex;
+  margin-bottom: 25rpx;
+  align-items: center;
+}
+.chargeinfo .selectChargingTime .topLine .title {
+  font-size: 32rpx;
+  color: #000000;
+  font-weight: bold;
+  line-height: 48rpx;
+}
+.chargeinfo .selectChargingTime .topLine .subtitle {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #999999;
+}
+.chargeinfo .selectChargingTime .selectTimePlant {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.chargeinfo .selectChargingTime .selectTimePlant .timeItem {
+  width: 156rpx;
+  height: 73rpx;
+  background-color: white;
+  border: 1rpx solid #166cff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8rpx;
+  color: #166cff;
+  margin-bottom: 20rpx;
+  font-size: 25rpx;
+}
+.balanceLine {
+  position: absolute;
+  bottom: 100rpx;
+  width: 90%;
+  height: 120rpx;
+  padding: 0 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.indexBlank3 {
+  width: 100%;
+  height: 150rpx;
+}
+.balanceLine .balanceRight {
+  display: flex;
+  font-size: 32rpx;
+  align-items: center;
+}
+.totalbottom {
+  width: 100%;
+  height: 112rpx;
+  position: absolute;
+  bottom: 0;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: white;
+  padding: 0 32rpx;
+}
+.totalbottom .left {
+  color: #ff5532;
+  font-weight: bold;
+}
+.totalbottom .right {
+  position: relative;
+  width: 280rpx;
+  height: 90rpx;
+  border-radius: 44rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.totalbottom .right .img {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+.totalbottom .right .text {
+  position: absolute;
+  z-index: 200;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.popTop {
+  width: 100%;
+  padding: 40rpx;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.popLogBody {
+  padding: 0 40rpx;
+  font-size: 28rpx;
+  color: #666666;
+}
+.waiscroll {
+  width: 100%;
+  height: 90vh;
+  overflow-y: scroll;
+}
+.waiscroll .indexBlank2 {
+  width: 100%;
+  height: 123rpx;
+}
+.popFoot {
+  width: 100%;
+  height: 140rpx;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popFoot .text {
+  width: 400rpx;
+  height: 88rpx;
+  background: linear-gradient(
+    270deg,
+    rgba(65, 190, 255, 1) 0%,
+    rgba(26, 110, 255, 1) 100%
+  );
+  box-shadow: 0rpx 4rpx 6rpx 0rpx rgba(27, 112, 255, 0.25);
+  border-radius: 44rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.dialogconfirm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 640rpx;
+  border-radius: 16rpx;
+  background-color: white;
+  z-index: 5000;
+}
+.dialogconfirm .closedialog {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+.dialogconfirm .dialogTop {
+  width: 100%;
+  height: 100rpx;
+  background-color: #fbfbfb;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dialogconfirm .dialogBody2 {
+  width: 100%;
+  height: 200rpx;
+  padding: 30rpx;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  color: #666666;
+  justify-content: center;
+  align-items: center;
+}
+.dialogconfirm .dialogBody {
+  width: 100%;
+  height: 200rpx;
+  padding: 30rpx;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  color: #666666;
+  justify-content: center;
+  align-items: center;
+}
+.dialogconfirm .dialogFoot {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 35rpx;
+  box-sizing: border-box;
+  padding-bottom: 50rpx;
+}
+.dialogconfirm .dialogFoot .item0 {
+  width: 400rpx;
+  height: 88rpx;
+  margin-bottom: 40rpx;
+  background: linear-gradient(
+    270deg,
+    rgba(65, 190, 255, 1) 0%,
+    rgba(26, 110, 255, 1) 100%
+  );
+  box-shadow: 0rpx 4rpx 6rpx 0rpx rgba(27, 112, 255, 0.25);
+  border-radius: 44rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.dialogconfirm .dialogFoot .item0 .btnbar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 44rpx;
+}
+.dialogconfirm .dialogFoot .item0 .text {
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1500;
+}
+.dialogconfirm .dialogFoot .subText {
+  color: #166cff;
+  font-size: 28rpx;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  text-align: center;
+}
+.dialogconfirm .dialogFoot .item2 {
+  width: 50%;
+  position: relative;
+}
+.dialogconfirm .dialogFoot .item2 .btnbar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 260rpx;
+  height: 90rpx;
+}
+.dialogconfirm .dialogFoot .item2 .text {
+  color: white;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  z-index: 1500;
+  top: 50%;
+  left: 50%;
+  font-size: 28rpx;
+  transform: translate(-50%, -50%);
+}
+.dialogconfirm .dialogFoot .item1 {
+  width: 245rpx;
+  height: 72rpx;
+  border-radius: 44rpx;
+  border: 2rpx solid #1a6eff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rpx;
+}
+.dialogconfirm .dialogFoot .item1 .text {
+  color: #1a6eff;
+  font-size: 28rpx;
+}
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #000;
+  z-index: 4000;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+.show {
+  display: block;
+}
+.noshow {
+  display: none;
+}

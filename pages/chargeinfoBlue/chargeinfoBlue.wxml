@@ -1,0 +1,233 @@
+<van-notice-bar text="蓝牙充换电服务中，为提供正常服务请保持屏幕常亮" color="#FFFFFF" backgroundColor="#000000" left-icon="info-o" />
+<view class="waiscroll">
+    <view class="chargeinfo">
+        <view class="topInfo">
+            <view class="cabinetName">{{cabinetinfo.cabinetName}}</view>
+            <view class="item">
+                <image mode="widthFix" style="width:30rpx;height:30rpx;" src="{{baseUrlImg+'icon_cont_id@2x.png'}}" />
+                <view style="margin-left:10rpx;font-size:24rpx;">{{cabinetinfo.cabinetDid}}</view>
+                <view style="margin-left:20rpx;font-size:24rpx;">限定功率≤260W</view>
+            </view>
+        </view>
+        <view class="centerChargeBox">
+            <view wx:if="{{!selectChargPort}}" class="topLine">
+                <image style="width:30rpx;height:30rpx;margin-right:10rpx;" src="{{baseUrlImg + 'lottdot.gif'}}" />
+                <view class="title">选择充电口</view>
+                <view class="subtitle">（请先将充电器插入可充电插座）</view>
+            </view>
+            <view wx:else class="topLine">
+                <view style="width:16rpx;height:16rpx;border-radius: 16rpx;margin-right:10rpx;background-color: #166CFF;"></view>
+                <view class="title">选择充电口</view>
+                <view class="subtitle">（请先将充电器插入可充电插座）</view>
+            </view>
+            <view class="cabinetShow">
+                <view class="leftCabinet">
+                    <view class="text">左侧</view>
+                    <view class="chargport">
+                        <view bind:tap="selectChargPort" data-set="5" style="{{selectChargPort == 5?'background-color: #166CFF;border: 1rpx solid #166cff;border-radius: 8rpx;color:white;':'background-color: white;border: 1rpx solid #166cff;border-radius: 8rpx;'}}" wx:if="{{cabinetBoxPortInfoList[0].chargeStatus == 0}}" class="chargPortCenter">
+                            <view class="positionnum" style="{{selectChargPort == 5?'color:#ffffff;':'color:#166cff;'}}">
+                                5
+                            </view>
+                            <image wx:if="{{selectChargPort == 5}}" mode="widthFix" style="margin-top:20rpx;width:70rpx;height:70rpx;" src="{{baseUrlImg+'img_charge03@2x.png'}}" />
+                            <image wx:else mode="widthFix" style="width:70rpx;height:70rpx;" src="{{baseUrlImg+'new_icon_cont_cz01@2x.png'}}" />
+                            <view class="text" style="{{selectChargPort == 5?'color:#ffffff;':'color:#166cff;'}}">
+                                可充电
+                            </view>
+                        </view>
+                        <view wx:elif="{{cabinetBoxPortInfoList[0].chargeStatus == 1}}" class="chargPortCenter">
+                            <view class="positionnum" style="color:#999999;">5</view>
+                            <image mode="widthFix" style="width:70rpx;height:70rpx;" src="{{baseUrlImg+'img_charge02@2x.png'}}" />
+                            <view class="text" style="color:#999999;">充电中</view>
+                        </view>
+                        <view wx:elif="{{cabinetBoxPortInfoList[0].chargeStatus == 3}}" class="chargPortCenter">
+                            <view class="positionnum" style="color:#999999;">5</view>
+                            <image mode="widthFix" style="width:70rpx;height:70rpx;" src="{{baseUrlImg+'img_charge04@2x.png'}}" />
+                            <view class="text" style="color:#999999;">禁用</view>
+                        </view>
+                    </view>
+                    <view class="chargport">
+                        <view bind:tap="selectChargPort" data-set="6" wx:if="{{cabinetBoxPortInfoList[1].chargeStatus == 0}}" class="chargPortCenter" style="{{selectChargPort == 6?'color:white;background-color: #166CFF;border: 1rpx solid #166cff;border-radius: 8rpx;':'background-color: white;border: 1rpx solid #166cff;border-radius: 8rpx;'}}">
+                            <view class="positionnum" style="{{selectChargPort == 6?'color:#ffffff;':'color:#166cff;'}}">
+                                6
+                            </view>
+                            <image wx:if="{{selectChargPort == 6}}" mode="widthFix" style="margin-top:20rpx;width:70rpx;height:70rpx;" src="{{baseUrlImg +'img_charge03@2x.png'}}" />
+                            <image wx:else mode="widthFix" style="width:70rpx;height:70rpx;" src="{{baseUrlImg+'new_icon_cont_cz01@2x.png'}}" />
+                            <view class="text" style="{{selectChargPort == 6?'color:#ffffff;':'color:#166cff;'}}">
+                                可充电
+                            </view>
+                        </view>
+                        <view wx:elif="{{cabinetBoxPortInfoList[1].chargeStatus == 1}}" class="chargPortCenter">
+                            <view class="positionnum" style="color:#999999;">6</view>
+                            <image mode="widthFix" style="width:70rpx;height:70rpx;" src="{{baseUrlImg+'img_charge02@2x.png'}}" />
+                            <view class="text" style="color:#999999;">充电中</view>
+                        </view>
+                        <view wx:elif="{{cabinetBoxPortInfoList[1].chargeStatus == 3}}" class="chargPortCenter">
+                            <view class="positionnum" style="color:#999999;">6</view>
+                            <image mode="widthFix" style="width:70rpx;height:70rpx;" src="{{baseUrlImg+'img_charge04@2x.png'}}" />
+                            <view class="text" style="color:#999999;">禁用</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="rightCabinet">
+                    <view class="text">右侧</view>
+                    <view class="chargport">
+                        <view bind:tap="selectChargPort" data-set="7" wx:if="{{cabinetBoxPortInfoList[2].chargeStatus == 0}}" class="chargPortCenter" style="{{selectChargPort == 7?'color:white;background-color: #166CFF;border: 1rpx solid #166cff;border-radius: 8rpx;':'background-color: white;border: 1rpx solid #166cff;border-radius: 8rpx;'}}">
+                            <view class="positionnum" style="color:#166cff;" style="{{selectChargPort == 7?'color:#ffffff;':'color:#166cff;'}}">
+                                7
+                            </view>
+                            <image wx:if="{{selectChargPort == 7}}" mode="widthFix" style="margin-top:20rpx;width:70rpx;height:70rpx;" src="{{baseUrlImg+'img_charge03@2x.png'}}" />
+                            <image wx:else mode="widthFix" style="width:70rpx;height:70rpx;" src="{{baseUrlImg+'new_icon_cont_cz01@2x.png'}}" />
+                            <view class="text" style="{{selectChargPort == 7?'color:#ffffff;':'color:#166cff;'}}">
+                                可充电
+                            </view>
+                        </view>
+                        <view wx:elif="{{cabinetBoxPortInfoList[2].chargeStatus == 1}}" class="chargPortCenter">
+                            <view class="positionnum" style="color:#999999;">7</view>
+                            <image mode="widthFix" style="width:70rpx;height:70rpx;" src="{{baseUrlImg+'img_charge02@2x.png'}}" />
+                            <view class="text" style="color:#999999;">充电中</view>
+                        </view>
+                        <view wx:elif="{{cabinetBoxPortInfoList[2].chargeStatus == 3}}" class="chargPortCenter">
+                            <view class="positionnum" style="color:#999999;">7</view>
+                            <image mode="widthFix" style="width:70rpx;height:70rpx;" src="{{baseUrlImg+'img_charge04@2x.png'}}" />
+                            <view class="text" style="color:#999999;">禁用</view>
+                        </view>
+                    </view>
+                    <view class="chargport">
+                        <view bind:tap="selectChargPort" data-set="8" wx:if="{{cabinetBoxPortInfoList[3].chargeStatus == 0}}" class="chargPortCenter" style="{{selectChargPort == 8?'color:white;background-color: #166CFF;border: 1rpx solid #166cff;border-radius: 8rpx;':'background-color: white;border: 1rpx solid #166cff;border-radius: 8rpx;'}}">
+                            <view class="positionnum" style="{{selectChargPort == 8?'color:#ffffff;':'color:#166cff;'}}">
+                                8
+                            </view>
+                            <image wx:if="{{selectChargPort == 8}}" mode="widthFix" style="margin-top:20rpx;width:70rpx;height:70rpx;" src="{{baseUrlImg+'img_charge03@2x.png'}}" />
+                            <image wx:else mode="widthFix" style="width:70rpx;height:70rpx;" src="{{baseUrlImg+'new_icon_cont_cz01@2x.png'}}" />
+                            <view class="text" style="{{selectChargPort == 8?'color:#ffffff;':'color:#166cff;'}}">
+                                可充电
+                            </view>
+                        </view>
+                        <view wx:elif="{{cabinetBoxPortInfoList[3].chargeStatus == 1}}" class="chargPortCenter">
+                            <view class="positionnum" style="color:#999999;">8</view>
+                            <image mode="widthFix" style="width:70rpx;height:70rpx;" src="{{baseUrlImg+'img_charge02@2x.png'}}" />
+                            <view class="text" style="color:#999999;">充电中</view>
+                        </view>
+                        <view wx:elif="{{cabinetBoxPortInfoList[3].chargeStatus == 3}}" class="chargPortCenter">
+                            <view class="positionnum" style="color:#999999;">8</view>
+                            <image mode="widthFix" style="width:70rpx;height:70rpx;" src="{{baseUrlImg+'img_charge04@2x.png'}}" />
+                            <view class="text" style="color:#999999;">禁用</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="selectChargingTime">
+            <view class="topLine">
+                <view style="width:16rpx;height:16rpx;border-radius: 16rpx;margin-right:10rpx;background-color: #166CFF;"></view>
+                <view class="title">选择充电时间</view>
+                <view class="subtitle">
+                    （{{chargingFee.moneyPerHours}}元/{{chargingFee.unit}}分钟，{{chargingFee.topMoney}}元封顶）
+                </view>
+            </view>
+            <view class="selectTimePlant">
+                <view style="{{selectTime==item?'background-color:#1A6EFF;color:white;':''}}" bindtap="selectTime" class="timeItem" wx:for="{{chargingTime}}" wx:key="index" data-item="{{item}}" data-index="{{index}}">
+                    <text wx:if="{{item == -1}}">充满自停</text>
+                    <text wx:else>{{item}}小时</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="balanceLine">
+        <block wx:if="{{cabinetinfo.userResearch}}">
+            <view wx:if="{{!cabinetinfo.userResearch.hasItBeenTried}}">
+                <image mode="widthFix" style="width:272rpx;height:90rpx;" src="{{baseUrlImg + 'tag_free@2x.png'}}" />
+            </view>
+            <view wx:else></view>
+        </block>
+        <block wx:else>
+            <image bind:tap="gotoresearch" mode="widthFix" style="width:197rpx;height:56rpx;" src="{{baseUrlImg + 'tag_active@2x.png'}}" />
+        </block>
+        <view class="balanceRight">
+            <view style="margin-right:15rpx;display: flex;">
+                <view>余额：</view>
+                <view style="margin:0 10rpx;margin-left:0;">
+                    ￥{{cabinetinfo.money?cabinetinfo.money:0}}
+                </view>
+            </view>
+            <view bind:tap="gotobalance" style="color:#166CFF;display: flex;align-items: center;">
+                充值
+                <image style="width:25rpx;height:25rpx;margin-left:5rpx;" src="{{baseUrlImg + 'icon_list_more03@2x.png'}}" />
+            </view>
+        </view>
+    </view>
+    <view class="indexBlank2"></view>
+</view>
+<view class="totalbottom">
+    <view class="left" style="display:flex;align-items: center;">
+        <block wx:if="{{cabinetinfo.userResearch}}">
+            <block wx:if="{{!cabinetinfo.userResearch.hasItBeenTried}}">
+                <view>{{'0.00 元'}}</view>
+            </block>
+            <block wx:else>
+                <view wx:if="{{selectTime == -1 }}">{{chargingFee.topMoney?chargingFee.topMoney+'元':'--' + '元'}}</view>
+                <view wx:else>
+                    {{totalMoney > chargingFee.topMoney?chargingFee.topMoney:totalMoney}}元
+                </view>
+            </block>
+        </block>
+        <block wx:else>
+            <view wx:if="{{selectTime == -1 }}">{{chargingFee.topMoney?chargingFee.topMoney+'元':'--' + '元'}}</view>
+            <view wx:else>
+                {{totalMoney > chargingFee.topMoney?chargingFee.topMoney:totalMoney}}元
+            </view>
+        </block>
+        <image catchtap="openInfo" mode="widthFix" style="width:40rpx;height:40rpx;margin-left:10rpx;padding-left:10rpx;padding:right:10rpx;" src="{{baseUrlImg + 'icon_cont_wenhao@2x.png'}}" />
+    </view>
+    <view class="right" wx:if="{{canBtn}}" bind:tap="gofororder">
+        <image class="img" style="width:100%;height:100%;" src="{{baseUrlImg + 'btn_small@2x.png'}}" />
+        <view class="text" style="width:100%;text-align: center;top: 46%;">立即充电</view>
+    </view>
+    <view class="right" wx:else style="opacity: 0.5;" bind:tap="checkgofororder">
+        <image class="img" style="width:100%;height:100%;" src="{{baseUrlImg + 'btn_small@2x.png'}}" />
+        <view class="text" style="width:100%;text-align: center;top: 46%;">立即充电</view>
+    </view>
+</view>
+<!-- pop 须知 -->
+<van-popup show="{{ chargeinfolog }}" close-on-click-overlay round position="bottom" custom-style="height: 57%;" bind:close="onClosechargeInfolog">
+    <view class="popTop">
+        <view style="font-size:32rpx;color:#000000;font-weight:bold;">充电须知</view>
+        <view style="display:flex;align-items:center;">
+            <view style="margin-right:20rpx;">下次不再提示</view>
+            <switch checked="{{chargelogChecked}}" bindchange="chargelogChange" />
+        </view>
+    </view>
+    <view class="popLogBody">
+        <view style="margin-bottom:5rpx;">
+            1、充电计费：{{chargingFee.moneyPerHours}}元/{{chargingFee.unit}}分钟（不足{{chargingFee.unit}}分钟按{{chargingFee.unit}}分钟计算，{{chargingFee.topMoney}}元封顶）；
+        </view>
+        <view style="margin-bottom:5rpx;">
+            2、充电先按购买时长进行扣费，充满自停扣除封顶金额{{chargingFee.topMoney}}元，充电完成后按实际时长收费，未使用的金额将自动退还；
+        </view>
+        <view style="margin-bottom:5rpx;">3、最长充电时间为{{chargingFee.topChargingTimeHour}}小时；</view>
+        <view style="margin-bottom:5rpx;">4、120秒内取消充电，不收取任何费用；</view>
+        <view style="margin-bottom:5rpx;color:#27C273;">
+            5、由于电池过充易导致电池性能不可逆损坏，为电池寿命和安全起见，充满电量最高为90%～99%。
+        </view>
+        <view style="margin-bottom:5rpx;color:#27C273;">
+            6、使用劣质充电器或电池容易引发安全事故，请使用原装充电器，养成安全充电好习惯。
+        </view>
+    </view>
+    <view class="popFoot" bind:tap="onClosechargeInfolog">
+        <view class="text">我知道了</view>
+    </view>
+</van-popup>
+<dialog></dialog>
+<view class="dialogconfirm" wx:if="{{balancestatus}}">
+    <view class="closedialog" bind:tap="closedialogconfirm">
+        <image class="imgclose" style="width:30rpx;height:30rpx;" src="{{baseUrlImg + 'icon_cancel@2x.png'}}" />
+    </view>
+    <view class="dialogTop">温馨提示</view>
+    <view class="dialogBody">余额不足，请充值后使用</view>
+    <view class="dialogFoot" style="flex-direction: column;">
+        <view class="item0" bind:tap="gotobalance">
+            <view class="text">立即充值</view>
+        </view>
+    </view>
+</view>
+<view bind:tap="closeMask" class="mask {{balancestatus?'show':'noshow'}}"></view>

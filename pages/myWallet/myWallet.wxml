@@ -1,0 +1,43 @@
+<!-- pages/myWallet/myWallet.wxml -->
+<view class="pagecont">
+    <view class="balance">
+        <image mode="widthFix" src="{{baseUrlImg+'v2icon_cont_wallet@2x.png'}}" />
+        <view class="wrap">
+            <text style="opacity: 0.7;">当前余额（元）</text>
+            <text>{{infoData.money||'0.00'}}</text>
+        </view>
+        <view class="money" bindtap="joinRecharge">去充值</view>
+        <view class="bottomLine">
+            <view class="left">
+                <view class="text">充值本金（元）</view>
+                <view class="val">{{infoData.principalMoney || '0.00'}}</view>
+            </view>
+            <view class="right">
+                <view class="text">赠送金额（元）</view>
+                <view class="val">{{infoData.additionalMoney || '0.00'}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="balanceNote">温馨提示：充值余额不可退，不可用于缴纳绿色回收金。</view>
+    <view class="balanceItem">
+        <view class="item" wx:for="{{menuList}}" wx:key="index" data-item="{{item}}" data-index="{{index}}"
+            bindtap="joinPage">
+            <view class="left">
+                <image mode="widthFix" src="{{item.img}}" />
+                <view>{{item.title}}</view>
+            </view>
+            <view class="right">
+                <!-- depositType -1（未缴纳）、0（已经缴纳）、1（正在退回绿色回收金）、2（绿色回收金已退回） -->
+                <text
+                    wx:if="{{index==0}}">{{infoData.depositType==-1||infoData.depositType==2?'未缴纳':infoData.depositType==0?infoData.depositMoney+'元':infoData.depositType==1?'退回中':''}}
+                </text>
+                <image wx:if="{{index==1||(index==0&&(infoData.depositType==0||infoData.depositType==1))}}"
+                    mode="widthFix" src="{{baseUrlImg+'icon_list_more@2x.png'}}" />
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="tixian_btn" bindtap="tixianBtn" wx:if="{{infoData.principalMoney > 0}}">提现</view>
+<view class="tixian_btn" bindtap="tixianBtn_none" style="opacity: 0.5;" wx:else>提现</view>
+<dialog></dialog>

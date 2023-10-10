@@ -1,0 +1,19 @@
+{
+  "extEnable": true,
+  "extAppid": "wxa4ac480db09afd6d",
+  "directCommit": false,
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "ext": {
+    "extAppid": "wxa4ac480db09afd6d",
+    "appletType": 0
+  },
+  "requiredPrivateInfos": [ 
+    "getLocation",
+    "chooseLocation"
+  ]
+}

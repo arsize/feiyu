@@ -1,0 +1,78 @@
+<view class="completed">
+	<view class="completedTop">
+		<image style="width:400rpx;height:314rpx;" src="{{baseUrlImg + 'img_cabinet04@2x.png'}}" />
+	</view>
+	<view class="statusBar">
+		<view class="line">
+			<view class="leftblock"></view>
+			<view>订单信息</view>
+		</view>
+		<view class="topBar">
+			<view class="item">
+				<view class="title">
+					{{chargingRecordDetail.boxProtSn?chargingRecordDetail.boxProtSn:'--'}}号
+				</view>
+				<view class="subtitle">充电位</view>
+			</view>
+			<view class="item">
+				<view class="title">
+					{{chargingRecordDetail.chargingTime?chargingRecordDetail.chargingTime:'00:00:00'}}
+				</view>
+				<view class="subtitle">充电计时</view>
+			</view>
+			<view class="item">
+				<view class="title">
+					{{chargingRecordDetail.costMoney?chargingRecordDetail.costMoney:0}}
+				</view>
+				<view class="subtitle">充电费用（元）</view>
+			</view>
+		</view>
+		<view class="detailinfo">
+			<view class="item">
+				<view class="left">订单编号：</view>
+				<view class="right" bindlongtap='copy' data-set="{{chargingRecordDetail.orderNo?chargingRecordDetail.orderNo:'--'}}">
+					{{chargingRecordDetail.orderNo?chargingRecordDetail.orderNo:'--'}}
+				</view>
+			</view>
+			<view class="item">
+				<view class="left">电柜ID：</view>
+				<view class="right">{{chargingRecordDetail.cabinetDid?chargingRecordDetail.cabinetDid:'--'}}</view>
+			</view>
+			<view class="item">
+				<view class="left">购买时长：</view>
+				<view class="right" wx:if="{{chargingRecordDetail.purchaseDuration == -1}}">
+					充满自停
+				</view>
+				<view class="right" wx:else>{{chargingRecordDetail.purchaseDuration}}小时</view>
+			</view>
+
+			<view class="item">
+				<view class="left">开始时间：</view>
+				<view class="right">{{chargingStartTime}}</view>
+			</view>
+			<view class="item">
+				<view class="left">结束时间：</view>
+				<view class="right">{{chargingEndTime}}</view>
+			</view>
+			<view class="item">
+				<view class="left">计费规则：</view>
+				<view class="right">
+					{{chargingRecordDetail.moneyPerHours}}元/{{chargingRecordDetail.unit}}分钟（{{chargingRecordDetail.topMoney}}元封顶）
+				</view>
+			</view>
+			<view class="item">
+				<view class="left">预付金额：</view>
+				<view class="right">
+					{{chargingRecordDetail.prePayMoney?chargingRecordDetail.prePayMoney:0}}元
+				</view>
+			</view>
+			<view class="item">
+				<view class="left">退还金额：</view>
+				<view class="right">
+					{{chargingRecordDetail.returnMoney?chargingRecordDetail.returnMoney:0}}元
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view bind:tap="gotoback" class="gotoback">返回首页</view>

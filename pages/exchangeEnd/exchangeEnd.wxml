@@ -1,0 +1,56 @@
+<view class="exchangeEnd">
+    <view class="endServing" wx:if="{{errCode == '100'}}">
+        <view class="topBox">
+            <image mode="widthFix" style="width:160rpx;height:160rpx;" src="{{baseUrlImg + 'icon_cont_warning@2x.png'}}" />
+            <view style="margin-top:30rpx;">因操作超时，换电终止</view>
+        </view>
+        <view bind:tap="gohome" class="block">返回首页</view>
+          
+
+        <view bind:tap="gophone" class="block2">拨打客服电话</view>
+    </view>
+    <view class="endServing" wx:if="{{errCode == '-3'}}">
+        <view class="topBox">
+            <image mode="widthFix" style="width:160rpx;height:160rpx;" src="{{baseUrlImg + 'icon_cont_warning@2x.png'}}" />
+            <view style="margin-top:30rpx;">未检测到电池，换电终止</view>
+            <view class="subbottomtext" wx:if="{{times && isreopen}}">
+                <view>若你的电池还在仓内</view>
+                <view>
+                    可在其他用户换电前
+                    <text style="color:#1A6EFF;" bind:tap="restartopen">重开仓门（{{times}}）</text>
+                </view>
+            </view>
+        </view>
+        <view bind:tap="gohome" class="block">返回首页</view>
+        <view bind:tap="gophone" class="block2">拨打客服电话</view>
+    </view>
+    <view class="endServing" wx:if="{{errCode == '-2'}}">
+        <view class="topBox">
+            <image mode="widthFix" style="width:160rpx;height:160rpx;" src="{{baseUrlImg + 'icon_cont_warning@2x.png'}}" />
+            <view style="margin-top:30rpx;">因电池SN码不匹配，已被电柜吞并，换电终止</view>
+            <view class="subbottomtext">
+                <view>正为你临时保管电池，请在3分钟内取出被吞电池</view>
+            </view>
+        </view>
+        <view wx:if="{{times && isgetbattery}}" bind:tap="getbattery" class="block">
+            取吞并电池（{{times}}）s
+        </view>
+        <view bind:tap="gophone" class="block2">拨打客服电话</view>
+    </view>
+    <view class="endServing" wx:if="{{errCode == '-1'}}">
+        <view class="topBox">
+            <image mode="widthFix" style="width:160rpx;height:160rpx;" src="{{baseUrlImg + 'icon_cont_warning@2x.png'}}" />
+            <view style="margin-top:30rpx;">换电终止</view>
+        </view>
+        <view bind:tap="gophone" class="block">拨打客服电话</view>
+        <view bind:tap="gohome" class="block2">返回首页</view>
+    </view>
+    <view class="endServing" wx:if="{{errCode == 'getbattery'}}">
+        <view class="topBox">
+            <image mode="widthFix" style="width:160rpx;height:160rpx;" src="{{baseUrlImg + 'icon_cont_warning@2x.png'}}" />
+            <view style="margin-top:30rpx;">仓门已打开，请取走电池后关闭仓门</view>
+        </view>
+        <view bind:tap="gohome" class="block2">返回首页</view>
+    </view>
+</view>
+<dialog></dialog>

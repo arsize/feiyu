@@ -1,0 +1,64 @@
+<view class="appointmentInfo">
+    <image style="width:100%;height:228rpx;" src="{{baseUrlImg + 'banner_yuyue@2x.png'}}" />
+    <view class="appointbody">
+        <view class="appointitem">
+            <view class="left">服务网点：</view>
+            <view class="right">{{infoData.busName||'-'}}</view>
+        </view>
+        <view class="appointitem">
+            <view class="left">网点电话：</view>
+            <view bind:tap="callphone" data-set="{{infoData}}" class="right" style="display: flex;width: 100%;justify-content: space-between;">
+                {{infoData.busMobile||'-'}}
+                <view style="color:#1A6EFF;font-size:24rpx;display: flex;align-items: center;">
+                    联系
+                    <image style="width:30rpx;height:30rpx;margin-left:10rpx;" mode="widthFix" src="{{baseUrlImg+'Rectangle@2x.png'}}" />
+                </view>
+            </view>
+        </view>
+        <view class="appointitem">
+            <view class="left">网点地址：</view>
+            <view bindtap="openMap" class="right" style="display: flex;width: 100%;justify-content: space-between;" data-set="{{infoData}}">
+                <view style="width:80%;">{{infoData.busAddress||'-'}}</view>
+                <view style="color:#1A6EFF;font-size:24rpx;display: flex;align-items: center;">
+                    导航
+                    <image style="width:30rpx;height:30rpx;margin-left:10rpx;" mode="widthFix" src="{{baseUrlImg+'icon_cont_guide@2x.png'}}" />
+                </view>
+            </view>
+        </view>
+        <view class="appointitem">
+            <view class="left">预约人：</view>
+            <view class="right">{{infoData.userName||'-'}}</view>
+        </view>
+        <view class="appointitem">
+            <view class="left">到店时间：</view>
+            <view class="right">{{infoData.arrivalDate}} {{infoData.arrivalTime}}</view>
+        </view>
+    </view>
+</view>
+<view class="dialogconfirm" wx:if="{{status}}">
+    <view class="dialogTop">取消原因</view>
+    <view class="dialogBody">
+        <view style="margin-top:10rpx;text-align:left;margin-bottom:20rpx;font-size: 30rpx;">
+            我们在不断改进中，请告诉我们暂不开通换电服务的原因
+        </view>
+        <view style="height: 430rpx;overflow-y:scroll;">
+            <view class="bodyitem" style="{{selectItem==item?'border:1rpx solid #166CFF;background-color:white;':''}}" bind:tap="selectitem" wx:for="{{cancelArr}}" wx:key="index" data-item="{{item}}" data-index="{{index}}">
+                {{item}}
+                <view>
+                    <block wx:if="{{selectItem==item}}">
+                        <image style="width:30rpx;height:30rpx;" src="{{baseUrlImg + 'icon_cont_checked@2x.png'}}" />
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="dialogFoot">
+        <view class="item0" bind:tap="cancelDialog">暂不取消</view>
+        <view class="item1" bind:tap="confirmCancel">确定</view>
+    </view>
+</view>
+<view class="appointBtn">
+    <view class="text" bind:tap="cancelappoint">取消预约</view>
+    <view class="okcont" bind:tap="confirmEnd">返回首页</view>
+</view>
+<view bind:tap="hideexchangeStatus" class="mask {{status?'show':'noshow'}}"></view>

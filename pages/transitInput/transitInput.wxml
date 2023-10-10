@@ -1,0 +1,26 @@
+<view class="transitInput">
+    <view class="top">
+        <view style="color:#333333;font-size:28rpx;">电柜ID</view>
+    </view>
+    <view class="inputnum">
+        <view bind:tap="selectBlockItem" wx:for="{{cabitnetArr}}" wx:key="index" data-item="{{item}}" data-index="{{index}}" class="blockitem" style="{{index == focusIndex?'border: 2rpx solid #1a6eff;background-color:#fff;':''}}">
+            {{item}}
+        </view>
+        <input maxlength="1" value="{{inputValue}}" bindinput='inputchange' focus="{{autofocus}}" type="number" style="{{'left:'+(38 + (focusIndex * 114))+'rpx;'}}" class="positioninput" />
+    </view>
+    <view wx:if="{{!hasCabinetId}}" style="width:100%;margin-top:32rpx;">
+        <image style="width:100%;height:224rpx;" src="{{baseUrlImg+'banner_scanning@2x.png'}}" />
+    </view>
+</view>
+<view class="historyinput">
+    <view class="topbar">
+        <view>历史记录</view>
+        <image wx:if="{{historyitems.length}}" bind:tap="delhistory" style="width:32rpx;height:32rpx;" src="{{baseUrlImg+'icon_cont_delete@2x.png'}}" />
+    </view>
+    <view class="centerbar">
+        <view bind:tap="gethistoryInput" class="historyitem" wx:for="{{historyitems}}" wx:key="index" data-item="{{item}}" data-index="{{index}}">
+            {{item}}
+        </view>
+    </view>
+</view>
+<dialog></dialog>

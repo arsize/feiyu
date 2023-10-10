@@ -1,0 +1,62 @@
+<van-notice-bar text="蓝牙充换电服务中，为提供正常服务请保持屏幕常亮" color="#FFFFFF" backgroundColor="#000000" left-icon="info-o" />
+<view class="exchangeserving">
+    <view class="servingTop">
+        <image style="width:400rpx;height:480rpx;" src="{{baseUrlImg + 'img_swap_cabinet_body01@2x.png'}}" />
+    </view>
+    <view class="statusBar">
+        <view class="line">
+            <view class="leftblock"></view>
+            <view>换电信息</view>
+        </view>
+        <view class="statusPort">
+            <view style="color:#FFCD3A;font-size:40rpx;">换电进行中</view>
+            <view style="color:#999999;font-size:28rpx;">
+                请在
+                <text style="padding: 5rpx 15rpx;color:#FFCD3A;width:88rpx;height:40rpx;background-color:#333;border-radius: 21rpx;">{{seconds}}s</text>
+                内完成换电操作
+            </view>
+        </view>
+        <view class="line">
+            <view class="leftblock"></view>
+            <view>订单信息</view>
+        </view>
+        <view class="blocklist">
+            <view class="item item1">
+                <view class="title" wx:if="{{exchangeRecordDetail.returnBoxSn}}">
+                    {{exchangeRecordDetail.returnBoxSn}}号
+                </view>
+                <view wx:else>
+                    <van-loading size="20" type="spinner" />
+                </view>
+                <view class="subtitle">放入仓</view>
+            </view>
+            <view class="item item2">
+                <view class="title" wx:if="{{exchangeRecordDetail.borrowBoxSn}}">
+                    {{exchangeRecordDetail.borrowBoxSn?exchangeRecordDetail.borrowBoxSn:'--'}}号
+                </view>
+                <view wx:else>
+                    <van-loading size="20" type="spinner" />
+                </view>
+                <view class="subtitle">取出仓</view>
+            </view>
+            <view class="item" wx:if="{{exchangeRecordDetail.chargingType==0}}">
+                <view class="title">
+                    {{exchangeRecordDetail.money?exchangeRecordDetail.money:0}}
+                </view>
+                <view class="subtitle">余额支付（元）</view>
+            </view>
+            <view class="item" wx:else>
+                <view class="title" wx:if="{{exchangeRecordDetail.frequencyCardType != 2}}">
+                    {{exchangeRecordDetail.surplusNum?exchangeRecordDetail.surplusNum:'0'}}
+                </view>
+                <view class="title" wx:else>无限次</view>
+                <view class="subtitle">套餐剩余次数</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="exchangebottombar">
+    如有疑问，请
+    <text bind:tap="callphone" style="color:#1A6EFF;">联系客服</text>
+</view>
+<dialog></dialog>

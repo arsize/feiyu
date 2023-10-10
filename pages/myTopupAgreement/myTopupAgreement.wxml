@@ -1,0 +1,72 @@
+<!--pages/myTopupAgreement/myTopupAgreement.wxml-->
+<view class="pageContAgree">
+    <view style="font-size:12pt;margin:0pt 0pt 10pt"></view>
+    <view style="font-size:16pt;margin:0pt 0pt 10pt; text-align:center"><text style="font-family:微软雅黑; font-size:16pt; font-weight:bold">充值协议</text></view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt"><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">尊敬的用户（以下简称“您”），为保障您的合法权益，请您在充值前仔细阅读本《 充值协议 》 </text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">（“本协议”）</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">以了解</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">的充值、返利及余额使用规则以避免产生任何误解。当您点击“</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">确认</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">充值”按钮后，即视为您已阅读、理解本协议，并同意按本协议的规定进行充值。</text>
+    </view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt">
+    </view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt"><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">1.</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">定义</text>
+    </view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt"><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">充值本金：您通过“</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”软件向您已注册的</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">用户</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">帐</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">户实际支付的金额。</text>
+    </view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt"><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">账户余额：您的</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">用户账号中显示的金额。包括充值的本金</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">、{{appName}}</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">通过充值返利活动赠送的返利金额</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">以及金币转换的余额</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">。</text>
+    </view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt">
+    </view>
+    <ol start="2" type="1" style="margin:0pt; padding-left:0pt">
+        <li style="font-family:黑体-简; font-size:10.5pt;list-style-position:inside; margin:0pt 0pt 10pt; text-indent:0pt">
+            <text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">2.账户余额有效期限
+            </text>
+        </li>
+    </ol>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt"><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">用户账户的有效期为自</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">获得</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">之日起至使用完毕为止。</text>
+    </view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt">
+    </view>
+    <ol start="3" type="1" style="margin:0pt; padding-left:0pt">
+        <li style="font-family:黑体-简; font-size:10.5pt;list-style-position:inside; margin:0pt 0pt 10pt; text-indent:0pt">
+            <text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">3.充值赠送活动规则</text>
+        </li>
+    </ol>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt"><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">我们会通过充值页面或具体活动页面，即时公布不同数额的充值本金，可享受的一定数额的赠送活动。例如充值200元赠送50元，具体活动您可通过充值或关注我们的活动页面进行了解。</text>
+    </view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt">
+    </view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt">
+    </view>
+    <ol start="4" type="1" style="margin:0pt; padding-left:0pt">
+        <li style="font-family:黑体-简; font-size:10.5pt;list-style-position:inside; margin:0pt 0pt 10pt; text-indent:0pt">
+            <text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">4.帐</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">户余额使用规则</text>
+        </li>
+    </ol>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt"><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">账户余额可用于</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">购买套餐</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">、支付充换电费用及在商城内购买物品</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">，用户使用期间会优先使用充值本金，充值本金用完再使用赠送金额。未使用的余额不支持转赠、转移、提现</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">。</text>
+    </view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt">
+    </view>
+    <ol start="5" type="1" style="margin:0pt; padding-left:0pt">
+        <li style="font-family:黑体-简; font-size:10.5pt;list-style-position:inside; margin:0pt 0pt 10pt; text-indent:0pt">
+            <text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">5.退款规则</text>
+        </li>
+    </ol>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt"><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">用户余额不支持退款、转赠、转移、提现。如遇特殊原因用户要求并经我司同意退款的需扣除3%的手续费，敬请谅解。</text>
+    </view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt">
+    </view>
+    <ol start="6" type="1" style="margin:0pt; padding-left:0pt">
+        <li style="font-family:黑体-简; font-size:10.5pt;list-style-position:inside; margin:0pt 0pt 10pt; text-indent:0pt">
+            <text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">6.正当性保证</text>
+        </li>
+    </ol>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt"><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">所提供的包含充值赠送</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">以及看广告获得</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">在内的所有优惠推广活动仅面向正当、合法按照</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">《</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">用户协议</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">》</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">使用我们服务的用户。一旦发现您存在利用我们的规则漏洞进行任何形式的作弊行为（包括但不限于通过我们的活动获得不正当的经济利益），我们有权取消与作弊行为相关账户赠送金额、追回您作弊所得的不正当经济利益、关闭作弊账户或与您相关的所有账户，并保留取消您后续使用我们服务的权利，及依据严重程度追究您的法律责任。
+        </text></view>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt">
+    </view>
+    <ol start="7" type="1" style="margin:0pt; padding-left:0pt">
+        <li style="font-family:黑体-简; font-size:10.5pt;list-style-position:inside; margin:0pt 0pt 10pt; text-indent:0pt">
+            <text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">7.特别说明</text>
+        </li>
+    </ol>
+    <view style="font-size:10.5pt;margin:0pt 0pt 10pt"><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">您完全理解并同意，</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">安徽飞鱼物联技术有限公司</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">（以下简称“</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">飞鱼物联</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”）有权随时修改本协议内容，届时将通过在官网或</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">“</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">{{appName}}</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">”</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">软件上公布修改后的协议，该公布将被视为</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">飞鱼物联</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">已通知用户；同时，</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">飞鱼物联</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">也可通过其他适当方式通知用户。如果您</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">选择继续充值即表示您同意并接受修改后协议并受其约束；如果您不同意我们对本协议的修改，请立即放弃充值或停止使用本服务。在适用法律法规允许的范围内，本协议下充值、返利及账户全额的使用规则的最终解释权归</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">飞鱼物联</text><text style="font-family:黑体-简; font-size:10.5pt; font-style:normal; text-transform:none">所有。</text>
+    </view>
+</view>

@@ -1,0 +1,140 @@
+<van-tabs swipeable bind:click="changetabs" lineWidth="40" color="#196EFF" active="{{ active }}">
+	<van-tab title="可使用">
+		<view wx:if="{{couponList && couponList.length > 0}}">
+			<view class="couponitem" wx:for="{{couponList}}" wx:item="{{item}}">
+				<view class="top">
+					<view class="left">
+						<view class="couponText">
+							{{item.name}}
+						</view>
+						<view class="couponTime" wx:if="{{item.rollTime}}">
+							仅剩 {{item.rollTime}}
+						</view>
+						<view class="couponTime" wx:else>
+							{{item.getTime}}-{{item.expiredTime}}
+						</view>
+
+						<view class="couponBottom">
+							<view class="detailinfo">
+								详细信息
+							</view>
+							<image bindtap="showdetail" data-set="{{index}}" style="{{selectindex == index?'width:34rpx;height:34rpx;':'width:34rpx;height:34rpx;transform: rotate(180deg);'}}" class="coupontop" src="{{baseUrlImg + 'v7_coupon_up.png'}}" />
+						</view>
+
+					</view>
+					<view class="right" bindtap="gotouse">
+						<view class="rightcontent">
+							<view class="money">
+								<view style="font-size:30rpx;margin-right:10rpx;margin-bottom:10rpx;">￥</view>
+								<view>{{item.discountedPrices?item.discountedPrices:''}}</view>
+							</view>
+							<view class="submoney">
+								满{{item.thresholdPrice}}元可使用
+							</view>
+							<view class="usebtn">
+								去使用
+							</view>
+
+						</view>
+						<image style="width:114rpx;height:70rpx;position: absolute;top:0;right:0;" src="{{item.willExpireSoon?'../../images/willExpireSoon.png':''}}" />
+
+					</view>
+				</view>
+				<view class="subBottom" wx:if="{{selectindex == index}}">
+					{{item.usageNotice}}
+				</view>
+			</view>
+			<view class="blank_block"></view>
+		</view>
+		<view wx:else class="noannouncement">
+			暂无数据
+		</view>
+	</van-tab>
+	<van-tab title="已使用">
+		<view wx:if="{{couponList && couponList.length > 0}}">
+			<view class="couponitem" wx:for="{{couponList}}" wx:item="{{item}}">
+				<view class="top">
+					<view class="left" style="position: relative;">
+						<view class="couponText">
+							{{item.name}}
+							<image style="position: absolute;top:10rpx;right:10rpx;width:94rpx;height:94rpx;" src="{{baseUrlImg +'v7_coupon_hasused.png'}}" />
+						</view>
+						<view class="couponTime">
+							{{item.getTime}}-{{item.expiredTime}}
+						</view>
+						<view class="couponBottom">
+							<view class="detailinfo">
+								详细信息
+							</view>
+							<image bindtap="showdetail" data-set="{{index}}" style="{{selectindex == index?'width:34rpx;height:34rpx;':'width:34rpx;height:34rpx;transform: rotate(180deg);'}}" class="coupontop" src="{{baseUrlImg + 'v7_coupon_up.png'}}" />
+						</view>
+
+					</view>
+					<view class="right right2">
+						<view class="rightcontent">
+							<view class="money">
+								<view style="font-size:30rpx;margin-right:10rpx;margin-bottom:10rpx;">￥</view>
+								<view>{{item.discountedPrices}}</view>
+							</view>
+							<view class="submoney">
+								满{{item.thresholdPrice}}元可使用
+							</view>
+						</view>
+
+					</view>
+				</view>
+				<view class="subBottom" wx:if="{{selectindex == index}}">
+					{{item.usageNotice}}
+				</view>
+			</view>
+			<view class="blank_block"></view>
+		</view>
+		<view wx:else class="noannouncement">
+			暂无数据
+		</view>
+	</van-tab>
+	<van-tab title="已过期">
+		<view wx:if="{{couponList && couponList.length > 0}}">
+			<view class="couponitem" wx:for="{{couponList}}" wx:item="{{item}}">
+				<view class="top">
+					<view class="left" style="position: relative;">
+						<view class="couponText">
+							{{item.name}}
+							<image style="position: absolute;top:10rpx;right:10rpx;width:94rpx;height:94rpx;" src="{{baseUrlImg +'v7_coupon_guoqi.png'}}" />
+						</view>
+						<view class="couponTime">
+							{{item.getTime}}-{{item.expiredTime}}
+						</view>
+						<view class="couponBottom">
+							<view class="detailinfo">
+								详细信息
+							</view>
+							<image bindtap="showdetail" data-set="{{index}}" style="{{selectindex == index?'width:34rpx;height:34rpx;':'width:34rpx;height:34rpx;transform: rotate(180deg);'}}" class="coupontop" src="{{baseUrlImg + 'v7_coupon_up.png'}}" />
+						</view>
+
+					</view>
+					<view class="right right2">
+						<view class="rightcontent">
+							<view class="money">
+								<view style="font-size:30rpx;margin-right:10rpx;margin-bottom:10rpx;">￥</view>
+								<view>{{item.discountedPrices}}</view>
+							</view>
+							<view class="submoney">
+								满{{item.thresholdPrice}}元可使用
+							</view>
+						</view>
+
+					</view>
+				</view>
+				<view class="subBottom" wx:if="{{selectindex == index}}">
+					{{item.usageNotice}}
+				</view>
+			</view>
+			<view class="blank_block"></view>
+
+		</view>
+		<view wx:else class="noannouncement">
+			暂无数据
+		</view>
+	</van-tab>
+</van-tabs>

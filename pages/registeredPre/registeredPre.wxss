@@ -1,0 +1,36 @@
+.registeredPre {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100rpx;
+}
+.elephimg {
+  margin-bottom: 32rpx;
+}
+.elephtext {
+  color: #000000;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 8rpx;
+}
+.subelephtext {
+  font-size: 28rpx;
+  color: #666666;
+  margin-bottom: 86rpx;
+}
+.souquanbtn {
+  width: 670rpx!important;
+  height: 100rpx;
+  background: rgba(26, 110, 255, 1);
+  border-radius: 12rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shouquantext {
+  font-size: 32rpx;
+  color: white;
+  font-weight: bold;
+}

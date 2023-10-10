@@ -1,0 +1,179 @@
+page {
+  background-color: #f5f5f5;
+}
+
+.appointmentInfo {
+  width: 100%;
+}
+
+.appointmentInfo .appointbody {
+  padding: 32rpx;
+  background-color: white;
+}
+
+.appointmentInfo .appointbody .appointitem {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  margin-bottom: 10rpx;
+}
+
+.appointmentInfo .appointbody .appointitem .left {
+  min-width: 160rpx;
+  color: #666666;
+  font-size: 28rpx;
+}
+
+.appointmentInfo .appointbody .appointitem .right {
+  display: flex;
+  color: #333333;
+  font-size: 28rpx;
+}
+
+.appointBtn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 686rpx;
+  height: 100rpx;
+  background: linear-gradient(270deg, #41beff 0%, #1a6eff 100%);
+  box-shadow: 0rpx 4rpx 6rpx 0rpx rgba(27, 112, 255, 0.25);
+  border-radius: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.appointBtn .text {
+  position: absolute;
+  top: -103rpx;
+  display: block;
+  width: 100%;
+  height: 100rpx;
+  color: #166cff;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.appointBtn .okcont {
+  width: 100%;
+  height: 100rpx;
+  color: #fff;
+  font: 500 32rpx "PingFangSC-Medium";
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialogconfirm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 648rpx;
+  border-radius: 16rpx;
+  background-color: white;
+  z-index: 5000;
+}
+
+.dialogconfirm .dialogTop {
+  width: 100%;
+  height: 100rpx;
+  background-color: #fbfbfb;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialogconfirm .dialogBody {
+  width: 100%;
+  /* height: 430rpx; */
+
+  padding: 40rpx 30rpx;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  color: #666666;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* overflow-y: scroll; */
+}
+
+.dialogconfirm .dialogBody .bodyitem {
+  width: 560rpx;
+  height: 80rpx;
+  background: #f7f7f7;
+  border-radius: 40rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  padding: 10rpx 40rpx;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  border: 1rpx solid transparent;
+}
+
+.dialogconfirm .dialogFoot {
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx 30rpx;
+  box-sizing: border-box;
+  padding-bottom: 35rpx;
+}
+
+.dialogconfirm .dialogFoot .item0 {
+  width: 260rpx;
+  height: 88rpx;
+  background: #ffffff;
+  border-radius: 44rpx;
+  border: 2rpx solid #1a6eff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1a6eff;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.dialogconfirm .dialogFoot .item1 {
+  width: 260rpx;
+  height: 88rpx;
+  background: linear-gradient(270deg, #41beff 0%, #1a6eff 100%);
+  box-shadow: 0rpx 4rpx 6rpx 0rpx rgba(27, 112, 255, 0.25);
+  border-radius: 44rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 30rpx;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #000;
+  z-index: 4000;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+.show {
+  display: block;
+}
+
+.noshow {
+  display: none;
+}

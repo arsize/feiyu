@@ -1,0 +1,47 @@
+.exchangeserver .blankblack {
+  width: 100%;
+  height: 130rpx;
+  background-color: #131415;
+}
+.exchangeserver .exchangeBottom {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #131415;
+  padding-bottom: 30rpx;
+  padding-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.exchangeserver .toptext {
+  width: 100%;
+  text-align: center;
+  font-size: 24rpx;
+  color: white;
+  background-color: #131415;
+  padding-bottom: 20rpx;
+}
+.exchangeserver .exchangeBottom .bottom {
+  width: 586rpx;
+  height: 90rpx;
+  background: linear-gradient(270deg, #31cc50 0%, rgba(41, 204, 58, 0.6) 100%);
+  border-radius: 60rpx;
+  border: 1rpx solid #4cf76d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 32rpx;
+}
+.fatherimg{
+  display: flex;
+  flex-direction: column;
+}
+.showimg {
+  vertical-align: top;
+  vertical-align: text-top;
+  vertical-align: bottom;
+  vertical-align: text-bottom;
+}

@@ -1,0 +1,123 @@
+page {
+  width: 100%;
+  background: #F6F6F8;
+}
+.pageCont {
+  width: 100%;
+}
+.pageCont .blank {
+  width: 100%;
+  height: 60rpx;
+}
+.pageCont .hasCont {
+  width: 100%;
+}
+.pageCont .hasCont .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 208rpx;
+}
+.pageCont .hasCont .item .left {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 28%;
+}
+.pageCont .hasCont .item .left .timer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-right: 24rpx;
+}
+.pageCont .hasCont .item .left .timer text:nth-child(1) {
+  margin-top: 24rpx;
+  color: #333;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+.pageCont .hasCont .item .left .timer text:nth-child(2) {
+  margin-top: 8rpx;
+  color: #999;
+  font: 500 20rpx "PingFangSC-Medium";
+}
+.pageCont .hasCont .item .left .line {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.pageCont .hasCont .item .left .line .short {
+  display: inline-block;
+  width: 4rpx;
+  height: 35rpx;
+  background: #EEEEEE;
+}
+.pageCont .hasCont .item .left .line .dot {
+  display: inline-block;
+  width: 22rpx;
+  height: 22rpx;
+  border-radius: 50%;
+}
+.pageCont .hasCont .item .left .line .long {
+  display: inline-block;
+  width: 4rpx;
+  height: 153rpx;
+  background: #EEEEEE;
+}
+.pageCont .hasCont .item .right {
+  width: 72%;
+  height: 176rpx;
+  border-top-left-radius: 12rpx;
+  border-bottom-left-radius: 12rpx;
+}
+.pageCont .hasCont .item .right .rightCont {
+  width: 90%;
+  margin: 0 auto;
+}
+.pageCont .hasCont .item .right .rightCont .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 24rpx 0;
+}
+.pageCont .hasCont .item .right .rightCont .top .topLeft {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.pageCont .hasCont .item .right .rightCont .top .topLeft text:nth-child(1) {
+  font: 500 32rpx "PingFangSC-Medium";
+}
+.pageCont .hasCont .item .right .rightCont .top .topLeft text:nth-child(2) {
+  display: inline-block;
+  margin-left: 16rpx;
+  width: 92rpx;
+  height: 40rpx;
+  color: rgba(255, 255, 255, 0.75);
+  font: 500 20rpx "PingFangSC-Medium";
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 8rpx;
+  background: rgba(0, 0, 0, 0.2);
+}
+.pageCont .hasCont .item .right .rightCont .top .topRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 33rpx;
+}
+.pageCont .hasCont .item .right .rightCont .top .topRight text {
+  font: 500 24rpx "PingFangSC-Medium";
+}
+.pageCont .hasCont .item .right .rightCont .top .topRight image {
+  width: 25rpx;
+  height: 25rpx;
+}
+.pageCont .hasCont .item .right .rightCont .middle {
+  margin-bottom: 2rpx;
+  /* color: rgba(255, 255, 255, 0.5); */
+  font: 500 24rpx "PingFangSC-Medium";
+}

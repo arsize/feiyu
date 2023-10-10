@@ -1,0 +1,58 @@
+<!-- pages/myOffStore/myOffStore.wxml -->
+<view class="pageCont">
+  <block wx:if="{{listData.length>0&&isRequest}}">
+    <view class="sideBar">
+      <scroll-view class="scrollHeight" scroll-y style="height: 100%" scroll-with-animation="{{isAnimation}}">
+        <view class="{{curSideBar==index?'item active':'item'}}" wx:for="{{listData}}" wx:key="index" data-item="{{item}}" data-index="{{index}}" bindtap="selectSideFun">
+          <text class="{{curSideBar==index?'active':''}}">{{item.cityName}}</text>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="storeCont" wx:if="{{listData[curSideBar].shopBusinessList.length>0&&isRequest}}">
+      <scroll-view class="scrollHeight" scroll-y style="height: 100%" scroll-with-animation="{{isAnimation}}">
+        <view class="{{item.isSelect?'item active':'item'}}" wx:for="{{listData[curSideBar].shopBusinessList}}" wx:key="index" data-item="{{item}}" data-index="{{index}}" catchtap="selectStoreFun">
+         
+          <view class="top">
+            <text>{{item.busName||'--'}}</text>
+            <text>{{item.diskm}}km</text>
+          </view>
+          <view class="bottom">
+            <view class="leftCont">
+              <text wx:if="{{item.isServeVehicle==1}}">车辆服务</text>
+              <text wx:if="{{item.isServerBattery==1}}">电池服务</text>
+              <text wx:if="{{item.isServerSale==1}}">售后服务</text>
+            </view>
+            <view class="rightCont">
+            </view>
+          </view>
+          <view class="middle">{{item.busAddress||'--'}}</view>
+          <view class="middle" wx:if="{{item.serviceTime}}">工作日{{item.serviceTime}}</view>
+    
+          <view class="bottom">
+            <view class="leftCont"></view>
+            <view class="rightCont">
+              <view data-index="0" data-item="{{item}}" catchtap="operationFun">
+                <text>联系</text>
+                <image mode="widthFix" src="{{baseUrlImg+'Rectangle@2x.png'}}" />
+              </view>
+              <view data-index="1" data-item="{{item}}" catchtap="operationFun">
+                <text>导航</text>
+                <image mode="widthFix" src="{{baseUrlImg+'icon_cont_guide@2x.png'}}" />
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="noRecordCont noStore" wx:if="{{listData[curSideBar].shopBusinessList.length==0&&isRequest}}">
+      <image class="laImage" mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
+      <text>暂无门店</text>
+    </view>
+  </block>
+  <block wx:if="{{listData.length==0&&isRequest}}">
+    <view class="noRecordCont noStore">
+      <image class="laImage" mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
+      <text>暂无门店</text>
+    </view>
+  </block>
+</view>

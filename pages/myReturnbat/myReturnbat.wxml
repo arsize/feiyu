@@ -1,0 +1,70 @@
+<!--pages/myReturnbat/myReturnbat.wxml-->
+
+<view class="noteTop" wx:if="{{isRequest}}">
+  <image mode="widthFix" src="{{baseUrlImg+'icon_cont_info02@2x.png'}}" />
+  请前往指定的线下服务网点退还电池
+</view>
+
+<view class="myReturnbatStore">
+  <view class="title">
+    
+  </view>
+    <view class="wrap" wx:if="{{isRequest&&objData.busName}}">
+    <view class="top">
+      <text>{{objData.busName||'-'}}</text>
+      
+    </view>
+    <view class="bottom">
+      <view class="leftCont">
+        <text wx:if="{{objData.isServeVehicle==1}}">车辆服务</text>
+        <text wx:if="{{objData.isServerBattery==1}}">电池服务</text>
+        <text wx:if="{{objData.isServerSale==1}}">售后服务</text>
+      </view>
+    
+    </view>
+    <view class="middle">
+      <image mode="widthFix" src="{{baseUrlImg+'icon_cont_time@2x.png'}}" />
+      <text>营业时间：{{objData.serviceTime?objData.serviceTime:'--'}}</text>
+    </view>
+    <view class="middle">
+      <image mode="widthFix" src="{{baseUrlImg+'icon_cont_location@2x.png'}}" />
+      <text>门店地址：{{objData.busAddress||'--'}}</text>
+      
+    </view>
+    
+    <view class="bottom">
+  
+      <view class="bottomCont">
+        <view data-index="0" bindtap="operationFun" class="">
+          <text>联系</text>
+          <image mode="widthFix" src="{{baseUrlImg+'Rectangle@2x.png'}}" />
+        </view>
+        <view data-index="1" bindtap="operationFun" class="">
+          <text>导航</text>
+          <image mode="widthFix" src="{{baseUrlImg+'icon_cont_guide@2x.png'}}" />
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="noRecordCont noStoreRe" wx:if="{{isRequest&&!objData.busName}}">
+    <image class="laImage" mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
+    <text>暂无门店</text>
+  </view>
+
+
+  <view bindtap="serviceFun" class="serviceCont" wx:if="{{isRequest&&objData.busName}}">
+    <text>若你已不在原服务网点附近，请</text>
+    <text bindtap="callcustomer">联系客服</text>
+  </view>
+</view>
+
+<view class="botBtmFixLine150"></view>
+
+<!--  wx:if="{{isRequest&&objData.busName}}" -->
+<view class="botBtmFix" wx:if="{{isRequest}}">
+  <view class="btnTrans" bindtap="cannelFun">取消退电</view>
+  <view class="btnBluelinear" bindtap="returnFun">出示个人二维码，解绑电池</view>
+</view>
+<dialog></dialog>

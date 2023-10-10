@@ -1,0 +1,3 @@
+<view class="myElectricbeans">
+	<web-view src="{{srcurl}}"></web-view>
+</view>

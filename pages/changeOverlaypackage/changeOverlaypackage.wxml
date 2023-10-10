@@ -1,0 +1,72 @@
+<view class="pageCont">
+	<block wx:if="{{buyComboList}}">
+		<block wx:for="{{buyComboList}}" wx:key="index">
+			<block wx:if="{{isfold?index < 3:true}}">
+				<view style="{{selectItem && selectItem.id == item.id?'border: 4rpx solid #1A6EFF;':''}}" class="comboItems" bindtap="selectcombo" data-item="{{item}}">
+					<view class="centline">
+						<view class="centerleft">
+							<view class="name">
+								{{item.name}}
+							</view>
+							<view class="rightblocks">
+								{{item.monthly}}元/次
+							</view>
+						</view>
+						<view class="centerright">
+							￥{{item.price}}
+						</view>
+					</view>
+					<view class="bottomsub" wx:if="{{item.originalPrice}}">
+						￥{{item.originalPrice}}
+					</view>
+				</view>
+			</block>
+		</block> 
+		<!-- 上拉 -->
+		<view wx:if="{{isfold&&buyComboList.length>3}}" class="viewMore" data-type="1" bindtap='viewMore'>
+			<text>查看更多</text>
+			<image mode="widthFix" class="laImage" src="{{baseUrlImg+'icon_cont_arrow01@2x.png'}}" />
+		</view>
+		<view wx:if="{{!isfold&&buyComboList.length>3}}" class="viewMore" data-type="2" bindtap='viewMore'>
+			<text>收起</text>
+			<image mode="widthFix" class="laImage" src="{{baseUrlImg+'Rectangle 27@2x.png'}}" />
+		</view>
+
+		<!-- 套餐说明 -->
+		<view class="noticeCont" style="margin-top:20rpx;">
+			<view class="title">
+				<text></text>
+				<text style="width: 195rpx;color:#333333;font-weight:bold;">套餐叠加包说明</text>
+				<text></text>
+			</view>
+			<view class="wrap">
+				<view class="item">
+					1、可多次购买套餐叠加包，购买后立即生效并于当月最后一日的24时到期(失效清零)；
+				</view>
+				<view class="item">
+					2、换电后优先扣除包月套餐的换电次数，包月套餐无可用次数时再扣除叠加包的换电次数。
+				</view>
+				<view class="item">
+					3、套餐一旦购买成功，不支持更换或退款。
+				</view>
+			</view>
+		</view>
+		<view class="botBtmFixLinenow"></view>
+		<view class="botBtmFixSig" style="box-shadow:none;">
+			<view class="money">
+				<text>{{buyComboMoney||'0.00'}}元</text>
+			</view>
+			<view class="payBtn" bindtap="checkPayFun">
+				去支付
+			</view>
+		</view>
+
+
+	</block>
+	<block wx:else>
+		<view class="noRecordCont">
+			<image mode="widthFix" class="laImage" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
+			<text>暂无可购买叠加包</text>
+		</view>
+	</block>
+</view>

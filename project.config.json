@@ -1,0 +1,127 @@
+{
+    "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+    "setting": {
+        "urlCheck": false,
+        "es6": true,
+        "enhance": false,
+        "postcss": true,
+        "preloadBackgroundData": false,
+        "minified": true,
+        "newFeature": false,
+        "coverView": true,
+        "nodeModules": true,
+        "autoAudits": false,
+        "showShadowRootInWxmlPanel": true,
+        "scopeDataCheck": false,
+        "uglifyFileName": false,
+        "checkInvalidKey": true,
+        "checkSiteMap": true,
+        "uploadWithSourceMap": true,
+        "compileHotReLoad": false,
+        "lazyloadPlaceholderEnable": false,
+        "useMultiFrameRuntime": true,
+        "useApiHook": true,
+        "useApiHostProcess": true,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
+        "useIsolateContext": true,
+        "userConfirmedBundleSwitch": false,
+        "packNpmManually": false,
+        "packNpmRelationList": [],
+        "minifyWXSS": true,
+        "disableUseStrict": false,
+        "minifyWXML": true,
+        "showES6CompileOption": false,
+        "useCompilerPlugins": false,
+        "ignoreUploadUnusedFiles": true
+    },
+    "compileType": "miniprogram",
+    "cloudfunctionTemplateRoot": "",
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
+    "editorSetting": {
+        "tabIndent": "insertSpaces",
+        "tabSize": 4
+    },
+    "libVersion": "2.18.0",
+    "packOptions": {
+        "ignore": [
+            {
+                "value": "less",
+                "type": "folder"
+            },
+            {
+                "value": "node_modules",
+                "type": "folder"
+            }
+        ],
+        "include": []
+    },
+    "appid": "wxa4ac480db09afd6d",
+    "projectname": "feiyuhuandian-v3.1",
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/my/my",
+                    "pathName": "pages/my/my",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/serviceing/serviceing",
+                    "pathName": "pages/serviceing/serviceing",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/serviceingSuccess/serviceingSuccess",
+                    "pathName": "pages/serviceingSuccess/serviceingSuccess",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/myPayDeposit/myPayDeposit",
+                    "pathName": "pages/myPayDeposit/myPayDeposit",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/myPayDepositOther/myPayDepositOther",
+                    "pathName": "pages/myPayDepositOther/myPayDepositOther",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/myCertificationTake/myCertificationTake",
+                    "pathName": "pages/myCertificationTake/myCertificationTake",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/cameraScanTake/cameraScanTake",
+                    "pathName": "pages/cameraScanTake/cameraScanTake",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/takePages/takePages",
+                    "pathName": "pages/takePages/takePages",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

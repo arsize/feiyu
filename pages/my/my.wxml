@@ -1,0 +1,190 @@
+<view>
+	<view class="myBaseInfo">
+		<view class="floatUserInfo">
+			<view class="topBar">
+				<view class="userCont">
+					<view class="userIcon">
+						<image bindtap="joinSet" class="image" mode="widthFix"
+							src="{{userPhoto||baseUrlImg+'avatarDefault.png'}}" />
+					</view>
+					<view bindtap="joinSet" class="right" wx:if="{{!logindata.unregistered}}">
+						<text>{{logindata.userNickname||''}}</text>
+						<text style="color:white;">{{logindata.account||''}}</text>
+					</view>
+					<view class="rightLogin" wx:else bindtap="joinRegister">
+						登录注册
+					</view>
+				</view>
+				<view class="qrcodeCont" bindtap="joinMyqr">
+					<image mode="widthFix" src="{{baseUrlImg+'icon_cont_qrcode@2x.png'}}" />
+				</view>
+			</view>
+			<view wx:if="{{!supportPowerBean}}" class="bottomBar">
+				<view class="block one" data-index="0" bindtap="gotomycoins">
+					<block wx:if="{{logindata.unregistered}}">
+						<text class="text">-</text>
+					</block>
+					<block wx:else>
+						<text class="text">{{infoData.walletMoney||'0.00'}}</text>
+					</block>
+
+					<text class="sub">钱包余额(元)</text>
+				</view>
+				<view class="block two" data-index="1" bindtap="gotomycoins">
+					<!-- <image mode="widthFix" style="width:60rpx;height:60rpx;" src="{{baseUrlImg+'v7_my_electrol.png'}}" /> -->
+					<block wx:if="{{logindata.unregistered}}">
+						<text class="text">-</text>
+					</block>
+					<block wx:else>
+						<text class="text" wx:if="{{infoData.batterySoc == null}}">-</text>
+						<text wx:else class="text">{{infoData.batterySoc||'0'}}%</text>
+					</block>
+
+					<text class="sub">我的电池</text>
+				</view>
+				<view class="block three" data-type="2" bindtap="joinCombo">
+					<!-- <image mode="widthFix" style="width:60rpx;height:60rpx;" src="{{baseUrlImg+'v7_my_taocan.png'}}" /> -->
+					<block wx:if="{{logindata.unregistered}}">
+						<text class="text">-</text>
+					</block>
+					<block wx:else>
+						<block wx:if="{{infoData.totalSurplusNum}}">
+							<block wx:if="{{infoData.totalSurplusNum > 0}}">
+								<text class="text">{{infoData.totalSurplusNum}}</text>
+							</block>
+							<block wx:else>
+								<text class="text">不限次</text>
+							</block>
+						</block>
+						<block wx:else>
+							<text class="text">-</text>
+						</block>
+					</block>
+					<text class="sub">当前套餐剩余(次)</text>
+				</view>
+			</view>
+
+			<view wx:else class="bottomBar2" style="padding: 6rpx 0;">
+				<view class="topbar">
+					<view style="width:343rpx;" class="block" data-index="0" bindtap="gotomycoins">
+						<view class="one">
+							<view style="display:flex;align-items: center;">
+								<!-- <image mode="widthFix" style="width:60rpx;height:60rpx;" src="{{baseUrlImg+'v7_my_qianbao.png'}}" /> -->
+								<block wx:if="{{logindata.unregistered}}">
+									<text class="text">-</text>
+								</block>
+								<block wx:else>
+									<text class="text">{{infoData.walletMoney||'0.00'}}</text>
+								</block>
+							</view>
+							<text class="sub">钱包余额(元)</text>
+						</view>
+
+					</view>
+					<view style="width:343rpx;" class="block" data-index="1" bindtap="gotomycoins">
+						<view class="two">
+							<view style="display:flex;align-items: center;">
+								<!-- <image mode="widthFix" style="width:60rpx;height:60rpx;" src="{{baseUrlImg+'v7_my_electrol.png'}}" /> -->
+								<block wx:if="{{logindata.unregistered}}">
+									<text class="text">-</text>
+								</block>
+								<block wx:else>
+									<text class="text" wx:if="{{infoData.batterySoc == null}}">-</text>
+									<text wx:else class="text">{{infoData.batterySoc||'0'}}%</text>
+								</block>
+							</view>
+							<text class="sub">我的电池</text>
+						</view>
+
+					</view>
+				</view>
+
+				<view class="bottombarcontain">
+					<view class="block" data-type="2" bindtap="joinCombo">
+						<view class="three">
+							<view style="display:flex;align-items: center;">
+								<block wx:if="{{logindata.unregistered}}">
+									<text class="text">-</text>
+								</block>
+								<block wx:else>
+									<block wx:if="{{infoData.totalSurplusNum}}">
+										<block wx:if="{{infoData.totalSurplusNum > 0}}">
+											<text class="text">{{infoData.totalSurplusNum}}</text>
+										</block>
+										<block wx:else>
+											<text class="text">不限次</text>
+										</block>
+									</block>
+									<block wx:else>
+										<text class="text">-</text>
+									</block>
+								</block>
+							</view>
+
+							<text class="sub">当前套餐剩余(次)</text>
+						</view>
+					</view>
+					<view class="block" data-type="4" bindtap="gotoelectric">
+						<view class="four">
+							<view style="display:flex;align-items: center;">
+								<!-- <image mode="widthFix" style="width:60rpx;height:60rpx;" src="{{baseUrlImg+'v7_my_dianli.png'}}" /> -->
+								<block wx:if="{{logindata.unregistered}}">
+									<text class="text">-</text>
+								</block>
+								<block wx:else>
+									<view class="text">
+										{{infoData.powerBeanNum?infoData.powerBeanNum:0}}
+									</view>
+								</block>
+							</view>
+							<view class="textbox">
+								<view class="sub">我的电粒(颗)</view>
+								<view wx:if="{{(infoData.toBeCollectedPowerBeanNum && infoData.toBeCollectedPowerBeanNum > 0)}}"
+									class="boxtitle" style="margin-left: 10rpx;">
+									<image style="width:80rpx;height:34rpx;" src="{{baseUrlImg + 'redRectangle@2x.png'}}" />
+									<view class="redspan">
+										待收取
+									</view>
+
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view wx:if="{{selfServiceFetchElectricity && !infoData.bindBattery && depost != 2}}" class="mytakeCombo" style="margin-top:200rpx;">
+		<view class="leftbs">
+			<image class="leftbs_img" src="{{baseUrlImg + 'v30_01.png'}}"></image> 自助租/取电池
+		</view>
+		<view class="btns" bindtap="gotoRentel">立即租/取</view>
+
+	</view>
+	<view class="myCombo"
+		style="{{supportPowerBean?'margin-top:200rpx;':''}}{{(selfServiceFetchElectricity && !infoData.bindBattery && depost != 2)?'margin-top:20rpx;':'margin-top:200rpx;'}}"
+		wx:if="{{(logindata.unregistered||!infoData.userFrequencyCardRecordVo.userFrequencyCardRecord) &&isRequest && isRecommendStatus}}"
+		bindtap="joinCombo" data-type="1">
+		<image mode="widthFix" src="{{coverUrl?coverUrl:baseUrlImg + 'bugComboBg.png'}}" />
+	</view>
+	<!-- 横排样式 -->
+	<view class="myMenuListRow" style="{{(selfServiceFetchElectricity && !infoData.bindBattery && depost != 2)?'':(logindata.unregistered||!infoData.userFrequencyCardRecordVo.userFrequencyCardRecord) &&isRequest && isRecommendStatus?'':'margin-top:200rpx;'}}">
+		<view class="title">
+			<view class="title_line">
+
+			</view>
+			常用功能
+		</view>
+		<view class="itemWrap">
+			<view class="item" wx:for="{{menuList}}" wx:key="index" data-item="{{item}}" data-index="{{index}}"
+				bindtap="joinPage">
+				<image mode="widthFix" class="listImg" src="{{item.img}}" />
+				<text class="menuText">{{item.title}}</text>
+				<block wx:if="{{infoData && !infoData.readLatestAnnouncement && index == 4 }}">
+					<view class="imgdotblock"></view>
+				</block>
+			</view>
+		</view>
+	</view>
+</view>

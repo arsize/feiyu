@@ -1,0 +1,10 @@
+{
+    "navigationBarBackgroundColor": "#1A6EFF",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#eeeeee",
+    "navigationBarTitleText": "我的车辆",
+    "backgroundTextStyle": "light",
+    "usingComponents": {
+        "dialog": "../component/dialog/dialog"
+    }
+}

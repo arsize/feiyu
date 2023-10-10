@@ -1,0 +1,88 @@
+{
+    "setting": {
+        "compileHotReLoad": true,
+        "urlCheck": false
+    },
+    "condition": {
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/my/my",
+                    "pathName": "pages/my/my",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/serviceing/serviceing",
+                    "pathName": "pages/serviceing/serviceing",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/serviceingSuccess/serviceingSuccess",
+                    "pathName": "pages/serviceingSuccess/serviceingSuccess",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/myPayDeposit/myPayDeposit",
+                    "pathName": "pages/myPayDeposit/myPayDeposit",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/myPayDepositOther/myPayDepositOther",
+                    "pathName": "pages/myPayDepositOther/myPayDepositOther",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/myCertificationTake/myCertificationTake",
+                    "pathName": "pages/myCertificationTake/myCertificationTake",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/cameraScanTake/cameraScanTake",
+                    "pathName": "pages/cameraScanTake/cameraScanTake",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/takePages/takePages",
+                    "pathName": "pages/takePages/takePages",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/myWallet/myWallet",
+                    "pathName": "pages/myWallet/myWallet",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/myWallet_sc/myWallet_sc",
+                    "pathName": "pages/myWallet_sc/myWallet_sc",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/myWallet_sc/myWallet_sc",
+                    "pathName": "pages/myWallet_sc/myWallet_sc",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/indexAdLink/indexAdLink",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                }
+            ]
+        }
+    },
+    "projectname": "feiyuhuandian-v3.1",
+    "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+    "libVersion": "2.31.1"
+}

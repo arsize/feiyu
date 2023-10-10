@@ -1,0 +1,30 @@
+<!--pages/personal/feedBack/feedBack.wxml-->
+<view class="pageCont">
+<form bindsubmit="formSubmitReg" class="formCont">
+  <view class="cont">
+    <view class="options">
+      <view class="topLine"></view>
+      <view class="textareaCont">
+        <textarea placeholder="你还需要我们为你解决什么问题？" placeholder-style="color:#999;font-size:28rpx;" name="detail" value="{{detail}}" maxlength="{{noteMaxLen}}" bindinput="bindWordLimit" bindblur="detailBlur" />
+      </view>
+      <view class="wordLimit">({{currentNoteLen|0}}/{{noteMaxLen}})</view>
+    </view>
+    <view class='imgCont'>
+      <view class='upload' wx:for="{{imagesList}}" wx:key="{{index}}">
+        <image class="hasPic" mode="widthFix" bindtap="previewImage" src="{{item}}"></image>
+        <image class="delect" data-index="{{index}}" bindtap="delete" src="http://swap.wondware.com/hdgxcximg/delete.png"></image>
+      </view>
+
+      <view class='upload' wx:if="{{imagesList.length<3}}">
+        <image bindtap='chooseImage' src="http://swap.wondware.com/hdgxcximg/addPhotoN.png"></image>
+      </view>
+
+    </view>
+
+    <view class="fromBtn">
+      <button formType="submit" class="{{currentNoteLen>0?'opacity10':'opacity4'}}">提交</button>
+    </view>
+
+  </view>
+</form>
+</view>

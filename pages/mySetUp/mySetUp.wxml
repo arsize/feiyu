@@ -1,0 +1,20 @@
+<!--pages/mySetUp/mySetUp.wxml-->
+<view class="pageCont">
+  <view class="logoCont">
+    <!-- <image mode="widthFix" class="rightIcon" src="{{baseUrlImg + 'logo_applet@2x.png'}}" /> -->
+    <image mode="widthFix" class="rightIcon" src="{{logindata.userPhoto||baseUrlImg+'avatarDefault.png'}}" />
+    <text>{{logindata.userNickname}}</text>
+  </view>
+  <view class="FAQCont">
+    <view class="item" wx:for="{{faqList}}" wx:key="index" data-index="{{index}}" data-item="{{item}}"
+      bindtap='showFun'>
+      <view class="left">{{item.title}}</view>
+      <view class="right">
+        <text>{{item.cont}}</text>
+        <image mode="widthFix" class="rightIcon" src="{{baseUrlImg + 'icon_list_more@2x.png'}}" />
+      </view>
+    </view>
+  </view>
+  <view class="logout" bindtap="logoutFun">退出登录</view>
+</view>
+<dialog></dialog>

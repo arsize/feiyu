@@ -1,0 +1,42 @@
+<view class="blueInfoPages">
+    <view class="top1" wx:if="{{model == 'iPhone'}}">
+        <view>
+            <image mode="widthFix" class="chargingimg" style="width:228rpx;height:64rpx;" src="{{baseUrlImg+'title_01.png'}}" />
+            <view style="color:#999999;font-size:28rpx;margin-top:20rpx;margin-bottom:20rpx;">
+                若你手机的版本高于iOS 13，请通过下述方式开启蓝牙功能。
+            </view>
+            <view style="font-size:32rpx;color:#333333;font-weight:bold;margin-top:20rpx;margin-bottom:20rpx;">
+                第1步 【设置】>【微信】>打开蓝牙开关
+            </view>
+            <image mode="widthFix" class="chargingimg" style="width:100%;height:342rpx;" src="{{baseUrlImg+'img_bluetooth01.png'}}" />
+            <view style="font-size:32rpx;color:#333333;font-weight:bold;margin-top:20rpx;margin-bottom:20rpx;">
+                第2步 【控制中心】>打开蓝牙开关
+            </view>
+            <view style="color:#999999;font-size:28rpx;margin-top:20rpx;margin-bottom:20rpx;">
+                轻扫屏幕右上方/屏幕底部，打开【控制中心】，点击蓝牙图标，开启蓝牙功能。
+            </view>
+            <image mode="widthFix" class="chargingimg" style="width:100%;height:342rpx;" src="{{baseUrlImg+'img_bluetooth02.png'}}" />
+            <image mode="widthFix" class="chargingimg" style="width:228rpx;height:64rpx;" src="{{baseUrlImg+'title_02.png'}}" />
+            <view style="color:#999999;font-size:28rpx;margin-top:20rpx;margin-bottom:20rpx;">
+                若你手机的版本低于iOS 13，请通过下述方式开启蓝牙功能。
+            </view>
+            <view style="font-size:32rpx;color:#333333;font-weight:bold;margin-top:20rpx;margin-bottom:20rpx;">
+                【控制中心】>打开蓝牙开关
+            </view>
+            <view style="color:#999999;font-size:28rpx;margin-top:20rpx;margin-bottom:20rpx;">
+                轻扫屏幕屏幕底部，打开【控制中心】点击蓝牙图标，开启蓝牙功能。
+            </view>
+            <image mode="widthFix" class="chargingimg" style="width:100%;height:342rpx;" src="{{baseUrlImg+'img_bluetooth02.png'}}" />
+        </view>
+    </view>
+    <view class="top2" wx:else>
+        <image mode="widthFix" class="chargingimg" style="width:228rpx;height:64rpx;" src="{{baseUrlImg+'title_03.png'}}" />
+        <view style="font-size:32rpx;color:#333333;font-weight:bold;margin-top:20rpx;margin-bottom:20rpx;">
+            第1步 【控制中心】>打开蓝牙开关
+        </view>
+        <view style="color:#999999;font-size:28rpx;margin-top:20rpx;margin-bottom:20rpx;">
+            轻扫屏幕顶部/底部，打开【控制中心】，点击蓝牙图标，开启蓝牙功能。
+        </view>
+        <image mode="widthFix" class="chargingimg" style="width:100%;height:342rpx;" src="{{baseUrlImg+'img_bluetooth03.png'}}" />
+    </view>
+</view>

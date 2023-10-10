@@ -1,0 +1,457 @@
+page {
+  width: 100%;
+  background: #F6F6F8;
+}
+
+.pageCont {
+  width: 100%;
+}
+
+.pageCont .typeCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200rpx;
+  background: #fff;
+}
+
+.pageCont .typeCont .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+
+.pageCont .typeCont .item image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-bottom: 12rpx;
+}
+
+.pageCont .typeCont .item text {
+  color: #333;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.pageCont .quesCont {
+  width: 100%;
+}
+
+.pageCont .quesCont .title {
+  width: 90%;
+  margin: 32rpx auto;
+}
+
+.pageCont .quesCont .title text {
+  display: inline-block;
+  width: 406rpx;
+  height: 80rpx;
+  color: #333;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 16rpx;
+  border-top-left-radius: 2rpx;
+  background: #fff;
+}
+
+.pageCont .quesCont .content {
+  width: 100%;
+}
+
+
+.pageCont .quesCont .content {
+  width: 100%;
+  /* overflow: hidden;
+  white-space: nowrap; */
+}
+
+.pageCont .quesCont .content .FAQ {
+  width: 100%;
+  /* display: inline-block; */
+}
+
+.pageCont .quesCont .content .FAQ .FAQCont {
+  display: inline-block;
+  white-space: normal;
+  width: 90%;
+  margin-left: 5%;
+  padding: 36rpx 0 40rpx 0;
+  border-radius: 8rpx;
+  background: #fff;
+}
+
+.pageCont .quesCont .content .FAQ .FAQCont .titleFAQ {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto 18rpx;
+}
+
+.pageCont .quesCont .content .FAQ .FAQCont .titleFAQ image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 34rpx;
+}
+
+.pageCont .quesCont .content .FAQ .FAQCont .titleFAQ text {
+  color: #333;
+  font: 500 30rpx "PingFangSC-Medium";
+}
+
+.pageCont .quesCont .content .FAQ .FAQCont .faqList {
+  width: 100%;
+  /* height: 445rpx; */
+}
+
+.pageCont .quesCont .content .FAQ .FAQCont .item {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.pageCont .quesCont .content .FAQ .FAQCont .item .hide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 23rpx 0;
+  border-bottom: 1rpx solid #eee;
+  box-sizing: border-box;
+}
+
+.pageCont .quesCont .content .FAQ .FAQCont .item .hide text {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.pageCont .quesCont .content .FAQ .FAQCont .item .hide image {
+  /* width: 25rpx;
+  height: 13rpx; */
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.pageCont .quesCont .content .FAQ .FAQCont .item .show {
+  width: 100%;
+  padding: 23rpx 0;
+}
+
+.pageCont .quesCont .content .FAQ .FAQCont .item .show text {
+  display: block;
+  width: 90%;
+  margin: 0 auto 10rpx;
+  font-size: 28rpx;
+  color: #888888;
+  line-height: 40rpx;
+  font-weight: 400;
+}
+
+.pageCont .quesCont .content .FAQ .FAQCont .bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 90%;
+  margin: 40rpx auto 0;
+}
+
+.pageCont .quesCont .content .FAQ .FAQCont .bottom image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+
+.pageCont .quesCont .content .FAQ .FAQCont .bottom text {
+  color: #166CFF;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.pageCont .quesCont .content .FAQ .FAQPage {
+  display: inline-block;
+  white-space: normal;
+  width: 90%;
+  height: 648rpx;
+  margin: 0 32rpx 0 16rpx;
+  overflow: hidden;
+}
+
+.pageCont .quesCont .content .FAQ .FAQPage .itemList {
+  display: inline-block;
+  width: 32%;
+  height: 260rpx;
+  margin: 0 2% 16rpx 0;
+  text-align: center;
+  border-radius: 8rpx;
+  background: #fff;
+}
+
+.pageCont .quesCont .content .FAQ .FAQPage .itemList image {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 64rpx 0 20rpx 0;
+}
+
+.pageCont .quesCont .content .FAQ .FAQPage .itemList text {
+  display: block;
+  color: #333;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.pageCont .quesCont .content .FAQ .FAQPage .itemList:nth-child(3n) {
+  margin-right: 0;
+}
+
+.pageCont .quesCont .content .answer {
+  display: block;
+  width: 90%;
+  /* margin: 0 atuo; */
+  margin-left: 5%;
+}
+
+.pageCont .quesCont .content .answer .item {
+  width: 100%;
+  margin: 0 atuo;
+}
+
+.pageCont .quesCont .content .answer .top {
+  width: 100%;
+  margin-top: 25rpx;
+  text-align: right;
+}
+
+.pageCont .quesCont .content .answer .top text {
+  display: inline-block;
+  color: #fff;
+  font-size: 28rpx;
+  border-radius: 13rpx;
+  padding: 10rpx 15rpx;
+  background: #1a6eff;
+
+}
+
+.pageCont .quesCont .content .answer .bottom {
+  margin-top: 25rpx;
+  display: inline-block;
+  width: 71%;
+  color: #333;
+  font-size: 28rpx;
+  border-radius: 15rpx;
+  padding: 20rpx 30rpx;
+  background: #fff;
+
+}
+
+.pageCont .quesCont .content .answer .bottom text {
+  display: inline-block;
+  width: 70%;
+  color: #333;
+  font-size: 28rpx;
+  border-radius: 8rpx;
+  padding: 10rpx 15rpx;
+  background: #fff;
+}
+
+
+.pageCont .quesCont .content .scrollViewH {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ {
+  width: 100%;
+  display: inline-block;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQCont {
+  display: inline-block;
+  white-space: normal;
+  width: 85%;
+  margin-left: 5%;
+  padding: 36rpx 0 40rpx 0;
+  border-radius: 8rpx;
+  background: #fff;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQCont .titleFAQ {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto 18rpx;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQCont .titleFAQ image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 34rpx;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQCont .titleFAQ text {
+  color: #333;
+  font: 500 30rpx "PingFangSC-Medium";
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQCont .faqList {
+  width: 100%;
+  height: 445rpx;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQCont .item {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQCont .item .hide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 23rpx 0;
+  border-bottom: 1rpx solid #eee;
+  box-sizing: border-box;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQCont .item .hide text {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQCont .item .hide image {
+  width: 25rpx;
+  height: 13rpx;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQCont .item .show {
+  width: 100%;
+  padding: 23rpx 0;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQCont .item .show text {
+  display: block;
+  width: 90%;
+  margin: 0 auto 10rpx;
+  font-size: 28rpx;
+  color: #888888;
+  line-height: 40rpx;
+  font-weight: 400;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQCont .bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 90%;
+  margin: 40rpx auto 0;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQCont .bottom image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQCont .bottom text {
+  color: #166CFF;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQPage {
+  display: inline-block;
+  white-space: normal;
+  width: 90%;
+  height: 648rpx;
+  margin: 0 32rpx 0 16rpx;
+  overflow: hidden;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQPage .itemList {
+  display: inline-block;
+  width: 32%;
+  height: 260rpx;
+  margin: 0 2% 16rpx 0;
+  text-align: center;
+  border-radius: 8rpx;
+  background: #fff;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQPage .itemList image {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 64rpx 0 20rpx 0;
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQPage .itemList text {
+  display: block;
+  color: #333;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.pageCont .quesCont .content .scrollViewH .FAQ .FAQPage .itemList:nth-child(3n) {
+  margin-right: 0;
+}
+
+.pageCont .phoneCont {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 112rpx;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.pageCont .phoneCont .left {
+  margin-left: 5%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.pageCont .phoneCont .right {
+  margin-right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 296rpx;
+  height: 80rpx;
+  color: #fff;
+  font: 500 28rpx "PingFangSC-Medium";
+  border-radius: 44rpx;
+  background: linear-gradient(to right, #1a6eff 0%, #41beff 100%) !important;
+}
+
+.pageCont .phoneCont .right image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 12rpx;
+}
+
+.toTop {
+  position: fixed;
+  right: 20rpx;
+  bottom: 130rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100rpx;
+  height: 100rpx;
+
+}
+
+.toTop image {
+  width: 40rpx;
+  height: 40rpx;
+
+}

@@ -1,0 +1,83 @@
+<!--pages/myConsume/myConsume.wxml-->
+<view class="pageCont">
+	<view class="typeCont">
+		<view class="item" wx:for="{{typeList}}" wx:key="index" data-item="{{item}}" data-index="{{index}}" bindtap="selectType">
+			<text class="{{typeCurr==index?'active':''}}">{{item.title}}</text>
+		</view>
+	</view>
+
+	<view class="record">
+		<view class="item" wx:if="{{recordList.length>0&&isRequest}}" wx:for="{{recordList}}" wx:key="index">
+			<view class="wrap" wx:for="{{item}}" wx:for-item="itemData" wx:key="index" wx:for-index="itemDataIndex">
+				<view class="timer" wx:if="{{itemDataIndex==0}}">
+					{{itemData.keyDate}}</view>
+				<block wx:if="{{typeCurr==0}}">
+					<view class="left">
+						<text>余额充值</text>
+						<text>{{itemData.ctimeHour}}</text>
+					</view>
+					<view class="right">
+						<block wx:if="{{itemData.payType==4&&itemData.type==8}}">
+							<text class="ColorRed">-{{itemData.money||'0.00'}}元</text>
+							<text>系统扣除</text>
+						</block>
+						<block wx:else>
+							<text class="ColorGreen">+{{itemData.money||'0.00'}}元</text>
+							<text>{{itemData.payType==4&&itemData.type==7?'系统赠送':itemData.payType==0?'余额支付':itemData.payType==1?'微信支付':itemData.payType==2?'支付宝支付':itemData.payType==3?'银联支付':''}}</text>
+						</block>
+						<view wx:if="{{itemData.additionalAmount}}" style="color:#999;font-size:24rpx;margin-top:10rpx;">
+							含赠送金额{{itemData.additionalAmount?itemData.additionalAmount:0}}元
+						</view>
+					</view>
+				</block>
+				<block wx:if="{{typeCurr==1}}">
+					<view class="left">
+						<text>{{itemData.type==0?'换电服务':itemData.type==1?'充电服务':itemData.type==2?'买车服务':itemData.type==3?'购买月租服务':itemData.type==4?'充电退费':itemData.type==5?'购买套餐':itemData.type==6?'套餐升级':itemData.type==7?'系统赠送':itemData.type==8?'系统扣除':itemData.type==9?'取消交易':itemData.type==10?'缴纳绿色回收金':itemData.type==11?'绿色回收金退回':itemData.type==12?'用户充值':''}}</text>
+						<text>{{itemData.ctimeHour}}</text>
+					</view>
+					<view class="right">
+						<text wx:if="{{itemData.type!=4&&itemData.type!=7&&itemData.type!=9}}"
+                            class="ColorRed">-{{itemData.money||'0.00'}}元</text>
+						<text wx:else class="ColorGreen">+{{itemData.money||'0.00'}}元</text>
+						<block wx:if="{{itemData.payType==0}}">
+							<view style="color:#999;font-size:24rpx;" wx:if="{{itemData.rechargeAmount && itemData.additionalAmount}}">
+								充值本金:{{itemData.rechargeAmount}}、赠送金额:{{itemData.additionalAmount}}
+							</view>
+							<view wx:else>
+								<view wx:if="{{itemData.rechargeAmount}}" style="color:#999;font-size:24rpx;">
+									充值本金
+								</view>
+								<view wx:if="{{itemData.additionalAmount}}" style="color:#999;font-size:24rpx;">
+									赠送金额
+								</view>
+							</view>
+						</block>
+						<block wx:else>
+							<text>{{itemData.payType==1?'微信':itemData.payType==2?'支付宝':itemData.payType==3?'银联':''}}支付</text>
+						</block>
+						<text wx:if="{{itemData.returnMoney}}" class="ColorGreen">已退还{{itemData.returnMoney}}元</text>
+					</view>
+				</block>
+				<block wx:if="{{typeCurr==2}}">
+					<view class="left">
+						<text>{{itemData.type==10?'绿色回收金支付':itemData.type==11?'绿色回收金退回':''}}</text>
+						<text>{{itemData.ctimeHour}}</text>
+					</view>
+					<view class="right">
+						<text
+                            class="{{itemData.type==10?'ColorRed':'ColorGreen'}}">{{itemData.type==10?'-':'+'}}{{itemData.money||'0.00'}}元</text>
+						<text>{{itemData.payType==0?'余额支付':itemData.payType==1?'微信支付':itemData.payType==2?'支付宝支付':itemData.payType==3?'银联支付':itemData.payType==4?'线下支付':''}}</text>
+					</view>
+				</block>
+
+			</view>
+		</view>
+
+		<view class="noRecordCont " wx:if="{{recordList.length==0&&isRequest}}">
+			<image class="laImage" mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus03@2x.png'}}" />
+			<text>暂无记录</text>
+		</view>
+	</view>
+
+
+</view>

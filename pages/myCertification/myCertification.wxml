@@ -1,0 +1,103 @@
+<!--pages/myCertification/myCertification.wxml-->
+<view class="pageCont">
+	<view class="reactivating" wx:if="{{batteryDepositOrderStatus == 0}}">
+		<view class="left">
+			<view class="defaultRound"></view>
+			<view style="color: #333333;font-size:24rpx;font-weight: bold;margin-top:15rpx;">
+				实名认证
+			</view>
+		</view>
+		<view class="center" style="height:40rpx;margin-left: 40rpx;">
+			<view style="width:130rpx;border:1rpx dotted #ddd;">
+
+			</view>
+		</view>
+
+		<view class="right">
+			<view class="defaultRound"></view>
+			<view style="color: #999999;font-size:24rpx;margin-top:15rpx;">
+				缴纳电池绿色回收金
+			</view>
+		</view>
+	</view>
+	<view class="lineTop24"></view>
+	<form bindsubmit="formSubmit" class="formSubmitCont">
+		<view class="info">
+			<view class="title">
+				<image class="cicle" mode="widthFix" src="{{baseUrlImg+'img_text03@2x.png'}}" />
+			</view>
+
+			<view class="cont">
+				<view class="item">
+					<text>真实姓名</text>
+					<input placeholder='请输入真实姓名' type="text" data-param="param1" maxlength="10" name="param1" value="{{param1}}" placeholder-class="placeholderCont" bindinput="bindinput"></input>
+
+				</view>
+				<view class="item">
+					<text>身份证号码</text>
+					<input placeholder='请输入身份证号码' maxlength='18' type="idcard" data-param="param2" name="param2" value="{{param2}}" placeholder-class="placeholderCont" bindinput="bindinput"></input>
+
+				</view>
+			</view>
+			<view class="note">
+				温馨提示：为保障你的合法权益，请进行实名认证。
+			</view>
+		</view>
+		<view class="info">
+			<view class="title">
+				<image class="cicle" style="width: 158rpx;" mode="widthFix" src="{{baseUrlImg+'img_text04@2x.png'}}" />
+			</view>
+
+			<view class="cont">
+				<view class="item">
+					<text>姓名</text>
+					<input placeholder='请输入姓名' type="text" data-param="param3" maxlength="10" name="param3" value="{{param3}}" placeholder-class="placeholderCont" bindinput="bindinput"></input>
+
+				</view>
+				<view class="item">
+					<text>手机号码</text>
+					<input placeholder='请输入手机号码' type="text" data-param="param4" maxlength="11" name="param4" value="{{param4}}" placeholder-class="placeholderCont" bindinput="bindinput"></input>
+
+				</view>
+			</view>
+			<view class="note">
+				温馨提示：为防止意外事故发生，请填写紧急联系人信息。
+			</view>
+		</view>
+		<view class="info">
+			<view class="title">
+				<image class="cicle" mode="widthFix" src="{{baseUrlImg+'img_text05@2x.png'}}" />
+			</view>
+
+			<view class="cont">
+				<view class="item">
+					<text>地区信息</text>
+					<view class="areaCont">
+						<picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+							<view class="picker" wx:if="{{param5.length>0}}">
+								{{param5[0]}}，{{param5[1]}}，{{param5[2]}}
+							</view>
+							<view class="pickerNo" wx:else>
+								请选择省市区（选填）
+							</view>
+						</picker>
+						<image class="cicle" mode="widthFix" src="{{baseUrlImg+'icon_list_more@2x.png'}}" />
+					</view>
+				</view>
+				<view class="item">
+					<text>详细地址</text>
+					<input placeholder='请输入详细地址（选填）' type="text" data-param="param6" maxlength="50" name="param6" value="{{param6}}" placeholder-class="placeholderCont" bindinput="bindinput"></input>
+
+				</view>
+			</view>
+			<view class="note">
+				温馨提示：为提供更好的服务和发送礼品，请填写你的常用地址。
+			</view>
+		</view>
+		<view class="botBtmFixLine165"></view>
+		<view class="fromBtnAc">
+			<!-- &&param5&&param6 -->
+			<button formType="submit" class="{{param1&&param2&&param3&&param4?'opacity10':'opacity4'}}">提交</button>
+		</view>
+	</form>
+</view>

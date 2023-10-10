@@ -1,0 +1,248 @@
+import regeneratorRuntime from '../../utils/runtime.js'
+const app = getApp();
+import {
+  HTTP
+} from "../../utils/server";
+import {
+  formats
+} from "../../utils/util";
+Page({
+  data: {
+    baseUrlImg: app.globalData.baseUrlImg,
+    depositDto: {},
+    frequencyCardList: [],
+    totalMoney: 0,
+    preTotalMoney: 0,
+    counpon: '',
+    currCard: -1,
+    freType: "",
+    exchangeExplain: '',
+    haveread: false
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onShow: function (options) {
+    this.getDataFun();
+  },
+  getDataFun() {
+    let that = this;
+    let params = {};
+    HTTP({
+      url: 'app/wx/userActivateBattery',
+      methods: 'get',
+      data: params,
+      loading: true,
+    }).then(async res => {
+      let objData = res.data;
+      let depositDto = objData.depositDto;
+      let comboList = [];
+      let activityFrequencyCardList = objData.activityFrequencyCardList || [];
+      let frequencyCardListS = objData.frequencyCardList || [];
+      comboList = activityFrequencyCardList.concat(frequencyCardListS);
+      let frequencyCardList = comboList;
+      let cardMoney = frequencyCardList.length > 0 ? Number(frequencyCardList[0].price) : 0;
+      let counpon = await that.getUserCounpon(cardMoney)
+      let totalMoney = ""
+      if (!counpon) {
+        totalMoney = (Number(depositDto.depositMoney) + cardMoney).toFixed(2);
+      } else {
+        totalMoney = (Number(depositDto.depositMoney) + cardMoney - counpon.discountedPrices).toFixed(2);
+        this.setData({
+          preTotalMoney: (Number(depositDto.depositMoney) + cardMoney).toFixed(2),
+          counpon: counpon.discountedPrices
+        })
+      }
+
+      if (frequencyCardList.length > 0) {
+        frequencyCardList.map((item, index) => {
+          if (item.num != 0 && item.num != -1) {
+            item.times = Number(item.price / item.num).toFixed(2);
+          } else {
+            item.times = -1;
+          }
+        })
+
+        that.setData({
+          currCard: 0
+        });
+      }
+      that.setData({
+        exchangeExplain: objData.exchangeExplain,
+        depositDto,
+        frequencyCardList,
+        currCard: 0,
+        isRequest: true
+      });
+      that.checkFrequencyType(totalMoney)
+    }, err => {
+      that.setData({
+        isRequest: true
+      })
+    })
+
+  },
+  selectFun(e) {
+    let index = e.currentTarget.dataset.index;
+    let item = e.currentTarget.dataset.item;
+    this.data.frequencyCardList.map(async (items, indexs) => {
+      if (indexs == index) {
+        if (this.data.currCard == index) {
+          this.data.totalMoney = Number(this.data.depositDto.depositMoney).toFixed(2)
+          this.setData({
+            currCard: -1,
+            totalMoney: this.data.totalMoney,
+            preTotalMoney: "",
+            counpon: ''
+          })
+        } else {
+          let counpon = await this.getUserCounpon(items.price)
+          if (!counpon) {
+            this.data.totalMoney = (Number(this.data.depositDto.depositMoney) + items.price).toFixed(2);
+            this.setData({
+              currCard: indexs,
+              totalMoney: this.data.totalMoney
+            })
+          } else {
+            this.data.totalMoney = (Number(this.data.depositDto.depositMoney) + items.price - counpon.discountedPrices).toFixed(2);
+            this.setData({
+              counpon: counpon.discountedPrices,
+              preTotalMoney: (Number(this.data.depositDto.depositMoney) + items.price).toFixed(2),
+              currCard: indexs,
+              totalMoney: this.data.totalMoney
+            })
+          }
+        }
+      }
+    })
+  },
+  selectFunNoPay(e) {
+    let dataset = e.currentTarget.dataset.set
+    if (dataset == "nopay") {
+      this.data.totalMoney = Number(this.data.depositDto.depositMoney).toFixed(2)
+      this.setData({
+        currCard: 'nopay',
+        totalMoney: this.data.totalMoney,
+        preTotalMoney: ""
+      })
+    }
+  },
+  gotoxieyi() {
+    wx.navigateTo({
+      url: '/pages/myDepositAgreement/myDepositAgreement',
+    })
+  },
+  // 支付
+  rechargeFun() {
+    if (!this.data.haveread) {
+      wx.showToast({
+        title: '请先阅读并同意《电池绿色回收金协议》',
+        icon: 'none'
+      })
+      return
+    }
+    let that = this;
+    let money = this.data.preTotalMoney ? this.data.preTotalMoney : this.data.totalMoney
+    let name = ""
+    let activeId = ""
+    let depositId = ""
+    let depositMoney = ""
+    let activeMoney = ""
+    if (this.data.currCard == 'nopay') {
+      depositId = this.data.depositDto.depositId
+      depositMoney = this.data.depositDto.depositMoney
+    } else {
+      if (this.data.frequencyCardList && this.data.frequencyCardList.length > 0) {
+        if (this.data.currCard != -1) {
+          name = this.data.frequencyCardList[this.data.currCard].name
+          activeId = this.data.frequencyCardList[this.data.currCard].id
+          activeMoney = this.data.frequencyCardList[this.data.currCard].price
+        }
+      }
+      depositId = this.data.depositDto.depositId
+      depositMoney = this.data.depositDto.depositMoney
+    }
+    wx.navigateTo({
+      url: '/pages/payforend/payforend?money=' + money + '&type=0' + '&name=' + name + '&activeId=' + activeId + "&depositId=" + depositId + "&depositMoney=" + depositMoney + "&activeMoney=" + activeMoney
+    })
+
+  },
+  // 获取用户优惠券
+  getUserCounpon(money) {
+    return new Promise((resolve, reject) => {
+      HTTP({
+        url: "wallet/getUserCouponListByPrice",
+        methods: 'get',
+        data: {
+          type: 0,
+          price: money
+        },
+        loading: true,
+      }).then(res => {
+        if (res.data && res.data.length > 0) {
+          resolve(res.data[0])
+        } else {
+          resolve("")
+        }
+      })
+    })
+  },
+
+  // 选择
+  selectnoteCont() {
+    this.setData({
+      haveread: !this.data.haveread
+    })
+
+  },
+
+  // 获取套餐策略类型
+  checkFrequencyType(money) {
+    // 套餐类型：0（次卡套餐无限时），1（限时套餐），2（限时套餐无限次），3（包月套餐），4（叠加包套餐）
+    HTTP({
+      url: 'wallet/getFrequencyCardType',
+      methods: "get",
+      data: {},
+    }).then(res => {
+      let freType = res.data
+      let totalMoney = (Number(this.data.depositDto.depositMoney)).toFixed(2);
+      if (freType == 3 || freType == 4) {
+        this.setData({
+          currCard: 'nopay',
+          totalMoney: totalMoney,
+          preTotalMoney: ""
+        })
+      } else {
+        this.setData({
+          totalMoney: money
+        })
+      }
+      this.setData({
+        freType: freType
+      })
+
+    })
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

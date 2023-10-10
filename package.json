@@ -1,0 +1,27 @@
+{
+  "name": "miniproj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "useless": "cd utils & node useless.js & cd .. & npx wxss ./pages",
+    "noless": "cd utils & node nouseless.js & cd ..",
+    "lessp": "npx wxss ./pages",
+    "init": "cd utils & node create.js & cd ..",
+    "reset": "cd utils & node resetapp.js & cd .."
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.wondware.com/wondwarefrontend/chargexchangmini.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "wxss-cli": "^1.0.4"
+  },
+  "dependencies": {
+    "@vant/weapp": "^1.0.2",
+    "eventemitter2": "^6.0.0",
+    "miniprograms-navigation-bar": "^2.0.2"
+  }
+}

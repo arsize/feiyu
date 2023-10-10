@@ -1,0 +1,322 @@
+<van-notice-bar wx:if="{{false}}" text="蓝牙充换电服务中，为提供正常服务请保持屏幕常亮" color="#FFFFFF" backgroundColor="#000000" left-icon="info-o" />
+<view class="waiscroll">
+	<view class="chargeinfo">
+		<view class="topInfo">
+			<view class="cabinetName">{{cabinetinfo.cabinetName}}</view>
+			<view class="item">
+				<image mode="widthFix" style="width:30rpx;height:30rpx;" src="{{baseUrlImg+'icon_cont_id@2x.png'}}" />
+				<view style="margin-left:10rpx;font-size:24rpx;">{{cabinetinfo.cabinetDid}}</view>
+			</view>
+		</view>
+		<view class="centerChargeBox">
+			<view class="toptext">温馨提示：开始换电后，将会打开空仓，请保持安全距离</view>
+			<view class="{{cabinetBitType == 0 ? 'cabinetShow' : 'cabinetBitShow' }}">
+				<view class="cabinetItem" wx:for="{{cabinetBoxInfoList}}" data-set="{{index}}">
+					<view class="portnum">{{index + 1}}</view>
+					<view class="cabinetCent" wx:if="{{item.chargeStatus == 0}}">
+						<image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery04@2x.png'}}" />
+						<view class="text">空仓</view>
+					</view>
+					<view class="cabinetCent" wx:elif="{{item.chargeStatus == 1}}">
+						<image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery01@2x.png'}}" />
+						<view class="text">充电中</view>
+					</view>
+					<view class="cabinetCent" wx:elif="{{item.chargeStatus == 2}}">
+						<image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery03@2x.png'}}" />
+						<view class="text">可换电</view>
+					</view>
+					<view class="cabinetCent" wx:elif="{{item.chargeStatus == 3}}">
+						<image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery02@2x.png'}}" />
+						<view class="text">禁用</view>
+					</view>
+				</view>
+				<!-- <view class="cabinetItem" data-set="2">
+					<view class="portnum">2</view>
+					<view class="cabinetCent" wx:if="{{cabinetBoxInfoList[1].chargeStatus == 0}}">
+						<image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery04@2x.png'}}" />
+						<view class="text">空仓</view>
+					</view>
+					<view class="cabinetCent" wx:elif="{{cabinetBoxInfoList[1].chargeStatus == 1}}">
+						<image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery01@2x.png'}}" />
+						<view class="text">充电中</view>
+					</view>
+					<view class="cabinetCent" wx:elif="{{cabinetBoxInfoList[1].chargeStatus == 2}}">
+						<image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery03@2x.png'}}" />
+						<view class="text">可换电</view>
+					</view>
+					<view class="cabinetCent" wx:elif="{{cabinetBoxInfoList[1].chargeStatus == 3}}">
+						<image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery02@2x.png'}}" />
+						<view class="text">禁用</view>
+					</view>
+				</view>
+				<view class="cabinetItem" data-set="3">
+					<view class="portnum">3</view>
+					<view class="cabinetCent" wx:if="{{cabinetBoxInfoList[2].chargeStatus == 0}}">
+						<image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery04@2x.png'}}" />
+						<view class="text">空仓</view>
+					</view>
+					<view class="cabinetCent" wx:elif="{{cabinetBoxInfoList[2].chargeStatus == 1}}">
+						<image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery01@2x.png'}}" />
+						<view class="text">充电中</view>
+					</view>
+					<view class="cabinetCent" wx:elif="{{cabinetBoxInfoList[2].chargeStatus == 2}}">
+						<image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery03@2x.png'}}" />
+						<view class="text">可换电</view>
+					</view>
+					<view class="cabinetCent" wx:elif="{{cabinetBoxInfoList[2].chargeStatus == 3}}">
+						<image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery02@2x.png'}}" />
+						<view class="text">禁用</view>
+					</view>
+				</view>
+				<view class="cabinetItem" data-set="4">
+					<view class="portnum">4</view>
+					<view class="cabinetCent" wx:if="{{cabinetBoxInfoList[3].chargeStatus == 0}}">
+						<image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery04@2x.png'}}" />
+						<view class="text">空仓</view>
+					</view>
+					<view class="cabinetCent" wx:elif="{{cabinetBoxInfoList[3].chargeStatus == 1}}">
+						<image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery01@2x.png'}}" />
+						<view class="text">充电中</view>
+					</view>
+					<view class="cabinetCent" wx:elif="{{cabinetBoxInfoList[3].chargeStatus == 2}}">
+						<image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery03@2x.png'}}" />
+						<view class="text">可换电</view>
+					</view>
+					<view class="cabinetCent" wx:elif="{{cabinetBoxInfoList[3].chargeStatus == 3}}">
+						<image style="width:100rpx;height:50rpx;" src="{{baseUrlImg + 'icon_battery02@2x.png'}}" />
+						<view class="text">禁用</view>
+					</view>
+				</view> -->
+			</view>
+		</view>
+		<view class="balanceLine" wx:if="{{!userFrequencyCardRecord}}">
+			<view class="exchangeJT" wx:if="{{exChangeBatteryFee != null && !recommendStatus}}">
+				<view>
+					<view class="title" style="margin-bottom:17rpx;">
+						本次是你今日<view class="boldtitle">
+							第{{exchangeJTCount + 1}}次
+						</view>
+						换电
+					</view>
+
+					<view wx:if="{{cabinetinfo.prompt}}">
+						<view wx:for="{{prompt}}" data-item="{{item}}" style="font-size:29rpx;color:#999999;font-weight: bold;">
+							{{item}}
+						</view>
+					</view>
+				</view>
+				<image style="width:100rpx;height:100rpx;" src="{{baseUrlImg + 'img_swap@2x.png'}}" />
+			</view>
+			<block wx:else>
+				<view class="text">换电套餐</view>
+				<view class="advertisement">
+					<swiper bind:tap="gotoadvertisement" style="height:100%;width:100%;" indicator-dots="{{false}}" autoplay="{{true}}" interval="{{2000}}" duration="{{500}}">
+						<block wx:for="{{background}}" wx:key="*this">
+							<swiper-item>
+								<image mode="widthFix" style="width:100%;height:100%;" src="{{baseUrlImg+'banner_swap30@2x.png'}}" />
+							</swiper-item>
+						</block>
+					</swiper>
+				</view>
+			</block>
+		</view>
+		<view class="balanceLine" wx:else>
+			<view class="text">当前换电套餐</view>
+			<view class="advertisement">
+				<view class="nowCardWay">
+					<view class="leftBox" wx:if="{{userFrequencyCardRecord.frequencyCardType == 1}}">
+						<view class="top">
+							剩余{{userFrequencyCardRecord.surplusNum?userFrequencyCardRecord.surplusNum:0}}次
+						</view>
+						<view class="subinfo">有效期至{{takeEffectTime}} - {{loseEffectTime}}</view>
+					</view>
+					<view class="leftBox" wx:elif="{{userFrequencyCardRecord.frequencyCardType == 0}}">
+						<view class="top">
+							剩余{{userFrequencyCardRecord.surplusNum?userFrequencyCardRecord.surplusNum:0}}次
+						</view>
+					</view>
+					<view class="leftBox" wx:elif="{{userFrequencyCardRecord.frequencyCardType == 2}}">
+						<view class="top">无限次</view>
+						<view class="subinfo">有效期至{{takeEffectTime}} - {{loseEffectTime}}</view>
+					</view>
+					<view class="leftBox" wx:elif="{{userFrequencyCardRecord.frequencyCardType == 3}}">
+						<view class="top">
+							剩余{{userFrequencyCardRecord.surplusNum?userFrequencyCardRecord.surplusNum:0}}次
+						</view>
+						<view class="subinfo">有效期: {{loseEffectTime}}</view>
+					</view>
+					<view class="leftBox" wx:elif="{{userFrequencyCardRecord.frequencyCardType == 4}}">
+						<view class="top">
+							剩余{{userFrequencyCardRecord.surplusNum?userFrequencyCardRecord.surplusNum:0}}次
+						</view>
+						<view class="subinfo">有效期: {{loseEffectTime}}</view>
+					</view>
+					<image style="width:100rpx;height:100rpx;" src="{{baseUrlImg + 'v2icon_cont_dqtc@2x.png'}}" />
+				</view>
+			</view>
+		</view>
+		<view class="balanceLine2" wx:if="{{!userFrequencyCardRecord}}">
+			<view></view>
+			<view class="balanceRight">
+				<view style="margin-right:15rpx;display:flex;">
+					<view>余额：</view>
+					<view style="margin:0 10rpx;margin-left:0;">
+						￥{{cabinetinfo.money?cabinetinfo.money:0}}
+					</view>
+				</view>
+				<view bind:tap="gotobalance" style="color:#166CFF;display: flex;align-items: center;">
+					充值
+					<image style="width:25rpx;height:25rpx;margin-left:5rpx;" src="{{baseUrlImg + 'icon_list_more03@2x.png'}}" />
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="totalbottom">
+	<view class="left" style="display:flex;align-items: center;">
+		<view wx:if="{{!userFrequencyCardRecord}}">
+			<block wx:if="{{exChangeBatteryFee == 0}}">
+				{{'0元'}}
+			</block>
+			<block wx:else>
+				{{exChangeBatteryFee?exChangeBatteryFee + '元':'--' + ' 元'}}
+			</block>
+		</view>
+		<view wx:else>
+			<block wx:if="{{userFrequencyCardRecord.frequencyCardType == 1}}">
+				<view wx:if="{{userFrequencyCardRecord.surplusNum > 0}}" style="display:flex;">
+					<view>{{'0.00 元'}}</view>
+					<view style="color:#999999;">（套餐抵扣）</view>
+				</view>
+				<view wx:else>{{exChangeBatteryFee?exChangeBatteryFee + '元':'--' + ' 元'}}</view>
+			</block>
+			<block wx:elif="{{userFrequencyCardRecord.frequencyCardType == 0}}">
+				<view wx:if="{{userFrequencyCardRecord.surplusNum > 0}}" style="display:flex;">
+					<view>{{'0.00 元'}}</view>
+					<view style="color:#999999;">（套餐抵扣）</view>
+				</view>
+				<view wx:else>{{exChangeBatteryFee?exChangeBatteryFee + '元':'--' + ' 元'}}</view>
+			</block>
+			<block wx:elif="{{userFrequencyCardRecord.frequencyCardType == 2}}">
+				<view style="display:flex;">
+					<view>{{'0.00 元'}}</view>
+					<view style="color:#999999;">（套餐抵扣）</view>
+				</view>
+			</block>
+			<block wx:elif="{{userFrequencyCardRecord.frequencyCardType == 3 || userFrequencyCardRecord.frequencyCardType == 4}}">
+				<view style="display:flex;">
+					<view>{{'0.00 元'}}</view>
+					<view style="color:#999999;">（套餐抵扣）</view>
+				</view>
+			</block>
+		</view>
+		<image catchtap="openInfo" mode="widthFix" style="width:40rpx;height:40rpx;margin-left:10rpx;padding-left:10rpx;padding:right:10rpx;" src="{{baseUrlImg + 'icon_cont_wenhao@2x.png'}}" />
+	</view>
+	<view class="right" wx:if="{{canBtn}}" bindtap="gofororderBeforDialog">
+		<image class="img" mode="widthFix" style="width:100%;height:100%;" src="{{baseUrlImg + 'btn_small@2x.png'}}" />
+		<view class="text" style="width:100%;text-align: center;top: 46%;">立即换电</view>
+	</view>
+	<view class="right" wx:else style="opacity: 0.5;">
+		<image class="img" mode="widthFix" style="width:100%;height:100%;" src="{{baseUrlImg + 'btn_small@2x.png'}}" />
+		<view class="text" style="width:100%;text-align: center;top: 46%;">立即换电</view>
+	</view>
+</view>
+<dialog></dialog>
+<!-- pop 须知 -->
+<van-popup show="{{ exchangeinfolog }}" close-on-click-overlay round position="bottom" custom-style="{{exchangeJT && exchangeJT.length > 1?'height: 55%;':'height: 41%;'}}" bind:close="onClosechargeInfolog">
+	<view class="popTop">
+		<view style="font-size:32rpx;color:#000000;font-weight:bold;">换电须知</view>
+		<view style="display:flex;align-items:center;">
+			<view style="margin-right:20rpx;">下次不再提示</view>
+			<switch checked="{{exchangelogChecked}}" bindchange="exchangelogChange" />
+		</view>
+	</view>
+	<view class="popLogBody" style="overflow-y: scroll;height:55%;" wx:if="{{exchangeJT.length > 1}}">
+		<view>
+			<view style="color:#666666;font-size:26rpx;">
+				1、换电收费：
+			</view>
+			<view>
+				<view class="row row1">
+					<view class="col">
+						当日换电次数
+					</view>
+					<view class="col">
+						换电收费
+					</view>
+				</view>
+				<view class="row" style="background:rgba(250,250,250,1);" wx:for="{{exchangeJT}}" data-item="{{item}}" data-index="{{index}}" wx:key="*this">
+					<view class="col" wx:if="{{index == (exchangeJT.length-1)}}">
+						第{{exchangeJT[index].count}}次之后
+					</view>
+					<view class="col" wx:else>
+						第{{exchangeJT[index].count + 1}}~{{exchangeJT[index + 1].count}}次
+					</view>
+					<view class="col" wx:if="{{item.price > 0}}">
+						{{item.price}}元/次
+					</view>
+					<view class="col" wx:else>
+						免费
+					</view>
+				</view>
+			</view>
+			<view style="color:black;margin-top:20rpx;">以上换电次数不含套餐抵扣的换电次数</view>
+			<view style="color:#666666;font-size:26rpx;margin-top:25rpx;">
+				2、若已购买套餐，系统将自动扣除有效套餐内的换电次数以抵扣换电费用。
+			</view>
+		</view>
+	</view>
+	<view class="popLogBody" wx:else>
+		<view style="margin-bottom:5rpx;" wx:if="{{exChangeBatteryFee != null}}">1、单次换电{{exChangeBatteryFee?exChangeBatteryFee:'--'}}元/次，购买换电套餐更实惠；</view>
+		<view style="margin-bottom:5rpx;" wx:if="{{exChangeBatteryFee != null}}">2、若已购买套餐，系统将自动扣除有效套餐内的换电次数以抵扣换电费用。</view>
+		<view style="margin-bottom:5rpx;" wx:else>1、若已购买套餐，系统将自动扣除有效套餐内的换电次数以抵扣换电费用。</view>
+
+	</view>
+
+	<view class="popFoot" bind:tap="onClosechargeInfolog">
+		<view class="text">我知道了</view>
+	</view>
+</van-popup>
+<view class="introst" wx:if="{{logshow && logshowNum < 4}}">
+	<view class="dialogTop">换电指引</view>
+	<view class="dialogBody">
+		<view class="item">
+			<view class="left">
+				<image style="width:88rpx;height:88rpx;" src="{{baseUrlImg + 'img_pop_swap01@2x.png'}}" />
+			</view>
+			<view class="right">
+				<view>第1步：</view>
+				<view style="color:#333333;font-size:28rpx;font-weight: bold;">空仓打开，放入待充电池后关闭仓门</view>
+			</view>
+		</view>
+		<view class="item">
+			<view class="left">
+				<image style="width:88rpx;height:88rpx;" src="{{baseUrlImg + 'img_pop_swap02@2x.png'}}" />
+			</view>
+			<view class="right">
+				<view>第2步：</view>
+				<view style="color:#333333;font-size:28rpx;font-weight: bold;">等待电池安全检测</view>
+			</view>
+		</view>
+		<view class="item">
+			<view class="left">
+				<image style="width:88rpx;height:88rpx;" src="{{baseUrlImg + 'img_pop_swap03@2x.png'}}" />
+			</view>
+			<view class="right">
+				<view>第3步：</view>
+				<view style="color:#333333;font-size:28rpx;font-weight: bold;">仓门打开，取出可用电池后关闭仓门</view>
+			</view>
+		</view>
+	</view>
+	<view class="dialogFoot">
+		<view style="display:flex;width:100%;height:100%;flex-direction: column;align-items: center;">
+			<view bindtap="closedialog" class="item0">
+				<view class="text">好的，开始换电</view>
+			</view>
+			<view bind:tap="notishi" style="display:flex;margin-top:36rpx;">
+				<view style="color:#666666;font-size:24rpx;">下次不再提示</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view bind:tap="hideexchangeStatus" class="mask {{logshow && logshowNum < 4?'show':'noshow'}}"></view>

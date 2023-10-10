@@ -1,0 +1,739 @@
+page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: PingFangSC-Medium;
+}
+
+.mapPage {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #f4f6f7;
+}
+
+.mapPage .serveType {
+  position: absolute;
+  top: 32rpx;
+  left: 5%;
+  z-index: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 528rpx;
+  height: 64rpx;
+
+}
+.heightXN{
+  height: 390rpx
+}
+
+.mapPage .serveType .item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 144rpx;
+  height: 64rpx;
+  margin-right: 32rpx;
+  color: #999;
+  font: 500 28rpx "PingFangSC-Medium";
+  text-align: center;
+  line-height: 64rpx;
+  border-radius: 32rpx;
+  box-shadow: 0px 0px 24rpx #eee;
+  background: #fff;
+}
+
+.mapPage .serveType .item.active {
+  color: #fff;
+  box-shadow: 0px 0px 24rpx #B7C4F7;
+  background: #1A6EFF;
+}
+
+.mapPage .serveType .item .wrap {
+  text-align: center;
+}
+
+.mapPage .serveType .item .image {
+  margin-left: 8rpx;
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.mapPage .batType {
+  position: absolute;
+  top: 110rpx;
+  left: 29%;
+  z-index: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  /* width: 230rpx; */
+  padding: 15rpx 0 6rpx 0;
+  width: 440rpx;
+  /*height: 64rpx; */
+  border-radius: 12rpx;
+  box-shadow: 0px 0px 24rpx #eee;
+  background: #fff;
+}
+
+.mapPage .batType .batTypeItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rpx;
+  width: 49%;
+}
+
+.mapPage .batType .batTypeItem .imagebt {
+  margin: 0 8rpx 0 0rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.mapPage .batType .batTypeItem .wrapbt {
+  display: inline-block;
+  width: 70%;
+  color: #999;
+  font: 500 22rpx "PingFangSC-Medium";
+}
+
+
+.mapPage .centerPosition {
+  position: absolute;
+  top: 0rpx;
+  bottom: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  margin: auto auto;
+  width: 45rpx;
+  height: 63rpx;
+  z-index: 0;
+}
+
+.mapPage .centerPosition .image {
+  width: 40rpx;
+  height: 58rpx;
+}
+
+.mapPage .leftBotPosition {
+  position: absolute;
+  bottom: 515rpx;
+  left: 20rpx;
+  margin: auto auto;
+  width: 108rpx;
+  height: 108rpx;
+  z-index: 0;
+}
+
+.mapPage .leftBotPosition .image {
+  width: 108rpx;
+  height: 108rpx;
+}
+.mapPage .topBotPosition {
+  position: absolute;
+  bottom: 730rpx;
+  left: 20rpx;
+  margin: auto auto;
+  width: 108rpx;
+  height: 108rpx;
+  z-index: 0;
+}
+
+.mapPage .topBotPosition .image {
+  width: 108rpx;
+  height: 108rpx;
+}
+
+.mapPage .leftList {
+  position: absolute;
+  bottom: 620rpx;
+  left: 20rpx;
+  margin: auto auto;
+  width: 108rpx;
+  height: 108rpx;
+  z-index: 0;
+}
+
+.mapPage .leftList .image {
+  width: 108rpx;
+  height: 108rpx;
+}
+
+
+/* 电柜信息 */
+.mapPage .cabitDetail {
+  position: absolute;
+  bottom: 0rpx;
+  left: 0rpx;
+  margin: auto auto;
+  width: 100%;
+  /* height: 515rpx; */
+
+
+  z-index: 0;
+  border-top-left-radius: 24rpx;
+  border-top-right-radius: 24rpx;
+  background: #fff;
+}
+
+.mapPage .cabitDetail .toTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0rpx auto;
+  /* height: 50rpx; */
+}
+
+.mapPage .cabitDetail .toTop .topImg {
+  margin: 32rpx 0;
+  width: 30rpx;
+  height: 24rpx;
+}
+
+.mapPage .cabitDetail .cabitTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  /* background: green; */
+}
+
+.mapPage .cabitDetail .cabitTitle .left {
+  width: 82%;
+  color: #000;
+  font: 500 32rpx "PingFangSC-Medium";
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+  /* background: red; */
+}
+
+.mapPage .cabitDetail .cabitTitle .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.mapPage .cabitDetail .cabitTitle .right cover-view {
+  color: #1A6EFF;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.mapPage .cabitDetail .cabitTitle .right .imageNav {
+  margin-left: 10rpx;
+  width: 24rpx;
+  height: 24rpx;
+
+}
+
+.mapPage .cabitDetail .middleInfo {
+  width: 90%;
+  margin: 24rpx auto;
+}
+
+.mapPage .cabitDetail .middleInfo .item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: 6rpx auto 0;
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mapPage .cabitDetail .middleInfo .item cover-image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 9rpx;
+}
+
+.mapPage .cabitDetail .middleInfo .item .text {
+  display: inline-block;
+  width: 82%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* background:green; */
+}
+
+.mapPage .cabitDetail .middleInfo .item .text2 {
+  display: inline-block;
+  width: 22%;
+  text-align: right;
+  font-size: 28rpx;
+  /* background:red; */
+}
+
+
+
+.mapPage .cabitDetail .bottomInfoCh {
+  /* display: flex;
+  justify-content: flex-start;
+  align-items: center; */
+  width: 90%;
+  margin: 16rpx auto 0;
+}
+
+.mapPage .cabitDetail .bottomInfoCh .top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: 0rpx auto;
+}
+
+.mapPage .cabitDetail .bottomInfoCh .top .wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+}
+
+.mapPage .cabitDetail .bottomInfoCh .top .wrap cover-view:nth-child(1) {
+  color: #666;
+  font: 500 26rpx "PingFangSC-Medium";
+}
+
+.mapPage .cabitDetail .bottomInfoCh .top .wrap cover-view:nth-child(2) {
+  color: #333;
+  font: 500 26rpx "PingFangSC-Medium";
+}
+
+.mapPage .cabitDetail .bottomInfoCh .bottom {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  margin: 16rpx auto 0;
+}
+
+.mapPage .cabitDetail .bottomInfoCh .bottom .title {
+  color: #666;
+  font: 500 26rpx "PingFangSC-Medium";
+}
+
+.mapPage .cabitDetail .bottomInfoCh .bottom .cont {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+
+
+}
+
+.mapPage .cabitDetail .bottomInfoCh .bottom .item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 20rpx 10rpx 0;
+  color: #666;
+  width: 35%;
+  font: 500 26rpx "PingFangSC-Medium";
+
+}
+
+
+.mapPage .cabitDetail .bottomInfoCh .bottom .item cover-view:nth-child(1) {
+  color: #666;
+  font: 500 26rpx "PingFangSC-Medium";
+}
+
+.mapPage .cabitDetail .bottomInfoCh .bottom .item cover-view:nth-child(2) {
+  margin-left: 8rpx;
+  color: #333;
+  font: 500 26rpx "PingFangSC-Medium";
+}
+
+
+
+.mapPage .cabitDetail .bottomInfo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  margin: 0rpx auto;
+}
+
+.mapPage .cabitDetail .bottomInfo .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 32rpx;
+  width: 100%;
+  height: 88rpx;
+  color: #fff;
+  font: 500 32rpx "PingFangSC-Medium";
+  border-radius: 44rpx;
+  background: linear-gradient(to right, #1a6eff 0%, #41beff 100%) !important;
+}
+
+.mapPage .cabitDetail .bottomInfo .btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 32rpx;
+  width: 100%;
+  height: 88rpx;
+  color: #fff;
+  font: 500 32rpx "PingFangSC-Medium";
+  border-radius: 44rpx;
+  /* background: linear-gradient(to right, #1a6eff 0%, #41beff 100%) !important; */
+}
+
+.mapPage .cabitDetail .bottomInfo .btn .btnImg {
+  width: 100%;
+  height: 100%;
+}
+
+.mapPage .cabitDetail .bottomInfo .btn .contbtn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+}
+
+
+.mapPage .cabitDetail .bottomInfo .item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 50rpx;
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+
+}
+
+.mapPage .cabitDetail .bottomInfo .item:nth-child(3) {
+  margin: 0;
+  width: 54%;
+}
+
+
+
+.mapPage .cabitDetail .bottomInfo .item cover-view:nth-child(1) {
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.mapPage .cabitDetail .bottomInfo .item cover-view:nth-child(2) {
+  color: #333;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+
+.mapPage .cabitDetail .bottomInfo .item:nth-child(3) cover-view:nth-child(2) {
+  width: 69%;
+}
+
+.mapPage .cabitDetail .batInfo {
+  width: 90%;
+  margin: 30rpx auto 0rpx;
+}
+
+.mapPage .cabitDetail .batInfo .title {
+  margin-bottom: 18rpx;
+  color: #333;
+  font: 500 26rpx "PingFangSC-Medium";
+}
+
+.mapPage .cabitDetail .batInfo .table {
+  position: relative;
+  width: 100%;
+  height: 206rpx;
+}
+
+.mapPage .cabitDetail .batInfo .table .imageBor {
+  width: 100%;
+  height: 206rpx;
+}
+
+.mapPage .cabitDetail .batInfo .table .tableCont {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.mapPage .cabitDetail .batInfo .table .nodata {
+  width: 100%;
+  height: 100%;
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  line-height: 200rpx;
+}
+
+.mapPage .cabitDetail .batInfo .table .tableCont .wrap {
+  width: 100%;
+  margin: 20rpx auto 0;
+  margin-top: 0;
+  margin-bottom: 20rpx;
+}
+
+.mapPage .cabitDetail .batInfo .table .tableCont .wrap:nth-child(1) {
+  /* margin-top: 16rpx; */
+   background-color: #F3F7FF;
+   padding: 15rpx 0;
+   box-sizing: border-box;
+   
+}
+
+.mapPage .cabitDetail .batInfo .table .tableCont .wrap:last-child {
+  margin-bottom: 10rpx;
+}
+
+.mapPage .cabitDetail .batInfo .table .tableCont .wrap .itemtext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.mapPage .cabitDetail .batInfo .table .tableCont .wrap .itemtext .text {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+}
+
+.mapPage .cabitDetail .bottomImg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  margin: 20rpx auto 0rpx;
+}
+
+.mapPage .cabitDetail .bottomImg .bottomImgWarp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48%;
+  height: 200rpx;
+}
+
+.mapPage .cabitDetail .bottomImg .bottomImgWarp .imageBtm {
+  width: 100%;
+  min-height: 120rpx !important;
+  height: auto !important;
+}
+
+.mapPage .cabitDetail .bottomImg .bottomImgWarp:nth-child(1) {
+  margin-right: 2%;
+}
+
+
+
+
+.mapPage .cabitDetail .topStore {
+  width: 100%;
+  height: 32rpx;
+}
+
+.mapPage .cabitListCont {
+  position: absolute;
+  bottom: 0rpx;
+  left: 0rpx;
+  margin: auto auto;
+  width: 100%;
+  height: 800rpx;
+  z-index: 0;
+  border-top-left-radius: 24rpx;
+  border-top-right-radius: 24rpx;
+  background: #fff;
+}
+
+.mapPage .cabitList {
+  /* position: absolute;
+  bottom: 0rpx;
+  left: 0rpx;
+   z-index: 0; */
+  margin: auto auto;
+  width: 100%;
+  /* height: 858rpx; */
+  height: 800rpx;
+  overflow-y: scroll;
+
+  border-top-left-radius: 24rpx;
+  border-top-right-radius: 24rpx;
+  background: #fff;
+}
+
+.mapPage .cabitList .toTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0rpx auto 20rpx;
+}
+
+.mapPage .cabitList .toTop .topImg {
+  margin: 32rpx 0;
+  width: 30rpx;
+  height: 24rpx;
+}
+
+.mapPage .cabitDetailItem {
+  width: 100%;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  /* border-bottom: 1rpx solid red; */
+
+  /* height: 310rpx; */
+}
+
+.mapPage .cabitDetailItem .cabitTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.mapPage .cabitDetailItem .cabitTitle .left {
+  width: 82%;
+  color: #000;
+  font: 500 32rpx "PingFangSC-Medium";
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mapPage .cabitDetailItem .cabitTitle .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.mapPage .cabitDetailItem .cabitTitle .right cover-view {
+  color: #1A6EFF;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.mapPage .cabitDetailItem .cabitTitle .right .imageNav {
+  margin-left: 10rpx;
+  width: 24rpx;
+  height: 24rpx;
+
+}
+
+.mapPage .cabitDetailItem .middleInfo {
+  width: 90%;
+  margin: 24rpx auto;
+}
+
+.mapPage .cabitDetailItem .middleInfo .item {
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: 6rpx auto 0;
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.mapPage .cabitDetailItem .middleInfo .item cover-image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 9rpx;
+}
+
+.mapPage .cabitDetailItem .middleInfo .item .text {
+  display: inline-block;
+  width: 95%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mapPage .cabitDetailItem .middleInfo .item .text2 {
+  display: inline-block;
+  width: 22%;
+  text-align: right;
+  font-size: 28rpx;
+  /* background:red; */
+}
+
+
+.mapPage .cabitDetailItem .bottomInfo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  margin: 0rpx auto;
+}
+
+.mapPage .cabitDetailItem .bottomInfo .item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 60rpx;
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.mapPage .cabitDetailItem .bottomInfo .item:nth-child(3) {
+  margin: 0;
+  width: 52%;
+}
+
+.mapPage .cabitDetailItem .bottomInfo .item cover-view:nth-child(1) {
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.mapPage .cabitDetailItem .bottomInfo .item cover-view:nth-child(2) {
+  color: #333;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.mapPage .cabitDetailItem .bottomInfo .item:nth-child(3) cover-view:nth-child(2) {
+  width: 69%;
+}
+
+.mapPage .cabitDetailItem .bottomImg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  margin: 0rpx auto;
+}
+
+.mapPage .cabitDetailItem .bottomImg .bottomImgWarp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48%;
+  height: 200rpx;
+}
+
+.mapPage .cabitDetailItem .bottomImg .bottomImgWarp .imageBtm {
+  width: 100%;
+  min-height: 120rpx !important;
+  height: auto !important;
+}
+
+.mapPage .cabitDetailItem .bottomImg .bottomImgWarp:nth-child(1) {
+  margin-right: 2%;
+}

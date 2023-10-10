@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#1A6EFF",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "换电",
+  "usingComponents": {
+    "van-popup": "../../miniprogram_npm/@vant/weapp/popup/index",
+    "van-notice-bar": "../../miniprogram_npm/@vant/weapp/notice-bar/index",
+    "dialog": "../component/dialog/dialog"
+  }
+}

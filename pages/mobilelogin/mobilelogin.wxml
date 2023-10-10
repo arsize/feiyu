@@ -1,0 +1,19 @@
+<view class="mobilelogin">
+    <view class="topmobile" style="padding-left: 5%;">
+        <view class="top">输入手机号</view>
+        <view class="mobileinput">
+            <input type="number" style="width:90%;" maxlength="11" value="{{inputval}}" bindinput="inputval" class="weui-input" auto-focus placeholder="请输入手机号" />
+            <image wx:if="{{inputval}}" catchtap="delmobile" class="delicon" style="width:40rpx;height:40rpx;" src="{{baseUrlImg + 'icon_input_delete@2x.png'}}" />
+        </view>
+    </view>
+    <view wx:if="{{!checkSuccess}}" class="mobileBtn" bind:tap="checkInputVal">获取验证码</view>
+    <view wx:else bind:tap="getVerification" class="mobileBtnactive">获取验证码</view>
+</view>
+<view class="bottomText">
+    <view class="text">
+        <view style="min-width: 400rpx;">点击登录，即表示已阅读并同意</view>
+        <view bind:tap="gotouseragreement" style="color:#166CFF;min-width: 175rpx;">
+            《隐私政策》
+        </view>
+    </view>
+</view>

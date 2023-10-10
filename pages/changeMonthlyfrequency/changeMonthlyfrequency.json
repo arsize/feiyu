@@ -1,0 +1,8 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "变更套餐",
+    "usingComponents": {
+        "dialog": "../component/dialog/dialog"
+    }
+}

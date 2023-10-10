@@ -1,0 +1,21 @@
+
+function getStrLen(str) {
+    return str.length
+}
+function checkinArr(arr, id) {
+    var temp = false
+    if (arr) {
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] == id) {
+                temp = true
+            }
+        }
+    }
+    return temp
+}
+
+
+module.exports = {
+    getStrLen: getStrLen,
+    checkinArr: checkinArr
+}

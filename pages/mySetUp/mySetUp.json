@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "dialog": "../component/dialog/dialog"
+  },
+  "navigationBarTitleText": "设置"
+}

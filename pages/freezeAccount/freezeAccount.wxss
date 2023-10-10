@@ -1,0 +1,56 @@
+page{
+    background-color: #F6F6F8;
+}
+.endServing {
+  width: 100%;
+}
+.endServing .topBox {
+  width: 100%;
+  height: 480rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.endServing .topBox .text{
+    width: 480rpx;
+    text-align: center;
+
+}
+.endServing .bottomBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 255rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.endServing .bottomBar .block {
+  margin-bottom: 20rpx;
+  width: 686rpx;
+  height: 100rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 50rpx;
+  box-shadow: 0rpx 2rpx 8rpx 0rpx rgba(0, 0, 0, 0.1);
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.endServing .bottomBar .block2 {
+  width: 686rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  background-color: white;
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

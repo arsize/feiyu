@@ -1,0 +1,9 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "服务终止",
+    "usingComponents": {
+      "dialog": "../component/dialog/dialog",
+      "van-notice-bar": "../../miniprogram_npm/@vant/weapp/notice-bar/index"
+    }
+  }

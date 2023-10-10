@@ -1,0 +1,9 @@
+<view class="top">
+  <image class="top_img" src="{{baseUrlImg + 'v30_02.png'}}"></image>
+  <view class="sub_text">
+    <view class="one">仓门已打开</view>
+    <view class="two">请在电柜前完成取电操作</view>
+  </view>
+</view>
+
+<view class="botton_btn" bindtap="gotohome">返回首页</view>

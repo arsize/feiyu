@@ -1,0 +1,87 @@
+<view class="pageCont">
+	<view class="block top">
+		<view class="blueline">
+		</view>
+		<view class="linename">
+			下月生效套餐
+		</view>
+	</view>
+	<view class="mycomboItems">
+		<view class="centline">
+			<view class="centerleft">
+				<view class="name" style="font-weight:bold;">
+					{{alreadyChangeFrequencyCard.frequencyCardName}}
+				</view>
+				<view class="rightblocks" style="color:#1A6EFF;border: 1rpx solid #1A6EFF;">
+					{{alreadyChangeFrequencyCard.monthly}}元/次
+				</view>
+			</view>
+			<view class="centerright">
+				￥{{alreadyChangeFrequencyCard.frequencyCardPrice}}
+			</view>
+		</view>
+		<view class="bottomsub" wx:if="{{item.frequencyCardOriginalPrice}}">
+			￥{{alreadyChangeFrequencyCard.frequencyCardOriginalPrice}}
+		</view>
+	</view>
+	<view class="block center" style="margin-top:34rpx;">
+		<view class="blueline">
+		</view>
+		<view class="linename">
+			选择变更套餐
+		</view>
+	</view>
+	<block wx:if="{{frequencyCardList && frequencyCardList.length > 0}}">
+		<view class="mycomboItems comboItems" style="{{selectItem && selectItem.id == item.id?'border: 4rpx solid #1A6EFF;':''}}" wx:for="{{frequencyCardList}}" data-item="{{item}}" bindtap="selectcombo">
+			<view class="centline">
+				<view class="centerleft">
+					<view class="name">
+						{{item.name}}
+					</view>
+					<view class="rightblocks">
+						{{item.monthly}}元/次
+					</view>
+				</view>
+				<view class="centerright">
+					￥{{item.price}}
+				</view>
+			</view>
+			<view class="bottomsub" wx:if="{{item.originalPrice}}">
+				￥{{item.originalPrice}}
+			</view>
+		</view>
+	</block>
+	<block wx:else>
+
+	</block>
+
+
+
+	<!-- 套餐说明 -->
+	<view class="noticeCont" style="margin-top:20rpx;">
+		<view class="title">
+			<text></text>
+			<text>变更说明</text>
+			<text></text>
+		</view>
+		<view class="wrap">
+			<view class="item">
+				1、套餐确认变更后于下月开始生效，例如原本套餐为12次/月，在9月12日修改为19次/月，则从10月1日开始套餐为19次/月。
+			</view>
+			<view class="item">
+				2、若在下月套餐生效前多次变更套餐，则以最后一次变更为准。
+			</view>
+		</view>
+	</view>
+	<view class="blockblank">
+
+	</view>
+
+
+</view>
+<view class="bottomBarLine">
+	<view class="configBiangeng" bindtap="confirmChange">
+		确认变更
+	</view>
+</view>
+<dialog></dialog>

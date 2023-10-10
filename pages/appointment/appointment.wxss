@@ -1,0 +1,95 @@
+page {
+  background-color: #f5f5f5;
+}
+.appointment .item {
+  width: 100%;
+  padding: 32rpx;
+  box-sizing: border-box;
+  background-color: white;
+  box-shadow: 0rpx -1rpx 0rpx 0rpx #eeeeee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.appointment .item .itemright {
+  display: flex;
+  align-items: center;
+}
+.appointment .item .top {
+  font-size: 30rpx;
+  color: #333333;
+  line-height: 46rpx;
+}
+.appointment .item3,
+.appointment .item4 {
+  width: 100%;
+  padding: 32rpx;
+  box-sizing: border-box;
+  background-color: white;
+  box-shadow: 0rpx -1rpx 0rpx 0rpx #eeeeee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.appointment .item3 .top,
+.appointment .item4 .top {
+  font-size: 30rpx;
+  color: #333333;
+  line-height: 46rpx;
+  min-width: 162rpx;
+}
+.appointment .item3 .iteminput,
+.appointment .item4 .iteminput {
+  text-align: right;
+}
+.appointment .item3 .text,
+.appointment .item4 .text {
+  padding-right: 40rpx;
+}
+.appointment .item2 {
+  width: 100%;
+  padding: 32rpx;
+  box-sizing: border-box;
+  background-color: white;
+  box-shadow: 0rpx -1rpx 0rpx 0rpx #eeeeee;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30rpx;
+}
+.appointment .item2 .top {
+  font-size: 30rpx;
+  color: #333333;
+  line-height: 46rpx;
+}
+.appointment .item2 .timebox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.appointment .item2 .timebox .timeItem {
+  margin-top: 20rpx;
+  width: 327rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+  border-radius: 8rpx;
+  color: #1a6eff;
+  font-size: 28rpx;
+  border: 2rpx solid #166cff;
+}
+.appointBtn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 686rpx;
+  height: 100rpx;
+  background: linear-gradient(270deg, #41beff 0%, #1a6eff 100%);
+  box-shadow: 0rpx 4rpx 6rpx 0rpx rgba(27, 112, 255, 0.25);
+  border-radius: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}

@@ -1,0 +1,89 @@
+<!-- pages/myPayDeposit/myPayDeposit.wxml -->
+<view class="pageCont">
+	<view class="reactivating">
+		<view class="left">
+			<image style="margin-right:16rpx;" style="width:60rpx;height:60rpx;" mode="widthFix" src="../../images/icon_step02@2x.png" />
+			<view style="color: #333333;font-size:24rpx;font-weight: bold;margin-top:15rpx;">
+				实名认证
+			</view>
+		</view>
+		<view class="center" style="height:40rpx;margin-left: 40rpx;">
+			<view style="width:130rpx;border:1rpx dotted #ddd;">
+
+			</view>
+		</view>
+
+		<view class="right">
+			<view class="defaultRound"></view>
+			<view style="color: #999999;font-size:24rpx;margin-top:15rpx;">
+				缴纳电池绿色回收金
+			</view>
+		</view>
+	</view>
+	<view class="lineTop24"></view>
+	<view class="listCont">
+		<view class="item">
+			<view class="title">
+				<view class="titleName">电池绿色回收金</view>
+			</view>
+			<view wx:for="{{depositList}}" wx:key="index" bindtap="selectBattery" data-item="{{item}}" class="{{depositActived == item.depositId ? 'cont primaryBor4' : 'cont'}}" style="box-sizing: border-box;">
+				<view class="top colorwhite">
+					<view>电池型号：</view>
+					<view style="color: #FF9900;font-size:32rpx;">￥{{item.depositMoney||"0.00"}}</view>
+				</view>
+				<view class="middle" style="margin-top:10rpx;">
+					<view wx:if="{{item.batteryTypeName}}" style="color:#333;">
+						<view>
+							{{item.batteryTypeName}} 
+						</view>
+						<view style="font-size: 24rpx;font-weight: 400;margin-top:5rpx;">
+							{{item.depositExplain || ''}}
+						</view>
+						
+					</view>
+					<view wx:else style="color:#333;">
+						{{item.voltage?item.voltage+"V":"-V"}}{{item.capacity?item.capacity+"Ah":"-Ah"}}
+					</view>
+				</view>
+			</view>
+		</view>
+		
+	</view>
+	<view class="bottomblock">
+		<view class="noteCont" style="color:#666666;font-size:24rpx;">
+			<view class="roundright" bindtap="selectnoteCont" wx:if="{{!haveread}}"></view>
+			<view bindtap="selectnoteCont" class="roundrighthave" wx:else>
+				<view class="roundrightnei"></view>
+			</view>
+			我已认真阅读并同意<text style="color:#1A6EFF;" bindtap="gotoxieyi">《电池绿色回收金协议》</text>
+		</view>
+		<view style="font-size:24rpx;color:#999999;width:100%;text-align:center;">
+			电池绿色回收金，随时可退
+		</view>
+	</view>
+	<view class="botBtmFixLine250"></view>
+
+	<view class="botBtmFixSig botBtmFixSigExtrl" wx:if="{{!preTotalMoney}}">
+		<view>
+			<text style="margin:0;" class="ColorRed">{{totalMoney||"0.00"}}元</text>
+		</view>
+		<view class="primaryBglinear" bindtap="rechargeFun">去支付</view>
+	</view>
+	<view class="botBtmFixSigExtrl" wx:else>
+		<view class="left">
+			<view>
+				<text style="margin:0;" class="ColorRed">{{totalMoney||"0.00"}}元</text>
+			</view>
+			<!-- <view class="submoney">
+				<view class="one">
+					￥{{preTotalMoney}}
+				</view>
+				<view class="two">
+					(券已抵扣套餐金额{{counpon}}元)
+				</view>
+			</view> -->
+		</view>
+		<view class="primaryBglExtrl" bindtap="rechargeFun">去支付</view>
+	</view>
+
+</view>

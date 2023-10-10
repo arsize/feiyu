@@ -1,0 +1,127 @@
+<!--pages/myService/myService.wxml-->
+<view class="pageCont">
+    <view class="typeCont">
+        <view class="item" bindtap="joinPageFeed">
+            <image mode="widthFix" src="{{baseUrlImg+'icon_cont_yjfk@2x.png'}}" />
+            <text>意见反馈</text>
+        </view>
+        <view class="item" bindtap="joinPage">
+            <image mode="widthFix" src="{{baseUrlImg+'icon_cont_cjdg@2x.png'}}" />
+            <text>催建电柜</text>
+        </view>
+    </view>
+    <view class="quesCont">
+        <view class="title">
+            <text>Hi~,你是遇到以下问题吗？😊</text>
+        </view>
+        <view class="content">
+            <view class="FAQ">
+                <view class="FAQCont">
+                    <view class="titleFAQ">
+                        <image mode="widthFix" src="{{baseUrlImg+'icon_cont_question@2x.png'}}" />
+                        <text>常见问题</text>
+                    </view>
+                    <!-- 问题列表 -->
+                    <view class="faqList">
+                        <!-- <scroll-view scroll-y="true" style="height: 445rpx;" bindscrolltolower="lower"> -->
+                        <view class="item" wx:for="{{faqList}}" wx:key="index">
+                            <view class="hide" data-index="{{index}}" data-item="{{item}}" bindtap="showFun">
+                                <text>{{item.title}}</text>
+                                <!--   bottom_icon-->
+                                <image wx:if="{{!item.isShow}}" src="{{baseUrlImg+'icon_list_more@2x.png'}}">
+                                </image>
+                                <image wx:else src="http://swap.wondware.com/hdgxcximg/top_icon.png"></image>
+                            </view>
+                            <view class="show" wx:if="{{item.isShow}}">
+                                <text wx:for="{{item.listCont}}" wx:key="index">{{item}}</text>
+                            </view>
+                        </view>
+                        <!-- </scroll-view> -->
+                    </view>
+
+                    <view class="bottom" bindtap="changeFun">
+                        <image mode="widthFix" src="{{baseUrlImg+'icon_cont_switch@2x.png'}}" />
+                        <text>换一批</text>
+                    </view>
+                </view>
+
+
+            </view>
+
+            <view class="answer">
+                <view class="item" wx:for="{{answerList}}" wx:key="index">
+                    <view class="top">
+
+                        <text>{{item.title}}</text>
+                    </view>
+                    <view class="bottom">
+                        {{item.listCont}}
+                        <!-- <text>
+                            {{item.listCont}}
+                        </text> -->
+                    </view>
+                </view>
+            </view>
+
+
+
+            <!-- <scroll-view class="scrollViewH" scroll-x="true" style="width: 100%">
+                <view class="FAQ">
+                    <view class="FAQCont">
+                        <view class="titleFAQ">
+                            <image mode="widthFix" src="{{baseUrlImg+'icon_cont_question@2x.png'}}" />
+                            <text>常见问题</text>
+                        </view>
+                        <view class="faqList">
+                            <scroll-view scroll-y="true" style="height: 445rpx;" bindscrolltolower="lower">
+                                <view class="item" wx:for="{{faqList}}" wx:key="index">
+                                    <view class="hide" data-index="{{index}}" data-item="{{item}}" bindtap="showFun">
+                                        <text>{{item.title}}</text>
+                                        <image wx:if="{{!item.isShow}}"
+                                            src="http://swap.wondware.com/hdgxcximg/bottom_icon.png">
+                                        </image>
+                                        <image wx:else src="http://swap.wondware.com/hdgxcximg/top_icon.png"></image>
+                                    </view>
+                                    <view class="show" wx:if="{{item.isShow}}">
+                                        <text wx:for="{{item.listCont}}" wx:key="index">{{item}}</text>
+                                    </view>
+                                </view>
+                            </scroll-view>
+                        </view>
+
+                        <view class="bottom">
+                            <image mode="widthFix" src="{{baseUrlImg+'icon_cont_switch@2x.png'}}" />
+                            <text>换一批</text>
+                        </view>
+                    </view>
+                    <view class="FAQPage">
+                        <view class="itemList" wx:for="{{menuList}}" wx:key="index" data-item="{{item}}"
+                            bindtap="joinMenu">
+                            <image mode="widthFix" src="{{item.img}}" />
+                            <text>{{item.title}}</text>
+                        </view>
+                    </view>
+
+                </view>
+
+            </scroll-view> -->
+        </view>
+    </view>
+    <view wx:if="{{isScroll}}" class="toTop" bindtap="toTopFun">
+        <!-- toTopIcon -->
+        <image mode="widthFix" src="{{baseUrlImg+'toTopIcon.png'}}" />
+
+    </view>
+    <view class="botBtmFixLine130"></view>
+    <view class="phoneCont">
+        <view class="left">
+            <text>工作时间：</text>
+            <text>工作日09:00-12:00 14:00-18:00</text>
+        </view>
+        <view class="right" bindtap="callPhone">
+            <image mode="widthFix" src="{{baseUrlImg+'Group 3@2x.png'}}" />
+            <text>拨打客服电话</text>
+        </view>
+    </view>
+
+</view>
