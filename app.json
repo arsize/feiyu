@@ -1,10 +1,10 @@
 {
     "pages": [
+        "pages/myCertificationTake/myCertificationTake",
         "pages/loading/loading",
         "pages/transitInputTake/transitInputTake",
         "pages/takePages/takePages",
         "pages/announcement/announcement",
-        "pages/myCertificationTake/myCertificationTake",
         "pages/cameraScanTake/cameraScanTake",
         "pages/myPayDepositOther/myPayDepositOther",
         "pages/serviceingSuccess/serviceingSuccess",

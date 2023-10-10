@@ -36,7 +36,8 @@
         "minifyWXML": true,
         "showES6CompileOption": false,
         "useCompilerPlugins": false,
-        "ignoreUploadUnusedFiles": true
+        "ignoreUploadUnusedFiles": true,
+        "condition": false
     },
     "compileType": "miniprogram",
     "cloudfunctionTemplateRoot": "",
@@ -63,15 +64,6 @@
     "appid": "wxa4ac480db09afd6d",
     "projectname": "feiyuhuandian-v3.1",
     "condition": {
-        "plugin": {
-            "list": []
-        },
-        "game": {
-            "list": []
-        },
-        "gamePlugin": {
-            "list": []
-        },
         "miniprogram": {
             "list": [
                 {
@@ -119,6 +111,7 @@
                 {
                     "name": "pages/takePages/takePages",
                     "pathName": "pages/takePages/takePages",
+                    "query": "",
                     "scene": null
                 }
             ]
