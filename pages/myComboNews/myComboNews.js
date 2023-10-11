@@ -188,7 +188,7 @@ Page({
           });
         }
         that.setData({
-          buyComboList: listdata,
+          buyComboList: that.data.buyComboListS,
           buyComboListE: that.data.buyComboListE,
           isRequest: true,
         });
