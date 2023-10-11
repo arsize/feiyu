@@ -18,6 +18,10 @@ Page({
     param6: '',
     desposi: true,
     region: ['广东省', '广州市', '海珠区'],
+    idCardParams: {
+      front: '',
+      back: ''
+    }
   },
   onShow() {},
 
@@ -34,6 +38,125 @@ Page({
       param5: e.detail.value
     })
   },
+
+  // 图片处理
+  chooseImage: function (e) {
+    console.log("e", e.currentTarget.dataset.type);
+    let that = this;
+    const currType = e.currentTarget.dataset.type;
+    let token = wx.getStorageSync('logindata').appToken;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['compressed'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        var tempFilePaths = res.tempFilePaths;
+        for (var f = 0; f < res.tempFilePaths.length; f++) {
+          wx.uploadFile({
+            url: `${app.globalData.baseUrl}fileUpload/picture`,
+            filePath: tempFilePaths[f],
+            header: {
+              'access_token': token,
+              'content-type': "multipart/form-data"
+            },
+            name: 'file',
+            success: function (res) {
+              var data = JSON.parse(res.data);
+              wx.hideLoading();
+              if (data.code == '200') {
+                const currImg = data.data;
+
+                that.setData({
+                  idCardParams: {
+                    ...that.data.idCardParams,
+                    [currType]: currImg
+                  },
+                })
+
+                if(that.data.idCardParams.back&&that.data.idCardParams.front){
+                  that.ocrIdCardOperate()
+                }
+
+              } else {
+                wx.showToast({
+                  title: data.message,
+                  icon: 'none',
+                  duration: 2000,
+                  mask: true
+                })
+              }
+
+            },
+            fail: function (res) {
+              wx.hideLoading();
+              console.log('res', res)
+              wx.showToast({
+                title: '上传失败',
+                image: '/image/icon_fail.png',
+                duration: 2000,
+                mask: true
+              })
+            }
+          })
+        }
+      },
+    })
+  },
+
+  ocrIdCardOperate() {
+    // TODO:
+    const params = {
+      faceImageUrl: this.data.idCardParams.front,
+      backImageUrl: this.data.idCardParams.back,
+    }
+
+    HTTP({
+      url: '/app/wx/ocrIdCard',
+      methods: 'get',
+      data: params,
+      loading: true,
+    }).then(res => {
+      console.log('res', res);
+      
+      this.setData({
+        param1: 'param1',
+        param2: 'param2',
+      })
+  
+    }, err => {
+      this.setData({
+        param1: '',
+        param2: '',
+        idCardParams:{
+          front:'',
+          back:''
+        }
+      })
+      wx.showToast({
+        title: err.msg,
+        icon: "none",
+        duration: 8000,
+        mask: true
+      })
+      // if (err.code == "50001") {
+      //   wx.showToast({
+      //     title: '真实姓名与身份证号码不匹配，实名认证不通过',
+      //     icon: "none",
+      //     duration: 2000,
+      //     mask: true
+      //   });
+      // }
+    })
+  },
+
+
+  // 预览图片
+  previewImage: function () {
+    wx.previewImage({
+      urls: this.data.imagesList
+    })
+  },
+
 
   formSubmit(e) {
     let paramObj = e.detail.value;

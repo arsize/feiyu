@@ -145,7 +145,7 @@
 									<block wx:if="{{cardItemType == 'exchange'}}">
 										<block wx:if="{{popUpsCode == '1' || popUpsCode == '2'}}">
                     <!-- bindtap="scanBtn"  -->
-											<view bindtap="gotomy" data-set="exchange" style="width:100%;height:100%;justify-content: center;display:flex;align-items: center;">
+											<view bindtap="gotoRentel" data-set="exchange" style="width:100%;height:100%;justify-content: center;display:flex;align-items: center;">
 												开通换电服务
 											</view>
 										</block>

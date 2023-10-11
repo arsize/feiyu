@@ -39,6 +39,7 @@ Page({
         oningExchangeOd: "",
         oningChargOd: "",
         realName: "",
+        depost: null,
         popUpsContent: "",
         point: "",//用户定位信息
         sourcelatitude: '',
@@ -438,8 +439,8 @@ Page({
                 userBindBatteryType: res.data.userBindBatteryType,
                 connectType: res.data.connectType,
                 showBattey: true,
-                selectBatteryIdArr: selectBatteryIdArr
-
+                selectBatteryIdArr: selectBatteryIdArr,
+                depost: res.data.batteryDepositOrderStatus,
             });
             wx.setStorageSync('batteryDepositOrderStatus', res.data.batteryDepositOrderStatus)
             wx.setStorageSync('realName', res.data.realName)
@@ -621,12 +622,39 @@ Page({
             url: '/pages/my/my',
         })
     },
-    // 前往开通服务页面
-    gotoopenservice() {
+    // TODO：
+  // 立即租取电
+  gotoRentel() {
+    if (!this.data.realName) {
+      wx.navigateTo({
+        url: '/pages/myCertificationTake/myCertificationTake',
+      })
+
+    } else {
+      if (this.data.depost == 0) {
         wx.navigateTo({
-            url: '/pages/exchangeserver/exchangeserver'
+          url: '/pages/myPayDepositOther/myPayDepositOther',
         })
-    },
+      } else if (this.data.depost == 1) {
+        wx.navigateTo({
+          url: '/pages/cameraScanTake/cameraScanTake',
+        })
+      } else if (this.data.depost == 2) {
+        wx.showToast({
+          title: '押金退还中',
+          icon: 'none'
+        })
+      }
+    }
+
+  },
+  
+        // 前往开通服务页面
+        gotoopenservice() {
+          wx.navigateTo({
+              url: '/pages/exchangeserver/exchangeserver'
+          })
+      },
     // 服务-我要充电
     gotoCharge() {
         this.setData({
