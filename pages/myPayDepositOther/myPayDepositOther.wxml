@@ -31,7 +31,6 @@
 				</view>
 			</view>
 			<view class="pickerBlock" bindtap="showPopup">
-      <!-- TODO: -->
 				<view class="pickerPlaceHodle" style="{{pickSelectArr?'color:#333;':''}}">{{pickSelectArr?pickSelectArr[1]:'请选择'}}</view>
 				<van-icon name="arrow" />
 			</view>

@@ -23,7 +23,7 @@ Page({
       back: ''
     }
   },
-  onShow() {},
+  onShow() { },
 
   bindinput(e) {
     let paramObj = e.detail.value;
@@ -41,7 +41,6 @@ Page({
 
   // 图片处理
   chooseImage: function (e) {
-    console.log("e", e.currentTarget.dataset.type);
     let that = this;
     const currType = e.currentTarget.dataset.type;
     let token = wx.getStorageSync('logindata').appToken;
@@ -63,7 +62,7 @@ Page({
             success: function (res) {
               var data = JSON.parse(res.data);
               wx.hideLoading();
-              if (data.code == '200') {
+              if (Number(data.code) === 200) {
                 const currImg = data.data;
 
                 that.setData({
@@ -73,13 +72,19 @@ Page({
                   },
                 })
 
-                if(that.data.idCardParams.back&&that.data.idCardParams.front){
+                if (that.data.idCardParams.back && that.data.idCardParams.front) {
                   that.ocrIdCardOperate()
                 }
 
               } else {
+                that.setData({
+                  idCardParams: {
+                    ...that.data.idCardParams,
+                    [currType]: ''
+                  },
+                })
                 wx.showToast({
-                  title: data.message,
+                  title: data.msg,
                   icon: 'none',
                   duration: 2000,
                   mask: true
@@ -88,14 +93,20 @@ Page({
 
             },
             fail: function (res) {
+              that.setData({
+                idCardParams: {
+                  ...that.data.idCardParams,
+                  [currType]: ''
+                },
+              })
               wx.hideLoading();
-              console.log('res', res)
               wx.showToast({
-                title: '上传失败',
-                image: '/image/icon_fail.png',
+                title: "上传失败,请重试",
+                icon: 'none',
                 duration: 2000,
                 mask: true
               })
+
             }
           })
         }
@@ -116,20 +127,20 @@ Page({
       data: params,
       loading: true,
     }).then(res => {
-      console.log('res', res);
       
+      const data = res.data;
       this.setData({
-        param1: 'param1',
-        param2: 'param2',
+        param1: data && data.name,
+        param2: data && data.idnumber,
       })
-  
+
     }, err => {
       this.setData({
         param1: '',
         param2: '',
-        idCardParams:{
-          front:'',
-          back:''
+        idCardParams: {
+          front: '',
+          back: ''
         }
       })
       wx.showToast({
