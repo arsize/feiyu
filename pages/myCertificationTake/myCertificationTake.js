@@ -149,14 +149,6 @@ Page({
         duration: 8000,
         mask: true
       })
-      // if (err.code == "50001") {
-      //   wx.showToast({
-      //     title: '真实姓名与身份证号码不匹配，实名认证不通过',
-      //     icon: "none",
-      //     duration: 2000,
-      //     mask: true
-      //   });
-      // }
     })
   },
 

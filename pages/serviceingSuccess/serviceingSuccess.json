@@ -1,5 +1,10 @@
 {
   "navigationBarBackgroundColor": "#fff",
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "服务开通成功"
+  "navigationBarTitleText": "服务开通成功",
+  "usingComponents": {
+    "van-popup": "../../miniprogram_npm/@vant/weapp/popup/index",
+    "van-icon": "../../miniprogram_npm/@vant/weapp/icon/index",
+    "dialog": "../component/dialog/dialog"
+}
 }

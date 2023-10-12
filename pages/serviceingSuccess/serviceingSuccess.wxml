@@ -7,3 +7,5 @@
 </view>
 
 <view class="botton_btn" bindtap="toscan">扫码取电</view>
+
+<dialog></dialog>
