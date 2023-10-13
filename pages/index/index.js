@@ -55,6 +55,7 @@ Page({
         chargingRecordDetail: "",
         chargingStartTime: "",
         batteryTypeAndNumDtoList: [],
+        UserFrequencyCardRecord:null,//是否购买套餐
         polyline: [{
             points: [],
             color: "#666666",
@@ -88,6 +89,7 @@ Page({
         percentArr: ['≦ 50%', '51%~80%', '81%~89%', '≧ 90%'],
         throttleDate: 0,//地图移动节流
         lastDate: '',//充换电切换节流
+        scanToTakeTitle:'开通换电服务',
         beansToBeReceived: '',
         cardMenus: [{
             name: "充电",
@@ -441,6 +443,7 @@ Page({
                 showBattey: true,
                 selectBatteryIdArr: selectBatteryIdArr,
                 depost: res.data.batteryDepositOrderStatus,
+                UserFrequencyCardRecord:res.data.UserFrequencyCardRecord
             });
             wx.setStorageSync('batteryDepositOrderStatus', res.data.batteryDepositOrderStatus)
             wx.setStorageSync('realName', res.data.realName)
@@ -636,9 +639,37 @@ Page({
           url: '/pages/myPayDepositOther/myPayDepositOther',
         })
       } else if (this.data.depost == 1) {
-        wx.navigateTo({
-          url: '/pages/cameraScanTake/cameraScanTake',
-        })
+        if(this.data.UserFrequencyCardRecord){
+          //已买套餐
+          wx.navigateTo({
+            url: '/pages/cameraScanTake/cameraScanTake',
+          })
+        }
+        else{
+          // 未买套餐
+          let option = {
+            status: true,
+            content: "您暂未购买套餐，无法取电",
+            foot: [{
+                text: "取消",
+                cb: () => {
+                },
+              },
+              {
+                text: "前往购买",
+                cb: () => {
+                  wx.setStorageSync("comboType", 1);
+                  wx.navigateTo({
+                    url: '/pages/myCombo/myCombo',
+                  })
+                },
+              },
+            ],
+          };
+          app.globalData.emitter.emit("dialogstatus", option);
+        }
+
+     
       } else if (this.data.depost == 2) {
         wx.showToast({
           title: '押金退还中',
@@ -1454,9 +1485,8 @@ Page({
                 }
             })
         }
-
-
     },
+
     scanExchangeBtn() {
         let that = this
         let organizationId = wx.getStorageSync("selectorganId");
