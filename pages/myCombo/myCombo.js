@@ -6,11 +6,16 @@ const app = getApp();
 Page({
   data: {
     baseUrlImg: app.globalData.baseUrlImg,
+    isProtocol:false,
     isExplain: false,
     // 1：购买套餐  2.我的套餐  3.升级套餐  4.缴纳绿色回收金   5.该地区暂无套餐  6.没有绑定电池  7.退绿色回收金中
     // comboType: 1,
     comboType: wx.getStorageSync("comboType"),
     rechargeMoney: 0,
+    batteryType:'',
+    userCouponList:[],
+    userCouponNameIndex:-1,
+    userCouponNameList:[],
     buyComboList: [],
     buyComboListS: [],
     buyComboListE: [],
@@ -187,10 +192,19 @@ Page({
             buyComboMoney: listdata[0].price,
           });
         }
+
+        
+        const userCouponListCurr = objData.userCouponList.map((item)=>item.name)
+
+        console.log("userCouponListCurr",userCouponListCurr)
         that.setData({
           buyComboList: listdata,
           buyComboListE: that.data.buyComboListE,
+          batteryType:objData.batteryType,
           isRequest: true,
+          userCouponList:objData.userCouponList,
+          userCouponNameList:userCouponListCurr
+
         });
       },
       (err) => {
@@ -200,6 +214,15 @@ Page({
       }
     );
   },
+
+  bindPickerChangeCoupon: function(e) {
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      userCouponNameIndex: e.detail.value
+    })
+  },
+
+
   viewMore(e) {
     let type = e.currentTarget.dataset.type;
     if (type == 1) {
@@ -401,11 +424,35 @@ Page({
       rechargedialogShow: false,
     });
   },
+
+  protocolFun() {
+    this.setData({
+      isProtocol: !this.data.isProtocol
+    });
+  },
+  joinAgree(){
+    wx.navigateTo({
+      url: "/pages/myAgreement/myAgreement"
+  })
+  },
+
   // 去支付
   checkPayFun() {
+
+if(!this.data.isProtocol){
+  wx.showToast({
+    title: "请先勾选协议",
+    icon: "none",
+    duration: 2000,
+    mask: true,
+  });
+  return;
+}
+
     let that = this;
     let name = this.data.buyComboList[this.data.buyComboCurr].name;
     let activeId = this.data.buyComboList[this.data.buyComboCurr].id;
+    const couponId = this.data.userCouponList[this.data.userCouponNameIndex]&&this.data.userCouponList[this.data.userCouponNameIndex].id;
     wx.navigateTo({
       url:
         "/pages/payforend/payforend?money=" +
@@ -414,7 +461,9 @@ Page({
         "&name=" +
         name +
         "&activeId=" +
-        activeId,
+        activeId+
+        "&couponId=" +
+        couponId,
     });
   },
   topupFun() {

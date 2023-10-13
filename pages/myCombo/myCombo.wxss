@@ -433,7 +433,8 @@ page {
   display: flex;
   justify-content: center;
 }
-.youhuiquan{
+
+.youhuiquan {
   width: 95%;
   margin: 0 auto;
   margin-top: 20rpx;
@@ -444,10 +445,24 @@ page {
   font-size: 28rpx;
   font-weight: 400;
 }
-.rows{
+
+.youhuiquan .title {
+  display: flex;
+  align-items: center;
+}
+
+.youhuiquan .title image {
+  margin-left: 3px;
+  width: 16px;
+  width: 16px;
+}
+
+
+.rows {
   color: #A7ADAF;
 }
-.info{
+
+.info {
   width: 95%;
   background-color: white;
   margin: 0 auto;
@@ -461,30 +476,84 @@ page {
   display: flex;
   align-items: center;
 }
-.sayrules{
+
+.sayrules {
   width: 95%;
   background-color: white;
   margin: 0 auto;
   box-sizing: border-box;
   padding: 10rpx 30rpx;
   margin-top: 20rpx;
-  
+
 }
-.sayrules .wrap{
+
+.sayrules .wrap {
   font-size: 23rpx;
   font-weight: 300;
   margin-top: 10rpx;
   color: #696868;
   margin-bottom: 20rpx;
+}
+
+.botBtnDe {
+  padding: 14rpx 0;
+  position: fixed;
+  left: 0;
+  bottom: 110rpx;
+  width: 100%;
+  background: #fff5e6;
 
 }
-.botBtmFixSig .pricebar{
-  
+
+.botBtnDe .protocol {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.botBtnDe .protocol view:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botBtnDe .protocol view:nth-child(1) image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 16rpx;
+}
+
+.botBtnDe .protocol view:nth-child(1) text {
+  color: #1a6eff;
+  font: 500 26rpx "PingFangSC-Medium";
+}
+
+.botBtnDe .protocol view:nth-child(1) text:nth-child(2) {
+  color: #666;
+}
+
+.botBtnDe .protocol view:nth-child(2) {
+  margin: 16rpx 0;
+  color: #999;
+  font: 500 26rpx "PingFangSC-Medium";
+  text-align: center;
+}
+
+
+.botBtmFixSig .title {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.botBtmFixSig .pricebar {
+
   font-size: 25rpx;
   display: flex;
   align-items: center;
 }
-.extrules{
+
+.extrules {
   height: 200rpx;
   display: flex;
   align-items: flex-start;

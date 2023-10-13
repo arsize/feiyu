@@ -34,6 +34,7 @@ Page({
         let type = options.type
         let name = options.name
         let activeId = options.activeId
+        let couponId = options.couponId
         let depositId = options.depositId
         let depositMoney = options.depositMoney
         let activeMoney = options.activeMoney
@@ -184,7 +185,7 @@ Page({
             openId: wx.getStorageSync("logindata").openId,
             frequencyCardId: this.data.activeId,
             wxPay: true,
-            couponId: this.data.selectCounpItem.id
+            couponId: this.data.data.couponId
         };
         wx.showLoading({
             title: "支付中",
