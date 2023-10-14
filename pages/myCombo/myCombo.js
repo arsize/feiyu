@@ -33,6 +33,7 @@ Page({
     freType: "",
     frequencyCardCategory: "",
     userType: wx.getStorageSync("userType"),
+    batteryDepositOrderStatus:Number(wx.getStorageSync("batteryDepositOrderStatus")),
   },
 
   onLoad: function (options) {
@@ -88,10 +89,12 @@ Page({
       });
 
       let content = "";
-      if (this.data.comboType == 4 || this.data.comboType == 6) {
+      // if (this.data.comboType == 4 || this.data.comboType == 6) {
+      if (Number(wx.getStorageSync("batteryDepositOrderStatus"))!==1&& (this.data.comboType == 4 || this.data.comboType == 6)) {
         if (this.data.comboType == 4) {
           content = "暂不能购买套餐，请先开通换电服务";
         } else if (this.data.comboType == 6) {
+          // TODO：
           content = "暂不能购买套餐，请先开通换电服务";
         }
         let option = {

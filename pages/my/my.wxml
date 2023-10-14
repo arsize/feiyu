@@ -154,14 +154,16 @@
 			</view>
 		</view>
 	</view>
-
+<!-- 
 	<view wx:if="{{selfServiceFetchElectricity && !infoData.bindBattery && depost != 2}}" class="mytakeCombo" style="margin-top:200rpx;">
 		<view class="leftbs">
 			<image class="leftbs_img" src="{{baseUrlImg + 'v30_01.png'}}"></image> 自助租/取电池
 		</view>
 		<view class="btns" bindtap="gotoRentel">立即租/取</view>
+	</view> -->
 
-	</view>
+	<view wx:if="{{selfServiceFetchElectricity && !infoData.bindBattery && depost != 2}}" style="margin-top:110rpx;" />
+
 	<view class="myCombo"
 		style="{{supportPowerBean?'margin-top:200rpx;':''}}{{(selfServiceFetchElectricity && !infoData.bindBattery && depost != 2)?'margin-top:20rpx;':'margin-top:200rpx;'}}"
 		wx:if="{{(logindata.unregistered||!infoData.userFrequencyCardRecordVo.userFrequencyCardRecord) &&isRequest && isRecommendStatus}}"

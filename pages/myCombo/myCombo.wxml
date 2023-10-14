@@ -159,165 +159,174 @@
     </view>
 
     <view class="botBtmFixLine220"></view>
-<view class="botBtnDe">
-	<view class="protocol" catchtap="protocolFun">
-		<view>
-			<image mode="widthFix" src="{{isProtocol?baseUrlImg+'icon_cont_checked@2x.png':baseUrlImg+'icon_cont_unckeck@2x.png'}}" />
-			<text>我已认真阅读并同意</text>
-			<text data-index="1" catchtap="joinAgree">《电池租赁服务协议》</text>
-		</view>
-	
-	</view>
-
-</view>
-
-
-        <view class="botBtmFixSig">
-
-          <!-- <view class="pay_cont"> -->
-          <view class="title">
-            <text style="color:#333;">金额：</text>
-            <text style="color:#f2622f;font-size: 16px;">{{buyComboMoney||'0.00'}}元</text>
-          </view>
-          <view class="payBtn" bindtap="checkPayFun">
-            去支付
-          </view>
-          <!-- </view> -->
-
+    <view class="botBtnDe">
+      <view class="protocol" catchtap="protocolFun">
+        <view>
+          <image mode="widthFix" src="{{isProtocol?baseUrlImg+'icon_cont_checked@2x.png':baseUrlImg+'icon_cont_unckeck@2x.png'}}" />
+          <text>我已认真阅读并同意</text>
+          <text data-index="1" catchtap="joinAgree">《电池租赁服务协议》</text>
         </view>
-        <!-- <view class="extrules">
+
+      </view>
+
+    </view>
+
+
+    <view class="botBtmFixSig">
+
+      <!-- <view class="pay_cont"> -->
+      <view class="title">
+        <text style="color:#333;">金额：</text>
+        <text style="color:#f2622f;font-size: 16px;">{{buyComboMoney||'0.00'}}元</text>
+      </view>
+      <view class="payBtn" bindtap="checkPayFun">
+        去支付
+      </view>
+      <!-- </view> -->
+
+    </view>
+    <!-- <view class="extrules">
       <view class="rules2">违约金规则</view>
     </view> -->
-      </view>
-      <!-- 我的套餐 -->
-      <view class="buyCombo" wx:if="{{comboType==2}}">
-        <view class="title">
-          <text></text>
-        </view>
-        <block wx:if="{{buyComboList.length>0}}">
-          <view class="listWrapMy">
-            <view wx:for="{{buyComboList}}" wx:key="index" class="{{item.status==1?'itemMycombo active':'itemMycombo'}}" data-item="{{item}}" style="{{item.frequencyCardType==4?' background: linear-gradient(#FF703E 0%, #FF934D 100%);':''}}">
-              <view class="{{item.status==1?'top ColorWhite':'top'}}">
-                <text wx:if="{{item.frequencyCardName}}">{{item.frequencyCardName}}
-                  {{item.payType == 4?'(兑换套餐)':''}}</text>
-                <text wx:else>{{item.frequencyCardType==2?'无限':item.frequencyCardNum}}次/30天</text>
+  </view>
+  <!-- 我的套餐 -->
+  <view class="buyCombo" wx:if="{{comboType==2}}">
+    <view class="title">
+      <text></text>
+    </view>
+    <block wx:if="{{buyComboList.length>0}}">
+      <view class="listWrapMy">
+        <view wx:for="{{buyComboList}}" wx:key="index" class="{{item.status==1?'itemMycombo active':'itemMycombo'}}" data-item="{{item}}" style="{{item.frequencyCardType==4?' background: linear-gradient(#FF703E 0%, #FF934D 100%);':''}}">
+          <view class="{{item.status==1?'top ColorWhite':'top'}}">
+            <text wx:if="{{item.frequencyCardName}}">{{item.frequencyCardName}}
+              {{item.payType == 4?'(兑换套餐)':''}}</text>
+            <text wx:else>{{item.frequencyCardType==2?'无限':item.frequencyCardNum}}次/30天</text>
 
 
 
-                <view wx:if="{{item.frequencyCardCategory != 1}}">
-                  <text wx:if="{{item.frequencyCardType==2}}">不限次</text>
-                  <text wx:elif="{{item.frequencyCardType == 3}}"><text style="font-size:24rpx;color:#FFFFFF;opacity: 0.5;">本月可用换电次数</text>
-                    剩{{item.surplusNum}}次</text>
-                  <text wx:else>剩{{item.surplusNum}}次</text>
-                </view>
-                <view wx:else>
-                  <text><text style="font-size:24rpx;color:#FFFFFF;opacity: 0.5;">本月可用换电次数 </text>剩{{item.surplusNum}}次</text>
-                </view>
+            <view wx:if="{{item.frequencyCardCategory != 1}}">
+              <text wx:if="{{item.frequencyCardType==2}}">不限次</text>
+              <text wx:elif="{{item.frequencyCardType == 3}}"><text style="font-size:24rpx;color:#FFFFFF;opacity: 0.5;">本月可用换电次数</text>
+                剩{{item.surplusNum}}次</text>
+              <text wx:else>剩{{item.surplusNum}}次</text>
+            </view>
+            <view wx:else>
+              <text><text style="font-size:24rpx;color:#FFFFFF;opacity: 0.5;">本月可用换电次数 </text>剩{{item.surplusNum}}次</text>
+            </view>
 
-                <!-- <view bindtap="changeMonthlyfrequency" class="changeBtn"
+            <!-- <view bindtap="changeMonthlyfrequency" class="changeBtn"
 							wx:if="{{item.frequencyCardType == 3 && item.frequencyCardCategory != 1}}">
 							变更包月套餐
 						</view> -->
-              </view>
-              <view wx:if="{{item.frequencyCardType != 3}}" class="{{item.status==1?'bottom activeBto':'bottom'}}">
-                有效期：{{item.status==2?'未生效':item.takeEffectTime+' 至 '+item.loseEffectTime||'永久'}}
-              </view>
-              <image wx:if="{{item.frequencyCardType != 3 && item.frequencyCardType != 4}}" mode="widthFix" src="{{item.status==1?baseUrlImg+'effectComboBg.png':baseUrlImg+'loseeffComboBg.png'}}" />
-              <view style="display: flex;justify-content: space-between;" wx:if="{{userType == 1 && item.frequencyCardType != 4}}">
-                <view></view>
-                <view style="background: #bedaff;color: #6196e9;border-radius:15rpx;font-size: 30rpx;margin-right:35rpx;box-sizing: border-box;padding:10rpx 30rpx;font-weight:700;">
-                  合约第{{item.numberOfFulfilledContracts}}期， 共{{item.frequencyCardContractPeriod || 0}}期
-                </view>
-              </view>
+          </view>
+          <view wx:if="{{item.frequencyCardType != 3}}" class="{{item.status==1?'bottom activeBto':'bottom'}}">
+            有效期：{{item.status==2?'未生效':item.takeEffectTime+' 至 '+item.loseEffectTime||'永久'}}
+          </view>
+          <image wx:if="{{item.frequencyCardType != 3 && item.frequencyCardType != 4}}" mode="widthFix" src="{{item.status==1?baseUrlImg+'effectComboBg.png':baseUrlImg+'loseeffComboBg.png'}}" />
+          <view style="display: flex;justify-content: space-between;" wx:if="{{userType == 1 && item.frequencyCardType != 4}}">
+            <view></view>
+            <view style="background: #bedaff;color: #6196e9;border-radius:15rpx;font-size: 30rpx;margin-right:35rpx;box-sizing: border-box;padding:10rpx 30rpx;font-weight:700;">
+              合约第{{item.numberOfFulfilledContracts}}期， 共{{item.frequencyCardContractPeriod || 0}}期
             </view>
           </view>
+        </view>
+      </view>
 
-          <view wx:if="{{!isfold&&buyComboListE.length>3}}" class="viewMore" data-type="2" bindtap='viewMore'>
-            <text>收起</text>
-            <image mode="widthFix" class="laImage" src="{{baseUrlImg+'Rectangle 27@2x.png'}}" />
-          </view>
-          <view wx:if="{{isfold&&buyComboListE.length>3}}" class="viewMore" data-type="1" bindtap='viewMore'>
-            <text>查看更多</text>
-            <image mode="widthFix" class="laImage" src="{{baseUrlImg+'icon_cont_arrow01@2x.png'}}" />
-          </view>
-          <view class="botBtmFixLine150"></view>
-          <view class="botBtmFix" wx:if="{{frequencyCardCategory != 1}}">
-            <!-- <view wx:if="{{freType && (freType == 3 || freType == 4)}}" class="btnBlue" data-type='1'
+      <view wx:if="{{!isfold&&buyComboListE.length>3}}" class="viewMore" data-type="2" bindtap='viewMore'>
+        <text>收起</text>
+        <image mode="widthFix" class="laImage" src="{{baseUrlImg+'Rectangle 27@2x.png'}}" />
+      </view>
+      <view wx:if="{{isfold&&buyComboListE.length>3}}" class="viewMore" data-type="1" bindtap='viewMore'>
+        <text>查看更多</text>
+        <image mode="widthFix" class="laImage" src="{{baseUrlImg+'icon_cont_arrow01@2x.png'}}" />
+      </view>
+      <view class="botBtmFixLine150"></view>
+      <view class="botBtmFix" wx:if="{{frequencyCardCategory != 1}}">
+        <!-- <view wx:if="{{freType && (freType == 3 || freType == 4)}}" class="btnBlue" data-type='1'
 					bindtap="btnFunDieJia">购买套餐叠加包</view> -->
-            <view wx:if="{{userType == 0}}" class="btnBlue" data-type='1' bindtap="btnFun">购买更多套餐</view>
-          </view>
-        </block>
-
-        <block wx:if="{{buyComboList.length==0}}">
-          <view class="noBattery">
-            <image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
-            <text style="margin: 5rpx 0;"></text>
-            <text data-type="2" bindtap="btmBtnFun">购买套餐</text>
-          </view>
-        </block>
+        <view wx:if="{{userType == 0}}" class="btnBlue" data-type='1' bindtap="btnFun">购买更多套餐</view>
       </view>
+    </block>
 
-      <!-- 无绿色回收金  没有绑定电池-->
-      <block wx:if="{{comboType==4||comboType==6}}">
-        <view class="noBattery">
-          <image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
-          <text>暂无套餐</text>
-          <text data-type="4" bindtap="btmBtnFun">购买套餐</text>
-        </view>
-      </block>
+    <block wx:if="{{buyComboList.length==0}}">
+      <view class="noBattery">
+        <image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
+        <text style="margin: 5rpx 0;"></text>
+        <text data-type="2" bindtap="btmBtnFun">购买套餐</text>
+      </view>
+    </block>
+  </view>
 
-      <!-- 退绿色回收金中-->
-      <block wx:if="{{comboType==7}}">
-        <view class="noBattery">
-          <image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
-          <text>暂无套餐</text>
+  <!-- 无绿色回收金  没有绑定电池, 已缴纳押金 -->
+  <block wx:if="{{batteryDepositOrderStatus===1&&(comboType==4||comboType==6)}}">
+    <view class="noBattery">
+      <image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
+      <text>暂无套餐</text>
+      <text data-type="1" bindtap="btnFun">购买套餐</text>
+    </view>
+  </block>
 
-        </view>
-      </block>
+  <!-- 无绿色回收金  没有绑定电池，未缴纳押金 -->
+  <block wx:if="{{batteryDepositOrderStatus!==1&&(comboType==4||comboType==6)}}">
+    <view class="noBattery">
+      <image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
+      <text>暂无套餐</text>
+      <text data-type="4" bindtap="btmBtnFun">购买套餐</text>
+    </view>
+  </block>
 
-      <block wx:if="{{comboType==5}}">
-        <view class="noRecordCont">
-          <image mode="widthFix" class="laImage" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
-          <text>暂无可购买套餐</text>
-        </view>
-      </block>
-
+  <!-- 退绿色回收金中-->
+  <block wx:if="{{comboType==7}}">
+    <view class="noBattery">
+      <image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
+      <text>暂无套餐</text>
 
     </view>
+  </block>
 
-    <!-- 余额不足 -->
-    <view class="readDialog {{rechargedialogShow?'show':'noshow'}}">
-      <view class="dialogTop" style="position:relative;">
-        <image bindtap="closeDialog" style="width:20rpx;height:20rpx;position:absolute;left:30rpx;top:30rpx;" src="{{baseUrlImg + 'icon_cancel@2x.png'}}" />
-        <text>温馨提示</text>
-      </view>
-      <view class="dialogBody">你的余额不足，请选择充值或微信支付完成购买</view>
-      <view class="dialogBottom">
-        <view bindtap="topupFun" class="button button1">
-          <text>充值</text>
-        </view>
-        <view bindtap="weChatpayment" class="button button2">
-          <text>微信支付</text>
-        </view>
-      </view>
+  <block wx:if="{{comboType==5}}">
+    <view class="noRecordCont">
+      <image mode="widthFix" class="laImage" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
+      <text>暂无可购买套餐</text>
     </view>
-    <view class="mask {{rechargedialogShow?'show':'noshow'}}"></view>
+  </block>
 
-    <!-- 支付提示  -->
-    <view class="blackopBg" wx:if="{{isPay}}" catchtap="okPayFun">
-      <view class="payNoteCont">
-        <view class="title">
-          <image catchtap="okPayFun" mode="widthFix" src="{{baseUrlImg+'icon_cancel@2x.png'}}" />
-          <text style="margin-right:25rpx;">支付提示</text>
-        </view>
-        <view class="content">
-          <text>购买套餐</text>
-          <text>{{buyComboList[buyComboCurr].price}}元</text>
-        </view>
-        <view class="btn" catchtap="balanceFun">
-          确认支付
-        </view>
-      </view>
+
+</view>
+
+<!-- 余额不足 -->
+<view class="readDialog {{rechargedialogShow?'show':'noshow'}}">
+  <view class="dialogTop" style="position:relative;">
+    <image bindtap="closeDialog" style="width:20rpx;height:20rpx;position:absolute;left:30rpx;top:30rpx;" src="{{baseUrlImg + 'icon_cancel@2x.png'}}" />
+    <text>温馨提示</text>
+  </view>
+  <view class="dialogBody">你的余额不足，请选择充值或微信支付完成购买</view>
+  <view class="dialogBottom">
+    <view bindtap="topupFun" class="button button1">
+      <text>充值</text>
     </view>
-    <!-- 弹框 -->
-    <dialog></dialog>
+    <view bindtap="weChatpayment" class="button button2">
+      <text>微信支付</text>
+    </view>
+  </view>
+</view>
+<view class="mask {{rechargedialogShow?'show':'noshow'}}"></view>
+
+<!-- 支付提示  -->
+<view class="blackopBg" wx:if="{{isPay}}" catchtap="okPayFun">
+  <view class="payNoteCont">
+    <view class="title">
+      <image catchtap="okPayFun" mode="widthFix" src="{{baseUrlImg+'icon_cancel@2x.png'}}" />
+      <text style="margin-right:25rpx;">支付提示</text>
+    </view>
+    <view class="content">
+      <text>购买套餐</text>
+      <text>{{buyComboList[buyComboCurr].price}}元</text>
+    </view>
+    <view class="btn" catchtap="balanceFun">
+      确认支付
+    </view>
+  </view>
+</view>
+<!-- 弹框 -->
+<dialog></dialog>
