@@ -17,7 +17,7 @@ Page({
    */
   onLoad: function (options) {
     console.log(options);
-    // depositType  绿色回收金状态：-1（未缴纳）、0（已经缴纳）、1（正在退回绿色回收金）、2（绿色回收金已退回）
+    // depositType  押金状态：-1（未缴纳）、0（已经缴纳）、1（正在退回押金）、2（押金已退回）
     if (options.depositType) {
       this.setData({
         depositType: options.depositType,

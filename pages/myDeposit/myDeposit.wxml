@@ -1,24 +1,24 @@
 <!--pages/myDeposit/myDeposit.wxml-->
 <view class="pageCont" wx:if="{{isRequest}}">
-    <!-- 绿色回收金状态：-1（未缴纳）、0（已经缴纳）、1（正在退回绿色回收金）、2（绿色回收金已退回） -->
+    <!-- 押金状态：-1（未缴纳）、0（已经缴纳）、1（正在退回押金）、2（押金已退回） -->
     <!--   -->
     <block wx:if="{{depositType==0}}">
         <view class="coinsCont">
             <view class="wrapC">
                 <image mode="widthFix" src="{{baseUrlImg+'banner_yajin@2x.png'}}" />
                 <view class="leftCont">
-                    <text>电池绿色回收金（元）</text>
+                    <text>电池押金（元）</text>
                     <text>{{depositMoney||'0.00'}}</text>
                 </view>
             </view>
         </view>
         <view class="depositNote">
             <image mode="widthFix" src="{{baseUrlImg+'icon_cont_info01@2x.png'}}" />
-            <text>电池成功退还后才可退还绿色回收金，提交申请后将与1-7个工作日原路返还至您账户</text>
+            <text>电池成功退还后才可退还押金，提交申请后将与1-7个工作日原路返还至您账户</text>
         </view>
 
         <view class="depositNoteBot" bindtap="joinPage">
-            《绿色回收金说明》
+            《押金说明》
         </view>
 
 
@@ -26,7 +26,7 @@
     <block wx:if="{{depositType==1}}">
         <view class="quitCont">
             <image mode="widthFix" src="{{baseUrlImg+'icon_cont_return@2x.png'}}" />
-            <text>正在为你办理退绿色回收金手续</text>
+            <text>正在为你办理退押金手续</text>
             <text>预计1~7个工作日原路返还至你账户</text>
         </view>
 
@@ -34,7 +34,7 @@
 
     <view class="noBattery" wx:if="{{depositType==-1||depositType==2}}">
         <image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
-        <text>暂未缴纳绿色回收金</text>
+        <text>暂未缴纳押金</text>
         <text data-type="0" bindtap="btmBtnFun">开通换电服务</text>
 
     </view>

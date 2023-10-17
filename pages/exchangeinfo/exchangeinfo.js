@@ -448,7 +448,7 @@ Page({
             if (err.code == 20007) {
                 let option = {
                     status: true,
-                    content: "您有绿色回收金正在退回,无法进行换电操作",
+                    content: "您有押金正在退回,无法进行换电操作",
                     foot: [{
                         text: '我知道了',
                         cb: () => {}

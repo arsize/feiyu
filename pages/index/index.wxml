@@ -194,24 +194,29 @@
 
             </view>
             <block wx:if="{{!isSupportPowerBean&&!showBattey}}">
-              <view bindtap="goMyyue" class="cardItem" style="background:#FFFAF1;width:100%;">
+              <!--  bindtap="goMyyue" -->
+              <view bindtap="gotomy" class="cardItem" style="background:#FFFAF1;width:100%;">
                 <image class="item_icon_img" src="{{baseUrlImg + 'v3_index_14.png'}}"></image>
                 <view class="text">
-                  我的钱包
+                  <!-- 我的钱包 -->
+                  我的中心
                 </view>
               </view>
             </block>
             <block wx:else>
-              <view bindtap="goMyyue" class="cardItem" style="background:#FFFAF1;{{(isSupportPowerBean && showBattey)?'width:31%;':'width:48%;'}}">
+              <!-- bindtap="goMyyue" -->
+              <view bindtap="gotomy" class="cardItem" style="background:#FFFAF1;{{(isSupportPowerBean && showBattey)?'width:31%;':'width:48%;'}}">
                 <image class="item_icon_img" src="{{baseUrlImg + 'v3_index_14.png'}}"></image>
                 <view class="text">
-                  我的钱包
+                  <!-- 我的钱包 -->
+                  我的中心
                 </view>
               </view>
             </block>
           </view>
           <view class="advertisement">
-            <swiper bind:tap="gotoadvertisement" style="height:100%;width:100%;" indicator-dots="{{false}}" autoplay="{{true}}" interval="{{2000}}" duration="{{500}}">
+            <!--  bind:tap="gotoadvertisement" -->
+            <swiper style="height:100%;width:100%;" indicator-dots="{{false}}" autoplay="{{true}}" interval="{{2000}}" duration="{{500}}">
               <swiper-item>
                 <image style="width:100%;height:100%;" src="{{baseUrlImg+'v5_index_kaitong@2x.png'}}"></image>
               </swiper-item>

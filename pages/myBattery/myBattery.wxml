@@ -58,7 +58,7 @@
 					<text>数据更新时间</text>
 				</block>
 				<block wx:if="{{batteryType==3}}">
-					<text class="ColorYellowtext">暂不可用，请缴纳绿色回收金激活电池</text>
+					<text class="ColorYellowtext">暂不可用，请缴纳押金激活电池</text>
 				</block>
 			</view>
 		</view>
@@ -111,7 +111,7 @@
 				</view>
 				<view class="item">
 					<view class="left">
-						<text>绿色回收金：</text>
+						<text>押金：</text>
 						<text wx:if="{{infoData.batteryDeposit === 0}}">0元</text>
 						<text wx:else>{{infoData.batteryDeposit?infoData.batteryDeposit+'元':'-'}}</text>
 					</view>
@@ -180,7 +180,7 @@
 	<block wx:if="{{batteryType==6}}">
 		<view class="quitCont">
 			<image mode="widthFix" src="{{baseUrlImg+'icon_cont_return@2x.png'}}" />
-			<text>正在为你办理退绿色回收金手续</text>
+			<text>正在为你办理退押金手续</text>
 			<text>预计1~7个工作日原路返还至你账户</text>
 		</view>
 	</block>

@@ -115,7 +115,6 @@ Page({
   },
 
   ocrIdCardOperate() {
-    // TODO:
     const params = {
       faceImageUrl: this.data.idCardParams.front,
       backImageUrl: this.data.idCardParams.back,

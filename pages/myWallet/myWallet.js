@@ -12,7 +12,7 @@ Page({
   data: {
     baseUrlImg: app.globalData.baseUrlImg,
     menuList: [{
-        title: "绿色回收金",
+        title: "押金",
         img: `${baseUrlImgCurr}icon_cont_cash@2x.png`,
         url: "/pages/myDeposit/myDeposit",
       },

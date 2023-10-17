@@ -194,7 +194,7 @@ Page({
   rechargeFun() {
     if (!this.data.depositDto.depositId) {
       wx.showToast({
-        title: '请选择绿色回收金',
+        title: '请选择押金',
         icon: 'none'
       })
       return
@@ -208,7 +208,7 @@ Page({
     }
     if (!this.data.haveread) {
       wx.showToast({
-        title: '请先阅读并同意《电池绿色回收金协议》',
+        title: '请先阅读并同意《电池押金协议》',
         icon: 'none'
       })
       return

@@ -266,7 +266,7 @@ Page({
       if (err.code == 20003) {
         let option = {
           status: true,
-          content: "你已领取电池，请缴纳绿色回收金激活电池",
+          content: "你已领取电池，请缴纳押金激活电池",
           foot: [{
             text: '稍后再说',
             cb: () => {

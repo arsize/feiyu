@@ -122,7 +122,7 @@ Page({
     }
     if (!this.data.haveread) {
       wx.showToast({
-        title: '请先阅读并同意《电池绿色回收金协议》',
+        title: '请先阅读并同意《电池押金协议》',
         icon: 'none'
       })
       return

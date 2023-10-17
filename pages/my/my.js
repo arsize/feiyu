@@ -131,7 +131,6 @@ Page({
       })
 
     }
-    console.log(this.data.coverUrl)
   },
   // 跳转到服务网点
   gotoservercenter() {

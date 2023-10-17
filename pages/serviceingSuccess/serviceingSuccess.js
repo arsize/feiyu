@@ -18,11 +18,7 @@ Page({
   onLoad: function (options) {
 
   },
-  // TODO：
   toscan() {
-    // wx.redirectTo({
-    //   url: '/pages/cameraScanTake/cameraScanTake',
-    // })
     this.getUserHasCardOperate()
   },
 

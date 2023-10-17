@@ -32,7 +32,7 @@
 				</block>
 				<block wx:if="{{typeCurr==1}}">
 					<view class="left">
-						<text>{{itemData.type==0?'换电服务':itemData.type==1?'充电服务':itemData.type==2?'买车服务':itemData.type==3?'购买月租服务':itemData.type==4?'充电退费':itemData.type==5?'购买套餐':itemData.type==6?'套餐升级':itemData.type==7?'系统赠送':itemData.type==8?'系统扣除':itemData.type==9?'取消交易':itemData.type==10?'缴纳绿色回收金':itemData.type==11?'绿色回收金退回':itemData.type==12?'用户充值':''}}</text>
+						<text>{{itemData.type==0?'换电服务':itemData.type==1?'充电服务':itemData.type==2?'买车服务':itemData.type==3?'购买月租服务':itemData.type==4?'充电退费':itemData.type==5?'购买套餐':itemData.type==6?'套餐升级':itemData.type==7?'系统赠送':itemData.type==8?'系统扣除':itemData.type==9?'取消交易':itemData.type==10?'缴纳押金':itemData.type==11?'押金退回':itemData.type==12?'用户充值':''}}</text>
 						<text>{{itemData.ctimeHour}}</text>
 					</view>
 					<view class="right">
@@ -60,7 +60,7 @@
 				</block>
 				<block wx:if="{{typeCurr==2}}">
 					<view class="left">
-						<text>{{itemData.type==10?'绿色回收金支付':itemData.type==11?'绿色回收金退回':''}}</text>
+						<text>{{itemData.type==10?'押金支付':itemData.type==11?'押金退回':''}}</text>
 						<text>{{itemData.ctimeHour}}</text>
 					</view>
 					<view class="right">

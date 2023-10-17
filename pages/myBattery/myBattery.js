@@ -14,7 +14,7 @@ Page({
   data: {
     isRequest: true,
     baseUrlImg: app.globalData.baseUrlImg,
-    // 0: 未绑定电池  1已经绑定电池   2吞电池  3.已经绑定电池,未激活电池  4.已经绑定电池,已激活电池  5.退电池  6.退绿色回收金中
+    // 0: 未绑定电池  1已经绑定电池   2吞电池  3.已经绑定电池,未激活电池  4.已经绑定电池,已激活电池  5.退电池  6.退押金中
     batteryType: -1,
     infoData: {},
     isTip: false,

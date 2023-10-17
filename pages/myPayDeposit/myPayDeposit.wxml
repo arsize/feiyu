@@ -16,7 +16,7 @@
 		<view class="right">
 			<view class="defaultRound"></view>
 			<view style="color: #999999;font-size:24rpx;margin-top:15rpx;">
-				缴纳电池绿色回收金
+				缴纳电池押金
 			</view>
 		</view>
 	</view>
@@ -24,7 +24,7 @@
 	<view class="listCont">
 		<view class="item">
 			<view class="title">
-				<view class="titleName">电池绿色回收金</view>
+				<view class="titleName">电池押金</view>
 			</view>
 			<view wx:for="{{depositList}}" wx:key="index" bindtap="selectBattery" data-item="{{item}}" class="{{depositActived == item.depositId ? 'cont primaryBor4' : 'cont'}}" style="box-sizing: border-box;">
 				<view class="top colorwhite">
@@ -55,10 +55,10 @@
 			<view bindtap="selectnoteCont" class="roundrighthave" wx:else>
 				<view class="roundrightnei"></view>
 			</view>
-			我已认真阅读并同意<text style="color:#1A6EFF;" bindtap="gotoxieyi">《电池绿色回收金协议》</text>
+			我已认真阅读并同意<text style="color:#1A6EFF;" bindtap="gotoxieyi">《电池押金协议》</text>
 		</view>
 		<view style="font-size:24rpx;color:#999999;width:100%;text-align:center;">
-			电池绿色回收金，随时可退
+			电池押金，随时可退
 		</view>
 	</view>
 	<view class="botBtmFixLine250"></view>

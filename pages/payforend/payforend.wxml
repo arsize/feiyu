@@ -17,7 +17,7 @@
 	</view>
 	<view class="three" wx:if="{{type == 0}}">
 		<block wx:if="{{depositId}}">
-			缴纳绿色回收金<text wx:if="{{name}}">+购买套餐：{{name}}</text>
+			缴纳押金<text wx:if="{{name}}">+购买套餐：{{name}}</text>
 		</block>
 		<block wx:else>
 			<text wx:if="{{name}}">购买套餐：{{name}}</text>

@@ -257,7 +257,7 @@
     </block>
   </view>
 
-  <!-- 无绿色回收金  没有绑定电池, 已缴纳押金 -->
+  <!-- 无押金  没有绑定电池, 已缴纳押金 -->
   <block wx:if="{{batteryDepositOrderStatus===1&&(comboType==4||comboType==6)}}">
     <view class="noBattery">
       <image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
@@ -266,7 +266,7 @@
     </view>
   </block>
 
-  <!-- 无绿色回收金  没有绑定电池，未缴纳押金 -->
+  <!-- 无押金  没有绑定电池，未缴纳押金 -->
   <block wx:if="{{batteryDepositOrderStatus!==1&&(comboType==4||comboType==6)}}">
     <view class="noBattery">
       <image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
@@ -275,7 +275,7 @@
     </view>
   </block>
 
-  <!-- 退绿色回收金中-->
+  <!-- 退押金中-->
   <block wx:if="{{comboType==7}}">
     <view class="noBattery">
       <image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />

@@ -12,7 +12,7 @@ Page({
         baseUrlImg: app.globalData.baseUrlImg,
         status: false,
         selectItem: '电动车售价高',
-        cancelArr: ['电动车售价高', "开通流程太麻烦", "不想交绿色回收金", "暂时还不想换车", "换电收费高", "预约其他服务网点", "其他原因"],
+        cancelArr: ['电动车售价高', "开通流程太麻烦", "不想交押金", "暂时还不想换车", "换电收费高", "预约其他服务网点", "其他原因"],
         infoData: {}
     },
     //options(Object)

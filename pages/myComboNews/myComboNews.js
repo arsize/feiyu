@@ -7,7 +7,7 @@ Page({
   data: {
     baseUrlImg: app.globalData.baseUrlImg,
     isExplain: false,
-    // 1：购买套餐  2.我的套餐  3.升级套餐  4.缴纳绿色回收金   5.该地区暂无套餐  6.没有绑定电池  7.退绿色回收金中
+    // 1：购买套餐  2.我的套餐  3.升级套餐  4.缴纳押金   5.该地区暂无套餐  6.没有绑定电池  7.退押金中
     // comboType: 1,
     comboType: wx.getStorageSync("comboType"),
     rechargeMoney: 0,
@@ -587,7 +587,7 @@ Page({
         let content = "";
         let textR = "";
         if (this.data.comboType == 4) {
-          content = "暂不能购买套餐，请先缴纳绿色回收金激活电池。";
+          content = "暂不能购买套餐，请先缴纳押金激活电池。";
           textR = "去激活电池";
         } else {
           content = "暂不能购买套餐，请先开通换电服务";
