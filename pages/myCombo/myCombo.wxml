@@ -244,7 +244,12 @@
       <view class="botBtmFix" wx:if="{{frequencyCardCategory != 1}}">
         <!-- <view wx:if="{{freType && (freType == 3 || freType == 4)}}" class="btnBlue" data-type='1'
 					bindtap="btnFunDieJia">购买套餐叠加包</view> -->
-        <view wx:if="{{userType == 0}}" class="btnBlue" data-type='1' bindtap="btnFun">购买更多套餐</view>
+          <block wx:if="{{userType == 0}}">
+        <!-- <view wx:if="{{userType == 0}}" class="btnBlue" data-type='1' bindtap="btnFun">购买更多套餐</view> -->
+        <view class="btnBlue" style="margin-bottom:20rpx" bindtap="goIndexFun">返回首页</view>
+        <view class="btnBlue" data-type='1' bindtap="btnFun">购买更多套餐</view>
+    </block>
+
       </view>
     </block>
 

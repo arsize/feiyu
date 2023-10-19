@@ -374,6 +374,12 @@ Page({
     }
   },
 
+  goIndexFun(){
+    wx.reLaunch({
+      url: "/pages/index/index"
+  });
+  },
+
   btnFun(e) {
     let type = e.currentTarget.dataset.type;
     wx.setStorageSync("comboType", type);

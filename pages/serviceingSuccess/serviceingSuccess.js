@@ -19,7 +19,11 @@ Page({
 
   },
   toscan() {
-    this.getUserHasCardOperate()
+    wx.setStorageSync("comboType", 1);
+    wx.redirectTo({
+      url: '/pages/myCombo/myCombo',
+    })
+    // this.getUserHasCardOperate()
   },
 
   getUserHasCardOperate() {
