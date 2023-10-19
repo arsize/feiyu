@@ -1,7 +1,8 @@
 {
   "navigationBarBackgroundColor": "#fff",
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "服务开通成功",
+  "navigationBarTitleText": "开通换电服务",
+
   "usingComponents": {
     "van-popup": "../../miniprogram_npm/@vant/weapp/popup/index",
     "van-icon": "../../miniprogram_npm/@vant/weapp/icon/index",

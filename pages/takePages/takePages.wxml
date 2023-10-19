@@ -8,7 +8,8 @@
   </view>
 </view>
 <view class="centerChargeBox">
-  <view class="toptext">温馨提示：开始换电后，将会打开空仓，请保持安全距离</view>
+  <!-- <view class="toptext">温馨提示：开始换电后，将会打开空仓，请保持安全距离</view> -->
+  <view class="toptext">温馨提示：开始取电后，将会打开电池仓，请保持安全距离</view>
   <view class="cabinetCent" wx:for="{{cabinetBoxInfoList}}" wx:key="index">
     <view class="portnum">{{item.boxSn}}</view>
 

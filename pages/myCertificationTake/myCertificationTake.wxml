@@ -76,7 +76,7 @@
 				温馨提示：为防止意外事故发生，请填写紧急联系人信息。
 			</view>
 		</view>
-		<view class="info">
+		<!-- <view class="info">
 			<view class="title">
 				<image class="cicle" mode="widthFix" src="{{baseUrlImg+'img_text05@2x.png'}}" />
 			</view>
@@ -105,7 +105,7 @@
 			<view class="note">
 				温馨提示：为提供更好的服务和发送礼品，请填写你的常用地址。
 			</view>
-		</view>
+		</view> -->
 		<view class="botBtmFixLine165"></view>
 		<view class="fromBtnAc">
 			<!-- &&param5&&param6 -->

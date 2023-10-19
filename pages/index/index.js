@@ -129,7 +129,7 @@ Page({
     this.data.mapCtx = wx.createMapContext("myMap");
   },
   onShow() {
-
+    this.getUserBattery(); //电量展示
     // 断开蓝牙
     bluetooth.offBlueLine();
     wx.setStorageSync('isBlueConnected', "")
@@ -447,7 +447,7 @@ Page({
         showBattey: true,
         selectBatteryIdArr: selectBatteryIdArr,
         depost: res.data.batteryDepositOrderStatus,
-        UserFrequencyCardRecord: res.data.UserFrequencyCardRecord
+        UserFrequencyCardRecord: res.data.userFrequencyCardRecord
       });
       wx.setStorageSync('batteryDepositOrderStatus', res.data.batteryDepositOrderStatus)
       wx.setStorageSync('realName', res.data.realName)
