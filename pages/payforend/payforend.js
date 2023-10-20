@@ -187,8 +187,10 @@ Page({
             openId: wx.getStorageSync("logindata").openId,
             frequencyCardId: this.data.activeId,
             wxPay: true,
-            couponId: this.data.couponId
         };
+        if(this.data.couponId && this.data.couponId != 'undefined'){
+          params.couponId = this.data.couponId
+        }
         wx.showLoading({
             title: "支付中",
             mask: true,
