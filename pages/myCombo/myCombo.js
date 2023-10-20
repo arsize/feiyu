@@ -142,6 +142,14 @@ Page({
       url: "/pages/changeMonthlyfrequency/changeMonthlyfrequency",
     });
   },
+
+    // 除
+    divideOperate(num1,num2){
+      return (Number(num1) / Number(num2)).toFixed(2)
+  },
+
+
+
   //  购买套餐列表
   getFrequencyCardList() {
     let that = this;
@@ -170,6 +178,7 @@ Page({
 
         if (listdata.length > 0) {
           listdata.map((item, index) => {
+            item['pricePerDay'] = this.divideOperate(item.price,item.validTime);
             if (item.activityType == 2) {
               if (item.num != 0 && item.num != -1) {
                 item.times = Number(item.price / item.num).toFixed(2);
@@ -180,6 +189,7 @@ Page({
             if (index < 3) {
               that.data.buyComboListS.push(item);
             }
+
           });
           if (listdata.length > 3) {
             that.data.buyComboListE = listdata;
@@ -198,7 +208,6 @@ Page({
         
         const userCouponListCurr = objData.userCouponList.map((item)=>item.name)
 
-        console.log("userCouponListCurr",userCouponListCurr)
         that.setData({
           buyComboList: listdata,
           buyComboListE: that.data.buyComboListE,

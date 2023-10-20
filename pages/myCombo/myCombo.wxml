@@ -96,11 +96,12 @@
                 {{item.price}}
               </view>
               <view class="itemoriginalPrice">
-                <view wx:if="{{!item.originalPrice}}"> ￥{{item.originalPrice}}
-                </view>
+                <!-- <view wx:if="{{!item.originalPrice}}"> ￥{{item.originalPrice}}
+                </view> -->
+                <view> ￥{{item.originalPrice||0.00}}</view>
               </view>
               <view class="subword">
-                <view style="color: #3D4A4F;">9.9</view> 元/天
+                <view style="color: #3D4A4F;">{{item.pricePerDay}}</view> 元/天
               </view>
             </view>
           </view>
