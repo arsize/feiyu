@@ -370,6 +370,7 @@ page {
 }
 
 .itemblock {
+  position: relative;
   width: 31%;
   height: 260rpx;
   border-radius: 10rpx;
@@ -562,4 +563,10 @@ page {
   color: #57a4e7;
   padding-top: 40rpx;
 
+}
+.wxnews{
+  width: 65rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
