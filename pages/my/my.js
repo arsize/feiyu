@@ -432,30 +432,38 @@ Page({
       }
       return;
     } else {
-      let type = e.currentTarget.dataset.type;
-          // payDepostStatus 0：未缴纳，1：已经缴纳, 2:正在退回押金
-          if (this.data.infoData.payDepostStatus == 0) {
-            wx.setStorageSync("comboType", 4);
-            if (this.throttle()) {
-              wx.navigateTo({
-                url: `/pages/myCombo/myCombo?currType=${type}`
-              });
-            }
-          } else if (this.data.infoData.payDepostStatus == 2) {
-            wx.setStorageSync("comboType", 7);
-            if (this.throttle()) {
-              wx.navigateTo({
-                url: `/pages/myCombo/myCombo?currType=${type}`
-              });
-            }
-          } else {
-            wx.setStorageSync("comboType", type);
-            if (this.throttle()) {
-              wx.navigateTo({
-                url: "/pages/myCombo/myCombo"
-              });
-            }
+      if(!this.data.infoData.payDepost){
+        wx.navigateTo({
+          url: "/pages/myCertificationTake/myCertificationTake"
+        });
+      }else{
+        let type = e.currentTarget.dataset.type;
+        // payDepostStatus 0：未缴纳，1：已经缴纳, 2:正在退回押金
+        if (this.data.infoData.payDepostStatus == 0) {
+          wx.setStorageSync("comboType", 4);
+          if (this.throttle()) {
+            wx.navigateTo({
+              url: `/pages/myCombo/myCombo?currType=${type}`
+            });
           }
+        } else if (this.data.infoData.payDepostStatus == 2) {
+          wx.setStorageSync("comboType", 7);
+          if (this.throttle()) {
+            wx.navigateTo({
+              url: `/pages/myCombo/myCombo?currType=${type}`
+            });
+          }
+        } else {
+          wx.setStorageSync("comboType", type);
+          if (this.throttle()) {
+            wx.navigateTo({
+              url: "/pages/myCombo/myCombo"
+            });
+          }
+        }
+      }
+
+  
       // if (this.data.infoData.bindBattery) {
       //   // payDepostStatus 0：未缴纳，1：已经缴纳, 2:正在退回押金
       //   if (this.data.infoData.payDepostStatus == 0) {
