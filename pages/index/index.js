@@ -141,6 +141,8 @@ Page({
     if (!logindata.unregistered) {
       this.getIsNowCharging();
       this.switchPopMessage()
+    }else{
+      this.switchPopMessage()
     }
 
   },
