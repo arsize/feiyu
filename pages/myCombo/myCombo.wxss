@@ -565,8 +565,10 @@ page {
 
 }
 .wxnews{
-  width: 65rpx;
+  width: 130rpx;
+  height: 39rpx;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -18rpx;
+  left: -2rpx;
+  background-color: #fff;
 }
