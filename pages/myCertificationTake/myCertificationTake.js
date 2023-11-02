@@ -23,7 +23,7 @@ Page({
       back: ''
     }
   },
-  onShow() { },
+  onShow() {},
 
   bindinput(e) {
     let paramObj = e.detail.value;
@@ -44,16 +44,27 @@ Page({
     let that = this;
     const currType = e.currentTarget.dataset.type;
     let token = wx.getStorageSync('logindata').appToken;
-    wx.chooseImage({
+
+    wx.chooseMedia({
       count: 1,
-      sizeType: ['compressed'],
+      mediaType: ['image'],
       sourceType: ['album', 'camera'],
-      success: function (res) {
-        var tempFilePaths = res.tempFilePaths;
-        for (var f = 0; f < res.tempFilePaths.length; f++) {
+      maxDuration: 30,
+      camera: 'back',
+      success(res) {
+        // wx.chooseImage({
+        //   count: 1,
+        //   sizeType: ['compressed'],
+        //   sourceType: ['album', 'camera'],
+        //   success: function (res) {
+        // console.log("res",res)
+
+        // var tempFilePaths = res.tempFilePaths;
+        var tempFilePaths = res.tempFiles;
+        for (var f = 0; f < res.tempFiles.length; f++) {
           wx.uploadFile({
             url: `${app.globalData.baseUrl}fileUpload/picture`,
-            filePath: tempFilePaths[f],
+            filePath: tempFilePaths[f].tempFilePath,
             header: {
               'access_token': token,
               'content-type': "multipart/form-data"
@@ -126,7 +137,7 @@ Page({
       data: params,
       loading: true,
     }).then(res => {
-      
+
       const data = res.data;
       this.setData({
         param1: data && data.name,
