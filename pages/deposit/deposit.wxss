@@ -1,0 +1,97 @@
+.container{
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.container .top{
+  margin-top: 40rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  position: relative;
+
+}
+.top .shoucang{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  top: -40%;
+  left: 0;
+}
+.top .top1{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.top .top2{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.top .num{
+  font-size: 60rpx;
+  margin: 0 8rpx;
+  color: #82B338;
+}
+.top .day{
+  font-size: 60rpx;
+  margin: 0 8rpx;
+  color: #D7A64A;
+}
+.container .center{
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 50rpx 0;
+position: relative;
+margin-top: 30rpx;
+padding-bottom: 10rpx;
+}
+.center .ico{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.ico2{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.rules{
+  margin-top: 60rpx;
+  border-top: 1rpx solid #ddd;
+  padding-top: 20rpx;
+}
+.rules-box{
+  margin-top: 10rpx;
+}
+.btn-box{
+  position: absolute;
+  bottom: 100rpx;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.textn{
+  margin-bottom: 10rpx;
+}
+.btn-box .btn{
+  width: 400rpx;
+  height: 120rpx;
+  background-color: #4095E5;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+border-radius: 20rpx;
+}

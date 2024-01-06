@@ -1,8 +1,8 @@
 const globalData = {
-  //   baseUrl: "http://gaashs.wondware.com/powerlongapp/",//测试
+    // baseUrl: "http://gaashs.wondware.com/powerlongapp/",//测试
   //   baseUrl: "https://release.wondware.com/powerlongapp/",//预发布
-  baseUrl: "https://power.feiyuhuandian.com/powerlongappV2/",//正式
-  // baseUrl: "http://106.14.67.99:8802/", //开发环境
+  // baseUrl: "https://power.feiyuhuandian.com/powerlongappV2/",//正式
+  baseUrl: "http://106.14.67.99:8802/", //开发环境
   baseUrlImg: "http://power.feiyuhuandian.com/rechargeMinipImgV2/",
   // appId: wx.getExtConfigSync
   //   ? wx.getExtConfigSync().extAppid

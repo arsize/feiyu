@@ -6,7 +6,8 @@ Component({
         status: false, //弹窗是否展示
         size: '', //弹窗大小：normal：正常，large:大，small：小
         title: '', //header title
-        content: "", //弹窗内容body
+        content: "", //弹窗内容body，
+        contentType:'string',
         foot: [], //是否显示弹窗foot
         closeicon: false,
         type: 'normal', //弹窗样式类型,最高优先级
@@ -78,6 +79,7 @@ Component({
                 size,
                 title,
                 content,
+                contentType,
                 clickBlackType,
                 foot,
                 closeicon
@@ -90,6 +92,7 @@ Component({
                 clickBlackType: clickBlackType ? clickBlackType : '',
                 title: title ? title : '温馨提示',
                 content: content ? content : '',
+                contentType:contentType?contentType:'string',
                 foot: foot && foot.length > 0 ? foot : [{
                     text: '我知道了',
                     cb: () => {

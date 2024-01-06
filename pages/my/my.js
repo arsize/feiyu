@@ -27,10 +27,15 @@ Page({
         img: `${baseUrlImgCurr}v4_my_icon_cont_syjl@2x.png`,
         url: "/pages/myUsagelog/myUsagelog",
       },
+      // {
+      //   title: "服务网点",
+      //   img: `${baseUrlImgCurr}v4_my_icon_cont_wddt@2x.png`,
+      //   url: "/pages/myMapList/myMapList",
+      // },
       {
-        title: "服务网点",
-        img: `${baseUrlImgCurr}v4_my_icon_cont_wddt@2x.png`,
-        url: "/pages/myMapList/myMapList",
+        title: "寄存",
+        img: `${baseUrlImgCurr}jicun.png`,
+        url: "/pages/deposit/deposit",
       },
       {
         title: "客服中心",

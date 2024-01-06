@@ -81,7 +81,8 @@
     "pages/survey/survey",
     "pages/transitInput/transitInput",
     "pages/myWallet_sc/myWallet_sc",
-    "pages/myComboNews/myComboNews"
+    "pages/myComboNews/myComboNews",
+    "pages/deposit/deposit"
   ],
   "window": {
     "backgroundTextStyle": "light",
