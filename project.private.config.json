@@ -7,6 +7,13 @@
         "miniprogram": {
             "list": [
                 {
+                    "name": "",
+                    "pathName": "pages/depositSuccess/depositSuccess",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
                     "name": "购买套餐新",
                     "pathName": "pages/myComboNews/myComboNews",
                     "query": "",

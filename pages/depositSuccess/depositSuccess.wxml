@@ -1,0 +1,10 @@
+<view class="content">
+<view class="center">
+  <view style="display: flex;"><view style="color: #148FE1;">{{num}}号</view>仓门已打开</view>
+<view>请放入电池，并接好插头</view>
+<view>最后关闭仓门哦！</view>
+</view>
+
+
+</view>
+<view class="scanbind" bindtap="goback">返回首页</view>

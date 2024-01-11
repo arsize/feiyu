@@ -1,27 +1,30 @@
 <view class="container">
   <view class="top">
-    <image class="shoucang" mode="widthFix" src="../../images/shoucang.png"/>
-    <view class="top1">每年享受<view class="num">3次</view>最长<view class="day">30天</view></view>
-    <view class="top2">免费寄存时间</view>
+    <image class="shoucang" mode="widthFix" src="../../images/shoucang.png" />
+    <view class="top1">每年享受<view class="num">{{freeCount}}次</view>最长<view class="day">{{freeDay}}天</view>免费寄存时间</view>
   </view>
   <view class="center">
-    <image class="ico" src="../../images/ico.png" mode="widthFix"/>
-    <image class="ico2" src="../../images/denglong2.png" mode="widthFix"/>
+    <image class="ico" src="../../images/ico.png" mode="widthFix" />
+    <image class="ico2" src="../../images/denglong2.png" mode="widthFix" />
     <view>电池存柜子，过年更放心！</view>
     <view>套餐不计费，假期更开心！</view>
   </view>
   <view class="rules">
     <view style="margin-top: 20rpx;margin-bottom: 20rpx;">寄存规则</view>
     <view class="rules-box">
-    <view>1.换电套餐单次最长可冻结30天，每年可享受3次机会。</view>
-    <view>2.单次冻结时间到达最长天数后，自动恢复租期。</view>
-    <view>3.可通过扫描换电柜二维码取电即可恢复使用。</view>
-    <view>4.需在留有两个空仓及以上电柜使用寄存服务。</view>
-</view>
+      <view>1.换电套餐单次最长可冻结{{freeDay}}天，每年可享受{{freeCount}}次机会。</view>
+      <view>2.单次冻结时间到达最长天数后，自动恢复租期。</view>
+      <view>3.可通过扫描换电柜二维码取电即可恢复使用。</view>
+      <view>4.需在留有两个空仓及以上电柜使用寄存服务。</view>
+    </view>
   </view>
   <view class="btn-box">
-  <view class="textn">剩3次机会</view>
-  <view class="btn" bind:tap="showdilog">扫码寄存</view>
+    <view class="textn">剩{{freeCount - saveCount}}次机会</view>
+    <view wx:if="{{status === 0}}" class="scanbind" bindtap="scanToSave">扫码寄存</view>
+    <view wx:else class="scanbind">已寄存{{saveDay}}天</view>
+    <view wx:if="{{status !== 0}}" class="bottomsub">取回电池，请点击首页【扫码取电】</view>
   </view>
+
+
 </view>
 <dialog></dialog>

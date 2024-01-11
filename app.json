@@ -82,7 +82,9 @@
     "pages/transitInput/transitInput",
     "pages/myWallet_sc/myWallet_sc",
     "pages/myComboNews/myComboNews",
-    "pages/deposit/deposit"
+    "pages/deposit/deposit",
+    "pages/cameraScanBySave/cameraScanBySave",
+    "pages/depositSuccess/depositSuccess"
   ],
   "window": {
     "backgroundTextStyle": "light",

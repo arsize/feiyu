@@ -1,0 +1,30 @@
+.scanbind {
+  position: fixed;
+  bottom: 50rpx;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400rpx;
+  height: 88rpx;
+  background: linear-gradient(270deg, #41beff 0%, #1a6eff 100%);
+  box-shadow: 0rpx 4rpx 6rpx 0rpx rgba(27, 112, 255, 0.25);
+  border-radius: 44rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: bold;
+}
+.content{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
