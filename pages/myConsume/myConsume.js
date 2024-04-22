@@ -18,7 +18,7 @@ Page({
     }, {
       title: '消费',
     }, {
-      title: '绿色回收金',
+      title: '押金',
     }],
     isRequest: false,
     recordList: [],

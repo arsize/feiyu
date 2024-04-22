@@ -27,10 +27,15 @@ Page({
         img: `${baseUrlImgCurr}v4_my_icon_cont_syjl@2x.png`,
         url: "/pages/myUsagelog/myUsagelog",
       },
+      // {
+      //   title: "服务网点",
+      //   img: `${baseUrlImgCurr}v4_my_icon_cont_wddt@2x.png`,
+      //   url: "/pages/myMapList/myMapList",
+      // },
       {
-        title: "服务网点",
-        img: `${baseUrlImgCurr}v4_my_icon_cont_wddt@2x.png`,
-        url: "/pages/myMapList/myMapList",
+        title: "寄存",
+        img: `${baseUrlImgCurr}jicun.png`,
+        url: "/pages/deposit/deposit",
       },
       {
         title: "客服中心",
@@ -131,7 +136,6 @@ Page({
       })
 
     }
-    console.log(this.data.coverUrl)
   },
   // 跳转到服务网点
   gotoservercenter() {
@@ -433,8 +437,12 @@ Page({
       }
       return;
     } else {
-      let type = e.currentTarget.dataset.type;
-      if (this.data.infoData.bindBattery) {
+      if(!this.data.infoData.payDepost){
+        wx.navigateTo({
+          url: "/pages/myCertificationTake/myCertificationTake"
+        });
+      }else{
+        let type = e.currentTarget.dataset.type;
         // payDepostStatus 0：未缴纳，1：已经缴纳, 2:正在退回押金
         if (this.data.infoData.payDepostStatus == 0) {
           wx.setStorageSync("comboType", 4);
@@ -458,38 +466,65 @@ Page({
             });
           }
         }
-      } else {
-        if (this.data.infoData.payDepostStatus == 0) {
-          wx.setStorageSync("comboType", 4);
-          if (this.throttle()) {
-            wx.navigateTo({
-              url: `/pages/myCombo/myCombo?currType=${type}`
-            });
-          }
-        } else if (this.data.infoData.payDepostStatus == 2) {
-          wx.setStorageSync("comboType", 7);
-          if (this.throttle()) {
-            wx.navigateTo({
-              url: `/pages/myCombo/myCombo?currType=${type}`
-            });
-          }
-        } else {
-          wx.setStorageSync("comboType", 6);
-          if (this.throttle()) {
-            wx.navigateTo({
-              url: `/pages/myCombo/myCombo?currType=${type}`
-            });
-          }
-          // app.printf(type);
-          // wx.setStorageSync("comboType", type);
-          // if (this.throttle()) {
-          //   wx.navigateTo({
-          //     url: "/pages/myCombo/myCombo"
-          //   });
-          // }
-        }
-
       }
+
+  
+      // if (this.data.infoData.bindBattery) {
+      //   // payDepostStatus 0：未缴纳，1：已经缴纳, 2:正在退回押金
+      //   if (this.data.infoData.payDepostStatus == 0) {
+      //     wx.setStorageSync("comboType", 4);
+      //     if (this.throttle()) {
+      //       wx.navigateTo({
+      //         url: `/pages/myCombo/myCombo?currType=${type}`
+      //       });
+      //     }
+      //   } else if (this.data.infoData.payDepostStatus == 2) {
+      //     wx.setStorageSync("comboType", 7);
+      //     if (this.throttle()) {
+      //       wx.navigateTo({
+      //         url: `/pages/myCombo/myCombo?currType=${type}`
+      //       });
+      //     }
+      //   } else {
+      //     wx.setStorageSync("comboType", type);
+      //     if (this.throttle()) {
+      //       wx.navigateTo({
+      //         url: "/pages/myCombo/myCombo"
+      //       });
+      //     }
+      //   }
+      // } else {
+      //   if (this.data.infoData.payDepostStatus == 0) {
+      //     wx.setStorageSync("comboType", 4);
+      //     if (this.throttle()) {
+      //       wx.navigateTo({
+      //         url: `/pages/myCombo/myCombo?currType=${type}`
+      //       });
+      //     }
+      //   } else if (this.data.infoData.payDepostStatus == 2) {
+      //     wx.setStorageSync("comboType", 7);
+      //     if (this.throttle()) {
+      //       wx.navigateTo({
+      //         url: `/pages/myCombo/myCombo?currType=${type}`
+      //       });
+      //     }
+      //   } else {
+      //     wx.setStorageSync("comboType", 6);
+      //     if (this.throttle()) {
+      //       wx.navigateTo({
+      //         url: `/pages/myCombo/myCombo?currType=${type}`
+      //       });
+      //     }
+      //     // app.printf(type);
+      //     // wx.setStorageSync("comboType", type);
+      //     // if (this.throttle()) {
+      //     //   wx.navigateTo({
+      //     //     url: "/pages/myCombo/myCombo"
+      //     //   });
+      //     // }
+      //   }
+
+      // }
 
     }
   },

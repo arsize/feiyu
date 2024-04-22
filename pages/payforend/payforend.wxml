@@ -17,7 +17,7 @@
 	</view>
 	<view class="three" wx:if="{{type == 0}}">
 		<block wx:if="{{depositId}}">
-			缴纳绿色回收金<text wx:if="{{name}}">+购买套餐：{{name}}</text>
+			缴纳押金<text wx:if="{{name}}">+购买套餐：{{name}}</text>
 		</block>
 		<block wx:else>
 			<text wx:if="{{name}}">购买套餐：{{name}}</text>
@@ -174,7 +174,7 @@
 			<image catchtap="okPayFun" mode="widthFix" src="{{baseUrlImg+'icon_cancel@2x.png'}}" />
 			<text style="margin-right:25rpx;">支付提示</text>
 		</view>
-		<view class="content" style="">
+		<view class="content">
 			<block wx:if="{{showyouhuiquan}}">
 				<text style="font-size:38rpx" wx:if="{{selectCounpItem && selectCounpItem.discountedPrices}}">{{m1.getFixed(money - selectCounpItem.discountedPrices)}}元</text>
 				<text style="font-size:38rpx" wx:else>{{money}}元</text>

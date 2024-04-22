@@ -1,0 +1,317 @@
+/* pages/myCombo/myCombo.wxss */
+
+page {
+  background: #f6f6f8;
+}
+
+.pageCont {
+  width: 100%;
+}
+
+.buyCombo {
+  width: 100%;
+}
+
+.buyComboNote {
+  margin-top: 300rpx;
+  width: 100%;
+  text-align: center;
+  color: #999;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.buyCombo .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 32rpx auto;
+}
+
+.buyCombo .title text:nth-child(1) {
+  color: #333;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.buyCombo .title text:nth-child(2) {
+  color: #1a6eff;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.buyCombo .listWrapMy {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 16rpx;
+}
+
+.buyCombo .listWrapMy .itemMycombo {
+  position: relative;
+  margin-bottom: 24rpx;
+  width: 100%;
+  height: 220rpx;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.buyCombo .listWrapMy .active {
+  background: linear-gradient(#3298ff 0%, #166cff 100%);
+}
+
+.buyCombo .listWrapMy .itemMycombo .top {
+  width: 90%;
+  margin: 0 auto;
+  padding: 48rpx 0 12rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+  font: 500 36rpx "PingFangSC-Medium";
+}
+
+.buyCombo .listWrapMy .itemMycombo .bottom {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.buyCombo .listWrapMy .itemMycombo .activeBto {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.buyCombo .listWrapMy .itemMycombo image {
+  position: absolute;
+  right: 22rpx;
+  bottom: 0;
+  width: 142.5rpx;
+  height: 124.5rpx;
+}
+
+.buyCombo .listWrap {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 16rpx;
+}
+
+.buyCombo .listWrap .item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+  width: 100%;
+  height: 180rpx;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.buyCombo .listWrap .item .titleNote {
+  position: absolute;
+  left: 0;
+  top: -11rpx;
+  /* margin-left: 16rpx; */
+  /* width: 118rpx;
+    height: 40rpx; */
+  width: 146rpx;
+  height: 48rpx;
+}
+
+.buyCombo .listWrap .item .titleNote image {
+  width: 146rpx;
+  height: 48rpx;
+}
+
+.buyCombo .listWrap .item .titleNote text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font: 500 24rpx "PingFangSC-Medium";
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.buyCombo .listWrap .item .left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.buyCombo .listWrap .item .left text:nth-child(1) {
+  color: #333;
+  font: 500 36rpx "PingFangSC-Medium";
+}
+
+.buyCombo .listWrap .item .left text:nth-child(2) {
+  margin-left: 16rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 124rpx;
+  height: 40rpx;
+  color: #ff9900;
+  font: 500 20rpx "PingFangSC-Medium";
+  border-radius: 6rpx;
+  border: 1rpx solid #ff9900;
+  box-sizing: border-box;
+}
+
+.buyCombo .listWrap .item .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  margin: 25rpx 5% 0 0;
+}
+
+.buyCombo .listWrap .item .right .startMoney {
+  margin-right: 10rpx;
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+  text-decoration: line-through;
+}
+
+.buyCombo .listWrap .item .right .currMoney {
+  color: #f90;
+  font: 500 36rpx "PingFangSC-Medium";
+}
+
+.buyCombo .listWrap .itemMy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+  width: 100%;
+  height: 180rpx;
+  border-radius: 16rpx;
+  box-sizing: content-box;
+  background: #fff;
+}
+
+.buyCombo .listWrap .itemMy .left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 5%;
+}
+
+.buyCombo .listWrap .itemMy .left .leftTop {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.buyCombo .listWrap .itemMy .left .leftTop text:nth-child(1) {
+  color: #333;
+  font: 500 36rpx "PingFangSC-Medium";
+}
+
+.buyCombo .listWrap .itemMy .left .leftTop text:nth-child(2) {
+  display: inline-block;
+  margin-left: 24rpx;
+  width: 92rpx;
+  height: 40rpx;
+  border-radius: 8rpx;
+  font: 500 20rpx "PingFangSC-Medium";
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.buyCombo .listWrap .itemMy .left .leftBtm {
+  margin-top: 24rpx;
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.buyCombo .viewMore {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.changeBtn {
+  position: absolute;
+  right: 0;
+  right: 32rpx;
+  bottom: 35rpx;
+  z-index: 100;
+  width: 230rpx;
+  height: 60rpx;
+  background: #ffffff;
+  border-radius: 30rpx;
+  border: 3rpx solid #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1a6eff;
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: bold;
+}
+
+.buyCombo .viewMore text {
+  margin-right: 9rpx;
+  color: #166cff;
+  font: 500 28rpx "PingFangSC-Medium";
+}
+
+.buyCombo .viewMore image {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.haseffect {
+  color: #fff;
+  background: #1a6eff;
+}
+
+.noeffect {
+  color: #fff;
+  background: #ffbf27;
+}
+
+.haspast {
+  color: #666;
+  background: #eee;
+}
+
+.buyCombo .listWrap .itemMy .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 5%;
+}
+
+.buyCombo .listWrap .itemMy .right .rightTop {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.buyCombo .listWrap .itemMy .right .rightTop text {
+  color: #999;
+  font: 500 24rpx "PingFangSC-Medium";
+}
+
+.buyCombo .listWrap .itemMy .right .rightTop image {
+  width: 24rpx;
+  height: 24rpx;
+  /* margin-left: 15rpx; */
+}
+
+.buyCombo .listWrap .itemMy .right .rightBtm {
+  margin-top: 24rpx;
+  font: 500 36rpx "PingFangSC-Medium";
+}

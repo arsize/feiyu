@@ -10,7 +10,7 @@ Page({
         url: '/pages/myAgreement/myAgreement',
       },
       {
-        title: "绿色回收金协议",
+        title: "押金协议",
         url: '/pages/myDepositAgreement/myDepositAgreement',
       },
       {

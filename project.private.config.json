@@ -7,6 +7,27 @@
         "miniprogram": {
             "list": [
                 {
+                    "name": "",
+                    "pathName": "pages/depositSuccess/depositSuccess",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "购买套餐新",
+                    "pathName": "pages/myComboNews/myComboNews",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "购买套餐旧",
+                    "pathName": "pages/myCombo/myCombo",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
                     "name": "pages/my/my",
                     "pathName": "pages/my/my",
                     "query": "",
@@ -82,7 +103,7 @@
             ]
         }
     },
-    "projectname": "feiyuhuandian-v3.1",
+    "projectname": "feiyu",
     "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
-    "libVersion": "2.31.1"
+    "libVersion": "3.1.3"
 }

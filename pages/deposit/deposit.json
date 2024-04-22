@@ -1,0 +1,8 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "寄存电池",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "dialog": "../component/dialog/dialog"
+}
+}

@@ -59,8 +59,6 @@ Page({
           OrganizationId: item.organizationId
         },
       }).then(res => {
-        console.log('res', res.data)
-
         resolve(res.data)
       }, err => {
         reject(err)
@@ -91,8 +89,27 @@ Page({
       className: 'column2',
       defaultIndex: 0,
     })
+
+    const currPickSelect1 = columns[0] && columns[0].values && columns[0].values[0];
+    const currPickSelect2 = columns[1] && columns[1].values && columns[1].values[0];
+    const currPickSelectArr = [currPickSelect1, currPickSelect2];
+
+    this.data.colum2.map(item => {
+      if (item.busName == currPickSelect2) {
+
+        this.setData({
+          selectshopBusinessId: item.id,
+          selectagentId: item.agentId
+        })
+      }
+    })
+
+
+
     this.setData({
       columns: columns,
+      pickSelectArr: currPickSelectArr,
+
     })
   },
   selectBattery(e) {
@@ -105,11 +122,13 @@ Page({
     })
   },
   onChange(event) {
+
     let that = this
     const {
       picker,
       value,
     } = event.detail;
+
     this.data.cityList.map(async item => {
       if (item.cityName == value[0]) {
         let colum2 = await this.getVehicleBusinessList(item)
@@ -146,9 +165,7 @@ Page({
         }
       })
     }
-    console.log('colum2', this.data.colum2)
-    console.log('selectagentId', this.data.selectshopBusinessId)
-    console.log('selectagentId', this.data.selectagentId)
+
   },
 
   onCancel() {
@@ -177,7 +194,7 @@ Page({
   rechargeFun() {
     if (!this.data.depositDto.depositId) {
       wx.showToast({
-        title: '请选择绿色回收金',
+        title: '请选择押金',
         icon: 'none'
       })
       return
@@ -191,7 +208,7 @@ Page({
     }
     if (!this.data.haveread) {
       wx.showToast({
-        title: '请先阅读并同意《电池绿色回收金协议》',
+        title: '请先阅读并同意《电池押金协议》',
         icon: 'none'
       })
       return
@@ -204,7 +221,6 @@ Page({
       shopBusinessId: this.data.selectshopBusinessId,
       agentId: this.data.selectagentId
     };
-    console.log(this.data.selectorganizationId)
     wx.showLoading({
       title: "支付中",
       mask: true
@@ -283,7 +299,7 @@ Page({
           content: "电柜已离线，请稍后再试",
           foot: [{
             text: '我知道了',
-            cb: () => {}
+            cb: () => { }
           }]
         }
         app.globalData.emitter.emit("dialogstatus", option)

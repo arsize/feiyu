@@ -18,6 +18,10 @@ Page({
     param6: '',
     desposi: true,
     region: ['广东省', '广州市', '海珠区'],
+    idCardParams: {
+      front: '',
+      back: ''
+    }
   },
   onShow() {},
 
@@ -34,6 +38,138 @@ Page({
       param5: e.detail.value
     })
   },
+
+  // 图片处理
+  chooseImage: function (e) {
+    let that = this;
+    const currType = e.currentTarget.dataset.type;
+    let token = wx.getStorageSync('logindata').appToken;
+
+    wx.chooseMedia({
+      count: 1,
+      mediaType: ['image'],
+      sourceType: ['album', 'camera'],
+      maxDuration: 30,
+      camera: 'back',
+      success(res) {
+        // wx.chooseImage({
+        //   count: 1,
+        //   sizeType: ['compressed'],
+        //   sourceType: ['album', 'camera'],
+        //   success: function (res) {
+        // console.log("res",res)
+
+        // var tempFilePaths = res.tempFilePaths;
+        var tempFilePaths = res.tempFiles;
+        for (var f = 0; f < res.tempFiles.length; f++) {
+          wx.uploadFile({
+            url: `${app.globalData.baseUrl}fileUpload/picture`,
+            filePath: tempFilePaths[f].tempFilePath,
+            header: {
+              'access_token': token,
+              'content-type': "multipart/form-data"
+            },
+            name: 'file',
+            success: function (res) {
+              var data = JSON.parse(res.data);
+              wx.hideLoading();
+              if (Number(data.code) === 200) {
+                const currImg = data.data;
+
+                that.setData({
+                  idCardParams: {
+                    ...that.data.idCardParams,
+                    [currType]: currImg
+                  },
+                })
+
+                if (that.data.idCardParams.back && that.data.idCardParams.front) {
+                  that.ocrIdCardOperate()
+                }
+
+              } else {
+                that.setData({
+                  idCardParams: {
+                    ...that.data.idCardParams,
+                    [currType]: ''
+                  },
+                })
+                wx.showToast({
+                  title: data.msg,
+                  icon: 'none',
+                  duration: 2000,
+                  mask: true
+                })
+              }
+
+            },
+            fail: function (res) {
+              that.setData({
+                idCardParams: {
+                  ...that.data.idCardParams,
+                  [currType]: ''
+                },
+              })
+              wx.hideLoading();
+              wx.showToast({
+                title: "上传失败,请重试",
+                icon: 'none',
+                duration: 2000,
+                mask: true
+              })
+
+            }
+          })
+        }
+      },
+    })
+  },
+
+  ocrIdCardOperate() {
+    const params = {
+      faceImageUrl: this.data.idCardParams.front,
+      backImageUrl: this.data.idCardParams.back,
+    }
+
+    HTTP({
+      url: '/app/wx/ocrIdCard',
+      methods: 'get',
+      data: params,
+      loading: true,
+    }).then(res => {
+
+      const data = res.data;
+      this.setData({
+        param1: data && data.name,
+        param2: data && data.idnumber,
+      })
+
+    }, err => {
+      this.setData({
+        param1: '',
+        param2: '',
+        idCardParams: {
+          front: '',
+          back: ''
+        }
+      })
+      wx.showToast({
+        title: err.msg,
+        icon: "none",
+        duration: 8000,
+        mask: true
+      })
+    })
+  },
+
+
+  // 预览图片
+  previewImage: function () {
+    wx.previewImage({
+      urls: this.data.imagesList
+    })
+  },
+
 
   formSubmit(e) {
     let paramObj = e.detail.value;

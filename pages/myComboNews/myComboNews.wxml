@@ -1,0 +1,211 @@
+<view class="pageCont" wx:if="{{isRequest}}">
+	<view class="buyCombo" wx:if="{{comboType==1}}">
+		<block wx:if="{{buyComboList.length>0}}">
+			<view class="title">
+			</view>
+			<view class="listWrap">
+				<view wx:for="{{buyComboList}}" wx:key="index" class="{{buyComboCurr==index?'item primaryBor4':'item'}}"
+					data-item="{{item}}" data-index="{{index}}" bindtap="selectbuyCombo">
+					<view class="titleNote" wx:if="{{item.activityName}}">
+						<image src="{{baseUrlImg+'card_element01@2x.png'}}" />
+						<text>{{item.activityName}}</text>
+					</view>
+					<view class="left">
+						<text wx:if="{{item.name}}">{{item.name}}</text>
+						<text wx:else>{{item.num>-1?item.num:'无限'}}次换电/30天</text>
+						<text wx:if="{{item.activityType==2&&item.times!=-1}}">{{item.times}}元/次</text>
+					</view>
+					<view class="right">
+						<text class="currMoney">{{item.price}}元</text>
+						<text wx:if="{{item.originalPrice}}" class="startMoney">{{item.originalPrice||"0.00"}}元</text>
+					</view>
+				</view>
+			</view>
+
+			<view wx:if="{{!isfold&&buyComboListE.length>3}}" class="viewMore" data-type="2" bindtap='viewMore'>
+				<text>收起</text>
+				<image mode="widthFix" class="laImage" src="{{baseUrlImg+'Rectangle 27@2x.png'}}" />
+			</view>
+			<view wx:if="{{isfold&&buyComboListE.length>3}}" class="viewMore" data-type="1" bindtap='viewMore'>
+				<text>查看更多</text>
+				<image mode="widthFix" class="laImage" src="{{baseUrlImg+'icon_cont_arrow01@2x.png'}}" />
+			</view>
+			<view class="botBtmFixSig">
+				<view>
+					<text>{{buyComboMoney||'0.00'}}元</text>
+				</view>
+				<view class="payBtn" bindtap="checkPayFun">
+					立即购买
+				</view>
+			</view>
+		</block>
+
+		<block wx:if="{{buyComboList.length==0}}">
+			<view class="noRecordCont">
+				<image mode="widthFix" class="laImage" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
+				<text>暂无可购买套餐</text>
+			</view>
+		</block>
+	</view>
+
+	<!-- 我的套餐 -->	
+	<view class="buyCombo" wx:if="{{comboType==2}}">
+		<view class="title">
+			<text></text>
+		</view>
+		<block wx:if="{{buyComboList.length>0}}">
+			<view class="listWrapMy">
+				<view wx:for="{{buyComboList}}" wx:key="index"
+					class="{{item.status==1?'itemMycombo active':'itemMycombo'}}" data-item="{{item}}"
+					style="{{item.frequencyCardType==4?' background: linear-gradient(#FF703E 0%, #FF934D 100%);':''}}">
+					<view class="{{item.status==1?'top ColorWhite':'top'}}">
+						<text wx:if="{{item.frequencyCardName}}">{{item.frequencyCardName}}
+							{{item.payType == 4?'(兑换套餐)':''}}</text>
+						<text wx:else >{{item.frequencyCardType==2?'无限':item.frequencyCardNum}}次/30天</text>
+
+
+
+						<view wx:if="{{item.frequencyCardCategory != 1}}">
+							<text wx:if="{{item.frequencyCardType==2}}">不限次</text>
+							<text wx:elif="{{item.frequencyCardType == 3}}"><text
+									style="font-size:24rpx;color:#FFFFFF;opacity: 0.5;">本月可用换电次数</text>
+								剩{{item.surplusNum}}次</text>
+							<text wx:else>剩{{item.surplusNum}}次</text>
+						</view>
+						<view wx:else>
+							<text ><text
+								style="font-size:24rpx;color:#FFFFFF;opacity: 0.5;">本月可用换电次数  </text>剩{{item.surplusNum}}次</text>
+						</view>
+
+						<!-- <view bindtap="changeMonthlyfrequency" class="changeBtn"
+							wx:if="{{item.frequencyCardType == 3 && item.frequencyCardCategory != 1}}">
+							变更包月套餐
+						</view> -->
+					</view>
+					<view wx:if="{{item.frequencyCardType != 3}}" class="{{item.status==1?'bottom activeBto':'bottom'}}">
+						有效期：{{item.status==2?'未生效':item.takeEffectTime+' 至 '+item.loseEffectTime||'永久'}}
+					</view>
+					<image  wx:if="{{item.frequencyCardType != 3 && item.frequencyCardType != 4}}" mode="widthFix" src="{{item.status==1?baseUrlImg+'effectComboBg.png':baseUrlImg+'loseeffComboBg.png'}}" />
+					<view style="display: flex;justify-content: space-between;"
+					wx:if="{{userType == 1 && item.frequencyCardType != 4}}"
+					>
+						<view></view>
+						<view
+							style="background: #bedaff;color: #6196e9;border-radius:15rpx;font-size: 30rpx;margin-right:35rpx;box-sizing: border-box;padding:10rpx 30rpx;font-weight:700;">
+							合约第{{item.numberOfFulfilledContracts}}期， 共{{item.frequencyCardContractPeriod || 0}}期
+						</view>
+					</view>
+				</view>
+			</view>
+
+			<view wx:if="{{!isfold&&buyComboListE.length>3}}" class="viewMore" data-type="2" bindtap='viewMore'>
+				<text>收起</text>
+				<image mode="widthFix" class="laImage" src="{{baseUrlImg+'Rectangle 27@2x.png'}}" />
+			</view>
+			<view wx:if="{{isfold&&buyComboListE.length>3}}" class="viewMore" data-type="1" bindtap='viewMore'>
+				<text>查看更多</text>
+				<image mode="widthFix" class="laImage" src="{{baseUrlImg+'icon_cont_arrow01@2x.png'}}" />
+			</view>
+			<view class="botBtmFixLine150"></view>
+			<view class="botBtmFix" wx:if="{{frequencyCardCategory != 1}}">
+				<!-- <view wx:if="{{freType && (freType == 3 || freType == 4)}}" class="btnBlue" data-type='1'
+					bindtap="btnFunDieJia">购买套餐叠加包</view> -->
+				<view  wx:if="{{userType == 0}}" class="btnBlue" data-type='1' bindtap="btnFun">购买更多套餐</view>
+			</view>
+		</block>
+
+		<block wx:if="{{buyComboList.length==0}}">
+			<view class="noBattery">
+				<image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
+				<text style="margin: 5rpx 0;"></text>
+				<text data-type="2" bindtap="btmBtnFun">购买套餐</text>
+			</view>
+		</block>
+	</view>
+
+	<!-- 无押金  没有绑定电池-->
+	<block wx:if="{{comboType==4||comboType==6}}">
+		<view class="noBattery">
+			<image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
+			<text>暂无套餐</text>
+			<text data-type="4" bindtap="btmBtnFun">购买套餐</text>
+		</view>
+	</block>
+
+	<!-- 退押金中-->
+	<block wx:if="{{comboType==7}}">
+		<view class="noBattery">
+			<image mode="widthFix" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
+			<text>暂无套餐</text>
+
+		</view>
+	</block>
+
+	<block wx:if="{{comboType==5}}">
+		<view class="noRecordCont">
+			<image mode="widthFix" class="laImage" src="{{baseUrlImg+'img_cont_emptystatus05@2x.png'}}" />
+			<text>暂无可购买套餐</text>
+		</view>
+	</block>
+
+	<block wx:if="{{comboType==1}}">
+		<view class="noticeCont">
+			<view class="title">
+				<text></text>
+				<text>套餐说明</text>
+				<text></text>
+			</view>
+			<view class="wrap">
+				<view class="item">
+					1、各城市套餐不通用，若更换城市需重新购买套餐；
+				</view>
+				<view class="item">
+					2、换电套餐支持叠加购买，第一张套餐卡到期失效后第二张套餐卡将自动生效。有效期为生效日0时至到期日的24时，如购买了20次/30天的套餐于4月1日0时生效，则在4月30日24时到期失效（清零）；
+				</view>
+				<view class="item">
+					3、套餐一旦购买成功，不支持更换或退款。
+				</view>
+
+			</view>
+		</view>
+		<view class="botBtmFixLine150"></view>
+	</block>
+</view>
+
+<!-- 余额不足 -->
+<view class="readDialog {{rechargedialogShow?'show':'noshow'}}">
+	<view class="dialogTop" style="position:relative;">
+		<image bindtap="closeDialog" style="width:20rpx;height:20rpx;position:absolute;left:30rpx;top:30rpx;"
+			src="{{baseUrlImg + 'icon_cancel@2x.png'}}" />
+		<text>温馨提示</text>
+	</view>
+	<view class="dialogBody">你的余额不足，请选择充值或微信支付完成购买</view>
+	<view class="dialogBottom">
+		<view bindtap="topupFun" class="button button1">
+			<text>充值</text>
+		</view>
+		<view bindtap="weChatpayment" class="button button2">
+			<text>微信支付</text>
+		</view>
+	</view>
+</view>
+<view class="mask {{rechargedialogShow?'show':'noshow'}}"></view>
+
+<!-- 支付提示  -->
+<view class="blackopBg" wx:if="{{isPay}}" catchtap="okPayFun">
+	<view class="payNoteCont">
+		<view class="title">
+			<image catchtap="okPayFun" mode="widthFix" src="{{baseUrlImg+'icon_cancel@2x.png'}}" />
+			<text style="margin-right:25rpx;">支付提示</text>
+		</view>
+		<view class="content">
+			<text>购买套餐</text>
+			<text>{{buyComboList[buyComboCurr].price}}元</text>
+		</view>
+		<view class="btn" catchtap="balanceFun">
+			确认支付
+		</view>
+	</view>
+</view>
+<!-- 弹框 -->
+<dialog></dialog>

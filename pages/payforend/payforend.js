@@ -29,11 +29,13 @@ Page({
         monthly: false
     },
     onLoad(options) {
+      console.log("options",options)
         console.log(options)
         let money = options.money
         let type = options.type
         let name = options.name
         let activeId = options.activeId
+        let couponId = options.couponId
         let depositId = options.depositId
         let depositMoney = options.depositMoney
         let activeMoney = options.activeMoney
@@ -44,6 +46,7 @@ Page({
             type: type,
             name: name,
             activeId: activeId,
+            couponId:couponId,
             depositId: depositId,
             depositMoney: depositMoney,
             activeMoney: activeMoney,
@@ -184,8 +187,10 @@ Page({
             openId: wx.getStorageSync("logindata").openId,
             frequencyCardId: this.data.activeId,
             wxPay: true,
-            couponId: this.data.selectCounpItem.id
         };
+        if(this.data.couponId && this.data.couponId != 'undefined'){
+          params.couponId = this.data.couponId
+        }
         wx.showLoading({
             title: "支付中",
             mask: true,
@@ -250,7 +255,7 @@ Page({
             } else if (err.code == 20003) {
                 let option = {
                     status: true,
-                    content: "请先缴纳电池绿色回收金",
+                    content: "请先缴纳电池押金",
                     foot: [{
                         text: '去支付',
                         cb: () => {
@@ -430,7 +435,7 @@ Page({
             else if (err.code == 20003) {
                 let option = {
                     status: true,
-                    content: "请先缴纳电池绿色回收金",
+                    content: "请先缴纳电池押金",
                     foot: [{
                         text: '去支付',
                         cb: () => {

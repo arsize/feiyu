@@ -939,7 +939,7 @@
   font: 500 28rpx "PingFangSC-Medium";
 }
 
-/* 缴纳绿色回收金步骤条 */
+/* 缴纳押金步骤条 */
 
 .explainStep {
   display: flex;

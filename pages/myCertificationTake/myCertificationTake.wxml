@@ -15,7 +15,7 @@
 		<view class="right">
 			<view class="defaultRound"></view>
 			<view style="color: #999999;font-size:24rpx;margin-top:15rpx;">
-				缴纳电池绿色回收金
+				缴纳电池押金
 			</view>
 		</view>
 	</view>
@@ -27,17 +27,30 @@
 			</view>
 
 			<view class="cont">
+      	<view class="item">
+					<text>上传身份证正面</text>
+        <view class='upload'>
+        <image bindtap='chooseImage' data-type="front" src="{{idCardParams.front||'http://swap.wondware.com/hdgxcximg/addPhotoN.png'}}"></image>
+      </view>
+			</view>
+      <view class="item">
+					<text>上传身份证反面</text>
+        <view class='upload'>
+        <image bindtap='chooseImage' data-type="back" src="{{idCardParams.back||'http://swap.wondware.com/hdgxcximg/addPhotoN.png'}}"></image>
+      </view>
+			</view>
+
 				<view class="item">
 					<text>真实姓名</text>
-					<input placeholder='请输入真实姓名' type="text" data-param="param1" maxlength="10" name="param1" value="{{param1}}" placeholder-class="placeholderCont" bindinput="bindinput"></input>
+					<input placeholder='真实姓名' disabled="true" type="text" data-param="param1" maxlength="10" name="param1" value="{{param1}}" placeholder-class="placeholderCont" bindinput="bindinput"></input>
 
 				</view>
 				<view class="item">
 					<text>身份证号码</text>
-					<input placeholder='请输入身份证号码' maxlength='18' type="idcard" data-param="param2" name="param2" value="{{param2}}" placeholder-class="placeholderCont" bindinput="bindinput"></input>
+					<input placeholder='身份证号码' disabled="true" maxlength='18' type="idcard" data-param="param2" name="param2" value="{{param2}}" placeholder-class="placeholderCont" bindinput="bindinput"></input>
 
 				</view>
-			</view>
+      </view> 
 			<view class="note">
 				温馨提示：为保障你的合法权益，请进行实名认证。
 			</view>
@@ -63,7 +76,7 @@
 				温馨提示：为防止意外事故发生，请填写紧急联系人信息。
 			</view>
 		</view>
-		<view class="info">
+		<!-- <view class="info">
 			<view class="title">
 				<image class="cicle" mode="widthFix" src="{{baseUrlImg+'img_text05@2x.png'}}" />
 			</view>
@@ -92,7 +105,7 @@
 			<view class="note">
 				温馨提示：为提供更好的服务和发送礼品，请填写你的常用地址。
 			</view>
-		</view>
+		</view> -->
 		<view class="botBtmFixLine165"></view>
 		<view class="fromBtnAc">
 			<!-- &&param5&&param6 -->
